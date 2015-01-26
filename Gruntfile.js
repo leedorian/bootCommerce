@@ -19,7 +19,6 @@ module.exports = function (grunt) {
   };
   var generateRawFiles = require('./grunt/bs-raw-files-generator.js');
   var generateCommonJSModule = require('./grunt/bs-commonjs-generator.js');*/
-  var getAllHtmlName = require('./grunt/getallhtmlname.js');
   var configBridge = grunt.file.readJSON('./grunt/configBridge.json', { encoding: 'utf8' });
 
   Object.keys(configBridge.paths).forEach(function (key) {
@@ -32,18 +31,18 @@ module.exports = function (grunt) {
  
   function getAllHtmlFromBlocks() {
 	var path = "./blocks";
-	var test = [];
+	var filesNameArr = [];
 	var files = fs.readdirSync(path);
 	for(var i=0;i<files.length;i++){
 		if(files[i].indexOf(".html")>-1) {
-			test.push(files[i].slice(0,-5));
+			filesNameArr.push(files[i].slice(0,-5));
 		}
 	}
-	return test;
+	return filesNameArr;
   }
    var fileNames = getAllHtmlFromBlocks();
-   console.info(fileNames);
-  // Project configuration.
+
+   // Project configuration.
   grunt.initConfig({
 
     // Metadata.
@@ -180,6 +179,18 @@ module.exports = function (grunt) {
 		blocks: [],
 		pages: []
 	},
+	uglify: {
+      options: {
+        preserveComments: '/*!* bootcommerce v3.3.2 (http://getbootstrap.com)'
+						+ '* Copyright 2011-2015 Twitter, Inc.'
+						+ '* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)'
+						+ '*/'
+      },
+      core: {
+        src: 'pages/dist/js/<%= pkg.name %>.js',
+        dest: 'dist/js/<%= pkg.name %>.min.js'
+      }
+    },
 
     less: {
       compileBlock: {
@@ -294,7 +305,10 @@ module.exports = function (grunt) {
 			src: 'blocks/dist/css/*.css',
 			dest: 'pages/dist/css/<%= pkg.name %>.css'
 		},
-		js: {}
+		js: {
+			src: 'blocks/dist/js/*.js',
+			dest: 'pages/dist/js/<%= pkg.name %>.js'
+		}
 	},
     processhtml: {
         pages: {
