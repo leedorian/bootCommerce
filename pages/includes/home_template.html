@@ -1,0 +1,15 @@
+<!-- home page template -->
+<div class="masthead">
+	<h1 class="title bread-word">BootCommerce</h1>
+	<p class="describe">describle......</p>
+	<hr class="masthead-hr">
+	<ul class="masthead-nav">
+		<% for(var i=0;i<list.length;i++){%>
+		<li class="nav-item" ><a href="#" data-page="<%= list[i] %>"><%= list[i] %></a></li>
+		<% } %>
+	</ul>
+	<hr class="masthead-hr">
+</div>
+<div class="displayContainer">
+	<p>Display widget</p>
+</div>
