@@ -19,7 +19,7 @@ module.exports = function (grunt) {
   };
   var generateRawFiles = require('./grunt/bs-raw-files-generator.js');
   var generateCommonJSModule = require('./grunt/bs-commonjs-generator.js');*/
-
+  var getAllHtmlName = require('./grunt/getallhtmlname.js');
   var configBridge = grunt.file.readJSON('./grunt/configBridge.json', { encoding: 'utf8' });
 
   Object.keys(configBridge.paths).forEach(function (key) {
@@ -28,6 +28,21 @@ module.exports = function (grunt) {
     });
   });
 
+  //get all html from blocks folder
+ 
+  function getAllHtmlFromBlocks() {
+	var path = "./blocks";
+	var test = [];
+	var files = fs.readdirSync(path);
+	for(var i=0;i<files.length;i++){
+		if(files[i].indexOf(".html")>-1) {
+			test.push(files[i].slice(0,-5));
+		}
+	}
+	return test;
+  }
+   var fileNames = getAllHtmlFromBlocks();
+   console.info(fileNames);
   // Project configuration.
   grunt.initConfig({
 
@@ -40,7 +55,24 @@ module.exports = function (grunt) {
             ' */\n',
     //jqueryCheck: configBridge.config.jqueryCheck.join('\n'),
     //jqueryVersionCheck: configBridge.config.jqueryVersionCheck.join('\n'),
-
+	// http server
+	'http-server': {
+        'dev': {
+            // the server root directory
+            root: "./",
+            port: 8282,
+            // port: function() { return 8282; }
+            host: "127.0.0.1",
+            cache: 100000,
+            showDir : true,
+            autoIndex: true,
+            // server default file extension
+            ext: "html",
+            // run in parallel with other tasks
+            runInBackground: false
+        }
+    },
+	
     // Task configuration.
 	clean: {
       blocks: 'blocks/dist',
@@ -270,7 +302,7 @@ module.exports = function (grunt) {
 			process: true,
             data: {
               message: 'This is development environment',
-			  list: ['test1','test2']
+			  list: fileNames 	//get from blocks folder
             }
           },
           files: {
@@ -319,6 +351,8 @@ module.exports = function (grunt) {
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean','dist-css','dist-pages']);
+  //http server task.
+  grunt.registerTask('server',['http-server']);
   // default task
-  grunt.registerTask('default',['clean','dist','htmlhintplus','dist-pages']);
+  grunt.registerTask('default',['clean','dist','htmlhintplus','dist-pages','server']);
 };

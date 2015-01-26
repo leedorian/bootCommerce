@@ -37,19 +37,23 @@
     "grunt-contrib-cssmin": "~0.11.0",
     "grunt-contrib-jade": "~0.14.0",
     "grunt-contrib-jshint": "~0.10.0",
-    "grunt-htmlhint-plus":"~0.0.6",
+    "grunt-htmlhint-plus": "~0.0.6",
     "grunt-contrib-less": "~1.0.0",
     "grunt-contrib-uglify": "~0.7.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-csscomb": "~3.0.0",
     "grunt-html-validation": "~0.1.18",
     "grunt-jscs": "~1.1.0",
-    "grunt-processhtml":"~0.3.6",
+    "grunt-processhtml": "~0.3.6",
     "load-grunt-tasks": "~2.0.0",
     "remarkable": "~1.6.0",
-    "time-grunt": "~1.0.0"
+    "time-grunt": "~1.0.0",
+	"grunt-http-server": "^1.1.0"
   },
   "engines": {
     "node": "~0.10.1"
+  },
+  "dependencies": {
+    
   }
 }
