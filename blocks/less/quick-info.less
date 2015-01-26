@@ -1,0 +1,125 @@
+/**
+ * @author Jack Han
+ */
+
+.quick-view{
+	border:1px solid #ccc;
+	width:750px;
+	position:absolute;
+	left:30px;
+	top:100px;
+	.quick-view-title{
+		position:relative;
+		h2{
+			display:inline-block;
+			margin:0;
+		}
+		.quick-view-close{
+			position:absolute;
+			right:10px;
+			bottom:10px;
+		}
+	}
+}
+.quick-view-info-viewer{
+	h2,h3{
+		font-size:inherit;
+		font-weight:bold;
+		margin:10px 0;
+	}
+	.quick-view-info-viewer-details,
+	.quick-view-info-viewer-attribute,
+	.quick-view-info-viewer-action{
+		border:1px solid #ccc;
+	}
+
+}
+
+.quick-view-image-viewer{
+	img{
+		width:100%;
+		border:0;
+
+	}
+	.quick-view-image-viewer-gallery{
+		margin-bottom:6px;
+	}			
+}
+
+.quick-view-image-viewer-thumbnail{
+	ul{
+		list-style:none;
+		margin:0;
+		padding:0;
+		li{
+			padding:0 1px;
+			img{
+				border:3px solid #fff;
+			}
+		}
+		li.active{
+			img{
+				border:3px solid #333;	
+			}					
+		}
+		li:hover{
+			img{
+				border:3px solid #333;	
+			}
+		}
+	}
+}
+
+.quick-view-info-viewer-attribute{
+	ul{
+		list-style:none;
+		margin:0;
+		padding:0;
+	}
+		
+	li{
+		float:left;
+		margin:0 5px 5px 0;
+		span{
+			display:block; 
+			width:40px;
+			height:40px;
+			border:2px solid #fff;
+			line-height:40px;
+			text-align:center;
+			cursor:pointer;
+		}
+	}					
+	li.available{
+		span{
+			border:2px solid green;
+		}
+	}
+	li.active{ 
+		span{
+			border:2px solid red;
+		}
+	}
+	li:hover{
+		span{
+			border:2px solid red;
+		}
+	}
+	
+
+	li.unavailable{
+		span{
+			border:2px solid grey;
+		}
+	}
+}
+.quick-view-info-viewer-action{
+	input,
+	.quick-view-info-viewer-action-addToWishList{		
+		padding:6px 0;
+		vertical-align:middle;
+	}
+}
+.quick-view-info-viewer-action-addToBasket{
+	margin:0 0 10px 0;
+}

@@ -4,7 +4,8 @@
 (function(){
 	var home = {
 		init: function(){
-			this.loadHtmlFragment("test1");
+			//load default fragment
+			//this.loadHtmlFragment("test1");
 			this.bindEvent();
 		},
 		bindEvent: function(){
