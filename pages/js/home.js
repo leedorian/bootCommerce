@@ -1,4 +1,5 @@
 /**
+ * @describe load html fragment
  * @author xxx
  */
 (function(){
@@ -20,7 +21,6 @@
 			jQuery.get("../../blocks/" + module + ".html",function(result){
 				if(result){
 					var container = jQuery(".displayContainer");
-					console.info(result);
 					container.empty().append(result);
 				}
 			});
