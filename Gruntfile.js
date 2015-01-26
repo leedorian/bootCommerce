@@ -19,31 +19,7 @@ module.exports = function (grunt) {
   };
   var generateRawFiles = require('./grunt/bs-raw-files-generator.js');
   var generateCommonJSModule = require('./grunt/bs-commonjs-generator.js');*/
-  var fs = require("fs");
 
-var paths = "../blocks";
-
-function explorer(path){ 
-	fs.readdir(path, function(err,files){ 
-		if(err){ 
-			console.log("error:\n"+err); 
-			return;
-		}
-		files.forEach(function(file){
-			fs.stat(path + "\\" + file, function(err,stat){ 
-				if(err){ 
-					console.log(err); return;
-				}
-				if(stat.isDirectory()){
-                    console.log(path+"\\"+file+"\\");
-				}else{
-					console.log(path+"\\"+file);
-				}
-			});
-	});    
-}
-
-explorer(paths);
   var configBridge = grunt.file.readJSON('./grunt/configBridge.json', { encoding: 'utf8' });
 
   Object.keys(configBridge.paths).forEach(function (key) {
