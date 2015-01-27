@@ -1,0 +1,57 @@
+/*!
+ * bootCommerce v0.0.1 (https://github.com/leedorian/bootCommerce/)
+ * Copyright 2015-2015 
+ * Licensed under MIT (https://github.com/leedorian/bootCommerce/blob/master/LICENSE.md)
+ */
+
+/**
+ * @author xxx
+ */
+.product_filter_removable
+{
+    width: 50%;
+    margin: 20px auto;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.product_filter_removable ul,
+.product_filter_removable li
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+.product_filter_removable h4
+{
+    margin: 0;
+    padding: 20px 10px;
+
+    border-radius: 5px 5px 0 0;
+    background: #f5f5f5;
+}
+.product_filter_removable .close
+{
+    font-size: 18px;
+}
+.product_filter_removable .close span
+{
+    font-size: 14px;
+}
+.product_filter_removable .product_removable_list
+{
+    padding-bottom: 15px;
+}
+.product_filter_removable .product_removable_list li
+{
+    padding: 10px;
+
+    border-bottom: 1px solid #ccc;
+}
+.product_filter_removable .product_removable_list li:first-child
+{
+    border-top: 1px solid #ccc;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2R1Y3RfZmlsdGVyX3JlbW92YWJsZS5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0lBRUc7QUFDSDtFQUNFLFlBQVc7RUFDWCxtQkFBa0I7RUFDbEIsd0JBQXVCO0VBQ3ZCLG9CQUFtQjtFQUNwQjtBQUNEOztFQUVFLGtCQUFpQjtFQUNqQixZQUFXO0VBQ1gsV0FBVTtFQUNYO0FBQ0Q7RUFDRSxXQUFVO0VBQ1YscUJBQW9CO0VBQ3BCLDRCQUEyQjtFQUMzQixvQkFBbUI7RUFDcEI7QUFDRDtFQUNFLGlCQUFnQjtFQUNqQjtBQUNEO0VBQ0UsaUJBQWdCO0VBQ2pCO0FBQ0Q7RUFDRSxzQkFBcUI7RUFDdEI7QUFDRDtFQUNFLGVBQWM7RUFDZCwrQkFBOEI7RUFDL0I7QUFDRDtFQUNFLDRCQUEyQjtFQUM1QiIsImZpbGUiOiJwcm9kdWN0X2ZpbHRlcl9yZW1vdmFibGUuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBAYXV0aG9yIHh4eFxuICovXG4ucHJvZHVjdF9maWx0ZXJfcmVtb3ZhYmxlIHtcbiAgd2lkdGg6IDUwJTtcbiAgbWFyZ2luOiAyMHB4IGF1dG87XG4gIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbn1cbi5wcm9kdWN0X2ZpbHRlcl9yZW1vdmFibGUgdWwsXG4ucHJvZHVjdF9maWx0ZXJfcmVtb3ZhYmxlIGxpIHtcbiAgbGlzdC1zdHlsZTogbm9uZTtcbiAgcGFkZGluZzogMDtcbiAgbWFyZ2luOiAwO1xufVxuLnByb2R1Y3RfZmlsdGVyX3JlbW92YWJsZSBoNCB7XG4gIG1hcmdpbjogMDtcbiAgYmFja2dyb3VuZDogI2Y1ZjVmNTtcbiAgYm9yZGVyLXJhZGl1czogNXB4IDVweCAwIDA7XG4gIHBhZGRpbmc6IDIwcHggMTBweDtcbn1cbi5wcm9kdWN0X2ZpbHRlcl9yZW1vdmFibGUgLmNsb3NlIHtcbiAgZm9udC1zaXplOiAxOHB4O1xufVxuLnByb2R1Y3RfZmlsdGVyX3JlbW92YWJsZSAuY2xvc2Ugc3BhbiB7XG4gIGZvbnQtc2l6ZTogMTRweDtcbn1cbi5wcm9kdWN0X2ZpbHRlcl9yZW1vdmFibGUgLnByb2R1Y3RfcmVtb3ZhYmxlX2xpc3Qge1xuICBwYWRkaW5nLWJvdHRvbTogMTVweDtcbn1cbi5wcm9kdWN0X2ZpbHRlcl9yZW1vdmFibGUgLnByb2R1Y3RfcmVtb3ZhYmxlX2xpc3QgbGkge1xuICBwYWRkaW5nOiAxMHB4O1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2NjYztcbn1cbi5wcm9kdWN0X2ZpbHRlcl9yZW1vdmFibGUgLnByb2R1Y3RfcmVtb3ZhYmxlX2xpc3QgbGk6Zmlyc3QtY2hpbGQge1xuICBib3JkZXItdG9wOiAxcHggc29saWQgI2NjYztcbn1cbiJdfQ== */
