@@ -27,7 +27,22 @@ module.exports = function (grunt) {
     });
   });
 
-  // Project configuration.
+  //get all html from blocks folder
+ 
+  function getAllHtmlFromBlocks() {
+	var path = "./blocks";
+	var filesNameArr = [];
+	var files = fs.readdirSync(path);
+	for(var i=0;i<files.length;i++){
+		if(files[i].indexOf(".html")>-1) {
+			filesNameArr.push(files[i].slice(0,-5));
+		}
+	}
+	return filesNameArr;
+  }
+   var fileNames = getAllHtmlFromBlocks();
+
+   // Project configuration.
   grunt.initConfig({
 
     // Metadata.
@@ -39,13 +54,30 @@ module.exports = function (grunt) {
             ' */\n',
     //jqueryCheck: configBridge.config.jqueryCheck.join('\n'),
     //jqueryVersionCheck: configBridge.config.jqueryVersionCheck.join('\n'),
-
-    // Task configuration.
-    /*clean: {
-      dist: 'dist',
-      docs: 'docs/dist'
+	// http server
+	'http-server': {
+        'dev': {
+            // the server root directory
+            root: "./",
+            port: 8282,
+            // port: function() { return 8282; }
+            host: "127.0.0.1",
+            cache: 100000,
+            showDir : true,
+            autoIndex: true,
+            // server default file extension
+            ext: "html",
+            // run in parallel with other tasks
+            runInBackground: false
+        }
     },
-
+	
+    // Task configuration.
+	clean: {
+      blocks: 'blocks/dist',
+      pages: 'pages/dist'
+    },
+ /*
     jshint: {
       options: {
         jshintrc: 'js/.jshintrc'
@@ -140,6 +172,25 @@ module.exports = function (grunt) {
       },
       files: 'js/tests/index.html'
     },*/
+	jshint: {
+		options: {
+			jshintrc: 'js/.jshintrc'
+		},
+		blocks: [],
+		pages: []
+	},
+	uglify: {
+      options: {
+        preserveComments: '/*!* bootcommerce v3.3.2 (http://getbootstrap.com)'
+						+ '* Copyright 2011-2015 Twitter, Inc.'
+						+ '* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)'
+						+ '*/'
+      },
+      core: {
+        src: 'pages/dist/js/<%= pkg.name %>.js',
+        dest: 'dist/js/<%= pkg.name %>.min.js'
+      }
+    },
 
     less: {
       compileBlock: {
@@ -211,7 +262,7 @@ module.exports = function (grunt) {
         'pages/dist/css/**/*.css'
       ]
     },
-    
+	
     usebanner: {
       options: {
         position: 'top',
@@ -244,15 +295,28 @@ module.exports = function (grunt) {
         advanced: false
       },
       minifyBlocks: {
-        src: 'dist/css/<%= pkg.name %>.css',
-        dest: 'dist/css/<%= pkg.name %>.min.css'
+        src: 'pages/dist/css/<%= pkg.name %>.css',
+        dest: 'pages/dist/css/<%= pkg.name %>.min.css'
       }
     },
+	concat: {
+		option: {},
+		css: {
+			src: 'blocks/dist/css/*.css',
+			dest: 'pages/dist/css/<%= pkg.name %>.css'
+		},
+		js: {
+			src: 'blocks/dist/js/*.js',
+			dest: 'pages/dist/js/<%= pkg.name %>.js'
+		}
+	},
     processhtml: {
         pages: {
           options: {
+			process: true,
             data: {
-              message: 'This is development environment'
+              message: 'This is development environment',
+			  list: fileNames 	//get from blocks folder
             }
           },
           files: {
@@ -260,6 +324,14 @@ module.exports = function (grunt) {
           }
         }
     },
+	htmlhintplus: {
+		//htmlhintrc: "path/to/file"
+		//use default rules
+		//TODO hint includes and blocks html
+		html: {
+			src:['pages/dist/home.html']
+		}
+	},
     watch: {
       less: {
         files: ['blocks/less/**/*.less','pages/less/**/*.less'],
@@ -278,101 +350,23 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });
   require('time-grunt')(grunt);
 /*
-
   // Docs HTML validation task
   grunt.registerTask('validate-html', ['jekyll:docs', 'validation']);
 
-  var runSubset = function (subset) {
-    return !process.env.TWBS_TEST || process.env.TWBS_TEST === subset;
-  };
-  var isUndefOrNonZero = function (val) {
-    return val === undefined || val !== '0';
-  };
-
-  // Test task.
-  var testSubtasks = [];
-  // Skip core tests if running a different subset of the test suite
-  if (runSubset('core') &&
-      // Skip core tests if this is a Savage build
-      process.env.TRAVIS_REPO_SLUG !== 'twbs-savage/bootstrap') {
-    testSubtasks = testSubtasks.concat(['dist-css', 'dist-js', 'csslint:dist', 'test-js', 'docs']);
-  }
-  // Skip HTML validation if running a different subset of the test suite
-  if (runSubset('validate-html') &&
-      // Skip HTML5 validator on Travis when [skip validator] is in the commit message
-      isUndefOrNonZero(process.env.TWBS_DO_VALIDATOR)) {
-    testSubtasks.push('validate-html');
-  }
-  // Only run Sauce Labs tests if there's a Sauce access key
-  if (typeof process.env.SAUCE_ACCESS_KEY !== 'undefined' &&
-      // Skip Sauce if running a different subset of the test suite
-      runSubset('sauce-js-unit') &&
-      // Skip Sauce on Travis when [skip sauce] is in the commit message
-      isUndefOrNonZero(process.env.TWBS_DO_SAUCE)) {
-    testSubtasks.push('connect');
-    testSubtasks.push('saucelabs-qunit');
-  }
-  grunt.registerTask('test', testSubtasks);
-  grunt.registerTask('test-js', ['jshint:core', 'jshint:test', 'jshint:grunt', 'jscs:core', 'jscs:test', 'jscs:grunt', 'qunit']);
 */
 
-  // TODO: JS distribution task.
-  //grunt.registerTask('dist-js', ['concat', 'uglify:core', 'commonjs']);
+  // JS distribution task.
+   grunt.registerTask('dist-js', ['concat:js', 'uglify:core', 'commonjs']);
 
   // CSS distribution task.
   grunt.registerTask('less-compile', ['less:compileBlock', 'less:compilePage']);
-  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:blocks', 'autoprefixer:pages', 'usebanner', 'csscomb:blocks','csscomb:pages'/*, 'cssmin:minifyBlocks'*/]);
-  grunt.registerTask('dist-pages', ['processhtml:pages']);
+  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:blocks', 'autoprefixer:pages', 'usebanner', 'csscomb:blocks','csscomb:pages','csslint:blocks','concat:css', 'cssmin:minifyBlocks']);
+  grunt.registerTask('dist-pages', ['processhtml:pages','htmlhintplus']);
 
   // Full distribution task.
-  grunt.registerTask('dist', ['dist-css']);
-
-  // Default task.
-  //grunt.registerTask('default', ['clean:dist', 'copy:fonts', 'test']);
-
-  // Version numbering task.
-  // grunt change-version-number --oldver=A.B.C --newver=X.Y.Z
-  // This can be overzealous, so its changes should always be manually reviewed!
-  //grunt.registerTask('change-version-number', 'sed');
-
-  //grunt.registerTask('build-glyphicons-data', function () { generateGlyphiconsData.call(this, grunt); });
-
-  // task for building customizer
-  /*grunt.registerTask('build-customizer', ['build-customizer-html', 'build-raw-files']);
-  grunt.registerTask('build-customizer-html', 'jade');
-  grunt.registerTask('build-raw-files', 'Add scripts/less files to customizer.', function () {
-    var banner = grunt.template.process('<%= banner %>');
-    generateRawFiles(grunt, banner);
-  });
-
-  grunt.registerTask('commonjs', 'Generate CommonJS entrypoint module in dist dir.', function () {
-    var srcFiles = grunt.config.get('concat.bootstrap.src');
-    var destFilepath = 'dist/js/npm.js';
-    generateCommonJSModule(grunt, srcFiles, destFilepath);
-  });*/
-
-  // Docs task.
-  /*grunt.registerTask('docs-css', ['autoprefixer:docs', 'autoprefixer:examples', 'csscomb:docs', 'csscomb:examples', 'cssmin:docs']);
-  grunt.registerTask('lint-docs-css', ['csslint:docs', 'csslint:examples']);
-  grunt.registerTask('docs-js', ['uglify:docsJs', 'uglify:customize']);
-  grunt.registerTask('lint-docs-js', ['jshint:assets', 'jscs:assets']);
-  grunt.registerTask('docs', ['docs-css', 'lint-docs-css', 'docs-js', 'lint-docs-js', 'clean:docs', 'copy:docs', 'build-glyphicons-data', 'build-customizer']);
-
-  grunt.registerTask('prep-release', ['jekyll:github', 'compress']);*/
-
-  // Task for updating the cached npm packages used by the Travis build (which are controlled by test-infra/npm-shrinkwrap.json).
-  // This task should be run and the updated file should be committed whenever Bootstrap's dependencies change.
-  /*grunt.registerTask('update-shrinkwrap', ['exec:npmUpdate', '_update-shrinkwrap']);
-  grunt.registerTask('_update-shrinkwrap', function () {
-    var done = this.async();
-    npmShrinkwrap({ dev: true, dirname: __dirname }, function (err) {
-      if (err) {
-        grunt.fail.warn(err);
-      }
-      var dest = 'test-infra/npm-shrinkwrap.json';
-      fs.renameSync('npm-shrinkwrap.json', dest);
-      grunt.log.writeln('File ' + dest.cyan + ' updated.');
-      done();
-    });
-  });*/
+  grunt.registerTask('dist', ['clean','dist-css','dist-pages']);
+  //http server task.
+  grunt.registerTask('server',['http-server']);
+  // default task
+  grunt.registerTask('default',['clean','dist','server']);
 };

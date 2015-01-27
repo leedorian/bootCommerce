@@ -1,0 +1,50 @@
+/**
+ * @author Jack Han
+ */
+
+.pro-image-viewer{
+	border:1px solid #ccc;
+	width:450px;
+	position:relative;
+	img{
+		width:100%;
+		border:0;
+		cursor:pointer;
+	}
+	li{
+		float:left;
+		padding:0 2px;
+		img{
+			border:3px solid #ddd;
+		}
+	}
+}
+.pro-image-viewer-thumbnail{
+	margin:5px 0;
+	ul{
+		list-style:none;
+		margin:0;
+		padding:0;
+	}
+	
+	li.active{
+		img{
+			border:3px solid blue;
+		}
+	}
+	li:hover{
+		img{
+			border:3px solid blue;
+		}
+	}
+}
+.pro-image-viewer-gallery{
+	.pro-image-viewer-gallery-zoomBtn{
+		position:absolute;
+		top:0;
+		right:0;
+		width:50px;
+		height:50px;
+		border:2px solid #fff;
+	}
+}
