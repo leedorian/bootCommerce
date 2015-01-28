@@ -3,6 +3,8 @@
  * @author xxx
  */
 (function(){
+	'use strict'
+	
 	var home = {
 		init: function(){
 			//load default fragment
@@ -24,7 +26,6 @@
 					container.empty().append(result);
 				}
 			});
-			var container = jQuery(".displayContainer");
 		}
 	}
 	home.init();

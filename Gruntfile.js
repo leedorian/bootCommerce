@@ -172,31 +172,57 @@ module.exports = function (grunt) {
       },
       files: 'js/tests/index.html'
     },*/
+	//TODO  remove css sourcemap
+	// TODO validate html blocks
+	// TODO js hint contact min
 	jshint: {
 		options: {
-			jshintrc: 'js/.jshintrc'
+			jshintrc: 'blocks/js/.jshintrc',
+			force: true
+			
 		},
-		blocks: [],
-		pages: []
+		blocks: {
+			src: "blocks/js/*.js"
+		},
+		pages: {
+			src: "pages/js/*.js"
+		}
+	},
+	jscs: {
+		options: {
+			config: 'blocks/js/.jscsrc',
+			force: true
+		},
+		blocks: {
+			src: '<%= jshint.blocks.src %>'
+		},
+		pages: {
+			src: '<%= jshint.pages.src %>'
+		}
 	},
 	uglify: {
       options: {
-        preserveComments: '/*!* bootcommerce v3.3.2 (http://getbootstrap.com)'
-						+ '* Copyright 2011-2015 Twitter, Inc.'
-						+ '* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)'
-						+ '*/'
+        preserveComments: 'some',
+		banner: '<%= banner %>',
+		sourceMap: true
       },
-      core: {
+      blocks: {
         src: 'pages/dist/js/<%= pkg.name %>.js',
-        dest: 'dist/js/<%= pkg.name %>.min.js'
-      }
+        dest: 'pages/dist/js/<%= pkg.name %>.min.js'
+      },
+	  pages: {
+		src: 'pages/js/home.js',
+		dest: 'pages/dist/js/home.min.js'
+	  }
     },
 
     less: {
       compileBlock: {
         options: {
           strictMath: true,
-          /*sourceMap: true,
+          sourceMap: false,
+		  outputSourceFiles: false
+		  /*
           outputSourceFiles: true,
           sourceMapURL: '<%= pkg.name %>.css.map',
           sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'*/
@@ -300,13 +326,14 @@ module.exports = function (grunt) {
       }
     },
 	concat: {
-		option: {},
+		option: {
+		},
 		css: {
 			src: 'blocks/dist/css/*.css',
 			dest: 'pages/dist/css/<%= pkg.name %>.css'
 		},
 		js: {
-			src: 'blocks/dist/js/*.js',
+			src: 'blocks/js/*.js',
 			dest: 'pages/dist/js/<%= pkg.name %>.js'
 		}
 	},
@@ -356,7 +383,7 @@ module.exports = function (grunt) {
 */
 
   // JS distribution task.
-   grunt.registerTask('dist-js', ['concat:js', 'uglify:core', 'commonjs']);
+   grunt.registerTask('dist-js', ['jshint','jscs','concat:js', 'uglify']);
 
   // CSS distribution task.
   grunt.registerTask('less-compile', ['less:compileBlock', 'less:compilePage']);
@@ -364,9 +391,8 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-pages', ['processhtml:pages','htmlhintplus']);
 
   // Full distribution task.
-  grunt.registerTask('dist', ['clean','dist-css','dist-pages']);
+  grunt.registerTask('dist', ['clean','dist-css','dist-pages','dist-js']);
   //http server task.
   grunt.registerTask('server',['http-server']);
   // default task
-  grunt.registerTask('default',['clean','dist','server']);
-};
+  grunt.registerTask('default',['clean','dist','server']);};

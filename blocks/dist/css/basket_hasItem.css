@@ -1,0 +1,63 @@
+/*!
+ * bootCommerce v0.0.1 (https://github.com/leedorian/bootCommerce/)
+ * Copyright 2015-2015 
+ * Licensed under MIT (https://github.com/leedorian/bootCommerce/blob/master/LICENSE.md)
+ */
+
+/**
+ * @author xxx
+ */
+.basket_hasItem .basket_order_link,
+.basket_hasItem .basket_order_btn
+{
+    margin: 10px 0;
+}
+.basket_quantity_item
+{
+    text-align: center;
+}
+.basket_quantity_item .basket_product_remove,
+.basket_quantity_item .basket_move_wishList
+{
+    display: block;
+}
+.basket_quantity_item .basket_order_quantity
+{
+    width: 50px;
+
+    text-align: center;
+}
+.basket_quantity_item .basket_quantity_operation
+{
+    min-width: 100px;
+}
+.basket_order_table .basket_productImg_section
+{
+    text-align: center;
+}
+.basket_total_details
+{
+    padding-right: 14px;
+
+    text-align: right;
+}
+.basket_total_figures
+{
+    text-align: right;
+}
+.basket_total_pay td
+{
+    font-weight: bold;
+}
+.basket_Promotional_code
+{
+    padding: 10px;
+
+    background: #ccc;
+}
+.basket_Promotional_code .btn
+{
+    margin-left: 10px;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJhc2tldF9oYXNJdGVtLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7SUFFRztBQUNIOztFQUVFLGdCQUFlO0VBQ2hCO0FBQ0Q7RUFDRSxvQkFBbUI7RUFDcEI7QUFDRDs7RUFFRSxnQkFBZTtFQUNoQjtBQUNEO0VBQ0Usb0JBQW1CO0VBQ25CLGFBQVk7RUFDYjtBQUNEO0VBQ0Usa0JBQWlCO0VBQ2xCO0FBQ0Q7RUFDRSxvQkFBbUI7RUFDcEI7QUFDRDtFQUNFLG1CQUFrQjtFQUNsQixxQkFBb0I7RUFDckI7QUFDRDtFQUNFLG1CQUFrQjtFQUNuQjtBQUNEO0VBQ0UsbUJBQWtCO0VBQ25CO0FBQ0Q7RUFDRSxlQUFjO0VBQ2Qsa0JBQWlCO0VBQ2xCO0FBQ0Q7RUFDRSxtQkFBa0I7RUFDbkIiLCJmaWxlIjoiYmFza2V0X2hhc0l0ZW0uY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBAYXV0aG9yIHh4eFxuICovXG4uYmFza2V0X2hhc0l0ZW0gLmJhc2tldF9vcmRlcl9saW5rLFxuLmJhc2tldF9oYXNJdGVtIC5iYXNrZXRfb3JkZXJfYnRuIHtcbiAgbWFyZ2luOiAxMHB4IDA7XG59XG4uYmFza2V0X3F1YW50aXR5X2l0ZW0ge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG4uYmFza2V0X3F1YW50aXR5X2l0ZW0gLmJhc2tldF9wcm9kdWN0X3JlbW92ZSxcbi5iYXNrZXRfcXVhbnRpdHlfaXRlbSAuYmFza2V0X21vdmVfd2lzaExpc3Qge1xuICBkaXNwbGF5OiBibG9jaztcbn1cbi5iYXNrZXRfcXVhbnRpdHlfaXRlbSAuYmFza2V0X29yZGVyX3F1YW50aXR5IHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICB3aWR0aDogNTBweDtcbn1cbi5iYXNrZXRfcXVhbnRpdHlfaXRlbSAuYmFza2V0X3F1YW50aXR5X29wZXJhdGlvbiB7XG4gIG1pbi13aWR0aDogMTAwcHg7XG59XG4uYmFza2V0X29yZGVyX3RhYmxlIC5iYXNrZXRfcHJvZHVjdEltZ19zZWN0aW9uIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuLmJhc2tldF90b3RhbF9kZXRhaWxzIHtcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gIHBhZGRpbmctcmlnaHQ6IDE0cHg7XG59XG4uYmFza2V0X3RvdGFsX2ZpZ3VyZXMge1xuICB0ZXh0LWFsaWduOiByaWdodDtcbn1cbi5iYXNrZXRfdG90YWxfcGF5IHRkIHtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59XG4uYmFza2V0X1Byb21vdGlvbmFsX2NvZGUge1xuICBwYWRkaW5nOiAxMHB4O1xuICBiYWNrZ3JvdW5kOiAjY2NjO1xufVxuLmJhc2tldF9Qcm9tb3Rpb25hbF9jb2RlIC5idG4ge1xuICBtYXJnaW4tbGVmdDogMTBweDtcbn1cbiJdfQ== */
