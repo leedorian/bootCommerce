@@ -174,7 +174,6 @@ module.exports = function (grunt) {
     },*/
 	//TODO  remove css sourcemap
 	// TODO validate html blocks
-	// TODO js hint contact min
 	jshint: {
 		options: {
 			jshintrc: 'blocks/js/.jshintrc',
@@ -219,13 +218,8 @@ module.exports = function (grunt) {
     less: {
       compileBlock: {
         options: {
-          strictMath: true,
-          sourceMap: false,
-		  outputSourceFiles: false
-		  /*
-          outputSourceFiles: true,
-          sourceMapURL: '<%= pkg.name %>.css.map',
-          sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'*/
+        // sourceMap: false,
+        // outputSourceFiles: true
         },
         files: [
             {
@@ -240,11 +234,8 @@ module.exports = function (grunt) {
       },
       compilePage: {
         options: {
-          strictMath: true,
-          /*sourceMap: true,
-          outputSourceFiles: true,
-          sourceMapURL: '<%= pkg.name %>-theme.css.map',
-          sourceMapFilename: 'dist/css/<%= pkg.name %>-theme.css.map'*/
+            // sourceMap: false,
+            // outputSourceFiles: true
         },
         files: [
             {
@@ -383,11 +374,11 @@ module.exports = function (grunt) {
 */
 
   // JS distribution task.
-   grunt.registerTask('dist-js', ['jshint','jscs','concat:js', 'uglify']);
+   grunt.registerTask('dist-js', ['jshint:blocks','jshint:pages','jscs','concat:js', 'uglify']);
 
   // CSS distribution task.
   grunt.registerTask('less-compile', ['less:compileBlock', 'less:compilePage']);
-  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:blocks', 'autoprefixer:pages', 'usebanner', 'csscomb:blocks','csscomb:pages','csslint:blocks','concat:css', 'cssmin:minifyBlocks']);
+  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:blocks', 'autoprefixer:pages', 'usebanner', 'csscomb:blocks','csscomb:pages','csslint:blocks','csslint:pages','concat:css', 'cssmin:minifyBlocks']);
   grunt.registerTask('dist-pages', ['processhtml:pages','htmlhintplus']);
 
   // Full distribution task.

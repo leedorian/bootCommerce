@@ -1,0 +1,38 @@
+<pre>
+"disallowEmptyBlocks": true, //不允许出现空块代码 eg.if () {}  catch除外
+"disallowKeywords": ["with"], //不使用with
+"disallowMixedSpacesAndTabs": true,//空格和tabs不能混用
+"disallowMultipleLineStrings": true, //不允许不使用连接字符串跨越多个行
+"disallowMultipleVarDecl": true, //不允许多个变量声明,除了在一个for循环
+"disallowQuotedKeysInObjects": "allButReserved",
+"disallowSpaceAfterPrefixUnaryOperators": ["++", "--", "+", "-", "~", "!"], //操作符右侧不能有空格
+"disallowSpaceBeforeBinaryOperators": [","], //逗号前不能出现空格
+"disallowSpaceBeforePostfixUnaryOperators": ["++", "--"], //操作符前不能出现空格
+"disallowSpacesInNamedFunctionExpression": { "beforeOpeningRoundBrace": true },//方法名与圆括号之间不要空格
+"disallowSpacesInsideArrayBrackets": true, //数组开始后和解释前不需要空格
+"disallowSpacesInsideParentheses": true,//圆括号开始后和结束前不需要空格
+"disallowTrailingComma": true, //数组和对象字面量最后不能有多余的逗号
+"disallowTrailingWhitespace": true, //要求所有行都要是一个非空字符结束
+"requireCamelCaseOrUpperCaseIdentifiers": true, //驼峰命名或者UPPERCASE_WITH_UNDERSCORES
+"requireCapitalizedConstructors": true,//构造函数需要大写
+"requireCommaBeforeLineBreak": true, //
+"requireDotNotation": true,   //允许逗号表达式
+"requireLineFeedAtFileEnd": true, //文件结尾需要空一行
+"requireSpaceAfterBinaryOperators": ["+", "-", "/", "*", "=", "==", "===", "!=", "!==", ">", "<", ">=", "<="],
+"requireSpaceAfterKeywords": ["if", "else", "for", "while", "do", "switch", "return", "try", "catch"],
+"requireSpaceAfterLineComment": true,
+"requireSpaceBeforeBinaryOperators": ["+", "-", "/", "*", "=", "==", "===", "!=", "!==", ">", "<", ">=", "<="],
+"requireSpaceBetweenArguments": true, //a(b, c);
+"requireSpacesInAnonymousFunctionExpression": { "beforeOpeningCurlyBrace": true, "beforeOpeningRoundBrace": true }, //var foo = function () {};
+"requireSpacesInConditionalExpression": true, //var a = b ? c : d;
+"requireSpacesInForStatement": true, //for(var i = 0; i < l; i++)
+"requireSpacesInFunctionDeclaration": { "beforeOpeningCurlyBrace": true },
+"requireSpacesInFunctionExpression": { "beforeOpeningCurlyBrace": true }, //function a () {}
+"requireSpacesInNamedFunctionExpression": { "beforeOpeningCurlyBrace": true }, //var x = function a () {};
+"requireSpacesInsideObjectBrackets": "allButNested", //{ a: { b:1 }}  
+"validateIndentation": 4, //缩进字符数
+"validateLineBreaks": "LF",
+"validateQuoteMarks": "'"
+</pre>
+<br/>
+<a href="http://jscs.info/rules.html">All rules</a>
