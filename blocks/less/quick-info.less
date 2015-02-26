@@ -2,81 +2,101 @@
  * @author Jack Han
  */
 
-.quick-view{
+.quickView{
 	border:1px solid #ccc;
 	width:750px;
 	position:absolute;
 	left:30px;
 	top:100px;
-	.quick-view-title{
+	.quickView_title{
 		position:relative;
+		padding:0 10px;
 		h2{
 			display:inline-block;
 			margin:0;
 		}
-		.quick-view-close{
-			position:absolute;
-			right:10px;
-			bottom:10px;
+		.close{
+			line-height:1.1;
+			font-size:30px;
 		}
 	}
+	.siteProImageViewer{
+		float:left;
+		width:50%;
+		padding:10px;
+	}
+	.quickView_productBriefInfo{
+		float:left;
+		width:50%;
+		padding:10px 10px 10px 0;
+	}
+
 }
-.quick-view-info-viewer{
+
+.siteProImageViewer{
+	img{
+		width:100%;
+	}
+	.siteProImageViewer_gallery{
+		margin-bottom:6px;
+	}
+	.siteProImageViewer_thumbnail{
+		ul{
+			list-style:none;
+			margin:0;
+			padding:0;
+			li{
+				padding:0 1px;
+				float:left;
+				width:25%;
+				img{
+					border:3px solid #fff;
+				}
+			}
+			li.active{
+				img{
+					border:3px solid #333;	
+				}					
+			}
+			li:hover{
+				img{
+					border:3px solid #333;	
+				}
+			}
+		}
+	}	
+}
+
+.productBriefInfo{
 	h2,h3{
 		font-size:inherit;
 		font-weight:bold;
 		margin:10px 0;
 	}
-	.quick-view-info-viewer-details,
-	.quick-view-info-viewer-attribute,
-	.quick-view-info-viewer-action{
+	.productBriefInfo_details,
+	.productBriefInfo_attribute,
+	.gl-product-info-action{
 		border:1px solid #ccc;
 	}
 
+	.productBriefInfo_handle{
+		input,
+		.productBriefInfo_handle_addToWishList{		
+			padding:6px 0;
+			vertical-align:middle;
+		}
+		.productBriefInfo_handle_addToBasket{
+			margin:0 0 10px 0;
+		}
+	}	
 }
 
-.quick-view-image-viewer{
-	img{
-		width:100%;
-		border:0;
-
-	}
-	.quick-view-image-viewer-gallery{
-		margin-bottom:6px;
-	}			
-}
-
-.quick-view-image-viewer-thumbnail{
+.productOption{
 	ul{
 		list-style:none;
 		margin:0;
 		padding:0;
-		li{
-			padding:0 1px;
-			img{
-				border:3px solid #fff;
-			}
-		}
-		li.active{
-			img{
-				border:3px solid #333;	
-			}					
-		}
-		li:hover{
-			img{
-				border:3px solid #333;	
-			}
-		}
-	}
-}
-
-.quick-view-info-viewer-attribute{
-	ul{
-		list-style:none;
-		margin:0;
-		padding:0;
-	}
-		
+	}		
 	li{
 		float:left;
 		margin:0 5px 5px 0;
@@ -105,21 +125,14 @@
 			border:2px solid red;
 		}
 	}
-	
-
 	li.unavailable{
 		span{
 			border:2px solid grey;
 		}
 	}
 }
-.quick-view-info-viewer-action{
-	input,
-	.quick-view-info-viewer-action-addToWishList{		
-		padding:6px 0;
-		vertical-align:middle;
-	}
-}
-.quick-view-info-viewer-action-addToBasket{
-	margin:0 0 10px 0;
-}
+
+
+
+
+

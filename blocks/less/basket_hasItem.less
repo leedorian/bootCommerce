@@ -2,9 +2,15 @@
  * @author xxx
  */
 .basket_hasItem{
-  .basket_order_link,.basket_order_btn{
+  .basket_order_link{
     margin:10px 0;
+    float:right;
   }
+  .basket_order_btn{
+    margin:10px 0;
+    float:left;
+  }
+
 }
 .basket_quantity_item{
   text-align: center;
@@ -25,17 +31,24 @@
     text-align: center;
   }
 }
-.basket_total_details{
-  text-align: right;
-  padding-right: 14px;
+
+.orderSummary{
+  float: right;
+  dt{
+    float:left;
+    width: 50%;
+    text-align: right;
+    font-weight: normal;
+  }
+  dd{
+    float:right;
+    width: 50%;
+    text-align: right;
+  }
 }
-.basket_total_figures{
-  text-align: right;
-}
-.basket_total_pay td{
-  font-weight: bold;
-}
-.basket_Promotional_code{
+
+.promotionalCode{
+  float: left;
   padding:10px;
   background: #ccc;
   .btn{

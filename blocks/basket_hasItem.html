@@ -4,7 +4,7 @@
 @version 0.0.1
  -->
 <div class="basket_hasItem">
-      <div class="basket_order_link pull-right">
+      <div class="basket_order_link">
           <a class="btn btn-default" href="#" role="button">Continue Shopping</a>
           <a class="btn btn-default" href="#" role="button">Checkout</a>
       </div>
@@ -41,34 +41,25 @@
           </table>
       </div>
       <div class="basket_order_total clearfix">
-          <div class="basket_Promotional_code pull-left">
+          <div class="promotional_code">
               Promotional code: <input type="text" value=""><button type="button" class="btn btn-default btn-xs">Apply</button>
           </div>
-          <table class="pull-right basket_order_sum" cellspacing="0" cellpadding="0" border="0" role="presentation" >
-              <tbody>
-              <tr>
-                  <td class="basket_total_details">Order Subtotal:</td>
-                  <td class="basket_total_figures">$59.99</td>
-              </tr>
-              <tr>
-                  <td class="basket_total_details">You saved:</td>
-                  <td class="basket_total_figures">$9.99</td>
-              </tr>
-              <tr class="basket_total_pay">
-                  <td class="basket_total_details">Amount you pay inc. GST:</td>
-                  <td class="basket_total_figures">$99.99</td>
-              </tr>
-
-              </tbody>
-          </table>
+          <dl class="order_summary">
+              <dt> Order Subtotal:</dt>
+              <dd>$59.99</dd>
+              <dt> You saved:</dt>
+              <dd>$59.99</dd>
+              <dt> Amount you pay inc. GST:</dt>
+              <dd>$59.99</dd>
+          </dl>
 
       </div>
       <div class="clearfix">
-          <div class="basket_order_btn pull-left">
+          <div class="basket_order_btn">
               <button type="button" class="btn btn-default">Save basket</button>
               <button type="button" class="btn btn-default">Empty basket</button>
           </div>
-          <div class="basket_order_link pull-right">
+          <div class="basket_order_link">
               <a class="btn btn-default" href="#" role="button">Continue Shopping</a>
               <a class="btn btn-default" href="#" role="button">Checkout</a>
           </div>
