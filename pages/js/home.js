@@ -8,20 +8,20 @@
 
     var home = {
         init: function () {
-			// load default fragment
-			// this.loadHtmlFragment('test1');
+            // load default fragment
+            // this.loadHtmlFragment('test1');
             this.bindEvent();
-		},
-		bindEvent: function () {
-			var that = this;
-			jQuery('.masthead-nav').on('click', 'a', function (event) {
-				var muduleName = jQuery(event.target).attr('data-page');
-				that.loadHtmlFragment(muduleName);
-			});
-		},
-		loadHtmlFragment: function (module) {
-			// dufault load from blocks/***
-			/*
+        },
+        bindEvent: function () {
+            var that = this;
+            jQuery('.masthead-nav').on('click', 'a', function (event) {
+                var muduleName = jQuery(event.target).attr('data-page');
+                that.loadHtmlFragment(muduleName);
+            });
+        },
+        loadHtmlFragment: function (module) {
+            // dufault load from blocks/***
+            /*
             jQuery.get('../../blocks/' + module + '.html', function (result) {
 				if (result) {
 					var container = jQuery('.displayContainer');
@@ -34,19 +34,19 @@
                 type: 'get',
                 url: '../../blocks/' + module + '.html',
                 cache: false, // remove cache
-                success: function(result) {
+                success: function (result) {
                     if (result) {
                         var container = jQuery('.displayContainer');
                         container.empty().append(result);
                     }
                 },
-                error: function() {
+                error: function () {
                     // TODO
                 }
             });
-		}
+        }
     };
 
-	home.init();
+    home.init();
 
 })();
