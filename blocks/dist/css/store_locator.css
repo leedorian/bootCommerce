@@ -5,7 +5,7 @@
  */
 
 /**
- * @author xxx
+ * @author Ivy
  */
 .store_locator .store_locator_inputInfo .form-control
 {
@@ -108,7 +108,7 @@
 .store_map_legendLocalStore span,
 .store_map_legendSuperStore span
 {
-    float: left;
+    vertical-align: top;
 }
 .store_mapList_storeName span
 {

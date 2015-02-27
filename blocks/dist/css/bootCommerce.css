@@ -8,7 +8,7 @@
  * @author Dorian
  */
 /**
- * @author xxx
+ * @author Ivy
  */
 .basket_hasItem .basket_order_link
 {
@@ -59,6 +59,10 @@
 
     text-align: right;
 }
+.orderSummary :nth-last-of-type(1)
+{
+    font-weight: bold;
+}
 .orderSummary dd
 {
     float: right;
@@ -80,7 +84,7 @@
     margin-left: 10px;
 }
 /**
- * @author xxx
+ * @author Ivy
  */
 /* start bracket breadcrumb style*/
 .breadcrumb_bracket_section li
@@ -165,7 +169,7 @@
     border-left-color: #fff;
 }
 /**
- * @author xxx
+ * @author Ivy
  */
 .carousel_product_crosswise .carousel-inner
 {
@@ -209,7 +213,7 @@
     height: 200px;
 }
 /**
- * @author xxx
+ * @author Ivy
  */
 .carousel_product_vertical
 {
@@ -258,7 +262,7 @@
     width: 100%;
 }
 /**
- * @author xxx
+ * @author Ivy
  */
 .cascading_panel
 {
@@ -624,7 +628,7 @@
     border: 1px solid #ccc;
 }
 /**
- * @author xxx
+ * @author Ivy
  */
 .product_filter_checkbox
 {
@@ -693,7 +697,7 @@
     border-top: 1px solid #ccc;
 }
 /**
- * @author xxx
+ * @author Ivy
  */
 .product_filter_removable
 {
@@ -1073,7 +1077,7 @@
     text-align: left;
 }
 /**
- * @author xxx
+ * @author Ivy
  */
 .store_locator .store_locator_inputInfo .form-control
 {
@@ -1176,7 +1180,7 @@
 .store_map_legendLocalStore span,
 .store_map_legendSuperStore span
 {
-    float: left;
+    vertical-align: top;
 }
 .store_mapList_storeName span
 {
