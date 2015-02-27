@@ -4,7 +4,7 @@ module.exports = function (grunt) {
   // Force use of Unix newlines
   grunt.util.linefeed = '\n';
 
-  
+
 
   var fs = require('fs');
   var path = require('path');
@@ -28,17 +28,17 @@ module.exports = function (grunt) {
   });
 
   //get all html from blocks folder
- 
+
   function getAllHtmlFromBlocks() {
-	var path = "./blocks";
-	var filesNameArr = [];
-	var files = fs.readdirSync(path);
-	for(var i=0;i<files.length;i++){
-		if(files[i].indexOf(".html")>-1) {
-			filesNameArr.push(files[i].slice(0,-5));
-		}
-	}
-	return filesNameArr;
+    var path = "./blocks";
+    var filesNameArr = [];
+    var files = fs.readdirSync(path);
+    for(var i=0;i<files.length;i++){
+        if(files[i].indexOf(".html")>-1) {
+            filesNameArr.push(files[i].slice(0,-5));
+        }
+    }
+    return filesNameArr;
   }
    var fileNames = getAllHtmlFromBlocks();
 
@@ -54,8 +54,8 @@ module.exports = function (grunt) {
             ' */\n',
     //jqueryCheck: configBridge.config.jqueryCheck.join('\n'),
     //jqueryVersionCheck: configBridge.config.jqueryVersionCheck.join('\n'),
-	// http server
-	'http-server': {
+    // http server
+    'http-server': {
         'dev': {
             // the server root directory
             root: "./",
@@ -71,9 +71,9 @@ module.exports = function (grunt) {
             runInBackground: false
         }
     },
-	
+
     // Task configuration.
-	clean: {
+    clean: {
       blocks: 'blocks/dist',
       pages: 'pages/dist'
     },
@@ -172,47 +172,47 @@ module.exports = function (grunt) {
       },
       files: 'js/tests/index.html'
     },*/
-	//TODO  remove css sourcemap
-	// TODO validate html blocks
-	jshint: {
-		options: {
-			jshintrc: 'blocks/js/.jshintrc',
-			force: true
-			
-		},
-		blocks: {
-			src: "blocks/js/*.js"
-		},
-		pages: {
-			src: "pages/js/*.js"
-		}
-	},
-	jscs: {
-		options: {
-			config: 'blocks/js/.jscsrc',
-			force: true
-		},
-		blocks: {
-			src: '<%= jshint.blocks.src %>'
-		},
-		pages: {
-			src: '<%= jshint.pages.src %>'
-		}
-	},
-	uglify: {
+    //TODO  remove css sourcemap
+    // TODO validate html blocks
+    jshint: {
+        options: {
+            jshintrc: 'blocks/js/.jshintrc',
+            force: true
+
+        },
+        blocks: {
+            src: "blocks/js/*.js"
+        },
+        pages: {
+            src: "pages/js/*.js"
+        }
+    },
+    jscs: {
+        options: {
+            config: 'blocks/js/.jscsrc',
+            force: true
+        },
+        blocks: {
+            src: '<%= jshint.blocks.src %>'
+        },
+        pages: {
+            src: '<%= jshint.pages.src %>'
+        }
+    },
+    uglify: {
       options: {
         preserveComments: 'some',
-		banner: '<%= banner %>',
-		sourceMap: true
+        banner: '<%= banner %>',
+        sourceMap: true
       },
       blocks: {
         src: 'pages/dist/js/<%= pkg.name %>.js',
         dest: 'pages/dist/js/<%= pkg.name %>.min.js'
       },
-	  pages: {
-		src: 'pages/js/home.js',
-		dest: 'pages/dist/js/home.min.js'
-	  }
+      pages: {
+        src: 'pages/js/home.js',
+        dest: 'pages/dist/js/home.min.js'
+      }
     },
 
     less: {
@@ -279,7 +279,7 @@ module.exports = function (grunt) {
         'pages/dist/css/**/*.css'
       ]
     },
-	
+
     usebanner: {
       options: {
         position: 'top',
@@ -303,8 +303,8 @@ module.exports = function (grunt) {
         src: ['*.css', '!*.min.css'],
         dest: 'pages/dist/css/'
       }
-    },  
-    
+    },
+
     cssmin: {
       options: {
         compatibility: 'ie8',
@@ -316,40 +316,41 @@ module.exports = function (grunt) {
         dest: 'pages/dist/css/<%= pkg.name %>.min.css'
       }
     },
-	concat: {
-		option: {
-		},
-		css: {
-			src: 'blocks/dist/css/*.css',
-			dest: 'pages/dist/css/<%= pkg.name %>.css'
-		},
-		js: {
-			src: 'blocks/js/*.js',
-			dest: 'pages/dist/js/<%= pkg.name %>.js'
-		}
-	},
+    concat: {
+        option: {
+        },
+        css: {
+            src: 'blocks/dist/css/*.css',
+            dest: 'pages/dist/css/<%= pkg.name %>.css'
+        },
+        js: {
+            src: 'blocks/js/*.js',
+            dest: 'pages/dist/js/<%= pkg.name %>.js'
+        }
+    },
     processhtml: {
         pages: {
           options: {
-			process: true,
+            process: true,
             data: {
               message: 'This is development environment',
-			  list: fileNames 	//get from blocks folder
+              list: fileNames     //get from blocks folder
             }
           },
           files: {
-            'pages/dist/home.html':['pages/home.html']
+            'pages/dist/home.html':['pages/home.html'],
+            'pages/dist/homePage.html':['pages/homePage.html']
           }
         }
     },
-	htmlhintplus: {
-		//htmlhintrc: "path/to/file"
-		//use default rules
-		//TODO hint includes and blocks html
-		html: {
-			src:['pages/dist/home.html']
-		}
-	},
+    htmlhintplus: {
+        //htmlhintrc: "path/to/file"
+        //use default rules
+        //TODO hint includes and blocks html
+        html: {
+            src:['pages/dist/home.html']
+        }
+    },
     watch: {
       less: {
         files: ['blocks/less/**/*.less','pages/less/**/*.less'],

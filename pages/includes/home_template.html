@@ -1,16 +1,21 @@
 <!-- home page template -->
 <div class="masthead">
-	<h1 class="title bread-word">BootCommerce</h1>
-	<p class="describe">describle......</p>
-	<hr class="masthead-hr">
-	<ul class="masthead-nav">
-		<% for(var i=0;i<list.length;i++){%>
-		<li class="nav-item" ><a href="#" data-page="<%= list[i] %>"><%= list[i] %></a></li>
-		<% } %>
-	</ul>
-	<hr class="masthead-hr">
+    <h1 class="title bread-word">BootCommerce</h1>
+    <p class="describe">describle......</p>
+    <hr class="masthead-hr">
+    <h2>Components</h2>
+    <ul class="masthead-nav">
+        <% for(var i=0;i<list.length;i++){%>
+        <li class="nav-item" ><a href="#" data-page="<%= list[i] %>"><%= list[i] %></a></li>
+        <% } %>
+    </ul>
+    <hr class="masthead-hr">
+    <h2>Demos</h2>
+    <ul class="masthead-nav">
+        <li class="nav-item"><a href="homePage.html" target="_blank">Home Page</a></li>
+    </ul>
 </div>
 <div class="displayContainer">
-	<p>Welcome !</p>
-	<p>Display widget here</p>
+    <p>Welcome !</p>
+    <p>Display widget here</p>
 </div>
