@@ -18,6 +18,7 @@
 .store_locator_map{
   margin: 20px auto;
   .store_map_panel{
+    float: left;
     width:60%;
     .store_map_canvas{
       min-height: 300px;
@@ -40,15 +41,15 @@
     }
     h5{
       font-weight: bold;
-      float:left;
       width: 80%;
-      margin: 0;
-      display: inline;
+      margin-top: 0;
+      display: inline-block;
 
     }
     p{font-weight: normal;}
   }
   .store_map_list{
+    float: left;
     min-width: 200px;
     width: 20%;
     border: 1px solid #ccc;
@@ -75,3 +76,16 @@
     margin-bottom: 20px;
   }
 }
+.store_map_legendLocalStore,
+.store_map_legendSuperStore,
+{
+  span{
+    float: left;
+  }
+}
+.store_mapList_storeName{
+  span{
+    float: right;
+  }
+}
+

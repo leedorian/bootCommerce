@@ -1,7 +1,8 @@
 /**
  * @author Jack Han
  */
-.productList{
+
+.siteProductList{
     list-style:none;
     margin:0;
     padding:0;
@@ -9,7 +10,7 @@
     	margin:0;
 		padding:0;
     }
-    .productList-thumb{
+    .siteProductList_thumb{
 		img{
 			width:100%;
 			border:0;
@@ -17,63 +18,103 @@
 	}	
 }
 
-.list-style{
-	.productList-item{
+.productList_list{
+	.siteProductList_item{
 	    border-bottom: 1px solid;
-	    padding: 10px 0;			
+	    padding: 15px 0;	
+	    .siteProductList_rating{
+	    	display:none;
+	    }
+	    .siteProductList_brief{
+	    	dipslay:block;
+	    }	
 	}
-	.productList-handle{
+	.siteProductList_thumb, .siteProductList_info, .siteProductList_price, .siteProductList_handle{
+		float:left;
+		padding:0 15px 0 0;
+	}
+	.siteProductList_thumb{
+		width:20%;		
+		.siteProductList_saleOffer{
+			display:none;
+		}
+		.siteProductList_compareBtn{
+			display:none;
+		}
+	}
+	.siteProductList_info{
+		width:50%;
+	}
+	.siteProductList_price{
+		width:10%;
+		p{
+			display:none;
+		}
+	}
+	.siteProductList_handle{
+		width:20%;
+		padding:0;
+	}
+	.siteProductList_handle{
 		text-align:center;
-		.productList-handle-quantity,
-		.productList-handle-addToBasket{
+		.siteProductList_handleQty,
+		.siteProductList_handleAdd{
 			width:100%;
 			padding:6px 0;
 			margin-bottom:10px;
 		}
 	}
-	.row{
-		margin:0;
-	}
 }
 
-.thumbnail-style{
-	.productList-item{
-		.row{ 
-			margin:0;
+
+.productList_thumbnail{
+	.siteProductList_item.clearfix{
+		clear:none;
+	}
+	padding-left:15px;
+	.siteProductList_item{
+		float:left;
+		width:33.33333%;
+		padding:0 15px 0 0;
+		.siteProductList_brief{
+			display:none;
 		}
 	}
-	.productList-thumb {
+	.siteProductList_thumb {
 		position:relative;
 		a{
 			display:block;
 		}
-		.sale-offer{
+		.siteProductList_saleOffer{
 			position:absolute;
 			top:0;
 			left:0;
 			border:1px solid #333;
 			background:#fff;
 		}
-		.compare-btn{
+		.siteProductList_compareBtn{
 			position:absolute;	 
 			bottom:0;
 			left:10px;
 		}
 
 	}
-	.productList-price{
+	.siteProductList_price {
 		min-height:40px;
-		.productList-price-quote{
+		.siteProductList_priceQuote{
 			font-weight: bold;
 		}
 		p{
 			color:#333;
 			margin:0;
 		}
+		.siteProductList_priceIcon{
+			display:none;
+		}
 	}
-	.productList-rating{
+	.siteProductList_rating{
 		margin-bottom: 10px;
-		.productList-rating-icon{
+		.siteProductList_ratingIcon{
 			display: inline-block;
 			width:100px;
 			background:#444;
@@ -81,12 +122,19 @@
 			vertical-align: middle;
 		}
 	}
-	.productList-handle{
-		.productList-handle-quantity,
-		.productList-handle-addToBasket{
-			padding:6px 0;
+	.siteProductList_handle{
+		.siteProductList_handleQty,
+		.siteProductList_handleAdd{
+			padding:6px auto;
+			float:left;
+		}
+		.siteProductList_inventory{
+			display:none;
+		}
+		.siteProductList_handleQty{
+			width:30%;
 		}		
-		.productList-handle-addToBasket{
+		.siteProductList_handleAdd{
 			float:right;
 		}
 	}
