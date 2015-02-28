@@ -29,6 +29,12 @@
 	    	dipslay:block;
 	    }	
 	}
+	.siteProductList_item:after{
+		clear:both;
+		display:block;
+		content:"";
+
+	}
 	.siteProductList_thumb, .siteProductList_info, .siteProductList_price, .siteProductList_handle{
 		float:left;
 		padding:0 15px 0 0;
@@ -49,6 +55,9 @@
 		width:10%;
 		p{
 			display:none;
+		}
+		font{
+			word-wrap:break-word;
 		}
 	}
 	.siteProductList_handle{
@@ -96,6 +105,10 @@
 			position:absolute;	 
 			bottom:0;
 			left:10px;
+			input{
+				margin:0;
+				vertical-align:middle;
+			}
 		}
 
 	}
@@ -133,6 +146,7 @@
 		}
 		.siteProductList_handleQty{
 			width:30%;
+			padding:6px 12px;
 		}		
 		.siteProductList_handleAdd{
 			float:right;
