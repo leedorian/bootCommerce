@@ -35,6 +35,24 @@
 {
     width: 100%;
 }
+.siteSearchBar .siteSearchBar_input
+{
+    width: 50%;
+}
+.siteSearchBar .siteSearchBar_select
+{
+    width: 30%;
+}
+.siteSearchBar .siteSearchBar_btn
+{
+    width: 20%;
+}
+.siteSearchBar .siteSearchBar_autoSuggest
+{
+    top: 34px;
+
+    width: 80%;
+}
 .siteSearchBar > div
 {
     float: left;
@@ -85,6 +103,13 @@
 {
     padding: 5px 15px;
 }
+.siteSearchBar:after
+{
+    display: block;
+    clear: both;
+
+    content: '';
+}
 .siteMinBasket .siteMinBasket_box
 {
     padding: 20px;
@@ -99,7 +124,6 @@
     right: 0;
 
     width: 350px;
-    height: 300px;
     margin: 0;
 }
 .siteMinBasket .siteMinBasket_popup ul
@@ -177,24 +201,6 @@
 
     width: 80%;
 }
-.header .headerSearchBar .siteSearchBar_input
-{
-    width: 50%;
-}
-.header .headerSearchBar .siteSearchBar_select
-{
-    width: 30%;
-}
-.header .headerSearchBar .siteSearchBar_btn
-{
-    width: 20%;
-}
-.header .headerSearchBar .siteSearchBar_autoSuggest
-{
-    top: 34px;
-
-    width: 80%;
-}
 .header .headerColLink
 {
     padding-bottom: 15px;
@@ -232,7 +238,6 @@
     right: 0;
 
     width: 350px;
-    height: 300px;
 }
 .header .headerNav
 {

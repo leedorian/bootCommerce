@@ -53,4 +53,10 @@
 .siteFooter .siteFooter_btmLink ul li a
 {
     padding: 0 10px;
+
+    border-right: 1px solid #eee;
+}
+.siteFooter .siteFooter_btmLink ul li:last-child a
+{
+    border-right: 0;
 }

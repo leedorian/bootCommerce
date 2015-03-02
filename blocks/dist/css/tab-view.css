@@ -9,6 +9,8 @@
  */
 .siteTabView .siteTabView_content
 {
+    padding: 10px 15px;
+
     border: 3px solid #ccc;
 }
 .siteTabView .siteTabView_title
