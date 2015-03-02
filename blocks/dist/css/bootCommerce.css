@@ -326,6 +326,12 @@
 .siteFooter .siteFooter_btmLink ul li a
 {
     padding: 0 10px;
+
+    border-right: 1px solid #eee;
+}
+.siteFooter .siteFooter_btmLink ul li:last-child a
+{
+    border-right: 0;
 }
 /**
  * @author Jack Han
@@ -357,6 +363,24 @@
 .siteSearchBar button
 {
     width: 100%;
+}
+.siteSearchBar .siteSearchBar_input
+{
+    width: 50%;
+}
+.siteSearchBar .siteSearchBar_select
+{
+    width: 30%;
+}
+.siteSearchBar .siteSearchBar_btn
+{
+    width: 20%;
+}
+.siteSearchBar .siteSearchBar_autoSuggest
+{
+    top: 34px;
+
+    width: 80%;
 }
 .siteSearchBar > div
 {
@@ -408,6 +432,13 @@
 {
     padding: 5px 15px;
 }
+.siteSearchBar:after
+{
+    display: block;
+    clear: both;
+
+    content: '';
+}
 .siteMinBasket .siteMinBasket_box
 {
     padding: 20px;
@@ -422,7 +453,6 @@
     right: 0;
 
     width: 350px;
-    height: 300px;
     margin: 0;
 }
 .siteMinBasket .siteMinBasket_popup ul
@@ -500,24 +530,6 @@
 
     width: 80%;
 }
-.header .headerSearchBar .siteSearchBar_input
-{
-    width: 50%;
-}
-.header .headerSearchBar .siteSearchBar_select
-{
-    width: 30%;
-}
-.header .headerSearchBar .siteSearchBar_btn
-{
-    width: 20%;
-}
-.header .headerSearchBar .siteSearchBar_autoSuggest
-{
-    top: 34px;
-
-    width: 80%;
-}
 .header .headerColLink
 {
     padding-bottom: 15px;
@@ -555,7 +567,6 @@
     right: 0;
 
     width: 350px;
-    height: 300px;
 }
 .header .headerNav
 {
@@ -780,6 +791,13 @@
 {
     dipslay: block;
 }
+.productList_list .siteProductList_item:after
+{
+    display: block;
+    clear: both;
+
+    content: '';
+}
 .productList_list .siteProductList_thumb,
 .productList_list .siteProductList_info,
 .productList_list .siteProductList_price,
@@ -812,6 +830,10 @@
 .productList_list .siteProductList_price p
 {
     display: none;
+}
+.productList_list .siteProductList_price font
+{
+    word-wrap: break-word;
 }
 .productList_list .siteProductList_handle
 {
@@ -871,6 +893,12 @@
     bottom: 0;
     left: 10px;
 }
+.productList_thumbnail .siteProductList_thumb .siteProductList_compareBtn input
+{
+    margin: 0;
+
+    vertical-align: middle;
+}
 .productList_thumbnail .siteProductList_price
 {
     min-height: 40px;
@@ -918,6 +946,7 @@
 .productList_thumbnail .siteProductList_handle .siteProductList_handleQty
 {
     width: 30%;
+    padding: 6px 12px;
 }
 .productList_thumbnail .siteProductList_handle .siteProductList_handleAdd
 {
@@ -928,11 +957,8 @@
  */
 .quickView
 {
-    position: absolute;
     top: 100px;
     left: 30px;
-
-    width: 750px;
 
     border: 1px solid #ccc;
 }
@@ -1011,9 +1037,9 @@
 }
 .productBriefInfo .productBriefInfo_details,
 .productBriefInfo .productBriefInfo_attribute,
-.productBriefInfo .gl-product-info-action
+.productBriefInfo .productBriefInfo_handle
 {
-    border: 1px solid #ccc;
+    border: 1px solid #eee;
 }
 .productBriefInfo .productBriefInfo_handle input,
 .productBriefInfo .productBriefInfo_handle .productBriefInfo_handle_addToWishList
@@ -1191,6 +1217,8 @@
  */
 .siteTabView .siteTabView_content
 {
+    padding: 10px 15px;
+
     border: 3px solid #ccc;
 }
 .siteTabView .siteTabView_title

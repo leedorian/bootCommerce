@@ -9,11 +9,8 @@
  */
 .quickView
 {
-    position: absolute;
     top: 100px;
     left: 30px;
-
-    width: 750px;
 
     border: 1px solid #ccc;
 }
@@ -92,9 +89,9 @@
 }
 .productBriefInfo .productBriefInfo_details,
 .productBriefInfo .productBriefInfo_attribute,
-.productBriefInfo .gl-product-info-action
+.productBriefInfo .productBriefInfo_handle
 {
-    border: 1px solid #ccc;
+    border: 1px solid #eee;
 }
 .productBriefInfo .productBriefInfo_handle input,
 .productBriefInfo .productBriefInfo_handle .productBriefInfo_handle_addToWishList
