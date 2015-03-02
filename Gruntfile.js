@@ -328,7 +328,11 @@ module.exports = function (grunt) {
             dest: 'pages/dist/css/<%= pkg.name %>.css'
         },
         js: {
-            src: 'blocks/js/*.js',
+            src: ['blocks/js/*.js','!blocks/js/bootCommerceBase.js'],
+            dest: 'blocks/dist/js/<%= pkg.name %>.js'
+        },
+        js_base:{
+            src: ['blocks/js/bootCommerceBase.js','blocks/dist/js/<%= pkg.name %>.js'],
             dest: 'blocks/dist/js/<%= pkg.name %>.js'
         }
     },
@@ -345,7 +349,7 @@ module.exports = function (grunt) {
                 {
                   expand: true,     // Enable dynamic expansion.
                   cwd: 'pages/',      // Src matches are relative to this path.
-                  src: ['**/*.html'], // Actual pattern(s) to match.
+                  src: ['*.html'], // Actual pattern(s) to match.
                   dest: 'pages/dist/',   // Destination path prefix.
                   ext: '.html',   // Dest filepaths will have this extension.
                   extDot: 'first'   // Extensions in filenames begin after the first dot
@@ -400,7 +404,7 @@ module.exports = function (grunt) {
 */
 
   // JS distribution task.
-   grunt.registerTask('dist-js', ['jshint:blocks','jshint:pages','jscs','concat:js', 'uglify']);
+   grunt.registerTask('dist-js', ['jshint:blocks','jshint:pages','jscs','concat:js','concat:js_base', 'uglify']);
 
   // CSS distribution task.
   grunt.registerTask('less-compile', ['less:compileBlock', 'less:compilePage']);
