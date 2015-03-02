@@ -195,7 +195,7 @@
     width: 80%;
     padding: 15px;
 }
-.header .headerSearchBar
+.header .siteSearchBar
 {
     float: left;
 
@@ -224,6 +224,16 @@
 {
     display: inline-block;
 }
+.header .headerColLink ul li a
+{
+    padding: 0 10px;
+
+    border-right: 1px solid #eee;
+}
+.header .headerColLink ul li:last-child a
+{
+    border: 0;
+}
 .header .headerMinBasket
 {
     position: relative;
@@ -239,7 +249,7 @@
 
     width: 350px;
 }
-.header .headerNav
+.siteNav
 {
     line-height: 45px;
 
@@ -247,13 +257,17 @@
 
     border: 1px solid #ccc;
 }
-.header .headerNav ul li
+.siteNav ul li
 {
     padding: 0 10px;
 
     background: #eee;
 }
-.header .headerNav ul li.active
+.siteNav ul li.active
+{
+    background: #ccc;
+}
+.siteNav ul li:hover
 {
     background: #ccc;
 }

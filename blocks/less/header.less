@@ -143,7 +143,7 @@
 		float:left;
 		padding:15px;
 	}
-	.headerSearchBar{
+	.siteSearchBar{
 		float:left;
 		width:80%;		
 	}
@@ -160,6 +160,13 @@
 			padding:0;
 			li{
 				display:inline-block;
+				a{
+					padding:0 10px;
+					border-right:1px solid #eee;
+				}
+			}
+			li:last-child a{
+				border:0;
 			}
 		}
 	}
@@ -173,20 +180,22 @@
 			width:350px;
 		}	
 	}
-	.headerNav{		
-		border:1px solid #ccc;
-		line-height:45px;
-		padding:0 15px;
-		ul{		
-			li{
-				padding:0 10px;
-				background:#eee;			
-			
-				&.active{
-					background:#ccc;
-				}
+}
+.siteNav{		
+	border:1px solid #ccc;
+	line-height:45px;
+	padding:0 15px;
+	ul{		
+		li{
+			padding:0 10px;
+			background:#eee;			
+		
+			&.active{
+				background:#ccc;
+			}
+			&:hover{
+				background:#ccc;
 			}
 		}
 	}
 }
-

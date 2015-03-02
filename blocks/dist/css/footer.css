@@ -35,6 +35,12 @@
     margin: 0 0 10px;
     padding: 0;
 }
+.siteFooter .siteFooter_groupLink_item a:before
+{
+    padding: 0 5px 0 0;
+
+    content: '>';
+}
 .siteFooter .siteFooter_groupLink_item.siteFooter_groupLink_item_last
 {
     border-right: 0;
