@@ -1,5 +1,0 @@
-/**
- * Search box
- * @author xxx
- */
-

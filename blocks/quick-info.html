@@ -4,24 +4,16 @@
 @version 0.0.1
  -->
 
-<div class="quickView clearfix">
+<div class="quickView clearfix"> 
 	<div class="quickView_title clearfix">
 		<h2>Quick info Title Product Name</h2>
 		<button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
 	</div>
-	<div class="siteProImageViewer">
-		<div class="siteProImageViewer_gallery">
-			<img src="http://lorempixel.com/450/450/sports" />
-		</div>
-		<div class="siteProImageViewer_thumbnail">
-			<ul class="clearfix">
-				<li class=" active"><img src="http://lorempixel.com/100/100/sports" /></li>
-				<li  class=""><img src="http://lorempixel.com/100/100/sports" /></li>
-				<li  class=""><img src="http://lorempixel.com/100/100/sports" /></li>
-				<li  class=""><img src="http://lorempixel.com/100/100/sports" /></li>
-			</ul>
-		</div>
-	</div>
+
+	<!-- build:include product-image-viewer.html -->
+    Header component
+    <!-- /build -->
+
 	<div class="productBriefInfo quickView_productBriefInfo">
 		<div class="productBriefInfo_details">
 			<h2>Product name title, Converse womenes chuck taylor ballet</h2>
@@ -31,29 +23,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum
 </p>
 			<a href="">View full product details</a>
 		</div>
-		<div class="productOption productBriefInfo_attribute">
-			<h3>Color Description: <span>White</span></h3>
-			<ul class="productOption_attribute_color clearfix ">
-				<li class="active"><span>red</span></li>
-				<li><span>blue</span></li>
-				<li><span>yellow</span></li>
-			</ul>
-			<h3>Size Description:<span>06</span></h3>
-			<ul class="productOption_attribute_size clearfix ">
-				<li class="available active"><span>06</span></li>
-				<li class="available"><span>06</span></li>
-				<li class="available"><span>06</span></li>
-				<li class="unavailable"><span>06</span></li>
-				<li class="unavailable"><span>06</span></li>
-				<li class="unavailable"><span>06</span></li>
-				<li class="unavailable"><span>06</span></li>
-				<li class="unavailable"><span>06</span></li>
-			</ul>
-			<p>Select attributes to see availability</p>
-			<h3>Availability:</h3>
-			<img src="" />
-			<span>Instock</span>
-		</div>
+		<!-- build:include product-option.html -->
+	    Header component
+	    <!-- /build -->
 
 		<div class="productBriefInfo_handle">
 			<h3>Quantity</h3>
