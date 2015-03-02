@@ -1,10 +1,10 @@
 {
   "always-semicolon": true,
-  "block-indent": 2,
+  "block-indent": 4,
   "color-case": "lower",
   "color-shorthand": true,
   "element-case": "lower",
-  "eof-newline": true,
+  "eof-newline": false,
   "leading-zero": false,
   "remove-empty-rulesets": true,
   "space-after-colon": 1,

@@ -172,7 +172,7 @@ module.exports = function (grunt) {
       },
       files: 'js/tests/index.html'
     },*/
-    //TODO  remove css sourcemap
+
     // TODO validate html blocks
     jshint: {
         options: {
@@ -203,11 +203,11 @@ module.exports = function (grunt) {
       options: {
         preserveComments: 'some',
         banner: '<%= banner %>',
-        sourceMap: true
+        sourceMap: false
       },
       blocks: {
-        src: 'pages/dist/js/<%= pkg.name %>.js',
-        dest: 'pages/dist/js/<%= pkg.name %>.min.js'
+        src: 'blocks/dist/js/<%= pkg.name %>.js',
+        dest: 'blocks/dist/js/<%= pkg.name %>.min.js'
       },
       pages: {
         src: 'pages/js/home.js',
@@ -218,8 +218,7 @@ module.exports = function (grunt) {
     less: {
       compileBlock: {
         options: {
-        // sourceMap: false,
-        // outputSourceFiles: true
+            sourceMap: false
         },
         files: [
             {
@@ -234,8 +233,7 @@ module.exports = function (grunt) {
       },
       compilePage: {
         options: {
-            // sourceMap: false,
-            // outputSourceFiles: true
+            sourceMap: false,
         },
         files: [
             {
@@ -256,13 +254,13 @@ module.exports = function (grunt) {
       },
       blocks: {
         options: {
-          map: true
+          //map: true
         },
         src: 'blocks/dist/css/**/*.css'
       },
       pages: {
         options: {
-          map: true
+          //map: true
         },
         src: 'pages/dist/css/**/*.css'
       }
@@ -272,12 +270,18 @@ module.exports = function (grunt) {
       options: {
         csslintrc: 'blocks/less/.csslintrc'
       },
-      blocks: [
-        'blocks/dist/css/**/*.css'
-      ],
-      pages: [
-        'pages/dist/css/**/*.css'
-      ]
+      blocks: {
+        expand: true,
+        cwd: 'blocks/dist/css/',
+        src: ['*.css', '!*.min.css','!bootCommerce.css'],
+        dest: 'blocks/dist/css/'
+      },
+      pages: {
+       expand: true,
+        cwd: 'pages/dist/css/',
+        src: ['*.css', '!*.min.css'],
+        dest: 'pages/dist/css/'
+      }
     },
 
     usebanner: {
@@ -312,8 +316,8 @@ module.exports = function (grunt) {
         advanced: false
       },
       minifyBlocks: {
-        src: 'pages/dist/css/<%= pkg.name %>.css',
-        dest: 'pages/dist/css/<%= pkg.name %>.min.css'
+        src: 'blocks/dist/css/<%= pkg.name %>.css',
+        dest: 'blocks/dist/css/<%= pkg.name %>.min.css'
       }
     },
     concat: {
@@ -325,7 +329,7 @@ module.exports = function (grunt) {
         },
         js: {
             src: 'blocks/js/*.js',
-            dest: 'pages/dist/js/<%= pkg.name %>.js'
+            dest: 'blocks/dist/js/<%= pkg.name %>.js'
         }
     },
     processhtml: {
@@ -337,10 +341,31 @@ module.exports = function (grunt) {
               list: fileNames     //get from blocks folder
             }
           },
-          files: {
-            'pages/dist/home.html':['pages/home.html'],
-            'pages/dist/homePage.html':['pages/homePage.html']
-          }
+            files: [
+                {
+                  expand: true,     // Enable dynamic expansion.
+                  cwd: 'pages/',      // Src matches are relative to this path.
+                  src: ['**/*.html'], // Actual pattern(s) to match.
+                  dest: 'pages/dist/',   // Destination path prefix.
+                  ext: '.html',   // Dest filepaths will have this extension.
+                  extDot: 'first'   // Extensions in filenames begin after the first dot
+                }
+            ]
+        },
+        blocks: {
+          options: {
+            process: true
+          },
+            files: [
+                {
+                  expand: true,     // Enable dynamic expansion.
+                  cwd: 'blocks/',      // Src matches are relative to this path.
+                  src: ['**/*.html'], // Actual pattern(s) to match.
+                  dest: 'blocks/dist/',   // Destination path prefix.
+                  ext: '.html',   // Dest filepaths will have this extension.
+                  extDot: 'first'   // Extensions in filenames begin after the first dot
+                }
+            ]
         }
     },
     htmlhintplus: {
@@ -358,7 +383,7 @@ module.exports = function (grunt) {
       },
       pages:{
         files: ['blocks/*.html','pages/*.html','pages/includes/**/*.html'],
-        tasks: ['processhtml:pages']
+        tasks: ['processhtml']
       }
     }
 
@@ -379,12 +404,14 @@ module.exports = function (grunt) {
 
   // CSS distribution task.
   grunt.registerTask('less-compile', ['less:compileBlock', 'less:compilePage']);
-  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:blocks', 'autoprefixer:pages', 'usebanner', 'csscomb:blocks','csscomb:pages','csslint:blocks','csslint:pages','concat:css', 'cssmin:minifyBlocks']);
-  grunt.registerTask('dist-pages', ['processhtml:pages','htmlhintplus']);
+  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:blocks', 'autoprefixer:pages', 'csscomb:blocks','csscomb:pages','csslint:blocks','csslint:pages', 'cssmin:minifyBlocks', 'usebanner']);
+  grunt.registerTask('dist-pages', ['processhtml','htmlhintplus']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean','dist-css','dist-pages','dist-js']);
   //http server task.
   grunt.registerTask('server',['http-server']);
   // default task
-  grunt.registerTask('default',['clean','dist','server']);};
+  grunt.registerTask('default',['clean','dist','server']);
+
+};
