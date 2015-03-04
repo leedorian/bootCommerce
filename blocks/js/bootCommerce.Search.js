@@ -4,4 +4,4 @@
  */
 
 /* global bootCommerce */
-bootCommerce.Search = {}
+bootCommerce.Search = {};
