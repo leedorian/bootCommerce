@@ -365,7 +365,7 @@ module.exports = function (grunt) {
                     {
                         expand: true, // Enable dynamic expansion.
                         cwd: 'blocks/', // Src matches are relative to this path.
-                        src: ['**/*.html'], // Actual pattern(s) to match.
+                        src: ['*.html'], // Actual pattern(s) to match.
                         dest: 'blocks/dist/', // Destination path prefix.
                         ext: '.html', // Dest filepaths will have this extension.
                         extDot: 'first' // Extensions in filenames begin after the first dot
