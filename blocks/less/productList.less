@@ -21,7 +21,7 @@
 
 .productList_list{
 	.siteProductList_item{
-	    border-bottom: 1px solid;
+	    border-bottom: 1px solid #eee;
 	    padding: 15px 0;	
 	    .siteProductList_rating{
 	    	display:none;
@@ -53,7 +53,7 @@
 		width:50%;
 	}
 	.siteProductList_price{
-		width:10%;
+		width:15%;
 		p{
 			display:none;
 		}
@@ -61,23 +61,26 @@
 			word-wrap:break-word;
 		}
 		.siteProductList_priceIcon{
-			text-align:center;
 			.fa{
 				font-size:45px;
 			}
 		}
 	}
 	.siteProductList_handle{
-		width:20%;
+		width:15%;
 		padding:0;
 	}
 	.siteProductList_handle{
 		text-align:center;
-		.siteProductList_handleQty,
+		.siteProductList_inventory{
+			display:block;
+			margin-bottom:5px;
+			i{
+				padding-right:5px;
+			}
+		}
 		.siteProductList_handleAdd{
 			width:100%;
-			padding:6px 0;
-			margin-bottom:10px;
 		}
 	}
 }
@@ -111,18 +114,17 @@
 			position:absolute;
 			top:0;
 			left:0;
-			border:1px solid #333;
-			background:#fff;
+			i{
+				font-size:25px;
+				color:yellow;
+			}			
 		}
 		.siteProductList_compareBtn{
+			background:rgba(255,255,255,0.5);
 			position:absolute;	 
 			bottom:0;
-			left:10px;
+			left:0;
 			font-weight:normal;
-			input{
-				margin:0;
-				vertical-align:middle;
-			}
 		}
 
 	}
@@ -132,7 +134,7 @@
 			font-weight: bold;
 		}
 		p{
-			color:#333;
+			color:#ccc;
 			margin:0;
 		}
 		.siteProductList_priceIcon{
@@ -156,12 +158,18 @@
 		.siteProductList_inventory{
 			display:none;
 		}
-		.siteProductList_handleQty{
+		.form-group{
 			width:30%;
-			padding:6px 12px;
+			float:left;
+			margin:0;
 		}		
 		.siteProductList_handleAdd{
 			float:right;
 		}
+	}
+	.siteProductList_handle:after{
+		clear:both;
+		content:"";
+		display:block;
 	}
 }
