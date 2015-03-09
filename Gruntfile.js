@@ -212,9 +212,13 @@ module.exports = function (grunt) {
                 dest: 'blocks/dist/js/<%= pkg.name %>.min.js'
             },
             pages: {
-                src: 'pages/js/home.js',
-                dest: 'pages/dist/js/home.min.js'
-            }
+                expand: true,
+                cwd: 'pages/js/',
+                src: ['*.js'],
+                dest: 'pages/dist/js/',
+                ext: '.min.js',
+                extDot: 'first'
+           }
         },
 
         less: {
