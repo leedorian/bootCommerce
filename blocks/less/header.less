@@ -3,187 +3,222 @@
  */
 
 .siteLogo{
-	padding:15px;
-	img{
-		width:100%;
-		border:0; 
-	}	
+    padding:15px 15px 15px 0;
+    img{
+        width:100%;
+        border:0; 
+    }   
 }
 
-.siteSearchBar{	
-	position:relative;
-	input,select{
-		padding:6px;
-		border:1px solid #ccc;
-		display:block;
-		width:100%;
-	}
-	button{
-		width:100%;
-	}
-	>div{
-		float:left;
-		padding:0 15px 0 0;
-	}	
-	.siteSearchBar_autoSuggest{
-		position:absolute;		
-		left:0;	
-	}
-	.autoSuggest_box{
-		border:1px solid #ccc;
-		h2{
-			margin:0;
-			color:#000;
-			font-size:inherit;
-			padding:5px 15px;
-			background:#ccc;
-		}
-		span{
-			font-weight:bold;
-		}
-		ul{
-			margin:0;
-			list-style:none;
-			padding:0;
-			li{
-				padding:5px 15px;
-				background:#eee;
-			}
-			li:hover{
-				background:#d9e9f7;
-			}
-		}
-	}
-	.autoSuggest_viewAll{
-		padding:5px 15px;
-	}
+.siteSearchBar{ 
+    position:relative;
+    .form-inline{
+        width:100%;
+        .form-group,.siteSearchBar_btn{
+            float:left;
+            padding-right:10px; 
+            .form-control{
+                width:100%;
+            }
+        }
+    }
+    input,select{
+        padding:6px;
+        border:1px solid #ccc;
+        display:block;
+        width:100%;
+    }
+    .siteSearchBar_input{
+        width:50%;
+    }
+    .siteSearchBar_select{
+        width:30%;
+    }
+    .siteSearchBar_btn{
+        width:20%;
+    }
+    .siteSearchBar_autoSuggest{
+        top:34px;
+        width:80%;
+    }
+    >div{
+        float:left;
+        padding:0 10px 0 0;
+    }   
+    .siteSearchBar_autoSuggest{
+        position:absolute;      
+        left:0; 
+    }
+    .autoSuggest_box{
+        border:1px solid #ccc;
+        h2{
+            margin:0;
+            color:#585858;
+            font-size:inherit;
+            padding:5px 15px;
+            background:#ccc;
+        }
+        span{
+            font-weight:bold;
+        }
+        ul{
+            margin:0;
+            list-style:none;
+            padding:0;
+            li{
+                padding:5px 15px;
+                background:#eee;
+            }
+            li:hover{
+                background:#d9e9f7;
+            }
+        }
+    }
+    .autoSuggest_viewAll{
+        padding:5px 15px;
+        background:#fff;
+    }
+}
+.siteSearchBar:after{
+    display:block;
+    content:"";
+    clear:both;
 }
 
 .siteMinBasket{
-	.siteMinBasket_box{
-		border:1px solid #ccc;
-		text-align:center;
-		padding:20px;
-	}
-	.siteMinBasket_popup{
-		position:absolute;
-		right:0;
-		width:350px;
-		height:300px;
-		margin:0;
-		ul{
-			margin:0;
-			list-style:none;
-			padding:0;
-		}
-		h4{
-			font-size:inherit;
-			font-weight:bold;
-		}
-		p{
-			margin:0;
-		}
-		.media{
-		    border-bottom: 1px solid;
-		    margin-bottom: 10px;
-		    padding-bottom: 10px;
-		}
-		.siteMinBasket_promptText{
-			padding:15px 15px 0 ;
-		}
-	}
-	.siteMinBasket_pr{
-		float:left;
-		font-weight:bold;
-	}
-	.siteMinBasket_qty{
-		float:right;
-	}
+    .siteMinBasket_box{
+        border:1px solid #eee;
+        text-align:center;
+        padding:5px 10px;
+    }
+    .siteMinBasket_popup{ 
+        position:absolute;
+        right:0;
+        width:350px;
+        margin:0;
+        .modal-content{
+            border-radius:0;
+        }
+        .modal-footer{
+            padding:10px 15px;
+            border:0;
+        }
+        ul{
+            margin:0;
+            list-style:none;
+            padding:0;
+        }
+        h4{
+            font-size:inherit;
+            font-weight:normal;
+        }
+        p{
+            margin:0 0 5px;
+        }
+        .media{
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+        .siteMinBasket_promptText{
+            padding:10px 15px 0 ;
+        }
+    }
+    .siteMinBasket_pr{
+        float:right;
+        font-weight:bold;
+        font-size:12px;
+    }
+    .siteMinBasket_qty{
+        float:left;
+        font-size:12px;
+    }
+    .modal-header{
+        padding:10px 15px;
+        background:#eee;
+    }
+    .modal-body{
+        padding:10px 15px 0;
+    }
+    .siteMinBasket_total{
+        text-align:right;
+        font-size:12px;
+    }
 }
 
 .siteNav{
-	clear:both;
-	ul{
-		list-style:none;
-		padding:0;
-		margin:0;
-		li{
-			float:left;
-			span{
-				display:block;				
-			}
-		}
-	}
+    clear:both;
+    ul{
+        list-style:none;
+        padding:0;
+        margin:0;
+        li{
+            float:left;
+            span{
+                display:block;              
+            }
+        }
+    }
 }
 
 .header{
-	.headerLogo{
-		width:20%;
-		float:left;	
-	}
-	.headerCol{
-		width:80%;
-		float:left;
-		padding:15px;
-	}
-	.headerSearchBar{
-		float:left;
-		width:80%;
-		.siteSearchBar_input{
-			width:50%;
-		}
-		.siteSearchBar_select{
-			width:30%;
-		}
-		.siteSearchBar_btn{
-			width:20%;
-		}
-		.siteSearchBar_autoSuggest{
-			top:34px;
-			width:80%;
-		}
-		
-	}
-	.headerColLink{
-		padding-bottom:15px;
-		text-align:right;
-		span{
-			display:inline-block;
-		}		
-		ul{
-			display:inline-block;
-			list-style:none;
-			margin:0;
-			padding:0;
-			li{
-				display:inline-block;
-			}
-		}
-	}
-	.headerMinBasket{
-		position:relative;
-		float:left;
-		width:20%;		
-		.siteMinBasket_popup{
-			position:absolute;
-			right:0;
-			width:350px;
-			height:300px;
-		}	
-	}
-	.headerNav{		
-		border:1px solid #ccc;
-		line-height:45px;
-		padding:0 15px;
-		ul{		
-			li{
-				padding:0 10px;
-				background:#eee;			
-			}
-			li.active{
-				background:#ccc;
-			}
-		}
-	}
+    .headerLogo{
+        width:20%;
+        float:left; 
+    }
+    .headerCol{
+        width:80%;
+        float:left;
+        padding:15px 0 15px;
+    }
+    .siteSearchBar{
+        float:left;
+        width:80%;      
+        font-size:12px;
+        z-index:1;
+        .btn{
+            font-size:12px;
+        }
+    }
+    .headerColLink{
+        padding-bottom:15px;
+        text-align:right;
+        span{
+            display:inline-block;
+        }       
+        ul{
+            display:inline-block;
+            list-style:none;
+            margin:0;
+            padding:0;
+            li{
+                display:inline-block;
+                a{
+                    padding:0 10px;
+                    border-right:1px solid #eee;
+                }
+            }
+            li:last-child a{
+                border:0;
+            }
+        }
+    }
+    .siteMinBasket{
+        position:relative;
+        float:left;
+        width:20%;      
+        z-index:1;
+        .siteMinBasket_popup{
+            position:absolute;
+            right:0;
+            width:350px;
+        }   
+    }
+
 }
 
+.navbar{
+    clear:both;
+    content:"";
+    display:block;
+}

@@ -23,16 +23,16 @@
             // dufault load from blocks/***
             /*
             jQuery.get('../../blocks/' + module + '.html', function (result) {
-				if (result) {
-					var container = jQuery('.displayContainer');
+                if (result) {
+                    var container = jQuery('.displayContainer');
                     console.info(result);
-					container.empty().append(result);
-				}
-			});
+                    container.empty().append(result);
+                }
+            });
             */
             jQuery.ajax({
                 type: 'get',
-                url: '../../blocks/' + module + '.html',
+                url: '../../blocks/dist/' + module + '.html',
                 cache: false, // remove cache
                 success: function (result) {
                     if (result) {
@@ -46,7 +46,6 @@
             });
         }
     };
-
     home.init();
 
 })();
