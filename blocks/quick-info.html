@@ -26,15 +26,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum
 		<!-- build:include product-option.html -->
 	    Header component
 	    <!-- /build -->
-
 		<div class="productBriefInfo_handle">
 			<h3>Quantity</h3>
 			<p>$1/unit, $1/100g</p>
-			<div class="productBriefInfo_handle_addToBasket">
-				<input type="text" placeholder="eg.1">
-				<button class="btn btn-primary">Add to Basket</button>	
-			</div>
-			<select class="productBriefInfo_handle_addToWishList">
+			<form class="form-inline clearfix">
+			  <div class="form-group">		   
+			    <div class="input-group">
+			      <input type="text" class="form-control" id="exampleInputAmount" placeholder="eg.1">
+			    </div>
+			  </div>
+			  <button type="submit" class="btn btn-primary">Transfer cash</button>
+			</form>
+			<select class="productBriefInfo_handle_addToWishList form-control">
 				<option>Add to wish list</option>
 			</select>
 		</div>

@@ -212,9 +212,13 @@ module.exports = function (grunt) {
                 dest: 'blocks/dist/js/<%= pkg.name %>.min.js'
             },
             pages: {
-                src: 'pages/js/home.js',
-                dest: 'pages/dist/js/home.min.js'
-            }
+                expand: true,
+                cwd: 'pages/js/',
+                src: ['*.js'],
+                dest: 'pages/dist/js/',
+                ext: '.min.js',
+                extDot: 'first'
+           }
         },
 
         less: {
@@ -365,7 +369,7 @@ module.exports = function (grunt) {
                     {
                         expand: true, // Enable dynamic expansion.
                         cwd: 'blocks/', // Src matches are relative to this path.
-                        src: ['**/*.html'], // Actual pattern(s) to match.
+                        src: ['*.html'], // Actual pattern(s) to match.
                         dest: 'blocks/dist/', // Destination path prefix.
                         ext: '.html', // Dest filepaths will have this extension.
                         extDot: 'first' // Extensions in filenames begin after the first dot
@@ -388,7 +392,7 @@ module.exports = function (grunt) {
             },
             pages: {
                 files: ['blocks/*.html', 'pages/*.html', 'pages/includes/**/*.html'],
-                tasks: ['processhtml']
+                tasks: ['processhtml:blocks','processhtml:pages']
             }
         }
 
@@ -412,7 +416,7 @@ module.exports = function (grunt) {
     // CSS distribution task.
     grunt.registerTask('less-compile', ['less:compileBlock', 'less:compilePage']);
     grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:blocks', 'autoprefixer:pages', 'csscomb:blocks', 'csscomb:pages', 'csslint:blocks', 'csslint:pages', 'cssmin:minifyBlocks', 'usebanner']);
-    grunt.registerTask('dist-pages', ['processhtml', 'htmlhintplus']);
+    grunt.registerTask('dist-pages', ['processhtml:blocks','processhtml:pages', 'htmlhintplus']);
 
     // Full distribution task.
     grunt.registerTask('dist', ['clean', 'dist-css', 'dist-pages', 'dist-js']);

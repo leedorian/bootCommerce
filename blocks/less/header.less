@@ -3,7 +3,7 @@
  */
 
 .siteLogo{
-    padding:15px;
+    padding:15px 15px 15px 0;
     img{
         width:100%;
         border:0; 
@@ -12,14 +12,21 @@
 
 .siteSearchBar{ 
     position:relative;
+    .form-inline{
+        width:100%;
+        .form-group,.siteSearchBar_btn{
+            float:left;
+            padding-right:10px; 
+            .form-control{
+                width:100%;
+            }
+        }
+    }
     input,select{
         padding:6px;
         border:1px solid #ccc;
         display:block;
         width:100%;
-    }
-    button{
-        width:100%; 
     }
     .siteSearchBar_input{
         width:50%;
@@ -31,12 +38,12 @@
         width:20%;
     }
     .siteSearchBar_autoSuggest{
-        top:31px;
+        top:34px;
         width:80%;
     }
     >div{
         float:left;
-        padding:0 15px 0 0;
+        padding:0 10px 0 0;
     }   
     .siteSearchBar_autoSuggest{
         position:absolute;      
@@ -69,6 +76,7 @@
     }
     .autoSuggest_viewAll{
         padding:5px 15px;
+        background:#fff;
     }
 }
 .siteSearchBar:after{
@@ -93,6 +101,7 @@
         }
         .modal-footer{
             padding:10px 15px;
+            border:0;
         }
         ul{
             margin:0;
@@ -104,10 +113,10 @@
             font-weight:normal;
         }
         p{
-            margin:0;
+            margin:0 0 5px;
         }
         .media{
-            border-bottom: 1px solid;
+            border-bottom: 1px solid #ddd;
             margin-bottom: 10px;
             padding-bottom: 10px;
         }
@@ -116,11 +125,24 @@
         }
     }
     .siteMinBasket_pr{
-        float:left;
+        float:right;
         font-weight:bold;
+        font-size:12px;
     }
     .siteMinBasket_qty{
-        float:right;
+        float:left;
+        font-size:12px;
+    }
+    .modal-header{
+        padding:10px 15px;
+        background:#eee;
+    }
+    .modal-body{
+        padding:10px 15px 0;
+    }
+    .siteMinBasket_total{
+        text-align:right;
+        font-size:12px;
     }
 }
 
@@ -147,7 +169,7 @@
     .headerCol{
         width:80%;
         float:left;
-        padding:15px;
+        padding:15px 0 15px;
     }
     .siteSearchBar{
         float:left;
@@ -192,6 +214,7 @@
             width:350px;
         }   
     }
+
 }
 
 .navbar{
