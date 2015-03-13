@@ -1,5 +1,4 @@
 /node_modules
-js
 /blocks/dist/*.html
 /blocks/dist
 /pages/dist
