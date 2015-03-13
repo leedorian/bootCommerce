@@ -8,75 +8,125 @@
 
 bootCommerce.Basket = {
     init:function(){
-         new bootCommerce.quantityInput().default(".basket_order_item");
+       new bootCommerce.quantityInput({
+        container:'.basket_order_table .basket_order_item',
+        containerInput:'.basket_order_table .basket_quantity_operation'
+        }).init();
     }
 };
+bootCommerce.quantityInput = function(options) {
+    "use strict";
+    /* properties */
+    this.defaults = {
+        container: "",
+        containerInput: ""
 
-bootCommerce.quantityInput = function(){
-    this.default = function(parentName){
-        this.parentName=parentName;
-        this.value=0;
-        this.singlePrice=0;
-        this.totalPrice=0;
-        this.currentIdIndex='';
-        this.spstr='';
+    };
+    this.settings = $.extend({}, this.defaults, options);
+    /*initialize*/
+    this.init = function () {
+        this.value = 0;
+        this.singlePrice = 0;
+        this.totalPrice = 0;
+        this.subTotal = 0;
+        this.savePrice = 0;
+        this.promotionalCode="";
+        this.currentIdIndex = '';
+        this.spstr = '';
         this.setIdName();
         this.calculate();
-
+        this.checkPromotionalCode();
     };
-    this.setIdName=function(){
-        var This=this;
-        $(this.parentName).find('.basket_quantity_operation').each(function(i){
-            $(This.parentName).find('.basket_quantity_operation').eq(i).attr('id','basket_qty_'+(i+1));
+    this.setIdName = function () {
+        var This = this;
+        $(this.settings.containerInput).each(function (i) {
+            $(This.settings.containerInput).eq(i).attr('id', 'basket_qty_' + (i + 1));
         });
-        $(this.parentName).each(function(i){
-            $(This.parentName).eq(i).attr('id','basket_orderItem_'+(i+1));
+        $(this.settings.container).each(function (i) {
+            $(This.settings.container).eq(i).attr('id', 'basket_orderItem_' + (i + 1));
         });
     };
-    this.calculate=function(){
-        var This=this;
+    this.calculate = function () {
+        var This = this;
         /*reduce quantity*/
-        $(this.parentName).find('button:first').on('click',function(){
-            This.value=parseInt($(this).parent().find('input').val());
-            if(This.value>1){
+        $(this.settings.containerInput).find('button:first').on('click', function () {
+            This.value = parseInt($(this).parent().find('input').val());
+            if (This.value > 1) {
                 This.value--;
                 $(this).parent().find('input').val(This.value);
-                This.spstr=$(this).parent().attr('id').split("_");
+                This.spstr = $(this).parent().attr('id').split("_");
                 This.changeTotalPrice();
-               /* This.singlePrice= $(this).parentsUntil(".basket_order_item").parent().find('.basket_quantity_SinglePrice span').html();
-                This.totalPrice=(parseFloat(This.singlePrice))*This.value;
-                $(this).parentsUntil(".basket_order_item").parent().find('.basket_quantity_totalPrice span').html(This.totalPrice.toFixed(2));
-                */
             }
         });
         /*add quantity*/
-        $(this.parentName).find('button:last').on('click',function(){
-            This.value=parseInt($(this).parent().find('input').val());
+        $(this.settings.containerInput).find('button:last').on('click', function () {
+            This.value = parseInt($(this).parent().find('input').val());
             This.value++;
             $(this).parent().find('input').val(This.value);
-            This.spstr=$(this).parent().attr('id').split("_");
+            This.spstr = $(this).parent().attr('id').split("_");
             This.changeTotalPrice();
         });
         /*input quantity*/
-        $(this.parentName).find('input').on('keyup',function(){
-            This.value=$(this).val();
+        $(this.settings.containerInput).find('input').on('keyup', function () {
+            This.value = $(this).val();
             var re = This.value.match(/^[1-9]+\d*$/);
-            if(re || This.value==''){
-                This.spstr=$(this).parent().attr('id').split("_");
+            if (re || This.value == '') {
+                This.spstr = $(this).parent().attr('id').split("_");
                 This.changeTotalPrice();
-            }else{
+            } else {
                 alert('请输入数字');
                 return false;
             }
         })
     };
-    this.changeTotalPrice=function(){
+    this.changeTotalPrice = function () {
+        var This = this;
+        this.subTotal = 0;
+        this.currentIdIndex = this.spstr[this.spstr.length - 1];
+        this.singlePrice = $('#basket_orderItem_' + this.currentIdIndex).find('.basket_quantity_SinglePrice span').html();
+        this.totalPrice = (parseFloat(this.singlePrice)) * this.value;
+        $('#basket_orderItem_' + this.currentIdIndex).find('.basket_quantity_totalPrice span').html(this.totalPrice.toFixed(2));
+        /*orderSubtotal*/
+        $(".basket_quantity_totalPrice").each(function (i) {
+            This.subTotal += parseFloat($(".basket_quantity_totalPrice span").eq(i).html());
+        });
+        $(".basket_order_total .orderSubtotal span").html(this.subTotal.toFixed(2));
+        this.savePrice = parseFloat($(".basket_order_total .SavePrice span").html());
+        $(".basket_order_total .payPrice span").html((this.subTotal - this.savePrice));
+    };
+    this.checkQty = function (langId, storeId, catalogId) {
+        $.ajax({
+            type: "GET",
+            url: "test.json",
+            data: {langId: langId, storeId: storeId, catalogId: catalogId},
+            dataType: "json",
+            success: function (data) {
+                // TODO
+            },
+            error: function () {
+                // TODO
+            }
+        });
+    };
+    this.checkPromotionalCode=function(){
         var This=this;
-        This.currentIdIndex=This.spstr[This.spstr.length-1];
-        This.singlePrice=$('#basket_orderItem_'+This.currentIdIndex).find('.basket_quantity_SinglePrice span').html();
-        This.totalPrice=(parseFloat(This.singlePrice))*This.value;
-        $('#basket_orderItem_'+This.currentIdIndex).find('.basket_quantity_totalPrice span').html(This.totalPrice.toFixed(2));
+        $(".promotionalCode button").on('click',function(){
+            This.promotionalCode=$(".promotionalCode input").val();
+            $.ajax({
+                type: "GET",
+                url: "test.json",
+                data: {promotionalCode:This.promotionalCode},
+                dataType: "json",
+                success: function (data) {
+                    // TODO
+                },
+                error: function () {
+                    // TODO
+                }
+            });
+        });
 
     }
 };
+
 
