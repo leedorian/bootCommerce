@@ -1,0 +1,22 @@
+/*!
+ * bootCommerce v0.0.1 (https://github.com/leedorian/bootCommerce/)
+ * Copyright 2015-2015 
+ * Licensed under MIT (https://github.com/leedorian/bootCommerce/blob/master/LICENSE.md)
+ */
+
+/**
+ * @author Ivy
+ */
+.cascading_panel
+{
+    width: 50%;
+    margin: 20px auto;
+
+    border-radius: 10px;
+}
+.cascading_panel .cascading_panel_collapse
+{
+    float: right;
+
+    text-decoration: none;
+}

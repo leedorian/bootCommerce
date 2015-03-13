@@ -1,0 +1,105 @@
+/*!
+ * bootCommerce v0.0.1 (https://github.com/leedorian/bootCommerce/)
+ * Copyright 2015-2015 
+ * Licensed under MIT (https://github.com/leedorian/bootCommerce/blob/master/LICENSE.md)
+ */
+
+/**
+ * @author Ivy
+ */
+.store_locator_detail
+{
+    min-height: 500px;
+    margin: 0;
+    padding: 10px;
+
+    border: 1px solid #ccc;
+}
+.store_locator_detail .store_detail_info
+{
+    padding: 0;
+}
+.store_locator_detail .store_detail_info .sotre_info_getDir
+{
+    display: block;
+}
+.store_locator_detail .store_detail_info li
+{
+    float: left;
+
+    padding-right: 10px;
+
+    list-style: none;
+}
+.store_locator_detail .store_detail_info .store_info_img
+{
+    width: 230px;
+    height: 115px;
+}
+.store_locator_detail .store_info_map
+{
+    width: 35%;
+    min-height: 300px;
+
+    border: 1px solid #ccc;
+}
+.store_detail_section ul
+{
+    padding: 0;
+
+    border: 1px solid #ccc;
+}
+.store_detail_section li
+{
+    margin: 10px 0;
+
+    list-style: none;
+}
+.store_detail_section li span
+{
+    width: 22%;
+    padding: 10px;
+}
+.store_detail_section h5
+{
+    font-weight: bold;
+
+    display: inline-block;
+
+    width: 70%;
+    margin: 0;
+    padding: 0;
+
+    vertical-align: top;
+}
+.store_detail_section h5 p
+{
+    font-size: 14px;
+    font-weight: normal;
+}
+.store_service_list
+{
+    float: left;
+
+    width: 60%;
+}
+.store_service_list li
+{
+    float: left;
+
+    width: 50%;
+
+    border-right: 1px solid #ccc;
+}
+.store_service_list li:nth-child(2n)
+{
+    border: 0;
+}
+.store_facilities_list
+{
+    display: inline;
+    float: left;
+
+    width: 30%;
+    margin-left: 10px;
+}

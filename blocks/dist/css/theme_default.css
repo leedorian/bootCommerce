@@ -1,0 +1,48 @@
+/*!
+ * bootCommerce v0.0.1 (https://github.com/leedorian/bootCommerce/)
+ * Copyright 2015-2015 
+ * Licensed under MIT (https://github.com/leedorian/bootCommerce/blob/master/LICENSE.md)
+ */
+
+/**
+ * default theme file
+ */
+/*global vars*/
+/*header*/
+.header .headerColLink
+{
+    font-size: 11px;
+}
+/*navigation*/
+.navbar .container-fluid .nav a
+{
+    font-size: 13px;
+}
+.navbar .container-fluid .navbar-brand
+{
+    font-size: 13px;
+}
+/*mini basket*/
+.siteMinBasket .siteMinBasket_popup p
+{
+    font-size: 12px;
+}
+/*footer*/
+.siteFooter .siteFooter_groupLink_item h2
+{
+    font-size: 13px;
+    font-weight: normal;
+}
+.siteFooter .siteFooter_groupLink_item a
+{
+    font-size: 11px;
+}
+.siteFooter .siteFooter_btmLink
+{
+    font-size: 11px;
+}
+/*prodcut list*/
+.siteProductList
+{
+    font-size: 13px;
+}

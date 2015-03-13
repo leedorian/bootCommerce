@@ -1,0 +1,86 @@
+/*!
+ * bootCommerce v0.0.1 (https://github.com/leedorian/bootCommerce/)
+ * Copyright 2015-2015 
+ * Licensed under MIT (https://github.com/leedorian/bootCommerce/blob/master/LICENSE.md)
+ */
+
+/**
+ * @author Jason
+ * @date 2015-01-23
+ */
+.indexPage
+{
+    margin: 0 auto;
+}
+.masthead
+{
+    position: fixed;
+    top: 0;
+
+    overflow: auto;
+
+    width: 25%;
+    height: 100%;
+    padding: 30px;
+
+    border-right: 1px solid #ddd;
+}
+.masthead .title
+{
+    font-size: 26px;
+}
+.masthead .describe
+{
+    font-size: 22px;
+}
+.masthead .masthead-hr
+{
+    width: 80%;
+    margin: 1rem 0;
+
+    border-top-color: #eee;
+    border-bottom: 0 none;
+}
+.masthead .masthead-nav
+{
+    padding: 0;
+
+    list-style: none;
+}
+.masthead .nav-item
+{
+    cursor: pointer;
+}
+.masthead .nav-item a
+{
+    line-height: 30px;
+
+    display: block;
+
+    height: 30px;
+    padding-left: 10px;
+
+    text-decoration: none;
+}
+.masthead .nav-item a:hover
+{
+    background: #d3dee8;
+}
+.displayContainer
+{
+    position: relative;
+
+    overflow: auto;
+
+    width: 70%;
+    min-width: 70%;
+    min-height: 600px;
+    margin-top: 30px;
+    margin-left: 30%;
+    padding: 10px;
+}
+.bread-word
+{
+    word-wrap: break-word;
+    word-break: break-all;
+}

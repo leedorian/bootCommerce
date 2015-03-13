@@ -1,0 +1,40 @@
+/*!
+ * bootCommerce v0.0.1 (https://github.com/leedorian/bootCommerce/)
+ * Copyright 2015-2015 
+ * Licensed under MIT (https://github.com/leedorian/bootCommerce/blob/master/LICENSE.md)
+ */
+
+/**
+ * @author Jack Han
+ */
+.siteTabView .siteTabView_content
+{
+    font-size: 12px;
+
+    padding: 10px 15px;
+
+    border: 3px solid #ccc;
+}
+.siteTabView .siteTabView_title
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+.siteTabView .siteTabView_title li
+{
+    float: left;
+
+    background: #eee;
+}
+.siteTabView .siteTabView_title li a
+{
+    display: block;
+
+    padding: 10px 15px;
+}
+.siteTabView .siteTabView_title li.active
+{
+    background: #ccc;
+}

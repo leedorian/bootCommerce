@@ -1,0 +1,310 @@
+/*!
+ * bootCommerce v0.0.1 (https://github.com/leedorian/bootCommerce/)
+ * Copyright 2015-2015 
+ * Licensed under MIT (https://github.com/leedorian/bootCommerce/blob/master/LICENSE.md)
+ */
+
+/**
+ * @author Jack Han
+ */
+.siteLogo
+{
+    padding: 15px 15px 15px 0;
+}
+.siteLogo img
+{
+    width: 100%;
+
+    border: 0;
+}
+.siteSearchBar
+{
+    position: relative;
+}
+.siteSearchBar .form-inline
+{
+    width: 100%;
+}
+.siteSearchBar .form-inline .form-group,
+.siteSearchBar .form-inline .siteSearchBar_btn
+{
+    float: left;
+
+    padding-right: 10px;
+}
+.siteSearchBar .form-inline .form-group .form-control,
+.siteSearchBar .form-inline .siteSearchBar_btn .form-control
+{
+    width: 100%;
+}
+.siteSearchBar input,
+.siteSearchBar select
+{
+    display: block;
+
+    width: 100%;
+    padding: 6px;
+
+    border: 1px solid #ccc;
+}
+.siteSearchBar .siteSearchBar_input
+{
+    width: 50%;
+}
+.siteSearchBar .siteSearchBar_select
+{
+    width: 30%;
+}
+.siteSearchBar .siteSearchBar_btn
+{
+    width: 20%;
+}
+.siteSearchBar .siteSearchBar_autoSuggest
+{
+    top: 34px;
+
+    width: 80%;
+}
+.siteSearchBar > div
+{
+    float: left;
+
+    padding: 0 10px 0 0;
+}
+.siteSearchBar .siteSearchBar_autoSuggest
+{
+    position: absolute;
+    left: 0;
+}
+.siteSearchBar .autoSuggest_box
+{
+    border: 1px solid #ccc;
+}
+.siteSearchBar .autoSuggest_box h2
+{
+    font-size: inherit;
+
+    margin: 0;
+    padding: 5px 15px;
+
+    color: #585858;
+    background: #ccc;
+}
+.siteSearchBar .autoSuggest_box span
+{
+    font-weight: bold;
+}
+.siteSearchBar .autoSuggest_box ul
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+.siteSearchBar .autoSuggest_box ul li
+{
+    padding: 5px 15px;
+
+    background: #eee;
+}
+.siteSearchBar .autoSuggest_box ul li:hover
+{
+    background: #d9e9f7;
+}
+.siteSearchBar .autoSuggest_viewAll
+{
+    padding: 5px 15px;
+
+    background: #fff;
+}
+.siteSearchBar:after
+{
+    display: block;
+    clear: both;
+
+    content: '';
+}
+.siteMinBasket .siteMinBasket_box
+{
+    padding: 5px 10px;
+
+    text-align: center;
+
+    border: 1px solid #eee;
+}
+.siteMinBasket .siteMinBasket_popup
+{
+    position: absolute;
+    right: 0;
+
+    width: 350px;
+    margin: 0;
+}
+.siteMinBasket .siteMinBasket_popup .modal-content
+{
+    border-radius: 0;
+}
+.siteMinBasket .siteMinBasket_popup .modal-footer
+{
+    padding: 10px 15px;
+
+    border: 0;
+}
+.siteMinBasket .siteMinBasket_popup ul
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+.siteMinBasket .siteMinBasket_popup h4
+{
+    font-size: inherit;
+    font-weight: normal;
+}
+.siteMinBasket .siteMinBasket_popup p
+{
+    margin: 0 0 5px;
+}
+.siteMinBasket .siteMinBasket_popup .media
+{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #ddd;
+}
+.siteMinBasket .siteMinBasket_popup .siteMinBasket_promptText
+{
+    padding: 10px 15px 0 ;
+}
+.siteMinBasket .siteMinBasket_pr
+{
+    font-size: 12px;
+    font-weight: bold;
+
+    float: right;
+}
+.siteMinBasket .siteMinBasket_qty
+{
+    font-size: 12px;
+
+    float: left;
+}
+.siteMinBasket .modal-header
+{
+    padding: 10px 15px;
+
+    background: #eee;
+}
+.siteMinBasket .modal-body
+{
+    padding: 10px 15px 0;
+}
+.siteMinBasket .siteMinBasket_total
+{
+    font-size: 12px;
+
+    text-align: right;
+}
+.siteNav
+{
+    clear: both;
+}
+.siteNav ul
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+.siteNav ul li
+{
+    float: left;
+}
+.siteNav ul li span
+{
+    display: block;
+}
+.header .headerLogo
+{
+    float: left;
+
+    width: 20%;
+}
+.header .headerCol
+{
+    float: left;
+
+    width: 80%;
+    padding: 15px 0 15px;
+}
+.header .siteSearchBar
+{
+    font-size: 12px;
+
+    z-index: 1;
+
+    float: left;
+
+    width: 80%;
+}
+.header .siteSearchBar .btn
+{
+    font-size: 12px;
+}
+.header .headerColLink
+{
+    padding-bottom: 15px;
+
+    text-align: right;
+}
+.header .headerColLink span
+{
+    display: inline-block;
+}
+.header .headerColLink ul
+{
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+.header .headerColLink ul li
+{
+    display: inline-block;
+}
+.header .headerColLink ul li a
+{
+    padding: 0 10px;
+
+    border-right: 1px solid #eee;
+}
+.header .headerColLink ul li:last-child a
+{
+    border: 0;
+}
+.header .siteMinBasket
+{
+    position: relative;
+    z-index: 1;
+
+    float: left;
+
+    width: 20%;
+}
+.header .siteMinBasket .siteMinBasket_popup
+{
+    position: absolute;
+    right: 0;
+
+    width: 350px;
+}
+.navbar
+{
+    display: block;
+    clear: both;
+
+    content: '';
+}
