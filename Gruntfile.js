@@ -419,7 +419,7 @@ module.exports = function (grunt) {
     // CSS distribution task.
     grunt.registerTask('less-compile', ['less:compileBlock', 'less:compilePage']);
     grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:blocks', 'autoprefixer:pages', 'csscomb:blocks', 'csscomb:pages', 'csslint:blocks', 'csslint:pages', 'cssmin:minifyBlocks', 'usebanner']);
-    grunt.registerTask('dist-pages', ['processhtml:blocks','processhtml:pages', 'htmlhintplus']);
+    grunt.registerTask('dist-pages', ['htmlhintplus', 'processhtml:blocks','processhtml:pages']);
 
     // Full distribution task.
     grunt.registerTask('dist', ['clean', 'dist-css', 'dist-pages', 'dist-js']);
