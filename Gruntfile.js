@@ -378,11 +378,14 @@ module.exports = function (grunt) {
             }
         },
         htmlhintplus: {
-            //htmlhintrc: "path/to/file"
             //use default rules
             //TODO hint includes and blocks html
+            options: {
+                htmlhintrc: "blocks/.htmlhintrc",
+                force: true
+            },
             html: {
-                src: ['pages/dist/home.html']
+                src: ['pages/*.html','pages/includes/*.html','blocks/*.html']
             }
         },
         watch: {
