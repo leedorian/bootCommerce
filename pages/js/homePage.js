@@ -13,7 +13,7 @@ bootCommerce.homePage = {
             keywordInput: ".siteSearchBarInput input[type='text']"
         });
         var MiniBasket = new bootCommerce.MiniBasket({
-            
+
         });
     }
 };

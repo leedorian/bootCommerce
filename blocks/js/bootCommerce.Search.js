@@ -23,20 +23,23 @@ bootCommerce.Search = function (options) {
        //console.log(this.control);
         var suggestDiv = $(_that.settings.suggestionCon);
         var resultItems = suggestDiv.find(".autoSuggestKeywords ul li");
-        var nextItem, current, currentIndex;
+        var nextItem;
+        var current;
+        var currentIndex;
         if (resultItems.length > 0) {
             currentIndex = suggestDiv.find(".autoSuggestKeywords ul li.active").removeClass("active").index();
-            if (this.control == 'down') {
-                if (currentIndex == resultItems.length - 1) {
+            if (this.control === 'down') {
+                if (currentIndex === resultItems.length - 1) {
                     currentIndex = -1;
                 }
                 nextItem = resultItems.eq(currentIndex + 1);
-            } else if (this.control == 'up') {
-            if (currentIndex <= 0) {
-                currentIndex = resultItems.length;
-            }
+            } else if (this.control === 'up') {
+                if (currentIndex <= 0) {
+                    currentIndex = resultItems.length;
+                }
                 nextItem = resultItems.eq(currentIndex - 1);
             }
+
             if (nextItem){
                 $(_that.settings.keywordInput).val(nextItem.addClass("active").find("a").text());
             }
@@ -49,32 +52,31 @@ bootCommerce.Search = function (options) {
             /* triger auto suggestion */
             if ($(this).val()) {
                 $(_that.settings.suggestionCon).show();
-            }else{
+            } else {
                 $(_that.settings.suggestionCon).hide();
             }
 
-            if (e.keyCode == '38') {
+            if (e.keyCode === '38') {
                 _that.highlightResult('up');
-            }
-
-            if (e.keyCode == '40') {
+            } else if (e.keyCode === '40') {
                 _that.highlightResult('down');
             }
         });
 
-        $(this.settings.container).on("blur.search", this.settings.keywordInput,  function (e) {
+        $(this.settings.container).on("blur.search", this.settings.keywordInput, function (e) {
             /* triger auto suggestion */
-           _that.highlightResult();
+            _that.highlightResult();
         });
     }
-    $(document).on("click.search",function(e){
-      if ($(e.target).parents(".siteSearchBar").size() === 0){
-        $(_that.settings.suggestionCon).hide();
-      }
-      if ( $(e.target).parents(".autoSuggestKeywords").size() !== 0 ){
-        $(e.target).parents(".autoSuggestKeywords").find("li.active").removeClass("active");
-        $(e.target).addClass("active");
-        console.log("function for search result");
-      }
+    $(document).on("click.search", function(e) {
+        if ($(e.target).parents(".siteSearchBar").size() === 0) {
+            $(_that.settings.suggestionCon).hide();
+        }
+
+        if ($(e.target).parents(".autoSuggestKeywords").size() !== 0) {
+            $(e.target).parents(".autoSuggestKeywords").find("li.active").removeClass("active");
+            $(e.target).addClass("active");
+            console.log("function for search result");
+        }
     });
 };
