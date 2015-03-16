@@ -7,19 +7,19 @@
 /**
  * @author Jack Han
  */
-.siteFooter .siteFooter_groupLink > ul,
-.siteFooter .siteFooter_groupLink_item > ul
+.siteFooter .siteFooterGroupLink > ul,
+.siteFooter .siteFooterGroupLinkItem > ul
 {
     margin: 0;
     padding: 0;
 
     list-style: none;
 }
-.siteFooter .siteFooter_groupLink
+.siteFooter .siteFooterGroupLink
 {
     margin-bottom: 15px;
 }
-.siteFooter .siteFooter_groupLink_item
+.siteFooter .siteFooterGroupLinkItem
 {
     float: left;
 
@@ -28,7 +28,7 @@
 
     border-right: 1px solid #ccc;
 }
-.siteFooter .siteFooter_groupLink_item h2
+.siteFooter .siteFooterGroupLinkItem h2
 {
     font-size: inherit;
     font-weight: bold;
@@ -36,32 +36,32 @@
     margin: 0 0 10px;
     padding: 0;
 }
-.siteFooter .siteFooter_groupLink_item a
+.siteFooter .siteFooterGroupLinkItem a
 {
     padding: 0 0 0 10px;
 }
-.siteFooter .siteFooter_groupLink_item.siteFooter_groupLink_item_last
+.siteFooter .siteFooterGroupLinkItem.siteFooterGroupLinkItemLast
 {
     border-right: 0;
 }
-.siteFooter .siteFooter_btmLink ul
+.siteFooter .siteFooterBtmLink ul
 {
     margin: 0;
     padding: 0;
 
     list-style: none;
 }
-.siteFooter .siteFooter_btmLink ul li
+.siteFooter .siteFooterBtmLink ul li
 {
     float: left;
 }
-.siteFooter .siteFooter_btmLink ul li a
+.siteFooter .siteFooterBtmLink ul li a
 {
     padding: 0 10px;
 
     border-right: 1px solid #eee;
 }
-.siteFooter .siteFooter_btmLink ul li:last-child a
+.siteFooter .siteFooterBtmLink ul li:last-child a
 {
     border-right: 0;
 }

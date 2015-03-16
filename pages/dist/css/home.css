@@ -31,7 +31,8 @@
 }
 .masthead .describe
 {
-    font-size: 22px;
+    font-size: 16px;
+    line-height: 1.2;
 }
 .masthead .masthead-hr
 {

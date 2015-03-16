@@ -164,6 +164,7 @@
     bottom: 0;
     left: 0;
 
+    background: #fff;
     background: rgba(255, 255, 255, .5);
 }
 .productList_thumbnail .siteProductList_price

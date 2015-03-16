@@ -47,21 +47,23 @@
 
     border: 1px solid #ccc;
 }
-.siteSearchBar .siteSearchBar_input
+.siteSearchBar .siteSearchBarInput
 {
     width: 50%;
 }
-.siteSearchBar .siteSearchBar_select
+.siteSearchBar .siteSearchBarSelect
 {
     width: 30%;
 }
-.siteSearchBar .siteSearchBar_btn
+.siteSearchBar .siteSearchBarBtn
 {
     width: 20%;
 }
-.siteSearchBar .siteSearchBar_autoSuggest
+.siteSearchBar .siteSearchBarAutoSuggest
 {
     top: 34px;
+
+    display: none;
 
     width: 80%;
 }
@@ -71,16 +73,16 @@
 
     padding: 0 10px 0 0;
 }
-.siteSearchBar .siteSearchBar_autoSuggest
+.siteSearchBar .siteSearchBarAutoSuggest
 {
     position: absolute;
     left: 0;
 }
-.siteSearchBar .autoSuggest_box
+.siteSearchBar .autoSuggestBox
 {
     border: 1px solid #ccc;
 }
-.siteSearchBar .autoSuggest_box h2
+.siteSearchBar .autoSuggestBox h2
 {
     font-size: inherit;
 
@@ -90,28 +92,32 @@
     color: #585858;
     background: #ccc;
 }
-.siteSearchBar .autoSuggest_box span
+.siteSearchBar .autoSuggestBox span
 {
     font-weight: bold;
 }
-.siteSearchBar .autoSuggest_box ul
+.siteSearchBar .autoSuggestBox ul
 {
     margin: 0;
     padding: 0;
 
     list-style: none;
 }
-.siteSearchBar .autoSuggest_box ul li
+.siteSearchBar .autoSuggestBox ul li
 {
     padding: 5px 15px;
 
     background: #eee;
 }
-.siteSearchBar .autoSuggest_box ul li:hover
+.siteSearchBar .autoSuggestBox ul li:hover
 {
     background: #d9e9f7;
 }
-.siteSearchBar .autoSuggest_viewAll
+.siteSearchBar .autoSuggestBox ul .active
+{
+    background: #d9e9f7;
+}
+.siteSearchBar .autoSuggestViewAll
 {
     padding: 5px 15px;
 
@@ -124,67 +130,70 @@
 
     content: '';
 }
-.siteMinBasket .siteMinBasket_box
+.siteMinBasket .siteMinBasketBox
 {
     padding: 5px 10px;
 
+    cursor: pointer;
     text-align: center;
 
     border: 1px solid #eee;
 }
-.siteMinBasket .siteMinBasket_popup
+.siteMinBasket .siteMinBasketPopup
 {
     position: absolute;
     right: 0;
 
+    display: none;
+
     width: 350px;
     margin: 0;
 }
-.siteMinBasket .siteMinBasket_popup .modal-content
+.siteMinBasket .siteMinBasketPopup .modal-content
 {
     border-radius: 0;
 }
-.siteMinBasket .siteMinBasket_popup .modal-footer
+.siteMinBasket .siteMinBasketPopup .modal-footer
 {
     padding: 10px 15px;
 
     border: 0;
 }
-.siteMinBasket .siteMinBasket_popup ul
+.siteMinBasket .siteMinBasketPopup ul
 {
     margin: 0;
     padding: 0;
 
     list-style: none;
 }
-.siteMinBasket .siteMinBasket_popup h4
+.siteMinBasket .siteMinBasketPopup h4
 {
     font-size: inherit;
     font-weight: normal;
 }
-.siteMinBasket .siteMinBasket_popup p
+.siteMinBasket .siteMinBasketPopup p
 {
     margin: 0 0 5px;
 }
-.siteMinBasket .siteMinBasket_popup .media
+.siteMinBasket .siteMinBasketPopup .media
 {
     margin-bottom: 10px;
     padding-bottom: 10px;
 
     border-bottom: 1px solid #ddd;
 }
-.siteMinBasket .siteMinBasket_popup .siteMinBasket_promptText
+.siteMinBasket .siteMinBasketPopup .siteMinBasket_promptText
 {
     padding: 10px 15px 0 ;
 }
-.siteMinBasket .siteMinBasket_pr
+.siteMinBasket .siteMinBasketPrice
 {
     font-size: 12px;
     font-weight: bold;
 
     float: right;
 }
-.siteMinBasket .siteMinBasket_qty
+.siteMinBasket .siteMinBasketQty
 {
     font-size: 12px;
 
@@ -200,7 +209,7 @@
 {
     padding: 10px 15px 0;
 }
-.siteMinBasket .siteMinBasket_total
+.siteMinBasket .siteMinBasketTotal
 {
     font-size: 12px;
 
