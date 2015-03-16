@@ -2,7 +2,7 @@
  * describe load html fragment
  */
 
-
+/*global jQuery */
 (function () {
     'use strict';
 
@@ -14,7 +14,7 @@
         },
         bindEvent: function () {
             var that = this;
-            jQuery('.masthead-nav').on('click', 'a', function (event) {
+            jQuery('.masthead-nav.blocks').on('click', 'a', function (event) {
                 var muduleName = jQuery(event.target).attr('data-page');
                 that.loadHtmlFragment(muduleName);
             });
@@ -32,7 +32,7 @@
             */
             jQuery.ajax({
                 type: 'get',
-                url: '../../blocks/dist/' + module + '.html',
+                url: '../../blocks/dist/' + module,
                 cache: false, // remove cache
                 success: function (result) {
                     if (result) {
@@ -48,4 +48,4 @@
     };
     home.init();
 
-})();
+}());
