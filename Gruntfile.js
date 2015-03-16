@@ -31,7 +31,7 @@ module.exports = function (grunt) {
 
     //get all html from blocks folder
 
-    function getAllHtmlFromBlocks() {
+    /*function getAllHtmlFromBlocks() {
         var path = "./blocks";
         var filesNameArr = [];
         var files = fs.readdirSync(path);
@@ -41,9 +41,38 @@ module.exports = function (grunt) {
             }
         }
         return filesNameArr;
-    }
-    var fileNames = getAllHtmlFromBlocks();
-
+    }*/
+    var fileNames = [
+        ["basket_empty.html","Empty basket"],
+        ["basket_hasItem.html","Basket with items"],
+        ["bread_crumbs.html","Bread crumbs"],
+        ["carousel_product_crosswise.html","Horizontal products carousel"],
+        ["carousel_product_vertical.html","Vertical products carousel"],
+        ["carousel_slide.html","Slide show"],
+        ["footer.html","Footer of site"],
+        ["signin_register.html","Sign in & register"],
+        ["registration.html","Registration"],
+        ["header.html","Header of site"],
+        ["mini_basket.html","Mini basket"],
+        ["navigation.html","Site navigation"],
+        ["orderSummary.html","Summary text"],
+        ["pagination.html","Pagination"],
+        ["product_filter_checkbox.html","Product filter checklist"],
+        ["product_filter_removable.html","Product filter removeable"],
+        ["product-image-viewer.html","Image viewer"],
+        ["product-list-horizontal.html","Products list view"],
+        ["product-list-vertical.html","Products thumbnail view"],
+        ["product-option.html","Product swatch"],
+        ["promotionalCode.html","Promotional code"],
+        ["quick-info.html","Quick info box"],
+        ["search.html","Product search"],
+        ["store_locator.html","Store locator"],
+        ["store_locator_detail.html","Store locator detail"],
+        ["tab-views.html","Product infos tab"]
+    ];
+    fileNames = fileNames.sort(function(x, y){
+      return x[1].localeCompare(y[1]);
+    });
     // Project configuration.
     grunt.initConfig({
 

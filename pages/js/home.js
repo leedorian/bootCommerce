@@ -32,7 +32,7 @@
             */
             jQuery.ajax({
                 type: 'get',
-                url: '../../blocks/dist/' + module + '.html',
+                url: '../../blocks/dist/' + module,
                 cache: false, // remove cache
                 success: function (result) {
                     if (result) {
