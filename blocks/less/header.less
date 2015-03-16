@@ -28,28 +28,29 @@
         display:block;
         width:100%;
     }
-    .siteSearchBar_input{
+    .siteSearchBarInput{
         width:50%;
     }
-    .siteSearchBar_select{
+    .siteSearchBarSelect{
         width:30%;
     }
-    .siteSearchBar_btn{
+    .siteSearchBarBtn{
         width:20%;
     }
-    .siteSearchBar_autoSuggest{
+    .siteSearchBarAutoSuggest{
         top:34px;
         width:80%;
+        display:none;
     }
     >div{
         float:left;
         padding:0 10px 0 0;
     }   
-    .siteSearchBar_autoSuggest{
+    .siteSearchBarAutoSuggest{
         position:absolute;      
         left:0; 
     }
-    .autoSuggest_box{
+    .autoSuggestBox{
         border:1px solid #ccc;
         h2{
             margin:0;
@@ -72,9 +73,12 @@
             li:hover{
                 background:#d9e9f7;
             }
+            .active{
+                background:#d9e9f7;
+            }
         }
     }
-    .autoSuggest_viewAll{
+    .autoSuggestViewAll{
         padding:5px 15px;
         background:#fff;
     }
@@ -86,16 +90,18 @@
 }
 
 .siteMinBasket{
-    .siteMinBasket_box{
+    .siteMinBasketBox{
         border:1px solid #eee;
         text-align:center;
         padding:5px 10px;
+        cursor:pointer;
     }
-    .siteMinBasket_popup{ 
+    .siteMinBasketPopup{ 
         position:absolute;
         right:0;
         width:350px;
         margin:0;
+        display:none;
         .modal-content{
             border-radius:0;
         }
@@ -124,12 +130,12 @@
             padding:10px 15px 0 ;
         }
     }
-    .siteMinBasket_pr{
+    .siteMinBasketPrice{
         float:right;
         font-weight:bold;
         font-size:12px;
     }
-    .siteMinBasket_qty{
+    .siteMinBasketQty{
         float:left;
         font-size:12px;
     }
@@ -140,7 +146,7 @@
     .modal-body{
         padding:10px 15px 0;
     }
-    .siteMinBasket_total{
+    .siteMinBasketTotal{
         text-align:right;
         font-size:12px;
     }
