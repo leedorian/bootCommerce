@@ -1,0 +1,36 @@
+/**
+ * @author Jack Han
+ */
+
+
+.productInfosTab {
+    .productInfosTabContent {
+        border: 3px solid #ccc;
+        padding: 10px 15px;
+        font-size: 12px;
+
+        >div {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    }
+    .productInfosTabTitle {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            float: left;
+            background: #eee;
+            a {
+                padding: 10px 15px;
+                display: block;
+            }
+        }
+        .active {
+            background: #ccc;
+        }
+    }
+}
