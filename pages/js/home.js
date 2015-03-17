@@ -62,6 +62,9 @@
 
                         //Slide show
 
+                        //Product infos tab
+                        bootCommerce.ProductInfosTab();
+
                         //
                     }
                 },
