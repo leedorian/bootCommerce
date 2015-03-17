@@ -68,7 +68,7 @@ module.exports = function (grunt) {
         ["search.html","Product search"],
         ["store_locator.html","Store locator"],
         ["store_locator_detail.html","Store locator detail"],
-        ["tab-views.html","Product infos tab"]
+        ["product_infos_tab.html","Product infos tab"]
     ];
     fileNames = fileNames.sort(function(x, y){
       return x[1].localeCompare(y[1]);
