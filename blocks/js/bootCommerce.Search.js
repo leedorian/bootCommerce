@@ -48,6 +48,7 @@ bootCommerce.Search = function (options) {
 
     /* initialize */
     if (this.settings.autoSuggestion) {
+
         $(this.settings.container).on("keyup.search", this.settings.keywordInput, function (e) {
             /* triger auto suggestion */
             if ($(this).val()) {
@@ -56,10 +57,12 @@ bootCommerce.Search = function (options) {
                 $(_that.settings.suggestionCon).hide();
             }
 
-            if (e.keyCode === '38') {
+            if (e.keyCode === 38) {
                 _that.highlightResult('up');
-            } else if (e.keyCode === '40') {
+                console.log(123);
+            } else if (e.keyCode === 40) {
                 _that.highlightResult('down');
+                console.log(123);
             }
         });
 
