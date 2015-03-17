@@ -18,10 +18,16 @@
                 that.loadHtmlFragment(muduleName);
             });
             //side bar
-            jQuery(".masthead").on("mouseenter", function () {
-                jQuery(this).addClass("expanded");
-            }).on("mouseleave", function () {
-                jQuery(this).removeClass("expanded");
+            jQuery("body").on("click", function (e) {
+                if (jQuery(e.target).parents(".masthead").size() === 0) {
+                    jQuery(".masthead").removeClass("expanded");
+                }else{
+                    jQuery(".masthead").addClass("expanded");
+                }
+
+            });
+            jQuery(".masthead").on("mouseleave",function () {
+                jQuery(".masthead").removeClass("expanded");
             });
         },
         loadHtmlFragment: function (module) {
