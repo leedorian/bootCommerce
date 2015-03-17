@@ -9,8 +9,11 @@ bootCommerce.homePage = {
         'use strict';
         var HeadSearch = new bootCommerce.Search({
             container: ".header .siteSearchBar",
-            suggestionCon: ".siteSearchBar_autoSuggest",
-            keywordInput: ".siteSearchBar_input input[type='text']"
+            suggestionCon: ".siteSearchBarAutoSuggest",
+            keywordInput: ".siteSearchBarInput input[type='text']"
+        });
+        var MiniBasket = new bootCommerce.MiniBasket({
+
         });
     }
 };

@@ -3,137 +3,143 @@
  */
 
 .quickView{
-	border:1px solid #ccc;
-	left:30px;
-	top:100px;
-	.quickView_title{
-		position:relative;
-		padding:0 10px;
-		h2{
-			display:inline-block;
-			margin:0;
-			font-size:16px;
-			line-height:33px;
-		}
-		.close{
-			line-height:1.1;
-			font-size:30px;
-		}
-	}
-	.siteProImageViewer{
-		float:left;
-		width:50%;
-		padding:10px;
-	}
-	.quickView_productBriefInfo{
-		float:left;
-		width:50%;
-		padding:10px 10px 10px 0;
-		font-size:13px;
-	}
+    border:1px solid #ccc;
+    left:30px;
+    top:100px;
+    .quickView_title{
+        position:relative;
+        padding:0 10px;
+        h2{
+            display:inline-block;
+            margin:0;
+            font-size:16px;
+            line-height:33px;
+        }
+        .close{
+            line-height:1.1;
+            font-size:30px;
+        }
+    }
+    .siteProImageViewer{
+        float:left;
+        width:50%;
+        padding:10px;
+    }
+    .quickView_productBriefInfo{
+        float:left;
+        width:50%;
+        padding:10px 10px 10px 0;
+        font-size:13px;
+    }
 
 }
 
 .siteProImageViewer{
-	img{
-		width:100%;
-	}
-	.siteProImageViewer_gallery{
-		margin-bottom:6px;
-	}
-	.siteProImageViewer_thumbnail{
-		ul{
-			list-style:none;
-			margin:0;
-			padding:0;
-			li{
-				padding:0 1px;
-				float:left;
-				width:25%;
-				img{
-					border:3px solid #fff;
-				}
-			}
-			li.active{
-				img{
-					border:3px solid #333;	
-				}					
-			}
-			li:hover{
-				img{
-					border:3px solid #333;	
-				}
-			}
-		}
-	}	
+    img{
+        width:100%;
+    }
+    .siteProImageViewer_gallery{
+        margin-bottom:6px;
+    }
+    .siteProImageViewer_thumbnail{
+        ul{
+            list-style:none;
+            margin:0;
+            padding:0;
+            li{
+                padding:0 1px;
+                float:left;
+                width:25%;
+                img{
+                    border:3px solid #fff;
+                }
+            }
+            li.active{
+                img{
+                    border:3px solid #333;  
+                }                   
+            }
+            li:hover{
+                img{
+                    border:3px solid #333;  
+                }
+            }
+        }
+    }   
 }
 
 .productBriefInfo{
-	h2,h3{
-		font-size:inherit;
-		font-weight:bold;
-		margin:10px 0;
-	}
-	.productBriefInfo_details,
-	.productBriefInfo_attribute,
-	.productBriefInfo_handle
-	{
-		border:1px solid #eee;
-	}
+    h2,h3{
+        font-size:inherit;
+        font-weight:bold;
+        margin:10px 0;
+    }
+    .productBriefInfo_details,
+    .productBriefInfo_attribute,
+    .productBriefInfo_handle
+    {
+        border:1px solid #eee;
+    }
 
-	.productBriefInfo_handle{
-		.form-inline{
-			margin-bottom:15px;
-			.btn{
-				float:right;
-			}
-		}
-	}	
+    .productBriefInfo_handle{
+        .form-inline{
+            margin-bottom:15px;
+            .btn{
+                float:right;
+            }
+        }
+    }   
 }
 
 .productOption{
-	ul{
-		list-style:none;
-		margin:0;
-		padding:0;
-	}		
-	li{
-		float:left;
-		margin:0 5px 5px 0;
-		span{
-			display:block; 
-			width:40px;
-			height:40px;
-			border:2px solid #fff;
-			line-height:40px;
-			text-align:center;
-			cursor:pointer;
-		}
-	}					
-	li.available{
-		span{
-			border:2px solid green;
-		}
-	}
-	li.active{ 
-		span{
-			border:2px solid red;
-		}
-	}
-	li:hover{
-		span{
-			border:2px solid red;
-		}
-	}
-	li.unavailable{
-		span{
-			border:2px solid grey;
-		}
-	}
-	h3{
-		font-size:13px;
-		font-weight:700;
-	}
+    ul{
+        list-style:none;
+        margin:0;
+        padding:0;
+    }       
+    li{
+        float:left;
+        margin:0 5px 5px 0;
+        span{
+            display:block; 
+            width:40px;
+            height:40px;
+            border:2px solid #fff;
+            line-height:40px;
+            text-align:center;
+            cursor:pointer;
+        }
+    }                   
+    .available{
+        span{
+            border:2px solid green;
+        }
+    }
+    .active{ 
+        span{
+            border:2px solid red;
+        }
+    }    
+    .unavailable{
+        span{
+            border:2px solid grey;
+        }
+    }
+    li:hover{
+        span{
+            border:2px solid red;
+        }
+    }
+    .unavailable:hover{
+        span{
+            border:2px solid grey;
+        }
+    }
+    
+    h3{
+        font-size:13px;
+        font-weight:700;
+    }
 }
 
 
