@@ -2,14 +2,13 @@
  * describe load html fragment
  */
 
-/*global jQuery */
+/*global jQuery, bootCommerce */
 (function () {
     'use strict';
 
     var home = {
         init: function () {
             // load default fragment
-            // this.loadHtmlFragment('test1');
             this.bindEvent();
         },
         bindEvent: function () {
@@ -21,15 +20,6 @@
         },
         loadHtmlFragment: function (module) {
             // dufault load from blocks/***
-            /*
-            jQuery.get('../../blocks/' + module + '.html', function (result) {
-                if (result) {
-                    var container = jQuery('.displayContainer');
-                    console.info(result);
-                    container.empty().append(result);
-                }
-            });
-            */
             jQuery.ajax({
                 type: 'get',
                 url: '../../blocks/dist/' + module,
@@ -38,6 +28,35 @@
                     if (result) {
                         var container = jQuery('.displayContainer');
                         container.empty().append(result);
+
+
+
+                        /**
+                         * initialize components
+                         */
+
+                        //Product search
+                        var Search = new bootCommerce.Search({
+                            container: ".displayContainer .siteSearchBar",
+                            suggestionCon: ".siteSearchBarAutoSuggest",
+                            keywordInput: ".siteSearchBarInput input[type='text']"
+                        });
+
+                        //Horizontal products carousel
+
+                        //Vertical products carousel
+
+                        //Image viewer
+
+                        //Mini basket
+
+                        //Product swatch
+
+                        //Quick info box
+
+                        //Slide show
+
+                        //
                     }
                 },
                 error: function () {

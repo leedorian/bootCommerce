@@ -49,6 +49,7 @@ bootCommerce.Search = function (options) {
     /* initialize */
     if (this.settings.autoSuggestion) {
         $(this.settings.container).on("keyup.search", this.settings.keywordInput, function (e) {
+
             /* triger auto suggestion */
             if ($(this).val()) {
                 $(_that.settings.suggestionCon).show();
