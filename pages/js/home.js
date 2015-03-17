@@ -17,6 +17,12 @@
                 var muduleName = jQuery(event.target).attr('data-page');
                 that.loadHtmlFragment(muduleName);
             });
+            //side bar
+            jQuery(".masthead").on("mouseenter", function () {
+                jQuery(this).addClass("expanded");
+            }).on("mouseleave", function () {
+                jQuery(this).removeClass("expanded");
+            });
         },
         loadHtmlFragment: function (module) {
             // dufault load from blocks/***

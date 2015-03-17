@@ -422,6 +422,10 @@ module.exports = function (grunt) {
                 files: ['blocks/less/**/*.less', 'pages/less/**/*.less'],
                 tasks: ['dist-css', 'dist-pages']
             },
+            js: {
+                files: ['blocks/js/*.js', 'pages/js/*.js'],
+                tasks: ['dist-js']
+            },
             pages: {
                 files: ['blocks/*.html', 'pages/*.html', 'pages/includes/**/*.html'],
                 tasks: ['processhtml:blocks','processhtml:pages']
