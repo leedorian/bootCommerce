@@ -7,170 +7,177 @@
     margin:0;
     padding:0;
     h2{
-    	margin:0;
-		padding:0;
-		font-size:14px;
+        margin:0;
+        padding:0;
+        font-size:14px;
     }
-    .siteProductList_thumb{
-		img{
-			width:100%;
-			border:0;
-		}
-	}	
+    .siteProductListThumb{
+        img{
+            width:100%;
+            border:0;
+        }
+    }
 }
 
-.productList_list{
-	.siteProductList_item{
-	    border-bottom: 1px solid #eee;
-	    padding: 15px 0;	
-	    .siteProductList_rating{
-	    	display:none;
-	    }
-	    .siteProductList_brief{
-	    	dipslay:block;
-	    }	
-	}
-	.siteProductList_item:after{
-		clear:both;
-		display:block;
-		content:"";
+.productListListMode{
+    .siteProductListItem{
+        border-bottom: 1px solid #eee;
+        padding: 15px 0;
+        .siteProductListRating{
+            display:none;
+        }
+        .siteProductListBrief{
+            dipslay:block;
+        }
+    }
+    .siteProductListItem:after{
+        clear:both;
+        display:block;
+        content:"";
 
-	}
-	.siteProductList_thumb, .siteProductList_info, .siteProductList_price, .siteProductList_handle{
-		float:left;
-		padding:0 15px 0 0;
-	}
-	.siteProductList_thumb{
-		width:20%;		
-		.siteProductList_saleOffer{
-			display:none;
-		}
-		.siteProductList_compareBtn{
-			display:none;
-		}
-	}
-	.siteProductList_info{
-		width:50%;
-	}
-	.siteProductList_price{
-		width:15%;
-		p{
-			display:none;
-		}
-		font{
-			word-wrap:break-word;
-		}
-		.siteProductList_priceIcon{
-			.fa{
-				font-size:45px;
-			}
-		}
-	}
-	.siteProductList_handle{
-		width:15%;
-		padding:0;
-	}
-	.siteProductList_handle{
-		text-align:center;
-		.siteProductList_inventory{
-			display:block;
-			margin-bottom:5px;
-			i{
-				padding-right:5px;
-			}
-		}
-		.siteProductList_handleAdd{
-			width:100%;
-		}
-	}
+    }
+    .siteProductListThumb, .siteProductListInfo, .siteProductListPrice, .siteProductListHandle{
+        float:left;
+        padding:0 15px 0 0;
+        position:relative;
+    }
+    .siteProductListThumb{
+        width:20%;
+        .siteProductListSaleOffer{
+            left: 0;
+            position: absolute;
+            top: 0;
+            i{
+                font-size:25px;
+                color:#ffe400;
+            }
+        }
+        .siteProductListCompareBtn{
+            display:none;
+        }
+    }
+    .siteProductListInfo{
+        width:50%;
+    }
+    .siteProductListPrice{
+        width:15%;
+        p{
+            display:none;
+        }
+        font{
+            word-wrap:break-word;
+        }
+        .siteProductListPriceIcon{
+            .fa{
+                font-size:45px;
+            }
+        }
+    }
+    .siteProductListHandle{
+        width:15%;
+        padding:0;
+    }
+    .siteProductListHandle{
+        text-align:center;
+        .siteProductListInventory{
+            display:block;
+            margin-bottom:5px;
+            i{
+                padding-right:5px;
+            }
+        }
+        .siteProductListHandleAdd{
+            width:100%;
+        }
+    }
 }
 
 
-.productList_thumbnail{
-	.siteProductList_info{
-		h2{
-			padding:5px 0;
-		}
-	}
-	.siteProductList_item.clearfix{
-		clear:none;
-	}
-	padding-left:15px;
-	.siteProductList_item{
-		float:left;
-		width:33.33333%;
-		padding:0 15px 0 0;
-		margin-bottom:15px;
-		.siteProductList_brief{
-			display:none;
-		}
-	}
-	.siteProductList_thumb {
-		position:relative;
-		a{
-			display:block;
-		}
-		.siteProductList_saleOffer{
-			position:absolute;
-			top:0;
-			left:0;
-			i{
-				font-size:25px;
-				color:yellow;
-			}			
-		}
-		.siteProductList_compareBtn{
-			background:rgb(255,255,255);
-			background:rgba(255,255,255,0.5);
-			position:absolute;
-			bottom:0;
-			left:0;
-			font-weight:normal;
-		}
+.productListThumbnailMode{
+    .siteProductListInfo{
+        h2{
+            padding:5px 0;
+        }
+    }
+    .siteProductListItem.clearfix{
+        clear:none;
+    }
+    padding-left:15px;
+    .siteProductListItem{
+        float:left;
+        width:33.33333%;
+        padding:0 15px 0 0;
+        margin-bottom:15px;
+        .siteProductListBrief{
+            display:none;
+        }
+    }
+    .siteProductListThumb {
+        position:relative;
+        a{
+            display:block;
+        }
+        .siteProductListSaleOffer{
+            position:absolute;
+            top:0;
+            left:0;
+            i{
+                font-size:25px;
+                color:#ffe400;
+            }
+        }
+        .siteProductListCompareBtn{
+            background:rgb(255,255,255);
+            background:rgba(255,255,255,0.5);
+            position:absolute;
+            bottom:0;
+            left:0;
+            font-weight:normal;
+        }
 
-	}
-	.siteProductList_price {
-		min-height:40px;
-		.siteProductList_priceQuote{
-			font-weight: bold;
-		}
-		p{
-			color:#ccc;
-			margin:0;
-		}
-		.siteProductList_priceIcon{
-			display:none;
-		}
-	}
-	.siteProductList_rating{
-		margin-bottom: 10px;
-		.siteProductList_ratingIcon{
-			display: inline-block;
-			height:20px;
-			vertical-align: middle;
-		}
-	}
-	.siteProductList_handle{
-		.siteProductList_handleQty,
-		.siteProductList_handleAdd{
-			padding:6px auto;
-			float:left;
-		}
-		.siteProductList_inventory{
-			display:none;
-		}
-		.form-group{
-			width:30%;
-			float:left;
-			margin:0;
-		}		
-		.siteProductList_handleAdd{
-			float:right;
-		}
-	}
-	.siteProductList_handle:after{
-		clear:both;
-		content:"";
-		display:block;
-	}
+    }
+    .siteProductListPrice {
+        min-height:40px;
+        .siteProductListPriceQuote{
+            font-weight: bold;
+        }
+        p{
+            color:#ccc;
+            margin:0;
+        }
+        .siteProductListPriceIcon{
+            display:none;
+        }
+    }
+    .siteProductListRating{
+        margin-bottom: 10px;
+        .siteProductListRatingIcon{
+            display: inline-block;
+            height:20px;
+            vertical-align: middle;
+        }
+    }
+    .siteProductListHandle{
+        .siteProductListHandleQty,
+        .siteProductListHandleAdd{
+            padding:6px auto;
+            float:left;
+        }
+        .siteProductListInventory{
+            display:none;
+        }
+        .form-group{
+            width:30%;
+            float:left;
+            margin:0;
+        }
+        .siteProductListHandleAdd{
+            float:right;
+        }
+    }
+    .siteProductListHandle:after{
+        clear:both;
+        content:"";
+        display:block;
+    }
 }
