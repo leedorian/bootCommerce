@@ -9,8 +9,8 @@
 bootCommerce.Basket = {
     init:function(){
        new bootCommerce.quantityInput({
-        container:'.basket_order_table .basket_order_item',
-        containerInput:'.basket_order_table .basket_quantity_operation'
+        container:'.basketOrderTable .basketOrderItem',
+        containerInput:'.basketOrderTable .basketQuantityOperation'
         }).init();
     }
 };
@@ -40,10 +40,10 @@ bootCommerce.quantityInput = function(options) {
     this.setIdName = function () {
         var This = this;
         $(this.settings.containerInput).each(function (i) {
-            $(This.settings.containerInput).eq(i).attr('id', 'basket_qty_' + (i + 1));
+            $(This.settings.containerInput).eq(i).attr('id', 'basketQty' + (i + 1));
         });
         $(this.settings.container).each(function (i) {
-            $(This.settings.container).eq(i).attr('id', 'basket_orderItem_' + (i + 1));
+            $(This.settings.container).eq(i).attr('id', 'basketOrderItem' + (i + 1));
         });
     };
     this.calculate = function () {
@@ -71,7 +71,7 @@ bootCommerce.quantityInput = function(options) {
             This.value = $(this).val();
             var re = This.value.match(/^[1-9]+\d*$/);
             if (re || This.value == '') {
-                This.spstr = $(this).parent().attr('id').split("_");
+                This.spstr = parseInt($(this).parent().attr('id'));
                 This.changeTotalPrice();
             } else {
                 alert('请输入数字');
@@ -83,16 +83,16 @@ bootCommerce.quantityInput = function(options) {
         var This = this;
         this.subTotal = 0;
         this.currentIdIndex = this.spstr[this.spstr.length - 1];
-        this.singlePrice = $('#basket_orderItem_' + this.currentIdIndex).find('.basket_quantity_SinglePrice span').html();
+        this.singlePrice = $('#basketOrderItem' + this.currentIdIndex).find('.basketQuantitySinglePrice span').html();
         this.totalPrice = (parseFloat(this.singlePrice)) * this.value;
-        $('#basket_orderItem_' + this.currentIdIndex).find('.basket_quantity_totalPrice span').html(this.totalPrice.toFixed(2));
+        $('#basketOrderItem' + this.currentIdIndex).find('.basketQuantityTotalPrice span').html(this.totalPrice.toFixed(2));
         /*orderSubtotal*/
-        $(".basket_quantity_totalPrice").each(function (i) {
-            This.subTotal += parseFloat($(".basket_quantity_totalPrice span").eq(i).html());
+        $(".basketQuantityTotalPrice").each(function (i) {
+            This.subTotal += parseFloat($(".basketQuantityTotalPrice span").eq(i).html());
         });
-        $(".basket_order_total .orderSubtotal span").html(this.subTotal.toFixed(2));
-        this.savePrice = parseFloat($(".basket_order_total .SavePrice span").html());
-        $(".basket_order_total .payPrice span").html((this.subTotal - this.savePrice));
+        $(".basketOrderTotal .orderSubtotal span").html(this.subTotal.toFixed(2));
+        this.savePrice = parseFloat($(".basketOrderTotal .SavePrice span").html());
+        $(".basketOrderTotal .payPrice span").html((this.subTotal - this.savePrice).toFixed(2));
     };
     this.checkQty = function (langId, storeId, catalogId) {
         $.ajax({
