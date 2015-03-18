@@ -1,0 +1,29 @@
+// =============================================
+// Mixin - Breakpoint
+// =============================================
+
+.bp(max-width, @value, @content) {
+    @media only screen {
+        @media (max-width: @value) {
+            @content();
+        }
+    }
+}
+
+.bp(min-width, @value, @content) {
+    @media only screen {
+        @media (min-width: @value) {
+            @content();
+        }
+    }
+}
+
+// breakpoint mixin demo:
+//
+//.bp(max-width, 1200px, {
+//    div { color:#888; }
+//});
+//
+//.bp(min-width, 1200px, {
+//    div { background-color:#888; }
+//});
