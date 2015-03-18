@@ -12,10 +12,10 @@
             this.bindEvent();
         },
         toggleSideBar: function (beacon) {
-            if(!beacon){
+            if (!beacon) {
                 jQuery(".masthead").removeClass("expanded");
                 jQuery(".masthead .fa").removeClass("fa-angle-double-left").addClass("fa-angle-double-right");
-            }else{
+            } else {
                 jQuery(".masthead").addClass("expanded");
                 jQuery(".masthead .fa").removeClass("fa-angle-double-right").addClass("fa-angle-double-left");
             }
@@ -31,11 +31,11 @@
             jQuery("body").on("click", function (e) {
                 if (jQuery(e.target).parents(".masthead").size() === 0) {
                     that.toggleSideBar();
-                }else{
-                    if(jQuery(e.target).hasClass("fa")){
-                        if(jQuery(".masthead").hasClass("expanded")){
+                } else {
+                    if (jQuery(e.target).hasClass("fa")) {
+                        if (jQuery(".masthead").hasClass("expanded")) {
                             that.toggleSideBar();
-                        }else{
+                        } else {
                             that.toggleSideBar(true);
                         }
                     }

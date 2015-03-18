@@ -2,6 +2,7 @@
  * bootCommerce namespace
  * @author Dorian
  */
+/*global Handlebars */
 var bootCommerce = bootCommerce || {};
 
 /**
@@ -15,10 +16,11 @@ bootCommerce.Utils = {
      * @return {string} the compiled html
      */
     template : function (tempID,data) {
+        "use strict";
         var source = $(tempID).html();
         var template = Handlebars.compile(source);
-        var context ={};
-        if(data && typeof data === "object"){
+        var context = {};
+        if (data && typeof data === "object") {
             context = data;
         }
         return template(context);
