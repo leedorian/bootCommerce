@@ -136,11 +136,21 @@ bootCommerce.Search = function (options) {
                     _that.highlightResult('down');
                     return;
 
+<<<<<<< HEAD
                 case 27:
                 case 13:
                     _that.toggleAutoSuggest(false);
                     return;
                 default:
+=======
+        $(this.settings.container).on("keyup.search", this.settings.keywordInput, function (e) {
+
+            /* triger auto suggestion */
+            if ($(this).val()) {
+                $(_that.settings.suggestionCon).show();
+            } else {
+                $(_that.settings.suggestionCon).hide();
+>>>>>>> 66cfd9636d96c822bbb6da95f9a49da7232e8830
             }
 
             if(searchTerm.length > _that.autoSuggestThresHold && searchTerm === _that.autoSuggestPreviousTerm) {

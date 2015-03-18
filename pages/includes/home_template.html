@@ -1,19 +1,22 @@
 <!-- home page template -->
-<div class="masthead">
+<div class="masthead expanded">
+    <i class="fa fa-angle-double-left"></i>
     <h1 class="title bread-word">BootCommerce</h1>
     <p class="describe">A components library of e-commerce site, it's based on Bootstrap</p>
     <hr class="masthead-hr">
-    <h3>Components</h3>
-    <ul class="masthead-nav blocks">
-        <% for(var i=0;i<list.length;i++){%>
-        <li class="nav-item" ><a href="#" data-page="<%= list[i][0] %>"><%= list[i][1] %></a></li>
-        <% } %>
-    </ul>
-    <hr class="masthead-hr">
-    <h3>Demos</h3>
-    <ul class="masthead-nav">
-        <li class="nav-item"><a href="homePage.html" target="_blank">Home Page</a></li>
-    </ul>
+    <div class="innerCon">
+        <h3>Components</h3>
+        <ul class="masthead-nav blocks">
+            <% for(var i=0;i<list.length;i++){%>
+            <li class="nav-item" ><a href="#" data-page="<%= list[i][0] %>"><%= list[i][1] %></a></li>
+            <% } %>
+        </ul>
+        <hr class="masthead-hr">
+        <h3>Demos</h3>
+        <ul class="masthead-nav">
+            <li class="nav-item"><a href="homePage.html" target="_blank">Home Page</a></li>
+        </ul>
+    </div>
 </div>
 <div class="displayContainer">
     <p>Welcome !</p>

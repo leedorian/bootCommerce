@@ -4,24 +4,41 @@
  */
 
 /*global bootCommerce, $, console */
-bootCommerce.ProductInfosTab = function (options) {
+bootCommerce.ProductInfosTab = function () {
     "use strict";
 
-    var $tab = $(".productInfosTab");
-    var $contents = $(".productInfosTabContent > div");
-
+    $(".productInfosTabTitle").on("click.ProductInfosTab", "a", function(e) {
+        e.preventDefault();
+    }).on("focus.ProductInfosTab", "a", function(e) {
+        $(this).tab("show");
+    }).on("keyup.ProductInfosTab", "li", function(e) {
+        switch (e.keyCode) {
+        case 37:
+            if ($(this).prev().size() > 0) {
+                $(this).prev().find('a').focus().tab("show");
+            }
+            break;
+        case 39:
+            if ($(this).next().size() > 0) {
+                $(this).next().find('a').focus().tab("show");
+            }
+            break;
+        default:
+        }
+    }).find("a:first").tab("show");
+/*
     $tab.on("click", ".productInfosTabTitle", function(e) {
         e.preventDefault();
     }).on("focus", ".productInfosTabTitle li", function(e) {
         $tab.find(".active").removeClass("active");
         $(this).addClass("active");
-        $contents.removeClass("active");
+        $(this).closest(".productInfosTab").find("").removeClass("active");
         $($(this).find("a").attr("href")).addClass("active");
     }).on("keyup", ".productInfosTabTitle li", function(e) {
         switch (e.keyCode) {
             case 37:
-                if ($tab.find(".active").prev().size() > 0) {
-                    $tab.find(".active").removeClass("active").prev().addClass("active").focus();
+                if ($(this).prev().size() > 0) {
+                    $(this).removeClass("active").prev().addClass("active").focus();
                     $contents.removeClass("active");
                     $($tab.find(".active a").attr("href")).addClass("active");
                 }
@@ -35,5 +52,5 @@ bootCommerce.ProductInfosTab = function (options) {
                 break;
             default:
         }
-    });
+    });*/
 };
