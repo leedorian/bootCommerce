@@ -11,7 +11,15 @@ bootCommerce.ProductInfosTab = function () {
         e.preventDefault();
     }).on("focus.ProductInfosTab", "a", function(e) {
         $(this).tab("show");
-    }).on("keyup.ProductInfosTab", "li", function(e) {
+    }).on("show.bs.tab", "a", function(e) {
+         $(this).closest(".productInfosTab")
+            .find("dt.current")
+            .removeClass("current")
+            .end()
+            .find($(e.target).attr("href"))
+            .prev("dt")
+            .addClass("current");
+    }).on("keypress.ProductInfosTab", "li", function(e) {
         switch (e.keyCode) {
         case 37:
             if ($(this).prev().size() > 0) {
@@ -26,31 +34,10 @@ bootCommerce.ProductInfosTab = function () {
         default:
         }
     }).find("a:first").tab("show");
-/*
-    $tab.on("click", ".productInfosTabTitle", function(e) {
-        e.preventDefault();
-    }).on("focus", ".productInfosTabTitle li", function(e) {
-        $tab.find(".active").removeClass("active");
-        $(this).addClass("active");
-        $(this).closest(".productInfosTab").find("").removeClass("active");
-        $($(this).find("a").attr("href")).addClass("active");
-    }).on("keyup", ".productInfosTabTitle li", function(e) {
-        switch (e.keyCode) {
-            case 37:
-                if ($(this).prev().size() > 0) {
-                    $(this).removeClass("active").prev().addClass("active").focus();
-                    $contents.removeClass("active");
-                    $($tab.find(".active a").attr("href")).addClass("active");
-                }
-                break;
-            case 39:
-                if ($tab.find(".active").next().size() > 0) {
-                    $tab.find(".active").removeClass("active").next().addClass("active").focus();
-                    $contents.removeClass("active");
-                    $($tab.find(".active a").attr("href")).addClass("active");
-                }
-                break;
-            default:
-        }
-    });*/
+
+    $(".productInfosTabContent").on("click.ProductInfosTab", "dt", function(e) {
+        $(this).closest(".productInfosTab")
+            .find(".productInfosTabTitle a[href=#" + $(this).next("dd").prop("id") + "]")
+            .tab("show");
+    });
 };
