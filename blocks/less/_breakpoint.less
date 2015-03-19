@@ -2,7 +2,7 @@
 // Mixin - Breakpoint
 // =============================================
 
-.bp(max-width, @value, @content) {
+.bp(max, @value, @content) {
     @media only screen {
         @media (max-width: @value) {
             @content();
@@ -10,7 +10,7 @@
     }
 }
 
-.bp(min-width, @value, @content) {
+.bp(min, @value, @content) {
     @media only screen {
         @media (min-width: @value) {
             @content();
@@ -18,12 +18,56 @@
     }
 }
 
+.bp(range, @minValue, @maxValue, @content) {
+    @media only screen {
+        @media (min-width: @minValue) {
+            @media (min-width: @maxValue) {
+                @content();
+            }
+        }
+    }
+}
+//
 // breakpoint mixin demo:
 //
-//.bp(max-width, 1200px, {
-//    div { color:#888; }
-//});
+// 1. max-width query:
+//.content {
+//    .bp(max, 1200px, {
+//        div { color:#888; }
+//    });
+//}
 //
-//.bp(min-width, 1200px, {
-//    div { background-color:#888; }
-//});
+// output:
+//@media only screen and (max-width: 1200px) {
+//  .content div {
+//    color: #888;
+//  }
+//}
+//
+// 2. min-width qurey:
+//.content {
+//    .bp(min, 1200px, {
+//        div { background-color:#888; }
+//    });
+//}
+//
+// output:
+//@media only screen and (min-width: 1200px) {
+//  .content div {
+//    background-color: #888;
+//  }
+//}
+//
+// 3. both query:
+//.content {
+//    .bp(range, 640px, 768px, {
+//        div { color:#888; }
+//    });
+//}
+//
+// output:
+//@media only screen and (min-width: 640px) and (min-width: 768px) {
+//  .content div {
+//    color: #888;
+//  }
+//}
