@@ -115,7 +115,7 @@ bootCommerce.Search = function (options) {
 
     console.log(this.settings);
 
-    $(this.settings.keywordInput).on("keypress.search", function(e){
+    $(this.settings.keywordInput).on("keypress.search", function(e) {
         if (e.which === 13){
             e.preventDefault();
             if (_that.autoSuggestURL !== "") {
@@ -126,7 +126,7 @@ bootCommerce.Search = function (options) {
         }
     }).on("keyup.search", function(e){
         var searchTerm = $(_that.settings.keywordInput).val();
-        if(searchTerm !== ""){
+        if (searchTerm !== "") {
             switch (e.which) {
                 case 38:
                     _that.highlightResult('up');
@@ -136,32 +136,22 @@ bootCommerce.Search = function (options) {
                     _that.highlightResult('down');
                     return;
 
-<<<<<<< HEAD
                 case 27:
                 case 13:
                     _that.toggleAutoSuggest(false);
                     return;
                 default:
-=======
-        $(this.settings.container).on("keyup.search", this.settings.keywordInput, function (e) {
-
-            /* triger auto suggestion */
-            if ($(this).val()) {
-                $(_that.settings.suggestionCon).show();
-            } else {
-                $(_that.settings.suggestionCon).hide();
->>>>>>> 66cfd9636d96c822bbb6da95f9a49da7232e8830
             }
 
-            if(searchTerm.length > _that.autoSuggestThresHold && searchTerm === _that.autoSuggestPreviousTerm) {
+            if (searchTerm.length > _that.autoSuggestThresHold && searchTerm === _that.autoSuggestPreviousTerm) {
                 return;
             }
             else {
                 _that.autoSuggestPreviousTerm = searchTerm;
             }
 
-            if(searchTerm.length > _that.dynamicAutoSuggestThresHold) {
-                //_that.doDynamicAutoSuggest(searchTerm);
+            if (searchTerm.length > _that.dynamicAutoSuggestThresHold) {
+                _that.doDynamicAutoSuggest(searchTerm);
             }else {
                 // clear the dynamic results
                 $(_that.settings.suggestionCon).find(".autoSuggestKeywords").html("");
@@ -217,15 +207,16 @@ bootCommerce.Search = function (options) {
      * @param {string} searchTerm - search term
      */
     this.doDynamicAutoSuggest = function (searchTerm) {
-        var _that = this;
+        console.log(searchTerm);
         // if pending autosuggest triggered, cancel it.
-        if(that.autoSuggestTimer != -1) {
+        if (_that.autoSuggestTimer != -1) {
             clearTimeout(that.autoSuggestTimer);
-            that.autoSuggestTimer = -1;
+            _that.autoSuggestTimer = -1;
         }
-        $("#autoSuggestDynamic_Result_div").html("");
+        $(_that.settings.suggestionCon).find(".autoSuggestKeywords").html("");
+
         // call the auto suggest
-        that.autoSuggestTimer = setTimeout(function() {
+        _that.autoSuggestTimer = setTimeout(function() {
             $.post(that.settings.SearchAutoSuggestServletURL+ "&term=" + escape(searchTerm)+ "&showHeader=true",{
                 requesttype:"ajax"
             },function(result){
@@ -278,7 +269,7 @@ bootCommerce.Search = function (options) {
 
             },"json");
             that.autoSuggestTimer = -1;
-        }, that.autoSuggestKeystrokeDelay);
+        }, _that.autoSuggestKeystrokeDelay);
     };
 
 };
