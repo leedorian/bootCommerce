@@ -12,7 +12,7 @@ bootCommerce.ProductInfosTab = function () {
     }).on("focus.ProductInfosTab", "a", function(e) {
         $(this).tab("show");
     }).on("show.bs.tab", "a", function(e) {
-         $(this).closest(".productInfosTab")
+        $(this).closest(".productInfosTab")
             .find("dt.current")
             .removeClass("current")
             .end()
