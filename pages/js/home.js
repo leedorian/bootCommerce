@@ -59,7 +59,8 @@
                         //Product infos tab
                         bootCommerce.ProductInfosTab();
 
-                        //
+                        //Basket with items
+                        bootCommerce.Basket();
                     }
                 },
                 error: function () {
