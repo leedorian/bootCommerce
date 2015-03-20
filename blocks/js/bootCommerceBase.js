@@ -6,6 +6,20 @@
 var bootCommerce = bootCommerce || {};
 
 /**
+ * bootCommerce constants
+ */
+bootCommerce.CONSTANTS = {
+    /**
+     * Break points
+     */
+    BP_XS: "screen and (max-width:479px)",
+    BP_S: "screen and (max-width:599px)",
+    BP_M: "screen and (max-width:770px)",
+    BP_L: "screen and (max-width:979px)",
+    BP_XL: "screen and (max-width:1199px)"
+};
+
+/**
  * bootCommerce untilities
  */
 bootCommerce.Utils = {
@@ -24,5 +38,6 @@ bootCommerce.Utils = {
             context = data;
         }
         return template(context);
-    }
+    },
+
 }
