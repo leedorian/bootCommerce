@@ -5,34 +5,32 @@
 @import (once) "_common.less";
 
 .productInfosTab {
-    .laptop() {
-        .productInfosTabContent {
-            border: 1px solid #ccc;
-            padding: 10px 15px;
+    .productInfosTabContent {
+        border: 1px solid #ccc;
+        padding: 10px 15px;
 
-            dt {
-                display: none;
-            }
+        dt {
+            display: none;
+        }
 
-            dd {
-                font-size: 12px;
+        dd {
+            font-size: 12px;
+        }
+    }
+    .productInfosTabTitle {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            float: left;
+            background: #eee;
+            a {
+                padding: 7px 10px 7px 24px;
+                display: block;
             }
         }
-        .productInfosTabTitle {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            li {
-                float: left;
-                background: #eee;
-                a {
-                    padding: 7px 10px 7px 24px;
-                    display: block;
-                }
-            }
-            .active {
-                background: #ccc;
-            }
+        .active {
+            background: #ccc;
         }
     }
 
@@ -92,7 +90,6 @@
         }
     }
 
-    .laptop();
     .bp(max, @medium, {
         .mobile();
     });
