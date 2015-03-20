@@ -6,15 +6,20 @@
 
 /* global basket */
 
-bootCommerce.Basket = {
-    init:function(){
-       new bootCommerce.quantityInput({
+bootCommerce.Basket =function() {
+       new bootCommerce.Basket.quantityInput({
         container:'.basketOrderTable .basketOrderItem',
         containerInput:'.basketOrderTable .basketQuantityOperation'
         }).init();
-    }
+        bootCommerce.Basket.checkPromotionalCode();
+    new bootCommerce.Basket.basketOperationButton({
+        saveBasketAjax:true,
+        emptyBasketAjax:true,
+        checkOutAjax:true
+    }).init();
+
 };
-bootCommerce.quantityInput = function(options) {
+bootCommerce.Basket.quantityInput = function(options) {
     "use strict";
     /* properties */
     this.defaults = {
@@ -30,15 +35,13 @@ bootCommerce.quantityInput = function(options) {
         this.totalPrice = 0;
         this.subTotal = 0;
         this.savePrice = 0;
-        this.promotionalCode="";
         this.currentIdIndex = '';
-        this.spstr = '';
         this.setIdName();
         this.calculate();
-        this.checkPromotionalCode();
+        this.removeBasketItem();
     };
+    var This = this;
     this.setIdName = function () {
-        var This = this;
         $(this.settings.containerInput).each(function (i) {
             $(This.settings.containerInput).eq(i).attr('id', 'basketQty' + (i + 1));
         });
@@ -47,14 +50,13 @@ bootCommerce.quantityInput = function(options) {
         });
     };
     this.calculate = function () {
-        var This = this;
         /*reduce quantity*/
         $(this.settings.containerInput).find('button:first').on('click', function () {
             This.value = parseInt($(this).parent().find('input').val());
             if (This.value > 1) {
                 This.value--;
                 $(this).parent().find('input').val(This.value);
-                This.spstr = $(this).parent().attr('id').split("_");
+                This.currentIdIndex =$(this).parent().attr('id').replace(/[^0-9]/ig,"");
                 This.changeTotalPrice();
             }
         });
@@ -63,7 +65,7 @@ bootCommerce.quantityInput = function(options) {
             This.value = parseInt($(this).parent().find('input').val());
             This.value++;
             $(this).parent().find('input').val(This.value);
-            This.spstr = $(this).parent().attr('id').split("_");
+            This.currentIdIndex =$(this).parent().attr('id').replace(/[^0-9]/ig,"");
             This.changeTotalPrice();
         });
         /*input quantity*/
@@ -71,8 +73,7 @@ bootCommerce.quantityInput = function(options) {
             This.value = $(this).val();
             var re = This.value.match(/^[1-9]+\d*$/);
             if (re || This.value == '') {
-                This.spstr = parseInt($(this).parent().attr('id'));
-                This.changeTotalPrice();
+                This.currentIdIndex =$(this).parent().attr('id').replace(/[^0-9]/ig,"");                This.changeTotalPrice();
             } else {
                 alert('请输入数字');
                 return false;
@@ -80,9 +81,8 @@ bootCommerce.quantityInput = function(options) {
         })
     };
     this.changeTotalPrice = function () {
-        var This = this;
+
         this.subTotal = 0;
-        this.currentIdIndex = this.spstr[this.spstr.length - 1];
         this.singlePrice = $('#basketOrderItem' + this.currentIdIndex).find('.basketQuantitySinglePrice span').html();
         this.totalPrice = (parseFloat(this.singlePrice)) * this.value;
         $('#basketOrderItem' + this.currentIdIndex).find('.basketQuantityTotalPrice span').html(this.totalPrice.toFixed(2));
@@ -108,24 +108,115 @@ bootCommerce.quantityInput = function(options) {
             }
         });
     };
-    this.checkPromotionalCode=function(){
-        var This=this;
+    this.removeBasketItem=function(){
+        $(".basketProductRemove").each(function(i){
+            $(this).on('click',function(){
+                This.currentIdIndex=$(this).parent().parent().attr('id').replace(/[^0-9]/ig,"");
+                $("#basketOrderItem"+This.currentIdIndex).remove();
+                This.changeTotalPrice();
+            })
+        })
+    }
+
+};
+var Fake_data={};
+bootCommerce.Basket.checkPromotionalCode = function(){
+        "use strict";
         $(".promotionalCode button").on('click',function(){
-            This.promotionalCode=$(".promotionalCode input").val();
             $.ajax({
-                type: "GET",
+                type: "post",
                 url: "test.json",
-                data: {promotionalCode:This.promotionalCode},
+                data: {
+                    promotionalCode:$(".promotionalCode input[type=text]").val()},
                 dataType: "json",
                 success: function (data) {
                     // TODO
+                    if(data){
+
+                    }
                 },
                 error: function () {
                     // TODO
                 }
             });
         });
+};
+bootCommerce.Basket.basketOperationButton=function(options){
+    "use strict";
+    /* properties */
+    this.defaults = {
+       saveBasketAjax:false
+    };
+    this.settings = $.extend({}, this.defaults, options);
+    /*initialize*/
+    var This = this;
+    this.init = function () {
+        this.saveBasketAjax=true;
+        this.emptyBasketAjax=true;
+        this.checkOutAjax=true;
+        this.saveBasket();
+        this.EmptyBasket();
+        this.checkOut();
+    };
+    this.saveBasket=function(){
+        $(".basketOrderBtn .basketSaveBtn").on('click',function(){
+            if(This.saveBasketAjax){
+                $.ajax({
+                    type : "get",
+                    async:false,
+                    url : "http://www.baidu.com/ur/submit/urreward",
+                    dataType : "jsonp",
+                    success : function(data){
+                        //TODO
+                    },
+                    error:function(){
+                        //TODO
+                    }
+                });
+            }else{
 
+            }
+        })
+    };
+    this.EmptyBasket=function(){
+        $(".basketOrderBtn .basketEmptyBtn").on('click',function(){
+            if(This.emptyBasketAjax){
+                $.ajax({
+                    type : "get",
+                    async:false,
+                    url : "http://www.baidu.com/ur/submit/urreward",
+                    dataType : "jsonp",
+                    success : function(data){
+                        //TODO
+                    },
+                    error:function(){
+                        //TODO
+                    }
+                });
+            }else{
+
+            }
+        })
+    };
+    this.checkOut=function(){
+        $(".basketOrderBtn .basketEmptyBtn").on('click',function(){
+            if(This.checkOutAjax){
+                $.ajax({
+                    type : "get",
+                    async:false,
+                    url : "http://www.baidu.com/ur/submit/urreward",
+                    dataType : "jsonp",
+                    success : function(data){
+                        //TODO
+                    },
+                    error:function(){
+                        //TODO
+                    }
+                });
+            }else{
+
+            }
+        })
     }
 };
 
