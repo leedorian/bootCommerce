@@ -38,6 +38,6 @@ bootCommerce.Utils = {
             context = data;
         }
         return template(context);
-    },
+    }
 
 }
