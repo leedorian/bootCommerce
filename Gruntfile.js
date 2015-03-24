@@ -339,6 +339,7 @@ module.exports = function (grunt) {
                 port: 7272,
                 host: "127.0.0.1",
                 reloadDelay: 2000,
+                reloadOnRestart: false,
                 browser: ["chrome", "firefox"]
             }
         }
