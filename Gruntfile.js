@@ -34,7 +34,7 @@ module.exports = function (grunt) {
         ["pagination.html", "Pagination"],
         ["product_filter_checkbox.html", "Product filter checklist"],
         ["product_filter_removable.html", "Product filter removeable"],
-        ["product-image-viewer.html", "Image viewer"],
+        ["image_viewer.html", "Image viewer"],
         ["product-list-horizontal.html", "Products list view"],
         ["product-list-vertical.html", "Products thumbnail view"],
         ["product-option.html", "Product swatch"],

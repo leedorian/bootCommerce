@@ -75,6 +75,7 @@
                         //Vertical products carousel
 
                         //Image viewer
+                        bootCommerce.ImageViewer();
 
                         //Mini basket
 

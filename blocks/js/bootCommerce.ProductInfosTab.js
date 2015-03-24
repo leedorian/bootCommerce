@@ -23,12 +23,12 @@ bootCommerce.ProductInfosTab = function () {
         switch (e.keyCode) {
         case 37:
             if ($(this).prev().size() > 0) {
-                $(this).prev().find('a').focus().tab("show");
+                $(this).prev().find("a").focus().tab("show");
             }
             break;
         case 39:
             if ($(this).next().size() > 0) {
-                $(this).next().find('a').focus().tab("show");
+                $(this).next().find("a").focus().tab("show");
             }
             break;
         default:

@@ -3,7 +3,13 @@
  * @author Jack
  */
 
-/*global bootCommerce, $, console */
+/*global bootCommerce, $, console, Handlebars */
+
+Handlebars.registerHelper('searchTermBold', function(term, options) {
+    "use strict";
+    return options.fn(this).replace(new RegExp("(>[^<]*)(" + term + ")([^>]*<)", "gi"), "$1<strong>$2</strong>$3");
+});
+
 bootCommerce.Search = function (options) {
     "use strict";
     /* properties */
@@ -12,264 +18,169 @@ bootCommerce.Search = function (options) {
         suggestionCon: "",
         keywordInput: "",
         searchForm: "",
-        container: ""
+        container: "",
+        development: true
     };
+    /**
+    *   for development
+    *   sample data
+    */
+    this.fakeData = {
+        header: "Suggest keywords",
+        term: "pipe",
+        keywords: [
+            "Pipe",
+            "pipe plugs",
+            "pipe end",
+            "pipe caps",
+            "pipe end plugs",
+            "pipe cap"
+        ],
+        Category: [
+            {
+                title: "flexible pipe caps",
+                url: "http://uk.essentracomponents.com/shop/en-GB/essentracomponentsuk/flexible-pipe-caps-18052-44",
+                name: "Caps &amp; Plugs &gt; Pipe &amp; Flange Protection Caps &gt; Pipe Caps &gt; Flexible Pipe Caps"
+            },
+            {
+                title: "flexible pipe caps",
+                url: "http://uk.essentracomponents.com/shop/en-GB/essentracomponentsuk/flexible-pipe-caps-18086-44",
+                name: "Caps &amp; Plugs &gt; Push Fit Caps &gt; Pipe Caps &gt; Flexible Pipe Caps"
+            }
+        ],
+        Brand: [
+        ]
+    };
+
     this.settings = $.extend({}, this.defaults, options);
-
-    /**
-     * This variable controls the timer handler before triggering the autoSuggest.  If the user types fast, intermittent requests will be cancelled.
-     * The value is initialized to -1.
-     * @type {object}
-     * @memberof bootCommerce.Search
-     */
+    this.inputVal = "";
+    this.suggestDivShow = false;
+    this.doDynamicSuggest = true;
+    this.oldInputVal = "";
     this.autoSuggestTimer = -1;
-    /**
-     * This variable controls the delay of the timer in milliseconds between the keystrokes before firing the search request.
-     * The value is initialized to 250.
-     * @type {number}
-     * @memberof bootCommerce.Search
-     */
     this.autoSuggestKeystrokeDelay = 250;
-    /**
-     * This variable stores the URL of currently selected static autosuggest recommendation
-     * The value is initialized to empty string.
-     * @type {string}
-     * @memberof bootCommerce.Search
-     */
-    this.autoSuggestURL = "";
-    /**
-     * This variable indicates whether a the cached suggestions have been retrieved.
-     * The value is initialized to false.
-     * @type {boolean}
-     * @memberof bootCommerce.Search
-     */
-    this.retrievedCachedSuggestions = false;
-
-    /**
-     * This variable sets the total number of static autosuggest recommendations used for each static category/grouping.
-     * The value is initialized to 4.
-     * @type {number}
-     * @memberof bootCommerce.Search
-     */
-    this.totalSuggested = 4;
-
-    /**
-     * This variable sets the total number of previous search history terms.
-     * The value is initialized to 2.
-     * @type {number}
-     * @memberof bootCommerce.Search
-     */
-    this.totalHistory = 2;
-
-    /**
-     * This variable controls when to trigger the auto suggest box.  The number of characters greater than this threshold will trigger the auto suggest functionality.
-     * The static/cached auto suggest will be performed if this threshold is exceeded.
-     * The value is initialized to 1.
-     * @type {number}
-     * @memberof bootCommerce.Search
-     */
-    this.autoSuggestThresHold = 1;
-
-    /**
-     * This variable controls when to trigger the dynamic auto suggest.  The number of characters greater than this threshold will trigger the request for keyword search.
-     * The static/cached auto suggest will be be displayed if the characters exceed the above config parameter, but exceeding this threshold will additionally perform the dynamic search to add to the results in the static/cached results.
-     * This value should be greater or equal than the AUTOSUGGEST_THRESHOLD, as the dynamic autosuggest is secondary to the static/cached auto suggest.
-     * The value is initialized to 1.
-     * @type {number}
-     * @memberof bootCommerce.Search
-     */
-    this.dynamicAutoSuggestThresHold = 1;
-    /**
-     * This variable stores the old search term used in the auto suggest search box
-     * The value is initialized to empty string.
-     * @type {string}
-     * @memberof bootCommerce.Search
-     */
-    this.autoSuggestPreviousTerm = "";
-    /**
-     * This variable stores static catetory and brand result
-     * @type {object}
-     * @memberof bootCommerce.Search
-     */
-    this.cachedSuggestions = {};
-    /**
-     * whether has static cached result
-     * @type {boolean}
-     * @memberof bootCommerce.Search
-     */
-    this.hasCachedResult = false;
-    /**
-     * whether has dynamic result
-     * @type {boolean}
-     * @memberof bootCommerce.Search
-     */
-    this.hasDynamicResult = false;
-    /**
-     * whether auto suggestion is open
-     * @type {boolean}
-     * @memberof bootCommerce.Search
-     */
-    this.asgDisplay = false;
-
     var _that = this;
 
-    console.log(this.settings);
-
     $(this.settings.keywordInput).on("keypress.search", function(e) {
-        if (e.which === 13){
+
+        if (e.keyCode === 13) {
             e.preventDefault();
-            if (_that.autoSuggestURL !== "") {
-                window.location.href = _that.autoSuggestURL;
-            } else {
-                $(_that.settings.container).find("form")[0].submit();
-            }
         }
-    }).on("keyup.search", function(e){
-        var searchTerm = $(_that.settings.keywordInput).val();
-        if (searchTerm !== "") {
-            switch (e.which) {
+    })
+    $(this.settings.keywordInput).on("keyup.search", function(e) {
+        _that.inputVal = $(this).val();
+        if (_that.inputVal.length >= 2) {
+
+            switch (e.keyCode) {
                 case 38:
-                    _that.highlightResult('up');
-                    return;
-
+                    _that.highlight("up");
+                    break;
                 case 40:
-                    _that.highlightResult('down');
-                    return;
-
+                    _that.highlight("down");
+                    break;
                 case 27:
+                    _that.clearResult();
+                    break;
                 case 13:
-                    _that.toggleAutoSuggest(false);
-                    return;
+                    _that.doSearchSumbit();
+                    break;
                 default:
-            }
+                    if (_that.oldInputVal !== _that.inputVal) {
 
-            if (searchTerm.length > _that.autoSuggestThresHold && searchTerm === _that.autoSuggestPreviousTerm) {
-                return;
-            }
-            else {
-                _that.autoSuggestPreviousTerm = searchTerm;
-            }
+                        _that.getResult(_that.inputVal);
 
-            if (searchTerm.length > _that.dynamicAutoSuggestThresHold) {
-                _that.doDynamicAutoSuggest(searchTerm);
-            }else {
-                // clear the dynamic results
-                $(_that.settings.suggestionCon).find(".autoSuggestKeywords").html("");
-                _that.hasDynamicResult = false;
+                        _that.oldInputVal = _that.inputVal;
+                    }
             }
         } else {
-            _that.clearAutoSuggestResults();
+            _that.clearResult();
+            _that.oldInputVal = _that.inputVal;
         }
     });
+};
 
-    this.highlightResult = function(control) {
-        console.log(control);
+bootCommerce.Search.prototype.getResult = function(keyword) {
+    "use strict";
+    var _that = this;
+
+    if (this.autoSuggestTimer !== -1) {
+        clearTimeout(this.autoSuggestTimer);
+        //this.autoSuggestTimer = -1;
     }
 
-    /**
-     * Display or hide suggestion drop down
-     * @function toggleAutoSuggest
-     * @memberof Essentra.autoSuggest
-     * @param {boolean} display - if true, show the drop down, false hide.
-     */
-    this.toggleAutoSuggest = function(display) {
-        if (display) {
-            $(this.settings.suggestionCon).show();
-            this.asgDisplay = true;
+    this.autoSuggestTimer = setTimeout(function() {
+        //console.log('call Timeout:', _that.autoSuggestTimer);
+        if (_that.settings.development) {
+            _that.showResult(_that.fakeData);
         } else {
-            console.log(this.settings);
-            $(this.settings.suggestionCon).hide();
-            this.asgDisplay = false;
-            this.autoSuggestURL = "";
+        //do ajax
+            console.log('do ajax');
         }
-    };
+        _that.autoSuggestTimer = -1;
+    }, _that.autoSuggestKeystrokeDelay);
 
-    /**
-     * Clear the results, and hide the drop down
-     * @function clearAutoSuggestResults
-     * @memberof bootCommerce.autoSuggest
-     */
-    this.clearAutoSuggestResults = function() {
-        // clear the static search results.
-        $(this.settings.suggestionCon).find(".autoSuggestCategory").html("");
-        //$("#autoSuggestHistory").html("");
-        this.autoSuggestPreviousTerm = "";
+    //console.log('regist Timeout:', this.autoSuggestTimer);
+};
 
-        // clear the dynamic search results;
-        $(this.settings.suggestionCon).find(".autoSuggestKeywords").html("");
-        this.toggleAutoSuggest(false);
-    };
+bootCommerce.Search.prototype.toggleSuggestDiv = function(control) {
+    "use strict";
+    if (control) {
+        $(this.settings.suggestionCon).show();
+    } else {
+        $(this.settings.suggestionCon).hide();
+    }
+}
 
-    /**
-     * get suggested keywords and show them in drop down
-     * @function doDynamicAutoSuggest
-     * @memberof Essentra.autoSuggest
-     * @param {string} searchTerm - search term
-     */
-    this.doDynamicAutoSuggest = function (searchTerm) {
-        console.log(searchTerm);
-        // if pending autosuggest triggered, cancel it.
-        if (_that.autoSuggestTimer != -1) {
-            clearTimeout(that.autoSuggestTimer);
-            _that.autoSuggestTimer = -1;
+bootCommerce.Search.prototype.showResult = function(result) {
+    "use strict";
+    var keyowrdHtml = bootCommerce.Utils.template("#tempBcSearchAutoSugTerm", result);
+    var categoryHtml = bootCommerce.Utils.template("#tempBcSearchAutoSugCat", result);
+    $(this.settings.suggestionCon).find(".autoSuggestKeywords").html(keyowrdHtml);
+    $(this.settings.suggestionCon).find(".autoSuggestCategory").html(categoryHtml);
+    this.toggleSuggestDiv(true);
+};
+
+bootCommerce.Search.prototype.highlight = function(control) {
+    "use strict";
+    var liItem = $(this.settings.suggestionCon).find("li");
+    var currentItem = liItem.filter(".active");
+    var index = liItem.index(currentItem);
+
+    if (control === "up") {
+        console.log(this.inputVal);
+        if (index <= 0) {
+            index = liItem.length;
         }
-        $(_that.settings.suggestionCon).find(".autoSuggestKeywords").html("");
+        index--;
+    } else {
+        if (index === liItem.length - 1) {
+            index = -1;
+        }
+        index++;
+    }
+    currentItem.removeClass("active");
+    currentItem = liItem.eq(index).addClass("active");
+    if (currentItem.closest('.autoSuggestCategory').size() === 0) {
+        $(this.settings.keywordInput).val(currentItem.text());
+    } else {
+        $(this.settings.keywordInput).val(this.oldInputVal);
+    }
+};
 
-        // call the auto suggest
-        _that.autoSuggestTimer = setTimeout(function() {
-            $.post(that.settings.SearchAutoSuggestServletURL+ "&term=" + escape(searchTerm)+ "&showHeader=true",{
-                requesttype:"ajax"
-            },function(result){
-                var header = "";
-                if(result.header){
-                    header = snowFlake.helper.strCon('<h5>',result.header,'</h5>');
-                }
-                if(result.keywords && result.keywords.length > 0){
-                    var ullist = "<ul>";
-                    var list = "";
-                    for(var i = 0;i<result.keywords.length;i++){
-                        //var searchName = result.term;
-                        var searchTermLower = result.term.toLowerCase();
-                        var displayName = result.keywords[i];
-                        var index = displayName.toLowerCase().indexOf(searchTermLower);
-                        if(index != -1) {
-                            list = snowFlake.helper.strCon(list,'<li><a href="#" data-keyword="',displayName,'">', displayName.substr(0, index) , '<strong>' , displayName.substr(index, searchTerm.length) , "</strong>" , displayName.substr(index + searchTerm.length),'</a></li>');
-                        }
-                    }
-                    if(list !==""){
-                        ullist = ullist+list + "</ul>";
-                        $("#autoSuggestDynamic_Result_div").html(header+ullist);
-                        that.hasDynamicResult = true;
-                    }else{
-                        that.hasDynamicResult = false;
-                        $("#autoSuggestDynamic_Result_div").html("");
-                    }
-                }else{
-                    that.hasDynamicResult = false;
-                }
-                if(result.Category){
-                    that.cachedSuggestions.Category = result.Category;
-                }
-                if(result.Brand){
-                    that.cachedSuggestions.Brand = result.Brand;
-                }
-                if(result.Articles){
-                    that.cachedSuggestions.Articles = result.Articles;
-                }
-                if(searchTerm.length > that.AUTOSUGGEST_THRESHOLD) {
-                    that.doStaticAutoSuggest(searchTerm);
-                }else{
-                    for (var i = 1; i <=3; i++) {
-                        $("#autoSuggestStatic_"+i).html("");
-                    }
-                    $("#autoSuggestHistory").html("");
-                    that.hasCachedResult = false;
-                }
-                that.checkAutoSuggest();
+bootCommerce.Search.prototype.clearResult = function() {
+    "use strict";
+    $(this.settings.suggestionCon).find(".autoSuggestKeywords").html("");
+    $(this.settings.suggestionCon).find(".autoSuggestCategory").html("");
+    $(this.settings.suggestionCon).hide();
+};
 
-            },"json");
-            that.autoSuggestTimer = -1;
-        }, _that.autoSuggestKeystrokeDelay);
-    };
-
+bootCommerce.Search.prototype.doSearchSumbit = function() {
+    "use strict";
+    var keyword = $(this.settings.suggestionCon).find(".active a");
+    if (keyword.length !== 0 && keyword.attr("href") !== "") {
+        window.location.href = keyword.attr("href");
+    } else {
+        //console.log($(this.settings.container).find("form"));
+        $(this.settings.container).find("form")[0].submit();
+    }
 };
