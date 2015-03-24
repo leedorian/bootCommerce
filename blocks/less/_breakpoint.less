@@ -1,18 +1,38 @@
-// =============================================
-// Mixin - Breakpoint
-// =============================================
+/**
+ * Mixin - Breakpoint
+ *
+ * @author Lionel Dong
+ */
 
-.bp(max, @value, @content) {
+ /**
+ * These should be used with the bp (max-width, xx) mixin
+ * where a min-width is used, remember to +1 to break correctly
+ */
+
+@xsmall: 479px;
+@small: 599px;
+@medium: 770px;
+@large: 979px;
+@xlarge: 1199px;
+
+/**
+ * set a max-width/min-width/both media query
+ *
+ * @param {string} max | min | range
+ * @param {string} @maxValue, @minValue, {number}px
+ * @param {string} @content The style's block
+ */
+.bp(max, @maxValue, @content) {
     @media only screen {
-        @media (max-width: @value) {
+        @media (max-width: @maxValue) {
             @content();
         }
     }
 }
 
-.bp(min, @value, @content) {
+.bp(min, @minValue, @content) {
     @media only screen {
-        @media (min-width: @value) {
+        @media (min-width: @minValue) {
             @content();
         }
     }
@@ -66,7 +86,7 @@
 //}
 //
 // output:
-//@media only screen and (min-width: 640px) and (min-width: 768px) {
+//@media only screen and (min-width: 640px) and (max-width: 768px) {
 //  .content div {
 //    color: #888;
 //  }

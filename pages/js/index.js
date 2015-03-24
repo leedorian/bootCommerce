@@ -28,7 +28,7 @@
                 that.loadHtmlFragment(muduleName);
             });
             //side bar
-            jQuery("body").on("click", function (e) {
+            jQuery(document).on("click", function (e) {
                 if (jQuery(e.target).parents(".masthead").size() === 0) {
                     that.toggleSideBar();
                 } else {
@@ -75,6 +75,7 @@
                         //Vertical products carousel
 
                         //Image viewer
+                        bootCommerce.ImageViewer();
 
                         //Mini basket
 
