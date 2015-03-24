@@ -39,7 +39,7 @@ bootCommerce.ImageViewer = function(conf) {
             lensOffset.top = e.pageY - boothOffset.top - lensHeight / 2;
         }
         $imageViewerLens.css(lensOffset);
-        $imageViewerOverlayImg.css({marginTop: - lensOffset.top * 2, marginLeft: - lensOffset.left * 2});
+        $imageViewerOverlayImg.css({ marginTop: -lensOffset.top * 2, marginLeft: -lensOffset.left * 2 });
     }).on("mouseenter.ImageViewer", ".imageViewerBooth", function(e) {
         $(this).find(".imageViewerOverlay").show();
     }).on("mouseleave.ImageViewer", ".imageViewerBooth", function(e) {
