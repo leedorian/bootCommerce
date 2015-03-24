@@ -21,20 +21,8 @@
     <div class="siteSearchBarAutoSuggest">
         <div class="autoSuggestBox">
             <div class="autoSuggestKeywords">
-                <h2>Suggested keywords</h2>
-                <ul>
-                    <li><a href=""><span>shirt</span></a></li>
-                    <li><a href=""><span>shirt</span> tee</a></li>
-                    <li><a href="">span>shirt</span>s</a></li>
-                    <li><a href=""><span>shirt</span> teesh</a></li>
-                </ul>
             </div>
             <div class="autoSuggestCategory">
-                <h2>Category</h2>
-                <ul>
-                    <li><a href="">Womens>Fashion Tops & <span>shirt</span></a></li>
-                    <li><a href="">Womens>Fashion Tops & <span>shirt</span></a></li>
-                </ul>
             </div>
             <div class="autoSuggestViewAll">
                 <a href="">View all result</a>
@@ -42,9 +30,32 @@
         </div>
     </div>
 </div>
-<script id="tempBcSearchAutoSug" type="text/x-handlebars-template">
+
+<script id="tempBcSearchAutoSugTerm" type="text/x-handlebars-template">
+    <h2>{{header}}</h2>
     <ul>
-        {{t}}
+    {{#searchTermBold term}}
+    {{#each keywords}}
+        <li><a href='' data-keyword='{{this}}'>{{this}}</a></li>
+    {{/each}}
+    {{/searchTermBold}}
     </ul>
 </script>
+
+<script id="tempBcSearchAutoSugCat" type="text/x-handlebars-template">
+    <h2>Suggest Category</h2>
+    <ul>
+    {{#searchTermBold term}}
+    {{#each Category}}
+        <li><a href="{{url}}">{{{name}}}</a></li>
+    {{/each}}
+    {{/searchTermBold}}
+    </ul>
+</script>
+
+
+<script id="temBcSearchAutoSug" type="text/x-handlebars-template">
+    <h2>{{header}}</h2>
+</script>
+
 <!-- End product search box -->
