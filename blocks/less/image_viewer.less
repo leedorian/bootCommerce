@@ -7,7 +7,55 @@
         width: 100%;
     }
     .imageViewerBooth {
+        position: relative;
         margin-bottom: 6px;
+
+        &:hover {
+            cursor: move;
+
+            .imageViewerZoom {
+                display: none;
+            }
+
+            .imageViewerLens {
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 50%;
+                height: 50%;
+                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAMAAABFaP0WAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAGUExURT1uzv///62t27cAAAACdFJOU/8A5bcwSgAAABBJREFUeNpiYGBkYGQECDAAAA0ABMZIs2EAAAAASUVORK5CYII=);
+            }
+        }
+
+        .imageViewerZoom {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: #fff;
+            opacity: .6;
+            color: #333;
+            font-size: 18px;
+            height: 30px;
+            line-height: 30px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .imageViewerOverlay {
+            display: none;
+            left: 100%;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            margin-left: 10px;
+            overflow: hidden;
+
+            img {
+                width: 200%;
+                height: 200%;
+            }
+        }
     }
     .imageViewerThumb {
         ul {
