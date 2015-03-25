@@ -39,7 +39,7 @@ module.exports = function (grunt) {
         ["product-list-vertical.html", "Products thumbnail view"],
         ["product-option.html", "Product swatch"],
         ["promotionalCode.html", "Promotional code"],
-        ["quick-info.html", "Quick info box"],
+        ["quick_info.html", "Quick info box"],
         ["search.html", "Product search"],
         ["store_locator.html", "Store locator"],
         ["store_locator_detail.html", "Store locator detail"],
