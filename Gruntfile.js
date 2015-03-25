@@ -312,13 +312,9 @@ module.exports = function (grunt) {
                 files: ['blocks/js/*.js', 'pages/js/*.js'],
                 tasks: ['dist-js']
             },
-            blocks: {
-                files: ['blocks/*.html'],
-                tasks: ['processhtml:blocks']
-            },
-            pages: {
-                files: ['pages/*.html', 'pages/includes/**/*.html'],
-                tasks: ['processhtml:pages']
+            html: {
+                files: ['blocks/*.html','pages/*.html', 'pages/includes/**/*.html'],
+                tasks: ['processhtml:blocks','processhtml:pages']
             }
         },
         browserSync: {
