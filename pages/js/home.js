@@ -71,8 +71,17 @@
                         });
 
                         //Horizontal products carousel
-
+                        var horizontalCarousel=  new bootCommerce.Carousel({
+                            containerId:'#carouselProductCrosswise',
+                            autoPlay: true,
+                            intervalTime: 3000
+                        });
                         //Vertical products carousel
+                        var verticalCarousel=  new bootCommerce.Carousel({
+                            containerId:'#carouselVerticalSection',
+                            autoPlay: false,
+                            intervalTime: 4000
+                        });
 
                         //Image viewer
 
@@ -83,12 +92,21 @@
                         //Quick info box
 
                         //Slide show
-
+                        var slideShow=  new bootCommerce.Carousel({
+                            containerId:'#carouselSlide',
+                            autoPlay: true,
+                            intervalTime: 3000
+                        });
                         //Product infos tab
                         bootCommerce.ProductInfosTab();
 
                         //Basket with items
                         bootCommerce.Basket();
+
+                        //Product filter removeable
+                        bootCommerce.FilterRemoveable();
+                        //Product filter checkList
+                        bootCommerce.FilterChecklist();
                     }
                 },
                 error: function () {

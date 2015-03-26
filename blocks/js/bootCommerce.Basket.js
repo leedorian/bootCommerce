@@ -25,7 +25,6 @@ bootCommerce.Basket.quantityInput = function(options) {
     this.defaults = {
         container: "",
         containerInput: ""
-
     };
     this.settings = $.extend({}, this.defaults, options);
     /*initialize*/
@@ -38,7 +37,8 @@ bootCommerce.Basket.quantityInput = function(options) {
         this.currentIdIndex = '';
         this.setIdName();
         this.calculate();
-        this.removeBasketItem();
+        this.removeBasketItem('.basketProductRemove');
+        this.removeBasketItem('.basketMoveWishList');
     };
     var This = this;
     this.setIdName = function () {
@@ -94,22 +94,9 @@ bootCommerce.Basket.quantityInput = function(options) {
         this.savePrice = parseFloat($(".basketOrderTotal .SavePrice span").html());
         $(".basketOrderTotal .payPrice span").html((this.subTotal - this.savePrice).toFixed(2));
     };
-    this.checkQty = function (langId, storeId, catalogId) {
-        $.ajax({
-            type: "GET",
-            url: "test.json",
-            data: {langId: langId, storeId: storeId, catalogId: catalogId},
-            dataType: "json",
-            success: function (data) {
-                // TODO
-            },
-            error: function () {
-                // TODO
-            }
-        });
-    };
-    this.removeBasketItem=function(){
-        $(".basketProductRemove").each(function(i){
+
+    this.removeBasketItem=function(removeName){
+        $(removeName).each(function(i){
             $(this).on('click',function(){
                 This.currentIdIndex=$(this).parent().parent().attr('id').replace(/[^0-9]/ig,"");
                 $("#basketOrderItem"+This.currentIdIndex).remove();
@@ -119,26 +106,10 @@ bootCommerce.Basket.quantityInput = function(options) {
     }
 
 };
-var Fake_data={};
 bootCommerce.Basket.checkPromotionalCode = function(){
         "use strict";
         $(".promotionalCode button").on('click',function(){
-            $.ajax({
-                type: "post",
-                url: "test.json",
-                data: {
-                    promotionalCode:$(".promotionalCode input[type=text]").val()},
-                dataType: "json",
-                success: function (data) {
-                    // TODO
-                    if(data){
-
-                    }
-                },
-                error: function () {
-                    // TODO
-                }
-            });
+            //ToDo
         });
 };
 bootCommerce.Basket.basketOperationButton=function(options){
@@ -161,58 +132,26 @@ bootCommerce.Basket.basketOperationButton=function(options){
     this.saveBasket=function(){
         $(".basketOrderBtn .basketSaveBtn").on('click',function(){
             if(This.saveBasketAjax){
-                $.ajax({
-                    type : "get",
-                    async:false,
-                    url : "http://www.baidu.com/ur/submit/urreward",
-                    dataType : "jsonp",
-                    success : function(data){
-                        //TODO
-                    },
-                    error:function(){
-                        //TODO
-                    }
-                });
+                //ajax request
             }else{
-
+                //form submit
             }
         })
     };
     this.EmptyBasket=function(){
         $(".basketOrderBtn .basketEmptyBtn").on('click',function(){
             if(This.emptyBasketAjax){
-                $.ajax({
-                    type : "get",
-                    async:false,
-                    url : "http://www.baidu.com/ur/submit/urreward",
-                    dataType : "jsonp",
-                    success : function(data){
-                        //TODO
-                    },
-                    error:function(){
-                        //TODO
-                    }
-                });
-            }else{
+                //ajax request
 
+            }else{
+                //form submit
             }
         })
     };
     this.checkOut=function(){
         $(".basketOrderBtn .basketEmptyBtn").on('click',function(){
             if(This.checkOutAjax){
-                $.ajax({
-                    type : "get",
-                    async:false,
-                    url : "http://www.baidu.com/ur/submit/urreward",
-                    dataType : "jsonp",
-                    success : function(data){
-                        //TODO
-                    },
-                    error:function(){
-                        //TODO
-                    }
-                });
+                //ajax request
             }else{
 
             }
