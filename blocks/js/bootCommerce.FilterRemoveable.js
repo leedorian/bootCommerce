@@ -11,10 +11,7 @@ bootCommerce.FilterRemoveable =function() {
         removeContainer:'.productRemovableList',
         allRemoveClickContainer:'.productFilterRemovableTitle'
     });
-    new bootCommerce.FilterRemoveable.CascadingPane({
-        showContainerOne:'#collapseOne',
-        containerOne:'#collapseTwo'
-    }).init();
+    bootCommerce.FilterRemoveable.CascadingPane();
 
 };
 bootCommerce.FilterRemoveable.FilterRemoveablePanel = function(options){
@@ -23,41 +20,36 @@ bootCommerce.FilterRemoveable.FilterRemoveablePanel = function(options){
         removeContainer:'',
         allRemoveClickContainer:''
     };
-    var This=this;
     this.settings = $.extend({}, this.defaults, options);
+    this.removeFn();
+
+};
+bootCommerce.FilterRemoveable.FilterRemoveablePanel.prototype.removeFn=function(){
+    "use strict";
+    var _that=this;
     $(this.settings.removeContainer).find("button").each(function(i){
-        $(This.settings.removeContainer).find("button").eq(i).on('click',(function(){
+        $(_that.settings.removeContainer).find("button").eq(i).on('click',(function(){
             $(this).parent().remove();
         }))
     });
     $(this.settings.allRemoveClickContainer).find("button").on('click',function(){
-        $(This.settings.removeContainer).find("li").remove();
+        $(_that.settings.removeContainer).find("li").remove();
     })
 };
-bootCommerce.FilterRemoveable.CascadingPane = function(options){
+bootCommerce.FilterRemoveable.CascadingPane = function(){
     "use strict";
-    this.defaults = {
-        showContainerOne:'',
-        containerOne:''
-    };
-    this.settings = $.extend({}, this.defaults, options);
-    this.init=function(){
-        $(this.settings.showContainerOne).collapse({
-            toggle: true
-        });
-        $(".panel-title").find('a').on('click',function(){
-            $(".panel-collapse").collapse('show');
+    $("#collapseOne").collapse({
+        toggle: true
+    });
+    $(".panel-title").find('a').on('click',function(){
+        $('.panel-collapse' ).collapse('hide');
+        if($(this).is('.fa-caret-down')){
+            $(this).removeClass("fa-caret-down").addClass("fa-caret-right");
             $($(this).attr('href')).collapse('toggle');
-        });
-        this.setCaret(this.settings.showContainerOne);
-        this.setCaret(this.settings.containerOne);
-    };
-    this.setCaret=function(obj){
-        $(obj).on('hidden.bs.collapse', function () {
-            $(this).prev().find('a').removeClass("fa-caret-down").addClass("fa-caret-right");
-        });
-        $(obj).on('show.bs.collapse', function () {
-            $(this).prev().find('a').removeClass("fa-caret-right").addClass("fa-caret-down");
-        });
-    };
+        }else{
+            $(this).removeClass("fa-caret-right").addClass("fa-caret-down");
+            $($(this).attr('href')).collapse('show');
+        }
+    });
 };
+

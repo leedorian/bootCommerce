@@ -7,19 +7,18 @@
 /* global basket */
 
 bootCommerce.Basket =function() {
-       new bootCommerce.Basket.quantityInput({
+    new bootCommerce.Basket.orderItem({
         container:'.basketOrderTable .basketOrderItem',
         containerInput:'.basketOrderTable .basketQuantityOperation'
-        }).init();
-        bootCommerce.Basket.checkPromotionalCode();
+        });
+    bootCommerce.Basket.checkPromotionalCode();
     new bootCommerce.Basket.basketOperationButton({
         saveBasketAjax:true,
         emptyBasketAjax:true,
         checkOutAjax:true
-    }).init();
-
+    })
 };
-bootCommerce.Basket.quantityInput = function(options) {
+bootCommerce.Basket.orderItem = function(options) {
     "use strict";
     /* properties */
     this.defaults = {
@@ -28,84 +27,88 @@ bootCommerce.Basket.quantityInput = function(options) {
     };
     this.settings = $.extend({}, this.defaults, options);
     /*initialize*/
-    this.init = function () {
-        this.value = 0;
-        this.singlePrice = 0;
-        this.totalPrice = 0;
-        this.subTotal = 0;
-        this.savePrice = 0;
-        this.currentIdIndex = '';
-        this.setIdName();
-        this.calculate();
-        this.removeBasketItem('.basketProductRemove');
-        this.removeBasketItem('.basketMoveWishList');
-    };
-    var This = this;
-    this.setIdName = function () {
-        $(this.settings.containerInput).each(function (i) {
-            $(This.settings.containerInput).eq(i).attr('id', 'basketQty' + (i + 1));
-        });
-        $(this.settings.container).each(function (i) {
-            $(This.settings.container).eq(i).attr('id', 'basketOrderItem' + (i + 1));
-        });
-    };
-    this.calculate = function () {
-        /*reduce quantity*/
-        $(this.settings.containerInput).find('button:first').on('click', function () {
-            This.value = parseInt($(this).parent().find('input').val());
-            if (This.value > 1) {
-                This.value--;
-                $(this).parent().find('input').val(This.value);
-                This.currentIdIndex =$(this).parent().attr('id').replace(/[^0-9]/ig,"");
-                This.changeTotalPrice();
-            }
-        });
-        /*add quantity*/
-        $(this.settings.containerInput).find('button:last').on('click', function () {
-            This.value = parseInt($(this).parent().find('input').val());
-            This.value++;
-            $(this).parent().find('input').val(This.value);
-            This.currentIdIndex =$(this).parent().attr('id').replace(/[^0-9]/ig,"");
-            This.changeTotalPrice();
-        });
-        /*input quantity*/
-        $(this.settings.containerInput).find('input').on('keyup', function () {
-            This.value = $(this).val();
-            var re = This.value.match(/^[1-9]+\d*$/);
-            if (re || This.value == '') {
-                This.currentIdIndex =$(this).parent().attr('id').replace(/[^0-9]/ig,"");                This.changeTotalPrice();
-            } else {
-                alert('请输入数字');
-                return false;
-            }
-        })
-    };
-    this.changeTotalPrice = function () {
-
-        this.subTotal = 0;
-        this.singlePrice = $('#basketOrderItem' + this.currentIdIndex).find('.basketQuantitySinglePrice span').html();
-        this.totalPrice = (parseFloat(this.singlePrice)) * this.value;
-        $('#basketOrderItem' + this.currentIdIndex).find('.basketQuantityTotalPrice span').html(this.totalPrice.toFixed(2));
-        /*orderSubtotal*/
-        $(".basketQuantityTotalPrice").each(function (i) {
-            This.subTotal += parseFloat($(".basketQuantityTotalPrice span").eq(i).html());
-        });
-        $(".basketOrderTotal .orderSubtotal span").html(this.subTotal.toFixed(2));
-        this.savePrice = parseFloat($(".basketOrderTotal .SavePrice span").html());
-        $(".basketOrderTotal .payPrice span").html((this.subTotal - this.savePrice).toFixed(2));
-    };
-
-    this.removeBasketItem=function(removeName){
-        $(removeName).each(function(i){
-            $(this).on('click',function(){
-                This.currentIdIndex=$(this).parent().parent().attr('id').replace(/[^0-9]/ig,"");
-                $("#basketOrderItem"+This.currentIdIndex).remove();
-                This.changeTotalPrice();
-            })
-        })
-    }
-
+    this.inputValue = 0;
+    this.singlePrice = 0;
+    this.totalPrice = 0;
+    this.subTotal = 0;
+    this.savePrice = 0;
+    this.currentIdIndex = '';
+    this.setIdName();
+    this.calculate();
+    this.removeBasketItem('.basketProductRemove');
+    this.removeBasketItem('.basketMoveWishList');
 };
+bootCommerce.Basket.orderItem.prototype.setIdName=function(){
+    "use strict";
+    var _that=this;
+    $(this.settings.containerInput).each(function (i) {
+        $(_that.settings.containerInput).eq(i).attr('id', 'basketQty' + (i + 1));
+    });
+    $(this.settings.container).each(function (i) {
+        $(_that.settings.container).eq(i).attr('id', 'basketOrderItem' + (i + 1));
+    });
+};
+bootCommerce.Basket.orderItem.prototype.calculate = function () {
+    /*reduce quantity*/
+    "use strict";
+    var _that=this;
+    $(this.settings.containerInput).find('button:first').on('click', function () {
+        _that.inputValue = parseInt($(this).parent().find('input').val());
+        if (_that.inputValue > 1) {
+            _that.inputValue--;
+            $(this).parent().find('input').val(_that.inputValue);
+            _that.currentIdIndex =$(this).parent().attr('id').replace(/[^0-9]/ig,"");
+            _that.changeTotalPrice();
+        }
+    });
+    /*add quantity*/
+    $(this.settings.containerInput).find('button:last').on('click', function () {
+        _that.inputValue = parseInt($(this).parent().find('input').val());
+        _that.inputValue++;
+        $(this).parent().find('input').val(_that.inputValue);
+        _that.currentIdIndex =$(this).parent().attr('id').replace(/[^0-9]/ig,"");
+        _that.changeTotalPrice();
+    });
+    /*input quantity*/
+    $(this.settings.containerInput).find('input').on('keyup', function () {
+        _that.inputValue = $(this).val();
+        var re = _that.inputValue.match(/^[1-9]+\d*$/);
+        if (re || _that.inputValue == '') {
+            _that.currentIdIndex =$(this).parent().attr('id').replace(/[^0-9]/ig,"");                _that.changeTotalPrice();
+        } else {
+            alert('请输入数字');
+            return false;
+        }
+    })
+};
+bootCommerce.Basket.orderItem.prototype.changeTotalPrice = function () {
+    "use strict";
+    var _that=this;
+    this.subTotal = 0;
+    this.singlePrice = $('#basketOrderItem' + this.currentIdIndex).find('.basketQuantitySinglePrice span').html();
+    this.totalPrice = (parseFloat(this.singlePrice)) * this.inputValue;
+    $('#basketOrderItem' + this.currentIdIndex).find('.basketQuantityTotalPrice span').html(this.totalPrice.toFixed(2));
+    /*orderSubtotal*/
+    $(".basketQuantityTotalPrice").each(function (i) {
+        _that.subTotal += parseFloat($(".basketQuantityTotalPrice span").eq(i).html());
+    });
+    $(".basketOrderTotal .orderSubtotal span").html(this.subTotal.toFixed(2));
+    this.savePrice = parseFloat($(".basketOrderTotal .SavePrice span").html());
+    $(".basketOrderTotal .payPrice span").html((this.subTotal - this.savePrice).toFixed(2));
+};
+bootCommerce.Basket.orderItem.prototype.removeBasketItem=function(removeName){
+    "use strict";
+    var _that=this;
+    $(removeName).each(function(i){
+        $(this).on('click',function(){
+            _that.currentIdIndex=$(this).parent().parent().attr('id').replace(/[^0-9]/ig,"");
+            $("#basketOrderItem"+_that.currentIdIndex).remove();
+            _that.changeTotalPrice();
+        })
+    })
+};
+
+
 bootCommerce.Basket.checkPromotionalCode = function(){
         "use strict";
         $(".promotionalCode button").on('click',function(){
@@ -120,43 +123,48 @@ bootCommerce.Basket.basketOperationButton=function(options){
     };
     this.settings = $.extend({}, this.defaults, options);
     /*initialize*/
-    var This = this;
-    this.init = function () {
-        this.saveBasketAjax=true;
-        this.emptyBasketAjax=true;
-        this.checkOutAjax=true;
-        this.saveBasket();
-        this.EmptyBasket();
-        this.checkOut();
-    };
-    this.saveBasket=function(){
-        $(".basketOrderBtn .basketSaveBtn").on('click',function(){
-            if(This.saveBasketAjax){
-                //ajax request
-            }else{
-                //form submit
-            }
-        })
-    };
-    this.EmptyBasket=function(){
-        $(".basketOrderBtn .basketEmptyBtn").on('click',function(){
-            if(This.emptyBasketAjax){
-                //ajax request
+    this.saveBasketAjax=true;
+    this.emptyBasketAjax=true;
+    this.checkOutAjax=true;
+    this.saveBasket();
+    this.EmptyBasket();
+    this.checkOut();
 
-            }else{
-                //form submit
-            }
-        })
-    };
-    this.checkOut=function(){
-        $(".basketOrderBtn .basketEmptyBtn").on('click',function(){
-            if(This.checkOutAjax){
-                //ajax request
-            }else{
-
-            }
-        })
-    }
+};
+bootCommerce.Basket.basketOperationButton.prototype.saveBasket=function(){
+    "use strict";
+    var _that=this;
+    $(".basketSaveBtn").on('click',function(){
+        if(_that.saveBasketAjax){
+            //ajax request
+        }else{
+            //form submit
+        }
+        $(".basketOrderTable tbody tr").empty();
+    })
 };
 
+bootCommerce.Basket.basketOperationButton.prototype.EmptyBasket=function(){
+    "use strict";
+    var _that=this;
+    $(".basketEmptyBtn").on('click',function(){
+        if(_that.emptyBasketAjax){
+            //ajax request
+        }else{
+            //form submit
+        }
+        //window.location.href="blocks/basket_empty.html";
+    })
+};
+bootCommerce.Basket.basketOperationButton.prototype.checkOut=function(){
+    "use strict";
+    var _that=this;
+    $(".basketCheckOutBtn").on('click',function(){
+        if(_that.checkOutAjax){
+            //ajax request
+        }else{
+            //form submit
+        }
+    })
+};
 

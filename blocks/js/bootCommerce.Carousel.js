@@ -8,7 +8,7 @@
 
 bootCommerce.Carousel = function(options){
     "use strict";
-    var This=this;
+    var _that = this;
     this.defaults = {
         containerId:'',
         controlDirectionClassName:'.carouselControl',
@@ -29,15 +29,15 @@ bootCommerce.Carousel = function(options){
         });
     }
     $(this.settings.controlDirectionClassName).eq(0).on('click',function(){
-        $(This.settings.containerId).carousel('prev');
+        $(_that.settings.containerId).carousel('prev');
     });
     $(this.settings.controlDirectionClassName).eq(1).on('click',function(){
-        $(This.settings.containerId).carousel('next');
+        $(_that.settings.containerId).carousel('next');
     });
 
     $(this.settings.carouselIndicatorsClassName).find("li").each(function(i){
         $(this).on('click',function(){
-            $(This.settings.containerId).carousel(i);
+            $(_that.settings.containerId).carousel(i);
         });
     });
 };
