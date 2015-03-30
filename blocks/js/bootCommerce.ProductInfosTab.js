@@ -20,15 +20,22 @@ bootCommerce.ProductInfosTab = function () {
             .prev("dt")
             .addClass("current");
     }).on("keypress.ProductInfosTab", "li", function(e) {
+        var $thisPrev;
+        var $thisNext;
+
         switch (e.keyCode) {
         case 37:
-            if ($(this).prev().size() > 0) {
-                $(this).prev().find("a").focus().tab("show");
+            $thisPrev = $(this).prev();
+
+            if ($thisPrev.size() > 0) {
+                $thisPrev.find("a").focus().tab("show");
             }
             break;
         case 39:
-            if ($(this).next().size() > 0) {
-                $(this).next().find("a").focus().tab("show");
+            $thisNext = $(this).next();
+
+            if ($thisNext.size() > 0) {
+                $thisNext.find("a").focus().tab("show");
             }
             break;
         default:
