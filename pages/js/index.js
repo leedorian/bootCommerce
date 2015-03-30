@@ -112,7 +112,8 @@
                         //Product infos tab
                         bootCommerce.ProductInfosTab();
 
-                        //
+                        //store Locator
+                        bootCommerce.StorLocator();
                     }
                 },
                 error: function () {

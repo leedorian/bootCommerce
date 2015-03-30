@@ -1,0 +1,113 @@
+/**
+ * @author Jack Han
+ */
+
+.quickInfo {
+    .quickInfoTitle {
+        position: relative;
+        padding: 0 10px;
+        h2 {
+            display: inline-block;
+            margin: 0;
+            font-size: 16px;
+            line-height: 33px;
+        }
+        .close {
+            line-height: 1.1;
+            font-size: 30px;
+        }
+    }
+    .quickInfoContent {
+        .imageViewer {
+            float: left;
+            width: 50%;
+            padding: 10px;
+        }
+        .quickInfoProductBriefInfo {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            font-size: 13px;
+        }
+    }
+
+}
+
+.productBriefInfo {
+    h2,
+    h3 {
+        font-size: inherit;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+    .productBriefInfoDetails,
+    .productBriefInfoAttribute,
+    .productBriefInfoHandle {
+        border: 1px solid #eee;
+    }
+
+    .productBriefInfoHandle {
+        .form-inline{
+            margin-bottom: 15px;
+            .btn{
+                float: right;
+            }
+        }
+    }
+}
+
+.productOption {
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        float: left;
+        margin: 0 5px 5px 0;
+        span {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #fff;
+            line-height: 40px;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+    .available {
+        span {
+            border: 2px solid green;
+        }
+    }
+    .active {
+        span {
+            border: 2px solid red;
+        }
+    }
+    .unavailable {
+        span{
+            border: 2px solid grey;
+        }
+    }
+    li:hover {
+        span {
+            border: 2px solid red;
+        }
+    }
+    .unavailable:hover {
+        span {
+            border: 2px solid grey;
+        }
+    }
+
+    h3{
+        font-size: 13px;
+        font-weight: 700;
+    }
+}
+
+
+
+
+

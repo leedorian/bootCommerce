@@ -84,6 +84,7 @@
                         });
 
                         //Image viewer
+                        bootCommerce.ImageViewer();
 
                         //Mini basket
 
