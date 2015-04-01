@@ -1,21 +1,25 @@
 /**
- * Search box
+ * StorLocator blocks
  * @author Ivy
  */
 
 
-/* global carousel */
+/* global StorLocator */
 bootCommerce.StorLocator =function() {
     "use strict";
+    $(".findStoreBtn").on('click.StorLocator',function(){
+        //ToDo
+    });
     $(".cascadingPanelCollapse").each(function(i){
-        $(this).on('click',function(){
+        $(this).on('click.StorLocator',function(){
             $('.collapse' ).collapse('hide');
-            if($(this).find('span').is('.fa-caret-down')){
-                $(this).find('span').removeClass("fa-caret-down").addClass("fa-caret-right");
+            var spanContainer=$(this).find('span');
+            if(spanContainer.is('.fa-caret-down')){
+                spanContainer.removeClass("fa-caret-down").addClass("fa-caret-right");
                 $($(this).attr('href')).collapse('toggle');
             }else{
                 $($(this).attr('href')).collapse('show');
-                $(this).find('span').removeClass("fa-caret-right").addClass("fa-caret-down");
+                spanContainer.removeClass("fa-caret-right").addClass("fa-caret-down");
             }
         })
     })

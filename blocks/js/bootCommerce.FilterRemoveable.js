@@ -5,14 +5,14 @@
 
 
 /* global carousel */
-bootCommerce.FilterRemoveable =function() {
-    "use strict";
-    new bootCommerce.FilterRemoveable.FilterRemoveablePanel({
-        removeContainer:'.productRemovableList',
-        allRemoveClickContainer:'.productFilterRemovableTitle'
-    });
-    bootCommerce.FilterRemoveable.CascadingPane();
-
+bootCommerce.FilterRemoveable={
+    init:function(){
+        new bootCommerce.FilterRemoveable.FilterRemoveablePanel({
+            removeContainer:'.productRemovableList',
+            allRemoveClickContainer:'.productFilterRemovableTitle'
+        });
+        bootCommerce.FilterRemoveable.CascadingPane();
+    }
 };
 bootCommerce.FilterRemoveable.FilterRemoveablePanel = function(options){
     "use strict";
@@ -27,12 +27,13 @@ bootCommerce.FilterRemoveable.FilterRemoveablePanel = function(options){
 bootCommerce.FilterRemoveable.FilterRemoveablePanel.prototype.removeFn=function(){
     "use strict";
     var _that=this;
-    $(this.settings.removeContainer).find("button").each(function(i){
-        $(_that.settings.removeContainer).find("button").eq(i).on('click',(function(){
+    var buttonContainer= $(this.settings.removeContainer).find("button");
+    buttonContainer.each(function(i){
+        buttonContainer.eq(i).on('click.removeFn',(function(){
             $(this).parent().remove();
         }))
     });
-    $(this.settings.allRemoveClickContainer).find("button").on('click',function(){
+    $(this.settings.allRemoveClickContainer).find("button").on('click.removeFn',function(){
         $(_that.settings.removeContainer).find("li").remove();
     })
 };
@@ -41,7 +42,7 @@ bootCommerce.FilterRemoveable.CascadingPane = function(){
     $("#collapseOne").collapse({
         toggle: true
     });
-    $(".panel-title").find('a').on('click',function(){
+    $(".panel-title").find('a').on('click.CascadingPane',function(){
         $('.panel-collapse' ).collapse('hide');
         if($(this).is('.fa-caret-down')){
             $(this).removeClass("fa-caret-down").addClass("fa-caret-right");
