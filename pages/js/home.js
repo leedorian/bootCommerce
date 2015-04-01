@@ -107,6 +107,9 @@
                         bootCommerce.FilterRemoveable();
                         //Product filter checkList
                         bootCommerce.FilterChecklist();
+
+                        // responsive navigation
+                        bootCommerce.Navigation();
                     }
                 },
                 error: function () {
