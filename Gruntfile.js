@@ -41,7 +41,8 @@ module.exports = function (grunt) {
         ["promotionalCode.html", "Promotional code"],
         ["quick_info.html", "Quick info box"],
         ["search.html", "Product search"],
-        ["store_locator.html", "Store locator"],
+        ["store_locator_view1.html", "Store locator view1"],
+        ["store_locator_view2.html", "Store locator view2"],
         ["store_locator_detail.html", "Store locator detail"],
         ["product_infos_tab.html", "Product infos tab"]
     ];

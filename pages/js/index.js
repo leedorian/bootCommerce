@@ -102,10 +102,10 @@
                         bootCommerce.ProductInfosTab();
 
                         //Basket with items
-                        bootCommerce.Basket();
+                        bootCommerce.Basket.init();
 
                         //Product filter removeable
-                        bootCommerce.FilterRemoveable();
+                        bootCommerce.FilterRemoveable.init();
                         //Product filter checkList
                         bootCommerce.FilterChecklist();
 
