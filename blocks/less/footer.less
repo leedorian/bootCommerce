@@ -2,19 +2,20 @@
  * @author Jack Han
  */
 
+@import (once) "_common.less";
 .siteFooter{
     .siteFooterGroupLink>ul, .siteFooterGroupLinkItem>ul{
         list-style:none;
         margin:0;
-        padding:0;  
+        padding:0;
 
     }
     .siteFooterGroupLink{
         margin-bottom:15px;
     }
     .siteFooterGroupLinkItem{
-        float:left;   
-        width:25%;  
+        float:left;
+        width:25%;
         padding:0 20px;
         border-right:1px solid #ccc;
         h2{
@@ -49,4 +50,54 @@
     }
 }
 
+.mobile {
+    .siteFooter {
+        .siteFooterGroupLinkItem {
+            width: 33.33333%;
+            margin-top: 15px;
+        }
+    }
+}
+.mobileSmall {
+    .siteFooter {
+        .siteFooterGroupLinkItem {
+            h2 {
+                margin: 0;
+                line-height: 40px;
+            }
+           float:none;
+           border: 1px solid #ddd;
+           display: block;
+           width: 100%;
+           text-align:center;
+           margin-top: 5px;
+           background: #eee;
+           ul {
+                display: none;
+           }
+        }
+        .siteFooterGroupLinkItem:hover {
+            background: #ccc;
+        }
+        .siteFooterBtmLink {
+            text-align: right;
+            ul {
+                display: none;
+            }
+            h2 {
+                display:inline-block;
+                margin:0;
+                font-size:13px;
+                border:1px solid #ccc;
+                padding:5px 10px;
+            }
+        }
+    }
+}
+.bp(max, @medium, {
+    .mobile();
+});
 
+.bp(max, @xsmall, {
+    .mobileSmall();
+});
