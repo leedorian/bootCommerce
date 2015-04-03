@@ -36,7 +36,7 @@ bootCommerce.Carousel = function(options){
     });
 
     $(this.settings.carouselIndicatorsClassName).find("li").each(function(i){
-        $(this).on('click',function(){
+        $(this).on('click.Carousel',function(){
             $(_that.settings.containerId).carousel(i);
         });
     });
