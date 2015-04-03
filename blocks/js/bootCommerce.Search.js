@@ -62,7 +62,6 @@ bootCommerce.Search = function (options) {
     var _that = this;
 
     $(this.settings.keywordInput).on("keypress.search", function(e) {
-
         if (e.keyCode === 13) {
             e.preventDefault();
         }

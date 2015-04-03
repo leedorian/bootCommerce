@@ -1,11 +1,11 @@
 /**
- * Search box
+ * Responsive header
  * @author Jack
  */
 
 /*global bootCommerce, $, console */
 
-bootCommerce.Search = function (options) {
+bootCommerce.Navigation = function () {
     "use strict";
     var navBarTit = $(".mobileHeader li");
         navBarTit.click(function() {
