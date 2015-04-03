@@ -244,6 +244,9 @@
 .mobile{
     .siteSearchBar {
         display:none;
+        .form-group {
+            margin-bottom: 0;
+        }
     }
     .navbar {
         display:none;
@@ -264,6 +267,16 @@
         }
     }
     .header {
+        position: relative;
+        .headerCol {
+            float: none;
+            width: 100%;
+        }
+        .siteSearchBar {
+            background:#E7E7E7;
+            width: 100%;
+            padding:15px;
+        }
         .headerLogo {
             .deskTopLogo {
                 display:none;
@@ -286,6 +299,18 @@
         }
         .siteMinBasket {
             display:none;
+            width: 100%;
+            background:#E7E7E7;
+            .siteMinBasketBox {
+                display: none;
+            }
+            .siteMinBasketPopup {
+                display: block;
+                width: 100%;
+            }
+            .siteMinBasketPopup {
+                position: inherit;
+            }
         }
     }
     .mobileHeader {
