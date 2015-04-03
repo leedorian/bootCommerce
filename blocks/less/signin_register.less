@@ -1,0 +1,37 @@
+/**
+ * @author Mike Zou
+ */
+@import (once) "_common.less";
+@import (once) "form.less";
+
+.signInOrRegister{
+    .signInWrapper,
+    .registerWrapper{
+        width:50%;
+        float: left;
+        padding: 0 5%;
+    }
+    .signInWrapper{
+        border-right: 1px solid #999;
+    }
+    .FormLayoutTransTrigger{
+        display: inline-block;
+        margin: 10px 2%;
+        width: 40%;
+        text-align: center;    
+    }
+    .mobile() {
+        .signInWrapper,
+        .registerWrapper{
+            width: 100%;
+        }
+        .signInWrapper{
+            border-right: none;
+            border-bottom: 1px solid #999;
+        }
+    }
+
+    .bp(max, @medium, {
+        .mobile();
+    });
+}

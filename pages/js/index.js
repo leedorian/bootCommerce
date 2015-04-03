@@ -114,6 +114,9 @@
 
                         //store Locator
                         bootCommerce.StorLocator();
+
+                        //sign in and register
+                        bootCommerce.signInRegister();
                     }
                 },
                 error: function () {
