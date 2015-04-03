@@ -4,7 +4,7 @@
  */
 
 
-/* global StorLocator */
+/* global bootCommerce, console, StorLocator */
 bootCommerce.StorLocator = function() {
     "use strict";
 

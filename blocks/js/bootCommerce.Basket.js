@@ -3,8 +3,7 @@
  * @author Ivy
  */
 
-
-/* global basket */
+/* global bootCommerce, console, basket */
 bootCommerce.Basket = {
     init: function() {
         "use strict";
@@ -58,7 +57,7 @@ bootCommerce.Basket.orderItem.prototype.calculate = function() {
     var _that = this;
     $(this.settings.containerInput).find(".reduceBtn").on("click.calculate", function() {
         var inputContainer = $(this).parent().find("input");
-        _that.inputValue = parseInt(inputContainer.val());
+        _that.inputValue = parseInt(inputContainer.val(), 10);
 
         if (_that.inputValue > 1) {
             _that.inputValue--;
@@ -69,7 +68,7 @@ bootCommerce.Basket.orderItem.prototype.calculate = function() {
     /*add quantity*/
     $(this.settings.containerInput).find(".addBtn").on("click.calculate", function() {
         var inputContainer = $(this).parent().find("input");
-        _that.inputValue = parseInt(inputContainer.val());
+        _that.inputValue = parseInt(inputContainer.val(), 10);
         _that.inputValue++;
         inputContainer.val(_that.inputValue);
     });

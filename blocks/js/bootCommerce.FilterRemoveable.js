@@ -1,12 +1,14 @@
 /**
- * Search box
+ * Filter removeable
  * @author Ivy
  */
 
 
-/* global carousel */
+/* global bootCommerce, console, carousel */
 bootCommerce.FilterRemoveable = {
     init: function() {
+        "use strict";
+
         new bootCommerce.FilterRemoveable.FilterRemoveablePanel({
             removeContainer:".productRemovableList",
             allRemoveClickContainer:".productFilterRemovableTitle"

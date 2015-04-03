@@ -1,11 +1,10 @@
 /**
- * Search box
+ * Carousel
  * @author Ivy
  */
 
 
-/* global carousel */
-
+/* global bootCommerce, console, carousel */
 bootCommerce.Carousel = function(options) {
     "use strict";
 

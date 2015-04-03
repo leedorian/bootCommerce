@@ -1,10 +1,10 @@
 /**
- * Search box
+ * Filter checklist
  * @author Ivy
  */
 
 
-/* global carousel */
+/* global bootCommerce, console, carousel */
 bootCommerce.FilterChecklist = function() {
     "use strict";
 
