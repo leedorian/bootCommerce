@@ -29,7 +29,7 @@ bootCommerce.Utils = {
      * @param {object} data the context data to compile the template
      * @return {string} the compiled html
      */
-    template : function (tempID,data) {
+    template : function(tempID, data) {
         "use strict";
         var source = $(tempID).html();
         var template = Handlebars.compile(source);

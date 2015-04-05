@@ -29,15 +29,7 @@
         display:block;
         width:100%;
     }
-    .siteSearchBarInput{
-        width:50%;
-    }
-    .siteSearchBarSelect{
-        width:30%;
-    }
-    .siteSearchBarBtn{
-        width:20%;
-    }
+
     .siteSearchBarAutoSuggest{
         top:34px;
         width:80%;
@@ -181,7 +173,7 @@
     .headerCol{
         width:80%;
         float:left;
-        padding:15px 0 15px;
+        padding:15px 0 0;
 
     }
     .siteSearchBar{
@@ -191,6 +183,16 @@
         z-index:1;
         .btn{
             font-size:12px;
+        }
+
+    .siteSearchBarInput{
+            width:50%;
+        }
+        .siteSearchBarSelect{
+            width:30%;
+        }
+        .siteSearchBarBtn{
+            width:20%;
         }
     }
     .headerColLink{
@@ -311,6 +313,9 @@
             .siteMinBasketPopup {
                 position: inherit;
             }
+            .modal-content {
+                box-shadow: none;
+            }
         }
     }
     .mobileHeader {
@@ -371,6 +376,16 @@
             }
             li:hover {
                 color:#333;
+            }
+        }
+    }
+    .header {
+        .siteSearchBar  {
+            .siteSearchBarSelect {
+                display: none;
+            }
+            .siteSearchBarInput {
+                width:80%;
             }
         }
     }

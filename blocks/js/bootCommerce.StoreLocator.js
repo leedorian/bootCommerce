@@ -4,23 +4,26 @@
  */
 
 
-/* global StorLocator */
-bootCommerce.StorLocator =function() {
+/* global bootCommerce, console, StorLocator */
+bootCommerce.StorLocator = function() {
     "use strict";
-    $(".findStoreBtn").on('click.StorLocator',function(){
+
+    $(".findStoreBtn").on("click.StorLocator", function() {
         //ToDo
     });
-    $(".cascadingPanelCollapse").each(function(i){
-        $(this).on('click.StorLocator',function(){
-            $('.collapse' ).collapse('hide');
-            var spanContainer=$(this).find('span');
-            if(spanContainer.is('.fa-caret-down')){
+
+    $(".cascadingPanelCollapse").each(function(i) {
+        $(this).on("click.StorLocator", function() {
+            var spanContainer = $(this).find("span");
+            $(".collapse").collapse("hide");
+
+            if (spanContainer.is(".fa-caret-down")) {
                 spanContainer.removeClass("fa-caret-down").addClass("fa-caret-right");
-                $($(this).attr('href')).collapse('toggle');
-            }else{
-                $($(this).attr('href')).collapse('show');
+                $($(this).attr("href")).collapse("toggle");
+            } else {
+                $($(this).attr("href")).collapse("show");
                 spanContainer.removeClass("fa-caret-right").addClass("fa-caret-down");
             }
-        })
-    })
+        });
+    });
 };

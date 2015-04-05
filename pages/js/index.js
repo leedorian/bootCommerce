@@ -71,13 +71,13 @@
                         });
 
                         //Horizontal products carousel
-                        var horizontalCarousel=  new bootCommerce.Carousel({
+                        var horizontalCarousel =  new bootCommerce.Carousel({
                             containerId:'#carouselProductCrosswise',
                             autoPlay: true,
                             intervalTime: 3000
                         });
                         //Vertical products carousel
-                        var verticalCarousel=  new bootCommerce.Carousel({
+                        var verticalCarousel =  new bootCommerce.Carousel({
                             containerId:'#carouselVerticalSection',
                             autoPlay: false,
                             intervalTime: 4000
@@ -93,7 +93,7 @@
                         //Quick info box
 
                         //Slide show
-                        var slideShow=  new bootCommerce.Carousel({
+                        var slideShow =  new bootCommerce.Carousel({
                             containerId:'#carouselSlide',
                             autoPlay: true,
                             intervalTime: 3000
@@ -114,6 +114,15 @@
 
                         //store Locator
                         bootCommerce.StorLocator();
+
+                        //sign in and register
+                        bootCommerce.signInRegister();
+
+                        //responsive navigation
+                        bootCommerce.Navigation();
+
+                        //mini basket
+                        bootCommerce.MiniBasket();
                     }
                 },
                 error: function () {
