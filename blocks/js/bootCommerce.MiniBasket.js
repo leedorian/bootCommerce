@@ -19,7 +19,15 @@ bootCommerce.MiniBasket = function () {
     });
 
     $(".siteMinBasketPopup .close").on("click.MiniBasket", function() {
-        defaults.miniBasketPopup.toggle("linear");
+
+        if ($(".mobileHeader").css("display") === "block") {
+            //defaults.miniBasketPopup.hide();
+            $(".siteMinBasket").hide();
+            $(".mobileMinBasket").removeClass("mobileActive");
+            $(".siteMinBasketPopup").css("display", "block");
+        } else {
+            defaults.miniBasketPopup.hide();
+        }
         //console.log(0);
     });
 };
