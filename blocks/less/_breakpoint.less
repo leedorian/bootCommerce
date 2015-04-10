@@ -1,0 +1,93 @@
+/**
+ * Mixin - Breakpoint
+ *
+ * @author Lionel Dong
+ */
+
+ /**
+ * These should be used with the bp (max-width, xx) mixin
+ * where a min-width is used, remember to +1 to break correctly
+ */
+
+@xsmall: 479px;
+@small: 599px;
+@medium: 770px;
+@large: 979px;
+@xlarge: 1199px;
+
+/**
+ * set a max-width/min-width/both media query
+ *
+ * @param {string} max | min | range
+ * @param {string} @maxValue, @minValue, {number}px
+ * @param {string} @content The style's block
+ */
+.bp(max, @maxValue, @content) {
+    @media only screen {
+        @media (max-width: @maxValue) {
+            @content();
+        }
+    }
+}
+
+.bp(min, @minValue, @content) {
+    @media only screen {
+        @media (min-width: @minValue) {
+            @content();
+        }
+    }
+}
+
+.bp(range, @minValue, @maxValue, @content) {
+    @media only screen {
+        @media (min-width: @minValue) {
+            @media (max-width: @maxValue) {
+                @content();
+            }
+        }
+    }
+}
+//
+// breakpoint mixin demo:
+//
+// 1. max-width query:
+//.content {
+//    .bp(max, 1200px, {
+//        div { color:#888; }
+//    });
+//}
+//
+// output:
+//@media only screen and (max-width: 1200px) {
+//  .content div {
+//    color: #888;
+//  }
+//}
+//
+// 2. min-width qurey:
+//.content {
+//    .bp(min, 1200px, {
+//        div { background-color:#888; }
+//    });
+//}
+//
+// output:
+//@media only screen and (min-width: 1200px) {
+//  .content div {
+//    background-color: #888;
+//  }
+//}
+//
+// 3. both query:
+//.content {
+//    .bp(range, 640px, 768px, {
+//        div { color:#888; }
+//    });
+//}
+//
+// output:
+//@media only screen and (min-width: 640px) and (max-width: 768px) {
+//  .content div {
+//    color: #888;
+//  }
+//}

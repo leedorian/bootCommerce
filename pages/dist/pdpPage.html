@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="../../bootstrap/favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../../lib/font-awesome-4.3.0/css/font-awesome.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="../../blocks/dist/css/bootCommerce.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="css/pdpPage.css" rel="stylesheet">
+</head>
+<!--
+@author Dorian
+@version 0.0.1
+-->
+<body>
+    <div class="pdpPage">
+    	<!-- Begin header  -->
+<!--
+@author Jack Han
+@version 0.0.1
+ -->
+
+<div class="header clearfix">
+    <div class="siteLogo headerLogo">
+        <img src="http://lorempixel.com/200/150/food" class="deskTopLogo" />
+        <img src="http://lorempixel.com/200/150/food" class="mobileLogo" />
+    </div>
+
+    <div class="headerCol clearfix">
+        <div class="headerColLink">
+            <h2>Top Link <i class="fa fa-sort-desc"></i></h2>
+            <ul>
+                <li><span>Free call 1800 640 811</span></li>
+                <li><a href="">Store Locator</a></li>
+                <li><a href="">Gift Card</a></li>
+                <li><a href="">Sign In/Register</a></li>
+            </ul>
+        </div>
+        <div class="mobileHeader">
+            <ul class="clearfix">
+                <li class="mobileNavBar" site-target="siteNavBar"> <i class="fa fa-bars"></i> <span>menu</span></li>
+                <li class="mobileSearchBar" site-target="siteSearchBar"><i class="fa fa-search"></i> <span>search</span></li>
+                <li class="mobileUserCenter" site-target="siteAccount"><i class="fa fa-user"></i> <span>account</span></li>
+                <li class="mobileMinBasket" site-target="siteMinBasket"> <i class="fa fa-shopping-cart"></i> <span>cart</span></li>
+            </ul>
+        </div>
+        <div class="clearfix">
+            <!-- Begin product search box -->
+<!--
+@author Jack
+@version 0.0.1
+ -->
+
+<div class="siteSearchBar " responsive-mobile-control="true">
+    <form class="form-inline clearfix">
+        <div class="form-group siteSearchBarInput">
+            <input type="text" placeholder="search..." id="" class="form-control">
+        </div>
+        <div class="form-group siteSearchBarSelect">
+            <select class="form-control">
+                <option>All Cateogries</option>
+                <option> demo 1</option>
+            </select>
+        </div>
+        <button class="btn btn-primary siteSearchBarBtn" type="submit">search</button>
+    </form>
+
+    <div class="siteSearchBarAutoSuggest">
+        <div class="autoSuggestBox">
+            <div class="autoSuggestKeywords">
+            </div>
+            <div class="autoSuggestCategory">
+            </div>
+            <div class="autoSuggestViewAll">
+                <a href="">View all result</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="tempBcSearchAutoSugTerm" type="text/x-handlebars-template">
+    <h2>{{header}}</h2>
+    <ul>
+    {{#searchTermBold term}}
+    {{#each keywords}}
+        <li><a href='' data-keyword='{{this}}'>{{this}}</a></li>
+    {{/each}}
+    {{/searchTermBold}}
+    </ul>
+</script>
+
+<script id="tempBcSearchAutoSugCat" type="text/x-handlebars-template">
+    <h2>Suggest Category</h2>
+    <ul>
+    {{#searchTermBold term}}
+    {{#each Category}}
+        <li><a href="{{url}}">{{{name}}}</a></li>
+    {{/each}}
+    {{/searchTermBold}}
+    </ul>
+</script>
+
+<!-- End product search box -->
+            <!-- Begin mini basket  -->
+<!--
+@author Jack Han
+@version 0.0.1
+ -->
+
+<div class="siteMinBasket" responsive-mobile-control="true">
+    <div class="siteMinBasketBox">
+        <i class="fa fa-shopping-cart"></i> My basket
+    </div>
+    <div class="siteMinBasketPopup modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">Items in your basket:</h4>
+          </div>
+          <p class="siteMinBasketPromptText">your cart is empty</p>
+          <div class="modal-body">
+            <ul>
+                <li>
+                    <div class="media">
+                      <a href="#" class="media-left">
+                          <img src="http://lorempixel.com/80/80/sports" />
+                      </a>
+                      <div class="media-body">
+                        <h4 class="media-heading"><a href="">Top aligned media</a></h4>
+                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel </p>
+                        <div class="clearfix">
+                            <span class="siteMinBasketQty"><strong>Quantity</strong>:1</span>
+                            <span class="siteMinBasketPrice">$49.00</span>
+                        </div>
+                      </div>
+                     </div>
+                </li>
+                <li>
+                    <div class="media">
+                      <a href="#" class="media-left">
+                            <img src="http://lorempixel.com/80/80/sports" />
+                      </a>
+                      <div class="media-body">
+                        <h4 class="media-heading"><a href="">Top aligned media </a></h4>
+                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel </p>
+                        <div class="clearfix">
+                            <span class="siteMinBasketQty"><strong>Quantity</strong>:1</span>
+                            <span class="siteMinBasketPrice">$49.00</span>
+                        </div>
+                      </div>
+                     </div>
+                </li>
+            </ul>
+            <p class="siteMinBasketTotal">Subtotal for 2 items(s) <strong>$640</strong></p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" type="button">go to your Basket</button>
+          </div>
+        </div>
+    </div>
+</div>
+
+<!-- End mini basket  -->
+        </div>
+    </div>
+
+    <!-- Begin product search box -->
+<!--
+@author Jack
+@version 0.0.1
+ -->
+
+ <!--
+    responsive-mobile-control - for responsive use only
+ -->
+<nav class="navbar navbar-default siteNavBar" responsive-mobile-control="true">
+  <div class="container-fluid">
+    <div class="navbar-collapse" id="">
+      <ul class="nav navbar-nav">
+        <li class=""><a href="#">Mens <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Womens</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Kids <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Hats</a></li>
+            <li><a href="#">Gloves</a></li>
+            <li><a href="#">Toys</a></li>
+            <li><a href="#">Others</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- End product search box -->
+</div>
+
+<!-- End header  -->
+        <!-- Begin bread_crumb -->
+<!--
+@author Ivy
+@version 0.0.1
+ -->
+<!--
+ if you want to use the slant breadCrumbs style, you just need to change the ol parent
+className to "breadCrumbSlantSection" and replace ol className to "breadcrumb".
+
+ if you want to use the bracket breadCrumbs style, you just need to change the ol parent
+className to "breadcrumbBracketSection" and replace ol className to "breadcrumb".
+
+ if you want to use the arrows breadCrumbs style, you just need to change the ol parent
+className to "breadcrumbArrowsSection" and replace ol className to "clearfix".
+ Default: arrows breadCrumbs
+-->
+<div class="breadCrumb">
+    <div class="breadcrumbArrowsSection">
+        <ol class="clearfix">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li><a  class="active" href="javascript:;">Data</a></li>
+        </ol>
+    </div>
+</div>
+
+<!-- End bread_crumb -->
+        <!-- Begin quick info  -->
+<!--
+@author Jack Han, Lionel Dong
+@version 0.0.1
+ -->
+
+<div class="quickInfo">
+    <div class="quickInfoTitle clearfix">
+        <h2>Quick info Title Product Name</h2>
+        <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="quickInfoContent clearfix">
+        <!-- Begin product image viewer  -->
+<!--
+@author Jack Han
+@version 0.0.1
+ -->
+
+<div class="imageViewer">
+    <div class="imageViewerBooth">
+        <a class="imageViewerZoom" href="#"><i class="fa fa-search"></i></a>
+        <img src="http://lorempixel.com/450/450/food">
+        <div class="imageViewerLens"></div>
+        <div class="imageViewerOverlay">
+            <img src="http://lorempixel.com/450/450/food">
+        </div>
+    </div>
+    <div class="imageViewerThumb">
+        <ul class="clearfix">
+            <li class="active"><img data-img-booth="http://lorempixel.com/450/450/food" src="http://lorempixel.com/100/100/food"></li>
+            <li><img data-img-booth="http://lorempixel.com/450/450/food?i=1" src="http://lorempixel.com/100/100/food"></li>
+            <li><img data-img-booth="http://lorempixel.com/450/450/food?i=2" src="http://lorempixel.com/100/100/food"></li>
+            <li><img data-img-booth="http://lorempixel.com/450/450/food?i=3" src="http://lorempixel.com/100/100/food"></li>
+        </ul>
+    </div>
+</div>
+<!-- End product image viewer  -->
+
+        <div class="productBriefInfo quickInfoProductBriefInfo">
+            <div class="productBriefInfoDetails">
+                <h2>Product name title, Converse womenes chuck taylor ballet</h2>
+                <font class="productBriefInfoDetailPrice">Price: $89</font>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet...
+                </p>
+                <a href="">View full product details</a>
+            </div>
+            <!-- Begin product product option -->
+<!-- 
+@author Jack Han
+@version 0.0.1
+ -->
+
+<div class="productOption">
+	<h3>Color Description: <span>White</span></h3>
+	<ul class="productOption_attribute_color clearfix ">
+		<li class="active"><span>red</span></li>
+		<li><span>blue</span></li>
+		<li><span>yellow</span></li>
+	</ul>
+	<h3>Size Description:<span>06</span></h3>
+	<ul class="productOption_attribute_size clearfix ">
+		<li class="available active"><span>06</span></li>
+		<li class="available"><span>06</span></li>
+		<li class="available"><span>06</span></li>
+		<li class="unavailable"><span>06</span></li>
+		<li class="unavailable"><span>06</span></li>
+		<li class="unavailable"><span>06</span></li>
+		<li class="unavailable"><span>06</span></li>
+		<li class="unavailable"><span>06</span></li>
+	</ul>
+	<p>Select attributes to see availability</p>
+	<h3>Availability:</h3>
+	<i class="fa fa-check"></i>
+	<span>Instock</span>
+</div>
+
+<!-- End product product option -->
+            <div class="productBriefInfoHandle">
+                <h3>Quantity</h3>
+                <p>$1/unit, $1/100g</p>
+                <form class="form-inline clearfix">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="exampleInputAmount" placeholder="eg.1">
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Transfer cash</button>
+                </form>
+                <select class="productBriefInfoHandleAddToWishList form-control">
+                    <option>Add to wish list</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End quick info  -->
+        <div class="pdpContent">
+            <!-- Begin tab view  -->
+<!--
+@author Jack Han, Lionel Dong
+@version 0.0.1
+ -->
+
+<div class="productInfosTab">
+    <ul class="productInfosTabTitle clearfix" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#tab1" aria-controls="Description" role="tab">Description</a>
+        </li>
+        <li role="presentation">
+            <a href="#tab2" aria-controls="Customer Reviews" role="tab">Customer Reviews</a>
+        </li>
+        <li role="presentation">
+            <a href="#tab3" aria-controls="Test3" role="tab">Tabview Test3</a>
+        </li>
+        <li role="presentation">
+            <a href="#tab4" aria-controls="Test4" role="tab">Tabview Test4</a>
+        </li>
+    </ul>
+    <dl class="tab-content productInfosTabContent">
+        <dt class="current">Description</dt>
+        <dd role="tabpanel" class="tab-pane active" id="tab1">
+            This is Description<br>
+            This is Description<br>
+            This is Description<br>
+            This is Description<br>
+            This is Description<br>
+            This is Description<br>
+        </dd>
+        <dt>Customer Reviews</dt>
+        <dd role="tabpanel" class="tab-pane" id="tab2">
+            This is Customer Reviews<br>
+            This is Customer Reviews<br>
+            This is Customer Reviews<br>
+            This is Customer Reviews<br>
+            This is Customer Reviews<br>
+            This is Customer Reviews<br>
+            This is Customer Reviews<br>
+            This is Customer Reviews<br>
+            This is Customer Reviews<br>
+            This is Customer Reviews<br>
+        </dd>
+        <dt>Tabview Test3</dt>
+        <dd role="tabpanel" class="tab-pane" id="tab3">
+            This is Tabview Test3<br>
+            This is Tabview Test3<br>
+            This is Tabview Test3<br>
+            This is Tabview Test3<br>
+            This is Tabview Test3<br>
+            This is Tabview Test3<br>
+        </dd>
+        <dt>Tabview Test4</dt>
+        <dd role="tabpanel" class="tab-pane" id="tab4">
+            This is Tabview Test4<br>
+        </dd>
+    </dl>
+</div>
+
+<!-- End tab view  -->
+        </div>
+            <!-- Begin footer  -->
+<!--
+@author Jack Han
+@version 0.0.1
+ -->
+
+<div class="siteFooter">
+	<div class="siteFooterGroupLink clearfix">
+		<ul class="clearfix">
+			<li class="siteFooterGroupLinkItem">
+                <h2>demo title</h2>
+				<ul>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+				</ul>
+			</li>
+			<li class="siteFooterGroupLinkItem">
+				<h2>demo title</h2>
+                <ul>
+                    <li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+				</ul>
+			</li>
+			<li class="siteFooterGroupLinkItem">
+				<h2>demo title</h2>
+                <ul>
+                    <li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+				</ul>
+			</li>
+			<li class="siteFooterGroupLinkItem siteFooterGroupLinkItemLast">
+				<h2>demo title</h2>
+                <ul>
+                    <li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+				</ul>
+			</li>
+
+		</ul>
+	</div>
+
+	<div class="siteFooterBtmLink">
+        <h2>Footer Link <i class="fa fa-sort-up"></i></h2>
+		<ul class="clearfix">
+			<li><a href="">Policy</a>  </li>
+			<li><a href="">Shop Info</a>  </li>
+			<li><a href="">Policy</a>  </li>
+			<li><a href="">Shop Info</a>  </li>
+			<li><a href="">Policy</a> </li>
+			<li><a href="">Shop Info</a>  </li>
+			<li><a href="">Policy</a>  </li>
+			<li><a href="">Shop Info</a>  </li>
+		</ul>
+	</div>
+</div>
+<!-- End footer  -->
+    </div>
+    <!-- libs -->
+    <script src="../../lib/jquery/jquery-1.11.2.min.js"></script>
+    <script src="../../lib/jquery/jquery.mobile.custom.min.js"></script>
+    <script src="../../lib/enquire.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../lib/handlebars.js"></script>
+    <!--<script src="../../blocks/dist/js/bootCommerce.min.js"></script>-->
+    <script src="../../blocks/js/bootCommerceBase.js"></script>
+
+    <!-- blocks js -->
+    <script src="../../blocks/js/bootCommerce.Search.js"></script>
+    <script src="../../blocks/js/bootCommerce.MiniBasket.js"></script>
+    <script src="../../blocks/js/bootCommerce.ProductInfosTab.js"></script>
+    <script src="../../blocks/js/bootCommerce.Basket.js"></script>
+    <script src="../../blocks/js/bootCommerce.Carousel.js"></script>
+    <script src="../../blocks/js/bootCommerce.FilterRemoveable.js"></script>
+    <script src="../../blocks/js/bootCommerce.FilterChecklist.js"></script>
+    <script src="../../blocks/js/bootCommerce.StoreLocator.js"></script>
+    <script src="../../blocks/js/bootCommerce.ImageViewer.js"></script>
+    <script src="../../blocks/js/bootCommerce.signInRegister.js"></script>
+    <script src="../../blocks/js/bootCommerce.Navigation.js"></script>
+    <script src="../../pages/dist/js/index.min.js"></script>
+<script src="../js/pdpPage.js"></script>
+  </body>
+</html>
+

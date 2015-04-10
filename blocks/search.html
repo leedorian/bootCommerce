@@ -1,46 +1,56 @@
 <!-- Begin product search box -->
-<!-- 
+<!--
 @author Jack
 @version 0.0.1
  -->
 
-<div class="siteSearchBar ">
+<div class="siteSearchBar " responsive-mobile-control="true">
     <form class="form-inline clearfix">
-        <div class="form-group siteSearchBarInput">           
+        <div class="form-group siteSearchBarInput">
             <input type="text" placeholder="search..." id="" class="form-control">
         </div>
-        <div class="form-group siteSearchBarSelect">           
+        <div class="form-group siteSearchBarSelect">
             <select class="form-control">
                 <option>All Cateogries</option>
-                <option> demo 1</option>    
+                <option> demo 1</option>
             </select>
         </div>
         <button class="btn btn-primary siteSearchBarBtn" type="submit">search</button>
     </form>
-    
+
     <div class="siteSearchBarAutoSuggest">
         <div class="autoSuggestBox">
             <div class="autoSuggestKeywords">
-                <h2>Suggested keywords</h2>
-                <ul>
-                    <li><a href=""><span>shirt</span></a></li>
-                    <li><a href=""><span>shirt</span> tee</a></li>
-                    <li><a href="">span>shirt</span>s</a></li>
-                    <li><a href=""><span>shirt</span> teesh</a></li>
-                </ul>
             </div>
             <div class="autoSuggestCategory">
-                <h2>Category</h2>
-                <ul>
-                    <li><a href="">Womens>Fashion Tops & <span>shirt</span></a></li>
-                    <li><a href="">Womens>Fashion Tops & <span>shirt</span></a></li>
-                </ul>
             </div>
             <div class="autoSuggestViewAll">
                 <a href="">View all result</a>
-            </div>                  
-        </div>                  
+            </div>
+        </div>
     </div>
 </div>
+
+<script id="tempBcSearchAutoSugTerm" type="text/x-handlebars-template">
+    <h2>{{header}}</h2>
+    <ul>
+    {{#searchTermBold term}}
+    {{#each keywords}}
+        <li><a href='' data-keyword='{{this}}'>{{this}}</a></li>
+    {{/each}}
+    {{/searchTermBold}}
+    </ul>
+</script>
+
+<script id="tempBcSearchAutoSugCat" type="text/x-handlebars-template">
+    <h2>Suggest Category</h2>
+    <ul>
+    {{#searchTermBold term}}
+    {{#each Category}}
+        <li><a href="{{url}}">{{{name}}}</a></li>
+    {{/each}}
+    {{/searchTermBold}}
+    </ul>
+</script>
 
 <!-- End product search box -->

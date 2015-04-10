@@ -3,28 +3,25 @@
 @author Ivy
 @version 0.0.1
  -->
-<div class="bread_crumb">
-    <div class="bread_crumb_slant">
-        <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Library</a></li>
-            <li> <a  class="active" href="javascript:;">Data</a></li>
-        </ol>
-    </div>
-    <div class="breadcrumb_bracket_section">
-        <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Library</a></li>
-            <li > <a  class="active" href="javascript:;">Data</a></li>
-        </ol>
-    </div>
-    <div class="breadcrumb_arrows_section">
+<!--
+ if you want to use the slant breadCrumbs style, you just need to change the ol parent
+className to "breadCrumbSlantSection" and replace ol className to "breadcrumb".
+
+ if you want to use the bracket breadCrumbs style, you just need to change the ol parent
+className to "breadcrumbBracketSection" and replace ol className to "breadcrumb".
+
+ if you want to use the arrows breadCrumbs style, you just need to change the ol parent
+className to "breadcrumbArrowsSection" and replace ol className to "clearfix".
+ Default: arrows breadCrumbs
+-->
+<div class="breadCrumb">
+    <div class="breadcrumbArrowsSection">
         <ol class="clearfix">
             <li><a href="#">Home</a></li>
             <li><a href="#">Library</a></li>
             <li><a  class="active" href="javascript:;">Data</a></li>
         </ol>
     </div>
-
 </div>
+
 <!-- End bread_crumb -->

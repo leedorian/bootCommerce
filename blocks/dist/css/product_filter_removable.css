@@ -7,7 +7,7 @@
 /**
  * @author Ivy
  */
-.product_filter_removable
+.productFilterRemovable
 {
     width: 50%;
     margin: 20px auto;
@@ -15,15 +15,15 @@
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.product_filter_removable ul,
-.product_filter_removable li
+.productFilterRemovable ul,
+.productFilterRemovable li
 {
     margin: 0;
     padding: 0;
 
     list-style: none;
 }
-.product_filter_removable h4
+.productFilterRemovable h4
 {
     margin: 0;
     padding: 20px 10px;
@@ -31,25 +31,40 @@
     border-radius: 5px 5px 0 0;
     background: #f5f5f5;
 }
-.product_filter_removable .close
+.productFilterRemovable .close
 {
     font-size: 18px;
 }
-.product_filter_removable .close span
+.productFilterRemovable .close span
 {
     font-size: 14px;
 }
-.product_filter_removable .product_removable_list
+.productFilterRemovable .productRemovableList
 {
     padding-bottom: 15px;
 }
-.product_filter_removable .product_removable_list li
+.productFilterRemovable .productRemovableList li
 {
     padding: 10px;
 
     border-bottom: 1px solid #ccc;
 }
-.product_filter_removable .product_removable_list li:first-child
+.productFilterRemovable .productRemovableList li:first-child
 {
     border-top: 1px solid #ccc;
+}
+/*cascading Panel*/
+.cascadingPanel
+{
+    width: 50%;
+    margin: 20px auto;
+
+    border-radius: 10px;
+}
+.cascadingPanel .cascadingPanelCollapse1,
+.cascadingPanel .cascadingPanelCollapse2
+{
+    float: right;
+
+    text-decoration: none;
 }

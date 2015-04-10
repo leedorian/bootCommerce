@@ -7,7 +7,7 @@
 /**
  * @author Ivy
  */
-.product_filter_checkbox
+.productFilterCheckbox
 {
     width: 50%;
     margin: 20px auto;
@@ -15,27 +15,27 @@
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.product_filter_checkbox dl,
-.product_filter_checkbox dt
+.productFilterCheckbox dl,
+.productFilterCheckbox dt
 {
     margin: 0;
     padding: 0;
 
     list-style: none;
 }
-.product_filter_checkbox dd label
+.productFilterCheckbox dd label
 {
     font-weight: normal;
 }
-.product_filter_checkbox dd input
+.productFilterCheckbox dd input
 {
     vertical-align: top;
 }
-.product_filter_checkbox dl:last-child dd:last-child
+.productFilterCheckbox dl:last-child dd:last-child
 {
     margin-top: 10px;
 }
-.product_filter_checkbox h4
+.productFilterCheckbox h4
 {
     margin: 0;
     padding: 20px 10px;
@@ -43,15 +43,15 @@
     border-radius: 5px 5px 0 0;
     background: #f5f5f5;
 }
-.product_filter_checkbox h4 span
+.productFilterCheckbox h4 span
 {
     font-size: 14px;
 }
-.product_filter_checkbox h4 span:first-child
+.productFilterCheckbox h4 span:first-child
 {
     padding-left: 5px;
 }
-.product_filter_checkbox .form-control
+.productFilterCheckbox .form-control
 {
     display: inline-block;
 
@@ -59,15 +59,15 @@
     height: auto;
     padding: 0 5px;
 }
-.product_filter_checkbox .close
+.productFilterCheckbox .close
 {
     font-size: 18px;
 }
-.product_filter_checkbox .product_checkbox_list
+.productFilterCheckbox .productCheckboxList
 {
     padding-bottom: 15px;
 }
-.product_filter_checkbox .product_checkbox_list dl
+.productFilterCheckbox .productCheckboxList dl
 {
     padding: 10px;
 

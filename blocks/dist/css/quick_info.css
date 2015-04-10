@@ -1,0 +1,119 @@
+/*!
+ * bootCommerce v0.0.1 (https://github.com/leedorian/bootCommerce/)
+ * Copyright 2015-2015 
+ * Licensed under MIT (https://github.com/leedorian/bootCommerce/blob/master/LICENSE.md)
+ */
+
+/**
+ * @author Jack Han
+ */
+.quickInfo .quickInfoTitle
+{
+    position: relative;
+
+    padding: 0 10px;
+}
+.quickInfo .quickInfoTitle h2
+{
+    font-size: 16px;
+    line-height: 33px;
+
+    display: inline-block;
+
+    margin: 0;
+}
+.quickInfo .quickInfoTitle .close
+{
+    font-size: 30px;
+    line-height: 1.1;
+}
+.quickInfo .quickInfoContent .imageViewer
+{
+    float: left;
+
+    width: 50%;
+    padding: 10px;
+}
+.quickInfo .quickInfoContent .quickInfoProductBriefInfo
+{
+    font-size: 13px;
+
+    float: left;
+
+    width: 50%;
+    padding: 10px;
+}
+.productBriefInfo h2,
+.productBriefInfo h3
+{
+    font-size: inherit;
+    font-weight: bold;
+
+    margin: 10px 0;
+}
+.productBriefInfo .productBriefInfoDetails,
+.productBriefInfo .productBriefInfoAttribute,
+.productBriefInfo .productBriefInfoHandle
+{
+    border: 1px solid #eee;
+}
+.productBriefInfo .productBriefInfoHandle .form-inline
+{
+    margin-bottom: 15px;
+}
+.productBriefInfo .productBriefInfoHandle .form-inline .btn
+{
+    float: right;
+}
+.productOption ul
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+.productOption li
+{
+    float: left;
+
+    margin: 0 5px 5px 0;
+}
+.productOption li span
+{
+    line-height: 40px;
+
+    display: block;
+
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+    text-align: center;
+
+    border: 2px solid #fff;
+}
+.productOption .available span
+{
+    border: 2px solid green;
+}
+.productOption .active span
+{
+    border: 2px solid red;
+}
+.productOption .unavailable span
+{
+    border: 2px solid grey;
+}
+.productOption li:hover span
+{
+    border: 2px solid red;
+}
+.productOption .unavailable:hover span
+{
+    border: 2px solid grey;
+}
+.productOption h3
+{
+    font-size: 13px;
+    font-weight: 700;
+}

@@ -1,38 +1,47 @@
 /**
  * @author Ivy
  */
-.product_filter_removable{
-  width: 50%;
-  margin: 20px auto;
-  border:1px solid #ccc;
-  border-radius: 5px;
-  ul,li{
-    list-style: none;
-    padding: 0;
-    margin:0;
-  }
-  h4{
-    margin:0;
-    background: #f5f5f5;
-    border-radius: 5px 5px 0 0;
-    padding: 20px 10px;
-  }
-  .close{
-    font-size:18px;
-    span{
-      font-size: 14px;
+.productFilterRemovable{
+    width: 50%;
+    margin: 20px auto;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    ul,li{
+        list-style: none;
+        padding: 0;
+        margin:0;
     }
-  }
-  .product_removable_list{
-
-    padding-bottom: 15px;
-    li{
-      padding:10px;
-      border-bottom:1px solid #ccc;
+    h4{
+        margin:0;
+        background: #f5f5f5;
+        border-radius: 5px 5px 0 0;
+        padding: 20px 10px;
     }
-    li:first-child{
-      border-top: 1px solid #ccc;
+    .close{
+        font-size:18px;
+        span{
+            font-size: 14px;
+        }
     }
-  }
-
+    .productRemovableList{
+        padding-bottom: 15px;
+        li{
+            padding:10px;
+            border-bottom:1px solid #ccc;
+        }
+        li:first-child{
+            border-top: 1px solid #ccc;
+        }
+    }
+}
+/*cascading Panel*/
+.cascadingPanel{
+    border-radius: 10px;
+    width: 50%;
+    margin: 20px auto;
+    .cascadingPanelCollapse1,
+    .cascadingPanelCollapse2{
+        float: right;
+        text-decoration: none;
+    }
 }

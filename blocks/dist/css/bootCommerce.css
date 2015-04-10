@@ -8,47 +8,67 @@
  * @author Dorian
  */
 /**
+ * @author Lionel
+ * @date 2015-03-19
+ */
+/**
+ * Mixin - Breakpoint
+ *
+ * @author Lionel Dong
+ */
+/**
+ * These should be used with the bp (max-width, xx) mixin
+ * where a min-width is used, remember to +1 to break correctly
+ */
+/**
+ * set a max-width/min-width/both media query
+ *
+ * @param {string} max | min | range
+ * @param {string} @maxValue, @minValue, {number}px
+ * @param {string} @content The style's block
+ */
+/**
  * @author Ivy
  */
-.basket_hasItem .basket_order_link
+.basketHasItem .basketOrderLink
 {
     margin: 10px 0;
 
     text-align: right;
 }
-.basket_hasItem .basket_order_btn
+.basketHasItem .basketOrderBtn
 {
     float: left;
 
     margin: 10px 0;
 }
-.basket_quantity_item
+.basketQuantityItem
 {
     text-align: center;
 }
-.basket_quantity_item .basket_product_remove,
-.basket_quantity_item .basket_move_wishList
+.basketQuantityItem .basketProductRemove,
+.basketQuantityItem .basketMoveWishList
 {
     display: block;
 }
-.basket_quantity_item .basket_order_quantity
+.basketQuantityItem .basketOrderQuantity
 {
     width: 50px;
 
     text-align: center;
 }
-.basket_quantity_item .basket_quantity_operation
+.basketQuantityItem .basketQuantityOperation
 {
     min-width: 100px;
 }
-.basket_order_table .basket_productImg_section
+.basketOrderTable .basketProductImgSection
 {
     text-align: center;
 }
-.basket_order_table .basket_productImg_section img
+.basketOrderTable .basketProductImgSection img
 {
-    width: 80px;
-    height: 80px;
+    width: 100%;
+    height: 100%;
 }
 .orderSummary
 {
@@ -95,39 +115,39 @@
  * @author Ivy
  */
 /* start bracket breadcrumb style*/
-.breadcrumb_bracket_section li
+.breadcrumbBracketSection li
 {
     font-weight: bold;
 
     display: inline-block;
 }
-.breadcrumb_bracket_section li + li:before
+.breadcrumbBracketSection li + li:before
 {
     content: '> ';
 
     color: #ccc;
 }
-.breadcrumb_bracket_section li .active
+.breadcrumbBracketSection li .active
 {
     font-weight: normal;
 }
 /* end  bracket breadcrumb style*/
 /* start arrows breadcrumb style*/
-.breadcrumb_arrows_section
+.breadcrumbArrowsSection
 {
     background: #f5f5f5;
 }
-.breadcrumb_arrows_section ol
+.breadcrumbArrowsSection ol
 {
     overflow: hidden;
 }
-.breadcrumb_arrows_section li
+.breadcrumbArrowsSection li
 {
     float: left;
 
     list-style: none;
 }
-.breadcrumb_arrows_section li a
+.breadcrumbArrowsSection li a
 {
     position: relative;
 
@@ -140,12 +160,12 @@
 
     background-color: #f5f5f5;
 }
-.breadcrumb_arrows_section li a:hover,
-.breadcrumb_arrows_section li .active
+.breadcrumbArrowsSection li a:hover,
+.breadcrumbArrowsSection li .active
 {
     background: #fff;
 }
-.breadcrumb_arrows_section li a:after
+.breadcrumbArrowsSection li a:after
 {
     position: absolute;
     z-index: 2;
@@ -164,7 +184,7 @@
     border-bottom: 50px solid transparent;
     border-left: 30px solid #f5f5f5;
 }
-.breadcrumb_arrows_section li a:before
+.breadcrumbArrowsSection li a:before
 {
     position: absolute;
     z-index: 1;
@@ -184,38 +204,38 @@
     border-bottom: 50px solid transparent;
     border-left: 30px solid #ccc;
 }
-.breadcrumb_arrows_section li a:hover:after,
-.breadcrumb_arrows_section li .active:after
+.breadcrumbArrowsSection li a:hover:after,
+.breadcrumbArrowsSection li .active:after
 {
     border-left-color: #fff;
 }
 /**
  * @author Ivy
  */
-.carousel_product_crosswise .carousel-inner
+.carouselProductCrosswise .carousel-inner
 {
     width: 80%;
     margin: 0 auto;
 }
-.carousel_product_crosswise .carousel-inner .item
+.carouselProductCrosswise .carousel-inner .item
 {
     width: 100%;
 }
-.carousel_product_crosswise .carousel-inner ul
+.carouselProductCrosswise .carousel-inner ul
 {
     margin: 0;
     padding: 0;
 }
-.carousel_product_crosswise .carousel-indicators
+.carouselProductCrosswise .carousel-indicators
 {
     bottom: -40px;
 }
-.carousel_product_crosswise .carousel-indicators li
+.carouselProductCrosswise .carousel-indicators li
 {
     border-color: #000;
     background: #ccc;
 }
-.carousel_product_crosswise .carousel-inner .item li
+.carouselProductCrosswise .carousel-inner .item li
 {
     float: left;
 
@@ -224,11 +244,11 @@
 
     list-style: none;
 }
-.carousel_product_crosswise .carousel-inner .item li:last-child
+.carouselProductCrosswise .carousel-inner .item li:last-child
 {
     margin-right: 0 ;
 }
-.carousel_product_crosswise .carousel-inner .item img
+.carouselProductCrosswise .carousel-inner .item img
 {
     width: 100%;
     height: 200px;
@@ -236,7 +256,7 @@
 /**
  * @author Ivy
  */
-.carousel_product_vertical
+.carouselProductVertical
 {
     width: 300px;
     margin: 20px auto;
@@ -245,58 +265,42 @@
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.carousel_product_vertical .carousel-inner
+.carouselProductVertical .carousel-inner
 {
     width: 80%;
     margin: 0 auto;
 }
-.carousel_product_vertical .carousel-inner .item
+.carouselProductVertical .carousel-inner .item
 {
     width: 100%;
 }
-.carousel_product_vertical .carousel-inner ul
+.carouselProductVertical .carousel-inner ul
 {
     margin-right: 0;
     padding: 0;
 }
-.carousel_product_vertical .carousel-indicators
+.carouselProductVertical .carousel-indicators
 {
     bottom: -40px;
 }
-.carousel_product_vertical .carousel-indicators li
+.carouselProductVertical .carousel-indicators li
 {
     border-color: #000;
     background: #ccc;
 }
-.carousel_product_vertical .carousel-inner .item li
+.carouselProductVertical .carousel-inner .item li
 {
     margin-bottom: 20px;
 
     list-style: none;
 }
-.carousel_product_vertical .carousel-inner .item li:last-child
+.carouselProductVertical .carousel-inner .item li:last-child
 {
     margin-bottom: 0 ;
 }
-.carousel_product_vertical .carousel-inner .item img
+.carouselProductVertical .carousel-inner .item img
 {
     width: 100%;
-}
-/**
- * @author Ivy
- */
-.cascading_panel
-{
-    width: 50%;
-    margin: 20px auto;
-
-    border-radius: 10px;
-}
-.cascading_panel .cascading_panel_collapse
-{
-    float: right;
-
-    text-decoration: none;
 }
 /**
  * @author Jack Han
@@ -359,6 +363,304 @@
 {
     border-right: 0;
 }
+.siteFooter .siteFooterBtmLink h2
+{
+    display: none;
+}
+.mobile .siteFooter .siteFooterGroupLinkItem
+{
+    width: 33.33333%;
+    margin-top: 15px;
+}
+.mobileSmall .siteFooter .siteFooterGroupLinkItem
+{
+    display: block;
+    float: none;
+
+    width: 100%;
+    margin-top: 5px;
+
+    text-align: center;
+
+    border: 1px solid #ddd;
+    background: #eee;
+}
+.mobileSmall .siteFooter .siteFooterGroupLinkItem h2
+{
+    line-height: 40px;
+
+    margin: 0;
+}
+.mobileSmall .siteFooter .siteFooterGroupLinkItem ul
+{
+    display: none;
+}
+.mobileSmall .siteFooter .siteFooterGroupLinkItem:hover
+{
+    background: #ccc;
+}
+.mobileSmall .siteFooter .siteFooterBtmLink
+{
+    text-align: right;
+}
+.mobileSmall .siteFooter .siteFooterBtmLink ul
+{
+    display: none;
+}
+.mobileSmall .siteFooter .siteFooterBtmLink h2
+{
+    font-size: 13px;
+
+    display: inline-block;
+
+    margin: 0;
+    padding: 5px 10px;
+
+    border: 1px solid #ccc;
+}
+@media only screen and (max-width: 770px)
+{
+    .siteFooter .siteFooterGroupLinkItem
+    {
+        width: 33.33333%;
+        margin-top: 15px;
+    }
+    .siteSearchBar
+    {
+        display: none;
+    }
+    .siteSearchBar .form-group
+    {
+        margin-bottom: 0;
+    }
+    .navbar
+    {
+        display: none;
+    }
+    .navbar .navbar-collapse
+    {
+        display: block;
+
+        border-color: #f8f8f8;
+    }
+    .navbar .navbar-collapse .navbar-nav
+    {
+        margin: 0;
+    }
+    .navbar .navbar-collapse .navbar-nav .dropdown a
+    {
+        padding: 10px 30px;
+    }
+    .navbar .navbar-collapse .navbar-nav .dropdown .dropdown-toggle
+    {
+        padding: 10px 15px;
+    }
+    .header
+    {
+        position: relative;
+    }
+    .header .headerCol
+    {
+        float: none;
+
+        width: 100%;
+    }
+    .header .siteSearchBar
+    {
+        width: 100%;
+        padding: 15px;
+
+        background: #e7e7e7;
+    }
+    .header .headerLogo .deskTopLogo
+    {
+        display: none;
+    }
+    .header .headerLogo .mobileLogo
+    {
+        display: block;
+    }
+    .header .headerColLink ul
+    {
+        display: none;
+    }
+    .header .headerColLink h2
+    {
+        font-size: 13px;
+
+        display: inline-block;
+
+        margin: 0;
+        padding: 5px 10px;
+
+        border: 1px solid #ccc;
+    }
+    .header .siteMinBasket
+    {
+        display: none;
+
+        width: 100%;
+
+        background: #e7e7e7;
+    }
+    .header .siteMinBasket .siteMinBasketBox
+    {
+        display: none;
+    }
+    .header .siteMinBasket .siteMinBasketPopup
+    {
+        display: block;
+
+        width: 100%;
+    }
+    .header .siteMinBasket .siteMinBasketPopup
+    {
+        position: inherit;
+    }
+    .header .siteMinBasket .modal-content
+    {
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+    .mobileHeader
+    {
+        display: block;
+        clear: both;
+    }
+    .mobileHeader ul
+    {
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+    }
+    .mobileHeader ul li
+    {
+        line-height: 40px;
+
+        float: left;
+
+        width: 25%;
+        height: 40px;
+
+        text-align: center;
+        text-transform: uppercase;
+
+        color: #bbb;
+        border: 1px solid #eee;
+        border-left: 0;
+    }
+    .mobileHeader ul li .fa
+    {
+        font-size: 20px;
+
+        vertical-align: middle;
+    }
+    .mobileHeader ul li:hover
+    {
+        color: #333;
+    }
+}
+@media only screen and (max-width: 479px)
+{
+    .siteFooter .siteFooterGroupLinkItem
+    {
+        display: block;
+        float: none;
+
+        width: 100%;
+        margin-top: 5px;
+
+        text-align: center;
+
+        border: 1px solid #ddd;
+        background: #eee;
+    }
+    .siteFooter .siteFooterGroupLinkItem h2
+    {
+        line-height: 40px;
+
+        margin: 0;
+    }
+    .siteFooter .siteFooterGroupLinkItem ul
+    {
+        display: none;
+    }
+    .siteFooter .siteFooterGroupLinkItem:hover
+    {
+        background: #ccc;
+    }
+    .siteFooter .siteFooterBtmLink
+    {
+        text-align: right;
+    }
+    .siteFooter .siteFooterBtmLink ul
+    {
+        display: none;
+    }
+    .siteFooter .siteFooterBtmLink h2
+    {
+        font-size: 13px;
+
+        display: inline-block;
+
+        margin: 0;
+        padding: 5px 10px;
+
+        border: 1px solid #ccc;
+    }
+    .mobileHeader ul
+    {
+        padding: 0;
+
+        list-style: none;
+    }
+    .mobileHeader ul li
+    {
+        line-height: 40px;
+
+        float: left;
+
+        width: 20%;
+        height: 40px;
+
+        text-align: center;
+
+        color: #bbb;
+        border: 1px solid #eee;
+        border-left: 0;
+    }
+    .mobileHeader ul li .fa
+    {
+        font-size: 20px;
+
+        vertical-align: middle;
+    }
+    .mobileHeader ul li span
+    {
+        display: none;
+    }
+    .mobileHeader ul li.mobileNavBar
+    {
+        width: 40%;
+    }
+    .mobileHeader ul li.mobileNavBar span
+    {
+        display: inline;
+    }
+    .mobileHeader ul li:hover
+    {
+        color: #333;
+    }
+    .header .siteSearchBar .siteSearchBarSelect
+    {
+        display: none;
+    }
+    .header .siteSearchBar .siteSearchBarInput
+    {
+        width: 80%;
+    }
+}
 /**
  * @author Jack Han
  */
@@ -401,18 +703,6 @@
     padding: 6px;
 
     border: 1px solid #ccc;
-}
-.siteSearchBar .siteSearchBarInput
-{
-    width: 50%;
-}
-.siteSearchBar .siteSearchBarSelect
-{
-    width: 30%;
-}
-.siteSearchBar .siteSearchBarBtn
-{
-    width: 20%;
 }
 .siteSearchBar .siteSearchBarAutoSuggest
 {
@@ -528,7 +818,7 @@
 }
 .siteMinBasket .siteMinBasketPopup p
 {
-    margin: 0 0 5px;
+    padding: 10px 0 0 15px;
 }
 .siteMinBasket .siteMinBasketPopup .media
 {
@@ -595,12 +885,16 @@
 
     width: 20%;
 }
+.header .headerLogo .mobileLogo
+{
+    display: none;
+}
 .header .headerCol
 {
     float: left;
 
     width: 80%;
-    padding: 15px 0 15px;
+    padding: 15px 0 0;
 }
 .header .siteSearchBar
 {
@@ -615,6 +909,18 @@
 .header .siteSearchBar .btn
 {
     font-size: 12px;
+}
+.header .siteSearchBar .siteSearchBarInput
+{
+    width: 50%;
+}
+.header .siteSearchBar .siteSearchBarSelect
+{
+    width: 30%;
+}
+.header .siteSearchBar .siteSearchBarBtn
+{
+    width: 20%;
 }
 .header .headerColLink
 {
@@ -649,6 +955,10 @@
 {
     border: 0;
 }
+.header .headerColLink h2
+{
+    display: none;
+}
 .header .siteMinBasket
 {
     position: relative;
@@ -665,12 +975,445 @@
 
     width: 350px;
 }
+.mobileHeader
+{
+    display: none;
+}
 .navbar
 {
     display: block;
     clear: both;
 
     content: '';
+}
+.mobile .siteSearchBar
+{
+    display: none;
+}
+.mobile .siteSearchBar .form-group
+{
+    margin-bottom: 0;
+}
+.mobile .navbar
+{
+    display: none;
+}
+.mobile .navbar .navbar-collapse
+{
+    display: block;
+
+    border-color: #f8f8f8;
+}
+.mobile .navbar .navbar-collapse .navbar-nav
+{
+    margin: 0;
+}
+.mobile .navbar .navbar-collapse .navbar-nav .dropdown a
+{
+    padding: 10px 30px;
+}
+.mobile .navbar .navbar-collapse .navbar-nav .dropdown .dropdown-toggle
+{
+    padding: 10px 15px;
+}
+.mobile .header
+{
+    position: relative;
+}
+.mobile .header .headerCol
+{
+    float: none;
+
+    width: 100%;
+}
+.mobile .header .siteSearchBar
+{
+    width: 100%;
+    padding: 15px;
+
+    background: #e7e7e7;
+}
+.mobile .header .headerLogo .deskTopLogo
+{
+    display: none;
+}
+.mobile .header .headerLogo .mobileLogo
+{
+    display: block;
+}
+.mobile .header .headerColLink ul
+{
+    display: none;
+}
+.mobile .header .headerColLink h2
+{
+    font-size: 13px;
+
+    display: inline-block;
+
+    margin: 0;
+    padding: 5px 10px;
+
+    border: 1px solid #ccc;
+}
+.mobile .header .siteMinBasket
+{
+    display: none;
+
+    width: 100%;
+
+    background: #e7e7e7;
+}
+.mobile .header .siteMinBasket .siteMinBasketBox
+{
+    display: none;
+}
+.mobile .header .siteMinBasket .siteMinBasketPopup
+{
+    display: block;
+
+    width: 100%;
+}
+.mobile .header .siteMinBasket .siteMinBasketPopup
+{
+    position: inherit;
+}
+.mobile .header .siteMinBasket .modal-content
+{
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+.mobile .mobileHeader
+{
+    display: block;
+    clear: both;
+}
+.mobile .mobileHeader ul
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+.mobile .mobileHeader ul li
+{
+    line-height: 40px;
+
+    float: left;
+
+    width: 25%;
+    height: 40px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #bbb;
+    border: 1px solid #eee;
+    border-left: 0;
+}
+.mobile .mobileHeader ul li .fa
+{
+    font-size: 20px;
+
+    vertical-align: middle;
+}
+.mobile .mobileHeader ul li:hover
+{
+    color: #333;
+}
+.mobileSmall .mobileHeader ul
+{
+    padding: 0;
+
+    list-style: none;
+}
+.mobileSmall .mobileHeader ul li
+{
+    line-height: 40px;
+
+    float: left;
+
+    width: 20%;
+    height: 40px;
+
+    text-align: center;
+
+    color: #bbb;
+    border: 1px solid #eee;
+    border-left: 0;
+}
+.mobileSmall .mobileHeader ul li .fa
+{
+    font-size: 20px;
+
+    vertical-align: middle;
+}
+.mobileSmall .mobileHeader ul li span
+{
+    display: none;
+}
+.mobileSmall .mobileHeader ul li.mobileNavBar
+{
+    width: 40%;
+}
+.mobileSmall .mobileHeader ul li.mobileNavBar span
+{
+    display: inline;
+}
+.mobileSmall .mobileHeader ul li:hover
+{
+    color: #333;
+}
+.mobileSmall .header .siteSearchBar .siteSearchBarSelect
+{
+    display: none;
+}
+.mobileSmall .header .siteSearchBar .siteSearchBarInput
+{
+    width: 80%;
+}
+@media only screen and (max-width: 770px)
+{
+    .siteFooter .siteFooterGroupLinkItem
+    {
+        width: 33.33333%;
+        margin-top: 15px;
+    }
+    .siteSearchBar
+    {
+        display: none;
+    }
+    .siteSearchBar .form-group
+    {
+        margin-bottom: 0;
+    }
+    .navbar
+    {
+        display: none;
+    }
+    .navbar .navbar-collapse
+    {
+        display: block;
+
+        border-color: #f8f8f8;
+    }
+    .navbar .navbar-collapse .navbar-nav
+    {
+        margin: 0;
+    }
+    .navbar .navbar-collapse .navbar-nav .dropdown a
+    {
+        padding: 10px 30px;
+    }
+    .navbar .navbar-collapse .navbar-nav .dropdown .dropdown-toggle
+    {
+        padding: 10px 15px;
+    }
+    .header
+    {
+        position: relative;
+    }
+    .header .headerCol
+    {
+        float: none;
+
+        width: 100%;
+    }
+    .header .siteSearchBar
+    {
+        width: 100%;
+        padding: 15px;
+
+        background: #e7e7e7;
+    }
+    .header .headerLogo .deskTopLogo
+    {
+        display: none;
+    }
+    .header .headerLogo .mobileLogo
+    {
+        display: block;
+    }
+    .header .headerColLink ul
+    {
+        display: none;
+    }
+    .header .headerColLink h2
+    {
+        font-size: 13px;
+
+        display: inline-block;
+
+        margin: 0;
+        padding: 5px 10px;
+
+        border: 1px solid #ccc;
+    }
+    .header .siteMinBasket
+    {
+        display: none;
+
+        width: 100%;
+
+        background: #e7e7e7;
+    }
+    .header .siteMinBasket .siteMinBasketBox
+    {
+        display: none;
+    }
+    .header .siteMinBasket .siteMinBasketPopup
+    {
+        display: block;
+
+        width: 100%;
+    }
+    .header .siteMinBasket .siteMinBasketPopup
+    {
+        position: inherit;
+    }
+    .header .siteMinBasket .modal-content
+    {
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+    .mobileHeader
+    {
+        display: block;
+        clear: both;
+    }
+    .mobileHeader ul
+    {
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+    }
+    .mobileHeader ul li
+    {
+        line-height: 40px;
+
+        float: left;
+
+        width: 25%;
+        height: 40px;
+
+        text-align: center;
+        text-transform: uppercase;
+
+        color: #bbb;
+        border: 1px solid #eee;
+        border-left: 0;
+    }
+    .mobileHeader ul li .fa
+    {
+        font-size: 20px;
+
+        vertical-align: middle;
+    }
+    .mobileHeader ul li:hover
+    {
+        color: #333;
+    }
+}
+@media only screen and (max-width: 479px)
+{
+    .siteFooter .siteFooterGroupLinkItem
+    {
+        display: block;
+        float: none;
+
+        width: 100%;
+        margin-top: 5px;
+
+        text-align: center;
+
+        border: 1px solid #ddd;
+        background: #eee;
+    }
+    .siteFooter .siteFooterGroupLinkItem h2
+    {
+        line-height: 40px;
+
+        margin: 0;
+    }
+    .siteFooter .siteFooterGroupLinkItem ul
+    {
+        display: none;
+    }
+    .siteFooter .siteFooterGroupLinkItem:hover
+    {
+        background: #ccc;
+    }
+    .siteFooter .siteFooterBtmLink
+    {
+        text-align: right;
+    }
+    .siteFooter .siteFooterBtmLink ul
+    {
+        display: none;
+    }
+    .siteFooter .siteFooterBtmLink h2
+    {
+        font-size: 13px;
+
+        display: inline-block;
+
+        margin: 0;
+        padding: 5px 10px;
+
+        border: 1px solid #ccc;
+    }
+    .mobileHeader ul
+    {
+        padding: 0;
+
+        list-style: none;
+    }
+    .mobileHeader ul li
+    {
+        line-height: 40px;
+
+        float: left;
+
+        width: 20%;
+        height: 40px;
+
+        text-align: center;
+
+        color: #bbb;
+        border: 1px solid #eee;
+        border-left: 0;
+    }
+    .mobileHeader ul li .fa
+    {
+        font-size: 20px;
+
+        vertical-align: middle;
+    }
+    .mobileHeader ul li span
+    {
+        display: none;
+    }
+    .mobileHeader ul li.mobileNavBar
+    {
+        width: 40%;
+    }
+    .mobileHeader ul li.mobileNavBar span
+    {
+        display: inline;
+    }
+    .mobileHeader ul li:hover
+    {
+        color: #333;
+    }
+    .header .siteSearchBar .siteSearchBarSelect
+    {
+        display: none;
+    }
+    .header .siteSearchBar .siteSearchBarInput
+    {
+        width: 80%;
+    }
 }
 /**
  * @author Jack Han
@@ -679,11 +1422,11 @@
 {
     margin: 0;
 }
-.siteProListPage .siteProListPage_pagination
+.siteProListPage .siteProListPagePagination
 {
     float: left;
 }
-.siteProListPage .siteProListPage_control
+.siteProListPage .siteProListPageControl
 {
     float: right;
 
@@ -692,25 +1435,25 @@
 
     list-style: none;
 }
-.siteProListPage .siteProListPage_control li
+.siteProListPage .siteProListPageControl li
 {
     float: left;
 }
-.siteProListPage .siteProListPage_control span
+.siteProListPage .siteProListPageControl span
 {
     margin: 0 10px 0 0;
 }
-.siteProListPage .siteProListPage_control .form-group
+.siteProListPage .siteProListPageControl .form-group
 {
     margin: 0 10px 0 0;
 }
-.siteProListPage .siteProListPage_control .form-control
+.siteProListPage .siteProListPageControl .form-control
 {
     display: inline-block;
 
     width: auto;
 }
-.siteProListPage .siteProListPage_control a
+.siteProListPage .siteProListPageControl a
 {
     font-size: 26px;
     line-height: 34px;
@@ -726,7 +1469,7 @@
 /**
  * @author Ivy
  */
-.product_filter_checkbox
+.productFilterCheckbox
 {
     width: 50%;
     margin: 20px auto;
@@ -734,27 +1477,27 @@
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.product_filter_checkbox dl,
-.product_filter_checkbox dt
+.productFilterCheckbox dl,
+.productFilterCheckbox dt
 {
     margin: 0;
     padding: 0;
 
     list-style: none;
 }
-.product_filter_checkbox dd label
+.productFilterCheckbox dd label
 {
     font-weight: normal;
 }
-.product_filter_checkbox dd input
+.productFilterCheckbox dd input
 {
     vertical-align: top;
 }
-.product_filter_checkbox dl:last-child dd:last-child
+.productFilterCheckbox dl:last-child dd:last-child
 {
     margin-top: 10px;
 }
-.product_filter_checkbox h4
+.productFilterCheckbox h4
 {
     margin: 0;
     padding: 20px 10px;
@@ -762,15 +1505,15 @@
     border-radius: 5px 5px 0 0;
     background: #f5f5f5;
 }
-.product_filter_checkbox h4 span
+.productFilterCheckbox h4 span
 {
     font-size: 14px;
 }
-.product_filter_checkbox h4 span:first-child
+.productFilterCheckbox h4 span:first-child
 {
     padding-left: 5px;
 }
-.product_filter_checkbox .form-control
+.productFilterCheckbox .form-control
 {
     display: inline-block;
 
@@ -778,15 +1521,15 @@
     height: auto;
     padding: 0 5px;
 }
-.product_filter_checkbox .close
+.productFilterCheckbox .close
 {
     font-size: 18px;
 }
-.product_filter_checkbox .product_checkbox_list
+.productFilterCheckbox .productCheckboxList
 {
     padding-bottom: 15px;
 }
-.product_filter_checkbox .product_checkbox_list dl
+.productFilterCheckbox .productCheckboxList dl
 {
     padding: 10px;
 
@@ -795,7 +1538,7 @@
 /**
  * @author Ivy
  */
-.product_filter_removable
+.productFilterRemovable
 {
     width: 50%;
     margin: 20px auto;
@@ -803,15 +1546,15 @@
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.product_filter_removable ul,
-.product_filter_removable li
+.productFilterRemovable ul,
+.productFilterRemovable li
 {
     margin: 0;
     padding: 0;
 
     list-style: none;
 }
-.product_filter_removable h4
+.productFilterRemovable h4
 {
     margin: 0;
     padding: 20px 10px;
@@ -819,27 +1562,141 @@
     border-radius: 5px 5px 0 0;
     background: #f5f5f5;
 }
-.product_filter_removable .close
+.productFilterRemovable .close
 {
     font-size: 18px;
 }
-.product_filter_removable .close span
+.productFilterRemovable .close span
 {
     font-size: 14px;
 }
-.product_filter_removable .product_removable_list
+.productFilterRemovable .productRemovableList
 {
     padding-bottom: 15px;
 }
-.product_filter_removable .product_removable_list li
+.productFilterRemovable .productRemovableList li
 {
     padding: 10px;
 
     border-bottom: 1px solid #ccc;
 }
-.product_filter_removable .product_removable_list li:first-child
+.productFilterRemovable .productRemovableList li:first-child
 {
     border-top: 1px solid #ccc;
+}
+/*cascading Panel*/
+.cascadingPanel
+{
+    width: 50%;
+    margin: 20px auto;
+
+    border-radius: 10px;
+}
+.cascadingPanel .cascadingPanelCollapse1,
+.cascadingPanel .cascadingPanelCollapse2
+{
+    float: right;
+
+    text-decoration: none;
+}
+/**
+ * @author Lionel Dong
+ */
+.imageViewer img
+{
+    width: 100%;
+}
+.imageViewer .imageViewerBooth
+{
+    position: relative;
+
+    margin-bottom: 6px;
+}
+.imageViewer .imageViewerBooth:hover
+{
+    cursor: move;
+}
+.imageViewer .imageViewerBooth:hover .imageViewerZoom
+{
+    display: none;
+}
+.imageViewer .imageViewerBooth:hover .imageViewerLens
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 50%;
+    height: 50%;
+
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAMAAABFaP0WAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAGUExURT1uzv///62t27cAAAACdFJOU/8A5bcwSgAAABBJREFUeNpiYGBkYGQECDAAAA0ABMZIs2EAAAAASUVORK5CYII=);
+}
+.imageViewer .imageViewerBooth .imageViewerZoom
+{
+    font-size: 18px;
+    line-height: 30px;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 30px;
+    height: 30px;
+
+    text-align: center;
+
+    opacity: .6;
+    color: #333;
+    background-color: #fff;
+}
+.imageViewer .imageViewerBooth .imageViewerOverlay
+{
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 100%;
+
+    display: none;
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
+}
+.imageViewer .imageViewerBooth .imageViewerOverlay img
+{
+    width: 200%;
+    height: 200%;
+}
+.imageViewer .imageViewerThumb ul
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+.imageViewer .imageViewerThumb ul li
+{
+    float: left;
+
+    width: 25%;
+    padding: 0 1px;
+}
+.imageViewer .imageViewerThumb ul li img
+{
+    border: 3px solid #fff;
+}
+.imageViewer .imageViewerThumb ul li.active img
+{
+    border: 3px solid #333;
+}
+.imageViewer .imageViewerThumb ul li:hover img
+{
+    border: 3px solid #333;
+}
+.imageViewer .imageViewerThumb ul li + li + li + li + li
+{
+    display: none;
 }
 /**
  * @author Jack Han
@@ -858,110 +1715,120 @@
     margin: 0;
     padding: 0;
 }
-.siteProductList .siteProductList_thumb img
+.siteProductList .siteProductListThumb img
 {
     width: 100%;
 
     border: 0;
 }
-.productList_list .siteProductList_item
+.productListListMode .siteProductListItem
 {
     padding: 15px 0;
 
     border-bottom: 1px solid #eee;
 }
-.productList_list .siteProductList_item .siteProductList_rating
+.productListListMode .siteProductListItem .siteProductListRating
 {
     display: none;
 }
-.productList_list .siteProductList_item .siteProductList_brief
+.productListListMode .siteProductListItem .siteProductListBrief
 {
     dipslay: block;
 }
-.productList_list .siteProductList_item:after
+.productListListMode .siteProductListItem:after
 {
     display: block;
     clear: both;
 
     content: '';
 }
-.productList_list .siteProductList_thumb,
-.productList_list .siteProductList_info,
-.productList_list .siteProductList_price,
-.productList_list .siteProductList_handle
+.productListListMode .siteProductListThumb,
+.productListListMode .siteProductListInfo,
+.productListListMode .siteProductListPrice,
+.productListListMode .siteProductListHandle
 {
+    position: relative;
+
     float: left;
 
     padding: 0 15px 0 0;
 }
-.productList_list .siteProductList_thumb
+.productListListMode .siteProductListThumb
 {
     width: 20%;
 }
-.productList_list .siteProductList_thumb .siteProductList_saleOffer
+.productListListMode .siteProductListThumb .siteProductListSaleOffer
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.productListListMode .siteProductListThumb .siteProductListSaleOffer i
+{
+    font-size: 25px;
+
+    color: #ffe400;
+}
+.productListListMode .siteProductListThumb .siteProductListCompareBtn
 {
     display: none;
 }
-.productList_list .siteProductList_thumb .siteProductList_compareBtn
-{
-    display: none;
-}
-.productList_list .siteProductList_info
+.productListListMode .siteProductListInfo
 {
     width: 50%;
 }
-.productList_list .siteProductList_price
+.productListListMode .siteProductListPrice
 {
     width: 15%;
 }
-.productList_list .siteProductList_price p
+.productListListMode .siteProductListPrice p
 {
     display: none;
 }
-.productList_list .siteProductList_price font
+.productListListMode .siteProductListPrice font
 {
     word-wrap: break-word;
 }
-.productList_list .siteProductList_price .siteProductList_priceIcon .fa
+.productListListMode .siteProductListPrice .siteProductListPriceIcon .fa
 {
     font-size: 45px;
 }
-.productList_list .siteProductList_handle
+.productListListMode .siteProductListHandle
 {
     width: 15%;
     padding: 0;
 }
-.productList_list .siteProductList_handle
+.productListListMode .siteProductListHandle
 {
     text-align: center;
 }
-.productList_list .siteProductList_handle .siteProductList_inventory
+.productListListMode .siteProductListHandle .siteProductListInventory
 {
     display: block;
 
     margin-bottom: 5px;
 }
-.productList_list .siteProductList_handle .siteProductList_inventory i
+.productListListMode .siteProductListHandle .siteProductListInventory i
 {
     padding-right: 5px;
 }
-.productList_list .siteProductList_handle .siteProductList_handleAdd
+.productListListMode .siteProductListHandle .siteProductListHandleAdd
 {
     width: 100%;
 }
-.productList_thumbnail
+.productListThumbnailMode
 {
     padding-left: 15px;
 }
-.productList_thumbnail .siteProductList_info h2
+.productListThumbnailMode .siteProductListInfo h2
 {
     padding: 5px 0;
 }
-.productList_thumbnail .siteProductList_item.clearfix
+.productListThumbnailMode .siteProductListItem.clearfix
 {
     clear: none;
 }
-.productList_thumbnail .siteProductList_item
+.productListThumbnailMode .siteProductListItem
 {
     float: left;
 
@@ -969,31 +1836,31 @@
     margin-bottom: 15px;
     padding: 0 15px 0 0;
 }
-.productList_thumbnail .siteProductList_item .siteProductList_brief
+.productListThumbnailMode .siteProductListItem .siteProductListBrief
 {
     display: none;
 }
-.productList_thumbnail .siteProductList_thumb
+.productListThumbnailMode .siteProductListThumb
 {
     position: relative;
 }
-.productList_thumbnail .siteProductList_thumb a
+.productListThumbnailMode .siteProductListThumb a
 {
     display: block;
 }
-.productList_thumbnail .siteProductList_thumb .siteProductList_saleOffer
+.productListThumbnailMode .siteProductListThumb .siteProductListSaleOffer
 {
     position: absolute;
     top: 0;
     left: 0;
 }
-.productList_thumbnail .siteProductList_thumb .siteProductList_saleOffer i
+.productListThumbnailMode .siteProductListThumb .siteProductListSaleOffer i
 {
     font-size: 25px;
 
-    color: yellow;
+    color: #ffe400;
 }
-.productList_thumbnail .siteProductList_thumb .siteProductList_compareBtn
+.productListThumbnailMode .siteProductListThumb .siteProductListCompareBtn
 {
     font-weight: normal;
 
@@ -1004,29 +1871,29 @@
     background: #fff;
     background: rgba(255, 255, 255, .5);
 }
-.productList_thumbnail .siteProductList_price
+.productListThumbnailMode .siteProductListPrice
 {
     min-height: 40px;
 }
-.productList_thumbnail .siteProductList_price .siteProductList_priceQuote
+.productListThumbnailMode .siteProductListPrice .siteProductListPriceQuote
 {
     font-weight: bold;
 }
-.productList_thumbnail .siteProductList_price p
+.productListThumbnailMode .siteProductListPrice p
 {
     margin: 0;
 
     color: #ccc;
 }
-.productList_thumbnail .siteProductList_price .siteProductList_priceIcon
+.productListThumbnailMode .siteProductListPrice .siteProductListPriceIcon
 {
     display: none;
 }
-.productList_thumbnail .siteProductList_rating
+.productListThumbnailMode .siteProductListRating
 {
     margin-bottom: 10px;
 }
-.productList_thumbnail .siteProductList_rating .siteProductList_ratingIcon
+.productListThumbnailMode .siteProductListRating .siteProductListRatingIcon
 {
     display: inline-block;
 
@@ -1034,29 +1901,29 @@
 
     vertical-align: middle;
 }
-.productList_thumbnail .siteProductList_handle .siteProductList_handleQty,
-.productList_thumbnail .siteProductList_handle .siteProductList_handleAdd
+.productListThumbnailMode .siteProductListHandle .siteProductListHandleQty,
+.productListThumbnailMode .siteProductListHandle .siteProductListHandleAdd
 {
     float: left;
 
     padding: 6px auto;
 }
-.productList_thumbnail .siteProductList_handle .siteProductList_inventory
+.productListThumbnailMode .siteProductListHandle .siteProductListInventory
 {
     display: none;
 }
-.productList_thumbnail .siteProductList_handle .form-group
+.productListThumbnailMode .siteProductListHandle .form-group
 {
     float: left;
 
     width: 30%;
     margin: 0;
 }
-.productList_thumbnail .siteProductList_handle .siteProductList_handleAdd
+.productListThumbnailMode .siteProductListHandle .siteProductListHandleAdd
 {
     float: right;
 }
-.productList_thumbnail .siteProductList_handle:after
+.productListThumbnailMode .siteProductListHandle:after
 {
     display: block;
     clear: both;
@@ -1066,20 +1933,13 @@
 /**
  * @author Jack Han
  */
-.quickView
-{
-    top: 100px;
-    left: 30px;
-
-    border: 1px solid #ccc;
-}
-.quickView .quickView_title
+.quickInfo .quickInfoTitle
 {
     position: relative;
 
     padding: 0 10px;
 }
-.quickView .quickView_title h2
+.quickInfo .quickInfoTitle h2
 {
     font-size: 16px;
     line-height: 33px;
@@ -1088,60 +1948,26 @@
 
     margin: 0;
 }
-.quickView .quickView_title .close
+.quickInfo .quickInfoTitle .close
 {
     font-size: 30px;
     line-height: 1.1;
 }
-.quickView .siteProImageViewer
+.quickInfo .quickInfoContent .imageViewer
 {
     float: left;
 
     width: 50%;
     padding: 10px;
 }
-.quickView .quickView_productBriefInfo
+.quickInfo .quickInfoContent .quickInfoProductBriefInfo
 {
     font-size: 13px;
 
     float: left;
 
     width: 50%;
-    padding: 10px 10px 10px 0;
-}
-.siteProImageViewer img
-{
-    width: 100%;
-}
-.siteProImageViewer .siteProImageViewer_gallery
-{
-    margin-bottom: 6px;
-}
-.siteProImageViewer .siteProImageViewer_thumbnail ul
-{
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
-}
-.siteProImageViewer .siteProImageViewer_thumbnail ul li
-{
-    float: left;
-
-    width: 25%;
-    padding: 0 1px;
-}
-.siteProImageViewer .siteProImageViewer_thumbnail ul li img
-{
-    border: 3px solid #fff;
-}
-.siteProImageViewer .siteProImageViewer_thumbnail ul li.active img
-{
-    border: 3px solid #333;
-}
-.siteProImageViewer .siteProImageViewer_thumbnail ul li:hover img
-{
-    border: 3px solid #333;
+    padding: 10px;
 }
 .productBriefInfo h2,
 .productBriefInfo h3
@@ -1151,17 +1977,17 @@
 
     margin: 10px 0;
 }
-.productBriefInfo .productBriefInfo_details,
-.productBriefInfo .productBriefInfo_attribute,
-.productBriefInfo .productBriefInfo_handle
+.productBriefInfo .productBriefInfoDetails,
+.productBriefInfo .productBriefInfoAttribute,
+.productBriefInfo .productBriefInfoHandle
 {
     border: 1px solid #eee;
 }
-.productBriefInfo .productBriefInfo_handle .form-inline
+.productBriefInfo .productBriefInfoHandle .form-inline
 {
     margin-bottom: 15px;
 }
-.productBriefInfo .productBriefInfo_handle .form-inline .btn
+.productBriefInfo .productBriefInfoHandle .form-inline .btn
 {
     float: right;
 }
@@ -1192,19 +2018,23 @@
 
     border: 2px solid #fff;
 }
-.productOption li.available span
+.productOption .available span
 {
     border: 2px solid green;
 }
-.productOption li.active span
+.productOption .active span
 {
     border: 2px solid red;
+}
+.productOption .unavailable span
+{
+    border: 2px solid grey;
 }
 .productOption li:hover span
 {
     border: 2px solid red;
 }
-.productOption li.unavailable span
+.productOption .unavailable:hover span
 {
     border: 2px solid grey;
 }
@@ -1223,46 +2053,46 @@
 /**
  * @author Ivy
  */
-.store_locator .store_locator_inputInfo .form-control
+.storeLocator .storeLocatorInputInfo .form-control
 {
     display: inline-block;
 
     width: 30%;
 }
-.store_locator ul,
-.store_locator p
+.storeLocator ul,
+.storeLocator p
 {
     margin: 0;
     padding: 0;
 }
-.store_locator li
+.storeLocator li
 {
     list-style: none;
 }
-.store_locator_map
+.storeLocatorMap
 {
     margin: 20px auto;
 }
-.store_locator_map .store_map_panel
+.storeLocatorMap .storeMapPanel
 {
     float: left;
 
     width: 60%;
 }
-.store_locator_map .store_map_panel .store_map_canvas
+.storeLocatorMap .storeMapPanel .storeMapCanvas
 {
     min-height: 300px;
     margin-bottom: 5%;
 
     border: 1px solid #ccc;
 }
-.store_locator_map .store_map_lenged
+.storeLocatorMap .storeMapLenged
 {
     padding: 10px;
 
     border: 1px solid #ccc;
 }
-.store_locator_map .store_map_lenged li
+.storeLocatorMap .storeMapLenged li
 {
     display: inline;
     float: left;
@@ -1270,11 +2100,11 @@
     width: 45%;
     margin-right: 5%;
 }
-.store_locator_map .store_map_lenged .glyphicon
+.storeLocatorMap .storeMapLenged .glyphicon
 {
     margin: 5px 10px 0 0;
 }
-.store_locator_map .store_map_lenged h5
+.storeLocatorMap .storeMapLenged h5
 {
     font-weight: bold;
 
@@ -1283,11 +2113,11 @@
     width: 80%;
     margin-top: 0;
 }
-.store_locator_map .store_map_lenged p
+.storeLocatorMap .storeMapLenged p
 {
     font-weight: normal;
 }
-.store_locator_map .store_map_list
+.storeLocatorMap .storeMapList
 {
     display: inline;
     float: left;
@@ -1299,11 +2129,11 @@
 
     border: 1px solid #ccc;
 }
-.store_locator_map .store_map_list .store_mapList_icon
+.storeLocatorMap .storeMapList .storeMapListIcon
 {
     vertical-align: top;
 }
-.store_locator_map .store_mapList_info
+.storeLocatorMap .storeMapListInfo
 {
     display: inline-block;
 
@@ -1313,7 +2143,7 @@
 
     vertical-align: middle;
 }
-.store_locator_mapGloble .store_map_canvas
+.storeLocatorMapGloble .storeMapCanvas
 {
     width: 100%;
     min-height: 300px;
@@ -1321,19 +2151,19 @@
 
     border: 1px solid #ccc;
 }
-.store_map_legendLocalStore span,
-.store_map_legendSuperStore span
+.storeMapLegendLocalStore span,
+.storeMapLegendSuperStore span
 {
     vertical-align: top;
 }
-.store_mapList_storeName span
+.storeMapListStoreName span
 {
     float: right;
 }
 /**
  * @author Ivy
  */
-.store_locator_detail
+.storeLocatorDetail
 {
     min-height: 500px;
     margin: 0;
@@ -1341,15 +2171,15 @@
 
     border: 1px solid #ccc;
 }
-.store_locator_detail .store_detail_info
+.storeLocatorDetail .storeDetailInfo
 {
     padding: 0;
 }
-.store_locator_detail .store_detail_info .sotre_info_getDir
+.storeLocatorDetail .storeDetailInfo .sotreInfoGetDir
 {
     display: block;
 }
-.store_locator_detail .store_detail_info li
+.storeLocatorDetail .storeDetailInfo li
 {
     float: left;
 
@@ -1357,36 +2187,36 @@
 
     list-style: none;
 }
-.store_locator_detail .store_detail_info .store_info_img
+.storeLocatorDetail .storeDetailInfo .storeInfoImg
 {
-    width: 230px;
-    height: 115px;
+    width: 100%;
+    height: 100%;
 }
-.store_locator_detail .store_info_map
+.storeLocatorDetail .storeInfoMap
 {
     width: 35%;
     min-height: 300px;
 
     border: 1px solid #ccc;
 }
-.store_detail_section ul
+.storeDetailSection ul
 {
     padding: 0;
 
     border: 1px solid #ccc;
 }
-.store_detail_section li
+.storeDetailSection li
 {
     margin: 10px 0;
 
     list-style: none;
 }
-.store_detail_section li span
+.storeDetailSection li span
 {
     width: 22%;
     padding: 10px;
 }
-.store_detail_section h5
+.storeDetailSection h5
 {
     font-weight: bold;
 
@@ -1398,18 +2228,18 @@
 
     vertical-align: top;
 }
-.store_detail_section h5 p
+.storeDetailSection h5 p
 {
     font-size: 14px;
     font-weight: normal;
 }
-.store_service_list
+.storeServiceList
 {
     float: left;
 
     width: 60%;
 }
-.store_service_list li
+.storeServiceList li
 {
     float: left;
 
@@ -1417,11 +2247,11 @@
 
     border-right: 1px solid #ccc;
 }
-.store_service_list li:nth-child(2n)
+.storeServiceList li:nth-child(2n)
 {
     border: 0;
 }
-.store_facilities_list
+.storeFacilitiesList
 {
     display: inline;
     float: left;
@@ -1430,38 +2260,117 @@
     margin-left: 10px;
 }
 /**
- * @author Jack Han
+ * @author Jack Han, Lionel Dong
  */
-.siteTabView .siteTabView_content
+.productInfosTab .productInfosTabContent
 {
-    font-size: 12px;
-
     padding: 10px 15px;
 
-    border: 3px solid #ccc;
+    border: 1px solid #ccc;
 }
-.siteTabView .siteTabView_title
+.productInfosTab .productInfosTabContent dt
+{
+    display: none;
+}
+.productInfosTab .productInfosTabContent dd
+{
+    font-size: 12px;
+}
+.productInfosTab .productInfosTabTitle
 {
     margin: 0;
     padding: 0;
 
     list-style: none;
 }
-.siteTabView .siteTabView_title li
+.productInfosTab .productInfosTabTitle li
 {
     float: left;
 
     background: #eee;
 }
-.siteTabView .siteTabView_title li a
+.productInfosTab .productInfosTabTitle li a
 {
     display: block;
 
-    padding: 10px 15px;
+    padding: 7px 15px;
 }
-.siteTabView .siteTabView_title li.active
+.productInfosTab .productInfosTabTitle .active
 {
     background: #ccc;
+}
+@media only screen and (max-width: 770px)
+{
+    .productInfosTab .productInfosTabTitle
+    {
+        display: none;
+    }
+    .productInfosTab .productInfosTabTitle li a
+    {
+        padding: 7px 10px 7px 24px;
+    }
+    .productInfosTab .productInfosTabContent
+    {
+        padding: 0;
+
+        border-bottom: none;
+    }
+    .productInfosTab .productInfosTabContent dt
+    {
+        font-weight: normal;
+        line-height: 1.4;
+
+        position: relative;
+
+        display: block;
+
+        padding: 7px 10px 7px 24px;
+
+        cursor: pointer;
+
+        color: #337ab7;
+        border-bottom: 1px solid #ccc;
+        background-color: #eee;
+    }
+    .productInfosTab .productInfosTabContent dt:after
+    {
+        position: absolute;
+        top: 50%;
+        left: 6px;
+
+        display: block;
+
+        width: 0;
+        height: 0;
+        margin-top: -3px;
+
+        content: '';
+
+        border-top: 4px solid transparent;
+        border-right: none;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid #39c;
+    }
+    .productInfosTab .productInfosTabContent dt.current
+    {
+        background: #ccc;
+    }
+    .productInfosTab .productInfosTabContent dt.current:after
+    {
+        border-top: 4px solid #39c;
+        border-right: 4px solid transparent;
+        border-bottom: none;
+        border-left: 4px solid transparent;
+    }
+    .productInfosTab .productInfosTabContent dd
+    {
+        margin: 0;
+        padding: 10px;
+
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+    }
 }
 /**
  * default theme file
@@ -1504,4 +2413,124 @@
 .siteProductList
 {
     font-size: 13px;
+}
+/**
+ * @author Mike Zou
+ */
+/**
+ * @author Mike Zou
+ */
+.form-group
+{
+    width: 80%;
+}
+.form-group label,
+.form-group input
+{
+    line-height: 34px;
+
+    height: 34px;
+}
+.form-group input[type=checkbox]
+{
+    float: left;
+}
+.form-group:after
+{
+    font-size: 0;
+
+    display: block;
+    visibility: hidden;
+    clear: both;
+
+    height: 0;
+
+    content: ' ';
+}
+.horizontalForm1 .form-group label,
+.horizontalForm2 .form-group label,
+.horizontalForm1 .form-group input,
+.horizontalForm2 .form-group input
+{
+    float: left;
+
+    width: 50%;
+}
+.horizontalForm1 .checkboxGroup input,
+.horizontalForm2 .checkboxGroup input
+{
+    width: auto;
+}
+.horizontalForm1 .form-group label
+{
+    padding-right: 2%;
+
+    text-align: right;
+}
+.horizontalForm1 .checkboxGroup
+{
+    position: relative;
+}
+.horizontalForm1 .checkboxGroup label
+{
+    float: right;
+
+    text-align: left;
+}
+.horizontalForm1 .checkboxGroup input
+{
+    position: absolute;
+    left: 50%;
+
+    margin-left: -17px;
+}
+.withoutLabelForm .form-group label
+{
+    display: none;
+}
+.withoutLabelForm .checkboxGroup label
+{
+    display: inline-block;
+}
+.withoutLabelForm .checkboxGroup input
+{
+    width: auto;
+}
+.form-inline .form-group
+{
+    width: auto;
+}
+.signInOrRegister .signInWrapper,
+.signInOrRegister .registerWrapper
+{
+    float: left;
+
+    width: 50%;
+    padding: 0 5%;
+}
+.signInOrRegister .signInWrapper
+{
+    border-right: 1px solid #999;
+}
+.signInOrRegister .FormLayoutTransTrigger
+{
+    display: inline-block;
+
+    width: 40%;
+    margin: 10px 2%;
+
+    text-align: center;
+}
+@media only screen and (max-width: 770px)
+{
+    .signInOrRegister .signInWrapper,
+    .signInOrRegister .registerWrapper
+    {
+        width: 100%;
+    }
+    .signInOrRegister .signInWrapper
+    {
+        border-right: none;
+        border-bottom: 1px solid #999;
+    }
 }

@@ -7,7 +7,7 @@
 /**
  * @author Ivy
  */
-.store_locator_detail
+.storeLocatorDetail
 {
     min-height: 500px;
     margin: 0;
@@ -15,15 +15,15 @@
 
     border: 1px solid #ccc;
 }
-.store_locator_detail .store_detail_info
+.storeLocatorDetail .storeDetailInfo
 {
     padding: 0;
 }
-.store_locator_detail .store_detail_info .sotre_info_getDir
+.storeLocatorDetail .storeDetailInfo .sotreInfoGetDir
 {
     display: block;
 }
-.store_locator_detail .store_detail_info li
+.storeLocatorDetail .storeDetailInfo li
 {
     float: left;
 
@@ -31,36 +31,36 @@
 
     list-style: none;
 }
-.store_locator_detail .store_detail_info .store_info_img
+.storeLocatorDetail .storeDetailInfo .storeInfoImg
 {
-    width: 230px;
-    height: 115px;
+    width: 100%;
+    height: 100%;
 }
-.store_locator_detail .store_info_map
+.storeLocatorDetail .storeInfoMap
 {
     width: 35%;
     min-height: 300px;
 
     border: 1px solid #ccc;
 }
-.store_detail_section ul
+.storeDetailSection ul
 {
     padding: 0;
 
     border: 1px solid #ccc;
 }
-.store_detail_section li
+.storeDetailSection li
 {
     margin: 10px 0;
 
     list-style: none;
 }
-.store_detail_section li span
+.storeDetailSection li span
 {
     width: 22%;
     padding: 10px;
 }
-.store_detail_section h5
+.storeDetailSection h5
 {
     font-weight: bold;
 
@@ -72,18 +72,18 @@
 
     vertical-align: top;
 }
-.store_detail_section h5 p
+.storeDetailSection h5 p
 {
     font-size: 14px;
     font-weight: normal;
 }
-.store_service_list
+.storeServiceList
 {
     float: left;
 
     width: 60%;
 }
-.store_service_list li
+.storeServiceList li
 {
     float: left;
 
@@ -91,11 +91,11 @@
 
     border-right: 1px solid #ccc;
 }
-.store_service_list li:nth-child(2n)
+.storeServiceList li:nth-child(2n)
 {
     border: 0;
 }
-.store_facilities_list
+.storeFacilitiesList
 {
     display: inline;
     float: left;

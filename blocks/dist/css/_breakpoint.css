@@ -1,0 +1,22 @@
+/*!
+ * bootCommerce v0.0.1 (https://github.com/leedorian/bootCommerce/)
+ * Copyright 2015-2015 
+ * Licensed under MIT (https://github.com/leedorian/bootCommerce/blob/master/LICENSE.md)
+ */
+
+/**
+ * Mixin - Breakpoint
+ *
+ * @author Lionel Dong
+ */
+/**
+ * These should be used with the bp (max-width, xx) mixin
+ * where a min-width is used, remember to +1 to break correctly
+ */
+/**
+ * set a max-width/min-width/both media query
+ *
+ * @param {string} max | min | range
+ * @param {string} @maxValue, @minValue, {number}px
+ * @param {string} @content The style's block
+ */

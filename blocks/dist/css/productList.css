@@ -21,110 +21,120 @@
     margin: 0;
     padding: 0;
 }
-.siteProductList .siteProductList_thumb img
+.siteProductList .siteProductListThumb img
 {
     width: 100%;
 
     border: 0;
 }
-.productList_list .siteProductList_item
+.productListListMode .siteProductListItem
 {
     padding: 15px 0;
 
     border-bottom: 1px solid #eee;
 }
-.productList_list .siteProductList_item .siteProductList_rating
+.productListListMode .siteProductListItem .siteProductListRating
 {
     display: none;
 }
-.productList_list .siteProductList_item .siteProductList_brief
+.productListListMode .siteProductListItem .siteProductListBrief
 {
     dipslay: block;
 }
-.productList_list .siteProductList_item:after
+.productListListMode .siteProductListItem:after
 {
     display: block;
     clear: both;
 
     content: '';
 }
-.productList_list .siteProductList_thumb,
-.productList_list .siteProductList_info,
-.productList_list .siteProductList_price,
-.productList_list .siteProductList_handle
+.productListListMode .siteProductListThumb,
+.productListListMode .siteProductListInfo,
+.productListListMode .siteProductListPrice,
+.productListListMode .siteProductListHandle
 {
+    position: relative;
+
     float: left;
 
     padding: 0 15px 0 0;
 }
-.productList_list .siteProductList_thumb
+.productListListMode .siteProductListThumb
 {
     width: 20%;
 }
-.productList_list .siteProductList_thumb .siteProductList_saleOffer
+.productListListMode .siteProductListThumb .siteProductListSaleOffer
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.productListListMode .siteProductListThumb .siteProductListSaleOffer i
+{
+    font-size: 25px;
+
+    color: #ffe400;
+}
+.productListListMode .siteProductListThumb .siteProductListCompareBtn
 {
     display: none;
 }
-.productList_list .siteProductList_thumb .siteProductList_compareBtn
-{
-    display: none;
-}
-.productList_list .siteProductList_info
+.productListListMode .siteProductListInfo
 {
     width: 50%;
 }
-.productList_list .siteProductList_price
+.productListListMode .siteProductListPrice
 {
     width: 15%;
 }
-.productList_list .siteProductList_price p
+.productListListMode .siteProductListPrice p
 {
     display: none;
 }
-.productList_list .siteProductList_price font
+.productListListMode .siteProductListPrice font
 {
     word-wrap: break-word;
 }
-.productList_list .siteProductList_price .siteProductList_priceIcon .fa
+.productListListMode .siteProductListPrice .siteProductListPriceIcon .fa
 {
     font-size: 45px;
 }
-.productList_list .siteProductList_handle
+.productListListMode .siteProductListHandle
 {
     width: 15%;
     padding: 0;
 }
-.productList_list .siteProductList_handle
+.productListListMode .siteProductListHandle
 {
     text-align: center;
 }
-.productList_list .siteProductList_handle .siteProductList_inventory
+.productListListMode .siteProductListHandle .siteProductListInventory
 {
     display: block;
 
     margin-bottom: 5px;
 }
-.productList_list .siteProductList_handle .siteProductList_inventory i
+.productListListMode .siteProductListHandle .siteProductListInventory i
 {
     padding-right: 5px;
 }
-.productList_list .siteProductList_handle .siteProductList_handleAdd
+.productListListMode .siteProductListHandle .siteProductListHandleAdd
 {
     width: 100%;
 }
-.productList_thumbnail
+.productListThumbnailMode
 {
     padding-left: 15px;
 }
-.productList_thumbnail .siteProductList_info h2
+.productListThumbnailMode .siteProductListInfo h2
 {
     padding: 5px 0;
 }
-.productList_thumbnail .siteProductList_item.clearfix
+.productListThumbnailMode .siteProductListItem.clearfix
 {
     clear: none;
 }
-.productList_thumbnail .siteProductList_item
+.productListThumbnailMode .siteProductListItem
 {
     float: left;
 
@@ -132,31 +142,31 @@
     margin-bottom: 15px;
     padding: 0 15px 0 0;
 }
-.productList_thumbnail .siteProductList_item .siteProductList_brief
+.productListThumbnailMode .siteProductListItem .siteProductListBrief
 {
     display: none;
 }
-.productList_thumbnail .siteProductList_thumb
+.productListThumbnailMode .siteProductListThumb
 {
     position: relative;
 }
-.productList_thumbnail .siteProductList_thumb a
+.productListThumbnailMode .siteProductListThumb a
 {
     display: block;
 }
-.productList_thumbnail .siteProductList_thumb .siteProductList_saleOffer
+.productListThumbnailMode .siteProductListThumb .siteProductListSaleOffer
 {
     position: absolute;
     top: 0;
     left: 0;
 }
-.productList_thumbnail .siteProductList_thumb .siteProductList_saleOffer i
+.productListThumbnailMode .siteProductListThumb .siteProductListSaleOffer i
 {
     font-size: 25px;
 
-    color: yellow;
+    color: #ffe400;
 }
-.productList_thumbnail .siteProductList_thumb .siteProductList_compareBtn
+.productListThumbnailMode .siteProductListThumb .siteProductListCompareBtn
 {
     font-weight: normal;
 
@@ -167,29 +177,29 @@
     background: #fff;
     background: rgba(255, 255, 255, .5);
 }
-.productList_thumbnail .siteProductList_price
+.productListThumbnailMode .siteProductListPrice
 {
     min-height: 40px;
 }
-.productList_thumbnail .siteProductList_price .siteProductList_priceQuote
+.productListThumbnailMode .siteProductListPrice .siteProductListPriceQuote
 {
     font-weight: bold;
 }
-.productList_thumbnail .siteProductList_price p
+.productListThumbnailMode .siteProductListPrice p
 {
     margin: 0;
 
     color: #ccc;
 }
-.productList_thumbnail .siteProductList_price .siteProductList_priceIcon
+.productListThumbnailMode .siteProductListPrice .siteProductListPriceIcon
 {
     display: none;
 }
-.productList_thumbnail .siteProductList_rating
+.productListThumbnailMode .siteProductListRating
 {
     margin-bottom: 10px;
 }
-.productList_thumbnail .siteProductList_rating .siteProductList_ratingIcon
+.productListThumbnailMode .siteProductListRating .siteProductListRatingIcon
 {
     display: inline-block;
 
@@ -197,29 +207,29 @@
 
     vertical-align: middle;
 }
-.productList_thumbnail .siteProductList_handle .siteProductList_handleQty,
-.productList_thumbnail .siteProductList_handle .siteProductList_handleAdd
+.productListThumbnailMode .siteProductListHandle .siteProductListHandleQty,
+.productListThumbnailMode .siteProductListHandle .siteProductListHandleAdd
 {
     float: left;
 
     padding: 6px auto;
 }
-.productList_thumbnail .siteProductList_handle .siteProductList_inventory
+.productListThumbnailMode .siteProductListHandle .siteProductListInventory
 {
     display: none;
 }
-.productList_thumbnail .siteProductList_handle .form-group
+.productListThumbnailMode .siteProductListHandle .form-group
 {
     float: left;
 
     width: 30%;
     margin: 0;
 }
-.productList_thumbnail .siteProductList_handle .siteProductList_handleAdd
+.productListThumbnailMode .siteProductListHandle .siteProductListHandleAdd
 {
     float: right;
 }
-.productList_thumbnail .siteProductList_handle:after
+.productListThumbnailMode .siteProductListHandle:after
 {
     display: block;
     clear: both;

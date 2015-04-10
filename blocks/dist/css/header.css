@@ -7,6 +7,26 @@
 /**
  * @author Jack Han
  */
+/**
+ * @author Lionel
+ * @date 2015-03-19
+ */
+/**
+ * Mixin - Breakpoint
+ *
+ * @author Lionel Dong
+ */
+/**
+ * These should be used with the bp (max-width, xx) mixin
+ * where a min-width is used, remember to +1 to break correctly
+ */
+/**
+ * set a max-width/min-width/both media query
+ *
+ * @param {string} max | min | range
+ * @param {string} @maxValue, @minValue, {number}px
+ * @param {string} @content The style's block
+ */
 .siteLogo
 {
     padding: 15px 15px 15px 0;
@@ -46,18 +66,6 @@
     padding: 6px;
 
     border: 1px solid #ccc;
-}
-.siteSearchBar .siteSearchBarInput
-{
-    width: 50%;
-}
-.siteSearchBar .siteSearchBarSelect
-{
-    width: 30%;
-}
-.siteSearchBar .siteSearchBarBtn
-{
-    width: 20%;
 }
 .siteSearchBar .siteSearchBarAutoSuggest
 {
@@ -173,7 +181,7 @@
 }
 .siteMinBasket .siteMinBasketPopup p
 {
-    margin: 0 0 5px;
+    padding: 10px 0 0 15px;
 }
 .siteMinBasket .siteMinBasketPopup .media
 {
@@ -240,12 +248,16 @@
 
     width: 20%;
 }
+.header .headerLogo .mobileLogo
+{
+    display: none;
+}
 .header .headerCol
 {
     float: left;
 
     width: 80%;
-    padding: 15px 0 15px;
+    padding: 15px 0 0;
 }
 .header .siteSearchBar
 {
@@ -260,6 +272,18 @@
 .header .siteSearchBar .btn
 {
     font-size: 12px;
+}
+.header .siteSearchBar .siteSearchBarInput
+{
+    width: 50%;
+}
+.header .siteSearchBar .siteSearchBarSelect
+{
+    width: 30%;
+}
+.header .siteSearchBar .siteSearchBarBtn
+{
+    width: 20%;
 }
 .header .headerColLink
 {
@@ -294,6 +318,10 @@
 {
     border: 0;
 }
+.header .headerColLink h2
+{
+    display: none;
+}
 .header .siteMinBasket
 {
     position: relative;
@@ -310,10 +338,392 @@
 
     width: 350px;
 }
+.mobileHeader
+{
+    display: none;
+}
 .navbar
 {
     display: block;
     clear: both;
 
     content: '';
+}
+.mobile .siteSearchBar
+{
+    display: none;
+}
+.mobile .siteSearchBar .form-group
+{
+    margin-bottom: 0;
+}
+.mobile .navbar
+{
+    display: none;
+}
+.mobile .navbar .navbar-collapse
+{
+    display: block;
+
+    border-color: #f8f8f8;
+}
+.mobile .navbar .navbar-collapse .navbar-nav
+{
+    margin: 0;
+}
+.mobile .navbar .navbar-collapse .navbar-nav .dropdown a
+{
+    padding: 10px 30px;
+}
+.mobile .navbar .navbar-collapse .navbar-nav .dropdown .dropdown-toggle
+{
+    padding: 10px 15px;
+}
+.mobile .header
+{
+    position: relative;
+}
+.mobile .header .headerCol
+{
+    float: none;
+
+    width: 100%;
+}
+.mobile .header .siteSearchBar
+{
+    width: 100%;
+    padding: 15px;
+
+    background: #e7e7e7;
+}
+.mobile .header .headerLogo .deskTopLogo
+{
+    display: none;
+}
+.mobile .header .headerLogo .mobileLogo
+{
+    display: block;
+}
+.mobile .header .headerColLink ul
+{
+    display: none;
+}
+.mobile .header .headerColLink h2
+{
+    font-size: 13px;
+
+    display: inline-block;
+
+    margin: 0;
+    padding: 5px 10px;
+
+    border: 1px solid #ccc;
+}
+.mobile .header .siteMinBasket
+{
+    display: none;
+
+    width: 100%;
+
+    background: #e7e7e7;
+}
+.mobile .header .siteMinBasket .siteMinBasketBox
+{
+    display: none;
+}
+.mobile .header .siteMinBasket .siteMinBasketPopup
+{
+    display: block;
+
+    width: 100%;
+}
+.mobile .header .siteMinBasket .siteMinBasketPopup
+{
+    position: inherit;
+}
+.mobile .header .siteMinBasket .modal-content
+{
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+.mobile .mobileHeader
+{
+    display: block;
+    clear: both;
+}
+.mobile .mobileHeader ul
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+.mobile .mobileHeader ul li
+{
+    line-height: 40px;
+
+    float: left;
+
+    width: 25%;
+    height: 40px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #bbb;
+    border: 1px solid #eee;
+    border-left: 0;
+}
+.mobile .mobileHeader ul li .fa
+{
+    font-size: 20px;
+
+    vertical-align: middle;
+}
+.mobile .mobileHeader ul li:hover
+{
+    color: #333;
+}
+.mobileSmall .mobileHeader ul
+{
+    padding: 0;
+
+    list-style: none;
+}
+.mobileSmall .mobileHeader ul li
+{
+    line-height: 40px;
+
+    float: left;
+
+    width: 20%;
+    height: 40px;
+
+    text-align: center;
+
+    color: #bbb;
+    border: 1px solid #eee;
+    border-left: 0;
+}
+.mobileSmall .mobileHeader ul li .fa
+{
+    font-size: 20px;
+
+    vertical-align: middle;
+}
+.mobileSmall .mobileHeader ul li span
+{
+    display: none;
+}
+.mobileSmall .mobileHeader ul li.mobileNavBar
+{
+    width: 40%;
+}
+.mobileSmall .mobileHeader ul li.mobileNavBar span
+{
+    display: inline;
+}
+.mobileSmall .mobileHeader ul li:hover
+{
+    color: #333;
+}
+.mobileSmall .header .siteSearchBar .siteSearchBarSelect
+{
+    display: none;
+}
+.mobileSmall .header .siteSearchBar .siteSearchBarInput
+{
+    width: 80%;
+}
+@media only screen and (max-width: 770px)
+{
+    .siteSearchBar
+    {
+        display: none;
+    }
+    .siteSearchBar .form-group
+    {
+        margin-bottom: 0;
+    }
+    .navbar
+    {
+        display: none;
+    }
+    .navbar .navbar-collapse
+    {
+        display: block;
+
+        border-color: #f8f8f8;
+    }
+    .navbar .navbar-collapse .navbar-nav
+    {
+        margin: 0;
+    }
+    .navbar .navbar-collapse .navbar-nav .dropdown a
+    {
+        padding: 10px 30px;
+    }
+    .navbar .navbar-collapse .navbar-nav .dropdown .dropdown-toggle
+    {
+        padding: 10px 15px;
+    }
+    .header
+    {
+        position: relative;
+    }
+    .header .headerCol
+    {
+        float: none;
+
+        width: 100%;
+    }
+    .header .siteSearchBar
+    {
+        width: 100%;
+        padding: 15px;
+
+        background: #e7e7e7;
+    }
+    .header .headerLogo .deskTopLogo
+    {
+        display: none;
+    }
+    .header .headerLogo .mobileLogo
+    {
+        display: block;
+    }
+    .header .headerColLink ul
+    {
+        display: none;
+    }
+    .header .headerColLink h2
+    {
+        font-size: 13px;
+
+        display: inline-block;
+
+        margin: 0;
+        padding: 5px 10px;
+
+        border: 1px solid #ccc;
+    }
+    .header .siteMinBasket
+    {
+        display: none;
+
+        width: 100%;
+
+        background: #e7e7e7;
+    }
+    .header .siteMinBasket .siteMinBasketBox
+    {
+        display: none;
+    }
+    .header .siteMinBasket .siteMinBasketPopup
+    {
+        display: block;
+
+        width: 100%;
+    }
+    .header .siteMinBasket .siteMinBasketPopup
+    {
+        position: inherit;
+    }
+    .header .siteMinBasket .modal-content
+    {
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+    .mobileHeader
+    {
+        display: block;
+        clear: both;
+    }
+    .mobileHeader ul
+    {
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+    }
+    .mobileHeader ul li
+    {
+        line-height: 40px;
+
+        float: left;
+
+        width: 25%;
+        height: 40px;
+
+        text-align: center;
+        text-transform: uppercase;
+
+        color: #bbb;
+        border: 1px solid #eee;
+        border-left: 0;
+    }
+    .mobileHeader ul li .fa
+    {
+        font-size: 20px;
+
+        vertical-align: middle;
+    }
+    .mobileHeader ul li:hover
+    {
+        color: #333;
+    }
+}
+@media only screen and (max-width: 479px)
+{
+    .mobileHeader ul
+    {
+        padding: 0;
+
+        list-style: none;
+    }
+    .mobileHeader ul li
+    {
+        line-height: 40px;
+
+        float: left;
+
+        width: 20%;
+        height: 40px;
+
+        text-align: center;
+
+        color: #bbb;
+        border: 1px solid #eee;
+        border-left: 0;
+    }
+    .mobileHeader ul li .fa
+    {
+        font-size: 20px;
+
+        vertical-align: middle;
+    }
+    .mobileHeader ul li span
+    {
+        display: none;
+    }
+    .mobileHeader ul li.mobileNavBar
+    {
+        width: 40%;
+    }
+    .mobileHeader ul li.mobileNavBar span
+    {
+        display: inline;
+    }
+    .mobileHeader ul li:hover
+    {
+        color: #333;
+    }
+    .header .siteSearchBar .siteSearchBarSelect
+    {
+        display: none;
+    }
+    .header .siteSearchBar .siteSearchBarInput
+    {
+        width: 80%;
+    }
 }

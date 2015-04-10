@@ -1,0 +1,86 @@
+/**
+ * @author Jason
+ * @date 2015-01-23
+ */
+
+.indexPage {
+    margin: 0 auto;
+}
+
+.masthead {
+    width: 260px;
+    height: 100%;
+    padding: 10px;
+    position: absolute;
+    border-right: 15px solid #2e6da4;
+    background: #fff;
+    top: 0;
+    left:-245px;
+    z-index: 100;
+    .fa{
+        position: absolute;
+        right:-15px;
+        top:0;
+        font-size:16px;
+        color: #fff;
+        width:15px;
+        height:100%;
+        line-height: 600px;
+        text-align: center;
+        cursor: pointer;
+        background: #2e6da4;
+    }
+    .innerCon{
+        width:100%;
+        height: 600px;
+        overflow:auto;
+    }
+    .title {
+        font-size: 26px;
+        margin-top:5px;
+    }
+    .describe {
+        font-size: 16px;
+        line-height: 1.2;
+    }
+    .masthead-hr {
+        border-bottom: 0 none;
+        border-top-color: #eee;
+        margin: 1rem 0;
+        width: 80%;
+    }
+    .masthead-nav {
+        list-style: none;
+        padding: 0;
+    }
+    .nav-item {
+        cursor: pointer;
+    }
+    .nav-item a {
+        text-decoration: none;
+        display: block;
+        height: 30px;
+        line-height: 30px;
+        padding-left: 10px;
+        &:hover {
+            background: #D3DEE8;
+        }
+    }
+}
+.expanded{
+    left:0px;
+    transition: left 0.5s;
+}
+.displayContainer {
+    min-height: 600px;
+    padding: 10px 10px 10px 25px;
+
+    .imageViewer {
+        width: 500px;
+    }
+}
+
+.bread-word {
+    word-break: break-all;
+    word-wrap: break-word;
+}

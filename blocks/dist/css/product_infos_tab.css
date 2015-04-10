@@ -1,0 +1,139 @@
+/*!
+ * bootCommerce v0.0.1 (https://github.com/leedorian/bootCommerce/)
+ * Copyright 2015-2015 
+ * Licensed under MIT (https://github.com/leedorian/bootCommerce/blob/master/LICENSE.md)
+ */
+
+/**
+ * @author Jack Han, Lionel Dong
+ */
+/**
+ * @author Lionel
+ * @date 2015-03-19
+ */
+/**
+ * Mixin - Breakpoint
+ *
+ * @author Lionel Dong
+ */
+/**
+ * These should be used with the bp (max-width, xx) mixin
+ * where a min-width is used, remember to +1 to break correctly
+ */
+/**
+ * set a max-width/min-width/both media query
+ *
+ * @param {string} max | min | range
+ * @param {string} @maxValue, @minValue, {number}px
+ * @param {string} @content The style's block
+ */
+.productInfosTab .productInfosTabContent
+{
+    padding: 10px 15px;
+
+    border: 1px solid #ccc;
+}
+.productInfosTab .productInfosTabContent dt
+{
+    display: none;
+}
+.productInfosTab .productInfosTabContent dd
+{
+    font-size: 12px;
+}
+.productInfosTab .productInfosTabTitle
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+.productInfosTab .productInfosTabTitle li
+{
+    float: left;
+
+    background: #eee;
+}
+.productInfosTab .productInfosTabTitle li a
+{
+    display: block;
+
+    padding: 7px 15px;
+}
+.productInfosTab .productInfosTabTitle .active
+{
+    background: #ccc;
+}
+@media only screen and (max-width: 770px)
+{
+    .productInfosTab .productInfosTabTitle
+    {
+        display: none;
+    }
+    .productInfosTab .productInfosTabTitle li a
+    {
+        padding: 7px 10px 7px 24px;
+    }
+    .productInfosTab .productInfosTabContent
+    {
+        padding: 0;
+
+        border-bottom: none;
+    }
+    .productInfosTab .productInfosTabContent dt
+    {
+        font-weight: normal;
+        line-height: 1.4;
+
+        position: relative;
+
+        display: block;
+
+        padding: 7px 10px 7px 24px;
+
+        cursor: pointer;
+
+        color: #337ab7;
+        border-bottom: 1px solid #ccc;
+        background-color: #eee;
+    }
+    .productInfosTab .productInfosTabContent dt:after
+    {
+        position: absolute;
+        top: 50%;
+        left: 6px;
+
+        display: block;
+
+        width: 0;
+        height: 0;
+        margin-top: -3px;
+
+        content: '';
+
+        border-top: 4px solid transparent;
+        border-right: none;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid #39c;
+    }
+    .productInfosTab .productInfosTabContent dt.current
+    {
+        background: #ccc;
+    }
+    .productInfosTab .productInfosTabContent dt.current:after
+    {
+        border-top: 4px solid #39c;
+        border-right: 4px solid transparent;
+        border-bottom: none;
+        border-left: 4px solid transparent;
+    }
+    .productInfosTab .productInfosTabContent dd
+    {
+        margin: 0;
+        padding: 10px;
+
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+    }
+}

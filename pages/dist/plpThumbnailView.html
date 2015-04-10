@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="../../bootstrap/favicon.ico">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../../lib/font-awesome-4.3.0/css/font-awesome.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="../../blocks/dist/css/bootCommerce.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="css/plpPage.css" rel="stylesheet">
+</head>
+<!--
+@author Dorian
+@version 0.0.1
+-->
+<body>
+    <div class="plpPage">
+        <!-- Begin header  -->
+<!--
+@author Jack Han
+@version 0.0.1
+ -->
+
+<div class="header clearfix">
+    <div class="siteLogo headerLogo">
+        <img src="http://lorempixel.com/200/150/food" class="deskTopLogo" />
+        <img src="http://lorempixel.com/200/150/food" class="mobileLogo" />
+    </div>
+
+    <div class="headerCol clearfix">
+        <div class="headerColLink">
+            <h2>Top Link <i class="fa fa-sort-desc"></i></h2>
+            <ul>
+                <li><span>Free call 1800 640 811</span></li>
+                <li><a href="">Store Locator</a></li>
+                <li><a href="">Gift Card</a></li>
+                <li><a href="">Sign In/Register</a></li>
+            </ul>
+        </div>
+        <div class="mobileHeader">
+            <ul class="clearfix">
+                <li class="mobileNavBar" site-target="siteNavBar"> <i class="fa fa-bars"></i> <span>menu</span></li>
+                <li class="mobileSearchBar" site-target="siteSearchBar"><i class="fa fa-search"></i> <span>search</span></li>
+                <li class="mobileUserCenter" site-target="siteAccount"><i class="fa fa-user"></i> <span>account</span></li>
+                <li class="mobileMinBasket" site-target="siteMinBasket"> <i class="fa fa-shopping-cart"></i> <span>cart</span></li>
+            </ul>
+        </div>
+        <div class="clearfix">
+            <!-- Begin product search box -->
+<!--
+@author Jack
+@version 0.0.1
+ -->
+
+<div class="siteSearchBar " responsive-mobile-control="true">
+    <form class="form-inline clearfix">
+        <div class="form-group siteSearchBarInput">
+            <input type="text" placeholder="search..." id="" class="form-control">
+        </div>
+        <div class="form-group siteSearchBarSelect">
+            <select class="form-control">
+                <option>All Cateogries</option>
+                <option> demo 1</option>
+            </select>
+        </div>
+        <button class="btn btn-primary siteSearchBarBtn" type="submit">search</button>
+    </form>
+
+    <div class="siteSearchBarAutoSuggest">
+        <div class="autoSuggestBox">
+            <div class="autoSuggestKeywords">
+            </div>
+            <div class="autoSuggestCategory">
+            </div>
+            <div class="autoSuggestViewAll">
+                <a href="">View all result</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="tempBcSearchAutoSugTerm" type="text/x-handlebars-template">
+    <h2>{{header}}</h2>
+    <ul>
+    {{#searchTermBold term}}
+    {{#each keywords}}
+        <li><a href='' data-keyword='{{this}}'>{{this}}</a></li>
+    {{/each}}
+    {{/searchTermBold}}
+    </ul>
+</script>
+
+<script id="tempBcSearchAutoSugCat" type="text/x-handlebars-template">
+    <h2>Suggest Category</h2>
+    <ul>
+    {{#searchTermBold term}}
+    {{#each Category}}
+        <li><a href="{{url}}">{{{name}}}</a></li>
+    {{/each}}
+    {{/searchTermBold}}
+    </ul>
+</script>
+
+<!-- End product search box -->
+            <!-- Begin mini basket  -->
+<!--
+@author Jack Han
+@version 0.0.1
+ -->
+
+<div class="siteMinBasket" responsive-mobile-control="true">
+    <div class="siteMinBasketBox">
+        <i class="fa fa-shopping-cart"></i> My basket
+    </div>
+    <div class="siteMinBasketPopup modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">Items in your basket:</h4>
+          </div>
+          <p class="siteMinBasketPromptText">your cart is empty</p>
+          <div class="modal-body">
+            <ul>
+                <li>
+                    <div class="media">
+                      <a href="#" class="media-left">
+                          <img src="http://lorempixel.com/80/80/sports" />
+                      </a>
+                      <div class="media-body">
+                        <h4 class="media-heading"><a href="">Top aligned media</a></h4>
+                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel </p>
+                        <div class="clearfix">
+                            <span class="siteMinBasketQty"><strong>Quantity</strong>:1</span>
+                            <span class="siteMinBasketPrice">$49.00</span>
+                        </div>
+                      </div>
+                     </div>
+                </li>
+                <li>
+                    <div class="media">
+                      <a href="#" class="media-left">
+                            <img src="http://lorempixel.com/80/80/sports" />
+                      </a>
+                      <div class="media-body">
+                        <h4 class="media-heading"><a href="">Top aligned media </a></h4>
+                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel </p>
+                        <div class="clearfix">
+                            <span class="siteMinBasketQty"><strong>Quantity</strong>:1</span>
+                            <span class="siteMinBasketPrice">$49.00</span>
+                        </div>
+                      </div>
+                     </div>
+                </li>
+            </ul>
+            <p class="siteMinBasketTotal">Subtotal for 2 items(s) <strong>$640</strong></p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" type="button">go to your Basket</button>
+          </div>
+        </div>
+    </div>
+</div>
+
+<!-- End mini basket  -->
+        </div>
+    </div>
+
+    <!-- Begin product search box -->
+<!--
+@author Jack
+@version 0.0.1
+ -->
+
+ <!--
+    responsive-mobile-control - for responsive use only
+ -->
+<nav class="navbar navbar-default siteNavBar" responsive-mobile-control="true">
+  <div class="container-fluid">
+    <div class="navbar-collapse" id="">
+      <ul class="nav navbar-nav">
+        <li class=""><a href="#">Mens <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Womens</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Kids <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Hats</a></li>
+            <li><a href="#">Gloves</a></li>
+            <li><a href="#">Toys</a></li>
+            <li><a href="#">Others</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- End product search box -->
+</div>
+
+<!-- End header  -->
+        <!-- Begin bread_crumb -->
+<!--
+@author Ivy
+@version 0.0.1
+ -->
+<!--
+ if you want to use the slant breadCrumbs style, you just need to change the ol parent
+className to "breadCrumbSlantSection" and replace ol className to "breadcrumb".
+
+ if you want to use the bracket breadCrumbs style, you just need to change the ol parent
+className to "breadcrumbBracketSection" and replace ol className to "breadcrumb".
+
+ if you want to use the arrows breadCrumbs style, you just need to change the ol parent
+className to "breadcrumbArrowsSection" and replace ol className to "clearfix".
+ Default: arrows breadCrumbs
+-->
+<div class="breadCrumb">
+    <div class="breadcrumbArrowsSection">
+        <ol class="clearfix">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li><a  class="active" href="javascript:;">Data</a></li>
+        </ol>
+    </div>
+</div>
+
+<!-- End bread_crumb -->
+        <div class="clearfix">
+            <div class="plpFilterCol">
+                <!-- Begin product_filter_removable -->
+<!--
+@author Ivy
+@version 0.0.1
+ -->
+<div class="productFilterRemovable">
+    <h4 class="productFilterRemovableTitle">
+        Filter by
+        <button type="button" class="close" aria-hidden="true">
+            &times;<span>Clear All</span>
+        </button>
+    </h4>
+    <ul class="productRemovableList">
+        <li>
+            Car Seats & Travel Equipment
+            <button type="button" class="close" aria-hidden="true">
+                &times;
+            </button>
+        </li>
+        <li>
+            Car Seats & Travel Equipment
+            <button type="button" class="close" aria-hidden="true">
+                &times;
+            </button>
+        </li>
+    </ul>
+</div>
+<!-- End product_filter_removable -->
+
+<!-- Begin cascading_panel -->
+<div class="cascadingPanel panel-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                BRAND
+                <a class="cascadingPanelCollapse1 fa fa-caret-down fa-lg " href="#collapseOne">
+                </a>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body">
+                Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                vice lomo.Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                vice lomo.Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                vice lomo.
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                Colour
+                <a class="cascadingPanelCollapse2 fa fa-caret-right fa-lg" href="#collapseTwo">
+                </a>
+            </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+                Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                vice lomo.Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                vice lomo.Nihil anim keffiyeh helvetica, craft beer labore wes anderson
+                cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                vice lomo.
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- End cascading_panel -->
+
+                <!-- Begin product_filter_checkbox -->
+<!--
+@author Ivy
+@version 0.0.1
+ -->
+
+<div class="productFilterCheckbox">
+    <h4>
+        Filter by<span>(<em>2</em> currently selected)</span>
+        <button type="button" class="close" aria-hidden="true">
+            &times;<span>Clear All</span>
+        </button>
+    </h4>
+    <div class="productCheckboxList">
+        <dl>
+            <dt>Options:</dt>
+            <dd>
+                <input id="globalOptions0" type="checkbox" value="" name="facet">
+                <label for="globalOptions0">Favourites</label>
+            </dd>
+            <dd>
+                <input id="globalOptions1" type="checkbox" value="" name="facet">
+                <label for="globalOptions1">New</label>
+            </dd>
+            <dd>
+                <input id="globalOptions2" type="checkbox" value="" name="facet">
+                <label for="globalOptions2">Offers</label>
+            </dd>
+        </dl>
+        <dl>
+            <dt>Top brands:</dt>
+            <dd>
+                <input id="topBrands0" type="checkbox" value="" name="facet">
+                <label for="topBrands0">Sainsbury's</label>
+            </dd>
+        </dl>
+        <dl>
+            <dt>Price:</dt>
+            <dd><a href="">Less than $100 (5)</a> </dd>
+            <dd><a href="">$100 To $200 (1)</a> </dd>
+            <dd>$<input type="text" class="form-control"   placeholder="eg1">
+                to <input type="text" class="form-control"   placeholder="eg2"> <button type="button" class="btn btn-default btn-xs">Go</button></dd>
+        </dl>
+    </div>
+</div>
+<!-- End product_filter_checkbox -->
+            </div>
+            <div class="plpListCol">
+                <!-- Begin pagination  -->
+<!--
+@author Jack Han
+@version 0.0.1
+ -->
+
+<div class="siteProListPage clearfix ">
+	<p>Products (1-20 of 542)</p>
+		<ul class="siteProListPagePagination pagination">
+		    <li><a href="#"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
+		    <li class="active"><a href="#">1</a></li>
+		    <li><a href="#">2</a></li>
+		    <li><a href="#">3</a></li>
+		    <li><a href="#">...</a></li>
+		    <li><a href="#">5</a></li>
+		    <li><a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
+	  	</ul>
+
+		<form class="form-inline siteProListPageControl">
+	      <div class="form-group">
+	        <label for="exampleInputName2">Sort by:</label>
+	        <select class="form-control " name="exampleInputName2">
+				<option>Newest First</option>
+				<option>Faourities First</option>
+			</select>
+	      </div>
+	      <div class="form-group">
+	        <label for="exampleInputEmail2">Per page:</label>
+	        <select class="form-control " name="exampleInputEmail2">
+				<option>Add list items</option>
+				<option>12 items</option>
+				<option>24 items</option>
+			</select>
+	      </div>
+	     	<a href="#" ><i class="fa fa-th"></i></a>
+			<a href="#"><i class="fa fa-th-list"></i></a>
+	    </form>
+</div>
+<!-- End pagination  -->
+                <!-- Begin product list  -->
+<!--
+@author Jack Han
+@version 0.0.1
+ -->
+
+ <ul class="siteProductList productListThumbnailMode clearfix ">
+
+    <li class="siteProductListItem clearfix">
+        <!-- Begin product list  -->
+<!--
+@author Jack Han
+@version 0.0.1
+ -->
+<div class="productItem">
+    <div class="siteProductListThumb">
+        <a href="#"><img src="http://lorempixel.com/200/200/food" /></a>
+        <div class="siteProductListSaleOffer"><i class="fa fa-certificate"></i></div>
+        <div class="checkbox siteProductListCompareBtn">
+           <label class="checkbox-inline">
+            <input type="checkbox" value="option1" id="inlineCheckbox1"> Compare
+          </label>
+        </div>
+    </div>
+    <div class="siteProductListInfo">
+        <h2>
+            <a href="#">Halfords 2 Tonne Alxe Stands</a>
+        </h2>
+        <p class="siteProductListBrief">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo
+        </p>
+    </div>
+    <div class="siteProductListPrice">
+        <div class="siteProductListPriceQuote">
+            <strong>$3.00/unit</strong><br/>$3.00/kg
+        </div>
+        <div class="siteProductListPriceIcon">
+            <i class="fa fa-picture-o"></i>
+        </div>
+        <p>Save $10.00(50%)</p>
+    </div>
+    <div class="siteProductListRating">
+        <span class="siteProductListRatingIcon">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </span>(23)
+    </div>
+    <div class="siteProductListHandle">
+        <span class="siteProductListInventory">
+            <i class="fa fa-check-circle"></i>Instock
+        </span>
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="eg.1">
+        </div>
+        <button class="siteProductListHandleAdd btn btn-primary">Add to Basket</button>
+    </div>
+</div>
+<!-- End product list  -->
+    </li>
+    <li class="siteProductListItem clearfix">
+        <!-- Begin product list  -->
+<!--
+@author Jack Han
+@version 0.0.1
+ -->
+<div class="productItem">
+    <div class="siteProductListThumb">
+        <a href="#"><img src="http://lorempixel.com/200/200/food" /></a>
+        <div class="siteProductListSaleOffer"><i class="fa fa-certificate"></i></div>
+        <div class="checkbox siteProductListCompareBtn">
+           <label class="checkbox-inline">
+            <input type="checkbox" value="option1" id="inlineCheckbox1"> Compare
+          </label>
+        </div>
+    </div>
+    <div class="siteProductListInfo">
+        <h2>
+            <a href="#">Halfords 2 Tonne Alxe Stands</a>
+        </h2>
+        <p class="siteProductListBrief">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo
+        </p>
+    </div>
+    <div class="siteProductListPrice">
+        <div class="siteProductListPriceQuote">
+            <strong>$3.00/unit</strong><br/>$3.00/kg
+        </div>
+        <div class="siteProductListPriceIcon">
+            <i class="fa fa-picture-o"></i>
+        </div>
+        <p>Save $10.00(50%)</p>
+    </div>
+    <div class="siteProductListRating">
+        <span class="siteProductListRatingIcon">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </span>(23)
+    </div>
+    <div class="siteProductListHandle">
+        <span class="siteProductListInventory">
+            <i class="fa fa-check-circle"></i>Instock
+        </span>
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="eg.1">
+        </div>
+        <button class="siteProductListHandleAdd btn btn-primary">Add to Basket</button>
+    </div>
+</div>
+<!-- End product list  -->
+    </li>
+    <li class="siteProductListItem clearfix">
+        <!-- Begin product list  -->
+<!--
+@author Jack Han
+@version 0.0.1
+ -->
+<div class="productItem">
+    <div class="siteProductListThumb">
+        <a href="#"><img src="http://lorempixel.com/200/200/food" /></a>
+        <div class="siteProductListSaleOffer"><i class="fa fa-certificate"></i></div>
+        <div class="checkbox siteProductListCompareBtn">
+           <label class="checkbox-inline">
+            <input type="checkbox" value="option1" id="inlineCheckbox1"> Compare
+          </label>
+        </div>
+    </div>
+    <div class="siteProductListInfo">
+        <h2>
+            <a href="#">Halfords 2 Tonne Alxe Stands</a>
+        </h2>
+        <p class="siteProductListBrief">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo
+        </p>
+    </div>
+    <div class="siteProductListPrice">
+        <div class="siteProductListPriceQuote">
+            <strong>$3.00/unit</strong><br/>$3.00/kg
+        </div>
+        <div class="siteProductListPriceIcon">
+            <i class="fa fa-picture-o"></i>
+        </div>
+        <p>Save $10.00(50%)</p>
+    </div>
+    <div class="siteProductListRating">
+        <span class="siteProductListRatingIcon">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </span>(23)
+    </div>
+    <div class="siteProductListHandle">
+        <span class="siteProductListInventory">
+            <i class="fa fa-check-circle"></i>Instock
+        </span>
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="eg.1">
+        </div>
+        <button class="siteProductListHandleAdd btn btn-primary">Add to Basket</button>
+    </div>
+</div>
+<!-- End product list  -->
+    </li>
+    <li class="siteProductListItem clearfix">
+        <!-- Begin product list  -->
+<!--
+@author Jack Han
+@version 0.0.1
+ -->
+<div class="productItem">
+    <div class="siteProductListThumb">
+        <a href="#"><img src="http://lorempixel.com/200/200/food" /></a>
+        <div class="siteProductListSaleOffer"><i class="fa fa-certificate"></i></div>
+        <div class="checkbox siteProductListCompareBtn">
+           <label class="checkbox-inline">
+            <input type="checkbox" value="option1" id="inlineCheckbox1"> Compare
+          </label>
+        </div>
+    </div>
+    <div class="siteProductListInfo">
+        <h2>
+            <a href="#">Halfords 2 Tonne Alxe Stands</a>
+        </h2>
+        <p class="siteProductListBrief">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo
+        </p>
+    </div>
+    <div class="siteProductListPrice">
+        <div class="siteProductListPriceQuote">
+            <strong>$3.00/unit</strong><br/>$3.00/kg
+        </div>
+        <div class="siteProductListPriceIcon">
+            <i class="fa fa-picture-o"></i>
+        </div>
+        <p>Save $10.00(50%)</p>
+    </div>
+    <div class="siteProductListRating">
+        <span class="siteProductListRatingIcon">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </span>(23)
+    </div>
+    <div class="siteProductListHandle">
+        <span class="siteProductListInventory">
+            <i class="fa fa-check-circle"></i>Instock
+        </span>
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="eg.1">
+        </div>
+        <button class="siteProductListHandleAdd btn btn-primary">Add to Basket</button>
+    </div>
+</div>
+<!-- End product list  -->
+    </li>
+    <li class="siteProductListItem clearfix">
+        <!-- Begin product list  -->
+<!--
+@author Jack Han
+@version 0.0.1
+ -->
+<div class="productItem">
+    <div class="siteProductListThumb">
+        <a href="#"><img src="http://lorempixel.com/200/200/food" /></a>
+        <div class="siteProductListSaleOffer"><i class="fa fa-certificate"></i></div>
+        <div class="checkbox siteProductListCompareBtn">
+           <label class="checkbox-inline">
+            <input type="checkbox" value="option1" id="inlineCheckbox1"> Compare
+          </label>
+        </div>
+    </div>
+    <div class="siteProductListInfo">
+        <h2>
+            <a href="#">Halfords 2 Tonne Alxe Stands</a>
+        </h2>
+        <p class="siteProductListBrief">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo
+        </p>
+    </div>
+    <div class="siteProductListPrice">
+        <div class="siteProductListPriceQuote">
+            <strong>$3.00/unit</strong><br/>$3.00/kg
+        </div>
+        <div class="siteProductListPriceIcon">
+            <i class="fa fa-picture-o"></i>
+        </div>
+        <p>Save $10.00(50%)</p>
+    </div>
+    <div class="siteProductListRating">
+        <span class="siteProductListRatingIcon">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </span>(23)
+    </div>
+    <div class="siteProductListHandle">
+        <span class="siteProductListInventory">
+            <i class="fa fa-check-circle"></i>Instock
+        </span>
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="eg.1">
+        </div>
+        <button class="siteProductListHandleAdd btn btn-primary">Add to Basket</button>
+    </div>
+</div>
+<!-- End product list  -->
+    </li>
+    <li class="siteProductListItem clearfix">
+        <!-- Begin product list  -->
+<!--
+@author Jack Han
+@version 0.0.1
+ -->
+<div class="productItem">
+    <div class="siteProductListThumb">
+        <a href="#"><img src="http://lorempixel.com/200/200/food" /></a>
+        <div class="siteProductListSaleOffer"><i class="fa fa-certificate"></i></div>
+        <div class="checkbox siteProductListCompareBtn">
+           <label class="checkbox-inline">
+            <input type="checkbox" value="option1" id="inlineCheckbox1"> Compare
+          </label>
+        </div>
+    </div>
+    <div class="siteProductListInfo">
+        <h2>
+            <a href="#">Halfords 2 Tonne Alxe Stands</a>
+        </h2>
+        <p class="siteProductListBrief">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo
+        </p>
+    </div>
+    <div class="siteProductListPrice">
+        <div class="siteProductListPriceQuote">
+            <strong>$3.00/unit</strong><br/>$3.00/kg
+        </div>
+        <div class="siteProductListPriceIcon">
+            <i class="fa fa-picture-o"></i>
+        </div>
+        <p>Save $10.00(50%)</p>
+    </div>
+    <div class="siteProductListRating">
+        <span class="siteProductListRatingIcon">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </span>(23)
+    </div>
+    <div class="siteProductListHandle">
+        <span class="siteProductListInventory">
+            <i class="fa fa-check-circle"></i>Instock
+        </span>
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="eg.1">
+        </div>
+        <button class="siteProductListHandleAdd btn btn-primary">Add to Basket</button>
+    </div>
+</div>
+<!-- End product list  -->
+    </li>
+
+ </ul>
+<!-- End product list  -->
+                <!-- Begin pagination  -->
+<!--
+@author Jack Han
+@version 0.0.1
+ -->
+
+<div class="siteProListPage clearfix ">
+	<p>Products (1-20 of 542)</p>
+		<ul class="siteProListPagePagination pagination">
+		    <li><a href="#"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
+		    <li class="active"><a href="#">1</a></li>
+		    <li><a href="#">2</a></li>
+		    <li><a href="#">3</a></li>
+		    <li><a href="#">...</a></li>
+		    <li><a href="#">5</a></li>
+		    <li><a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
+	  	</ul>
+
+		<form class="form-inline siteProListPageControl">
+	      <div class="form-group">
+	        <label for="exampleInputName2">Sort by:</label>
+	        <select class="form-control " name="exampleInputName2">
+				<option>Newest First</option>
+				<option>Faourities First</option>
+			</select>
+	      </div>
+	      <div class="form-group">
+	        <label for="exampleInputEmail2">Per page:</label>
+	        <select class="form-control " name="exampleInputEmail2">
+				<option>Add list items</option>
+				<option>12 items</option>
+				<option>24 items</option>
+			</select>
+	      </div>
+	     	<a href="#" ><i class="fa fa-th"></i></a>
+			<a href="#"><i class="fa fa-th-list"></i></a>
+	    </form>
+</div>
+<!-- End pagination  -->
+            </div>
+        </div>
+            <!-- Begin footer  -->
+<!--
+@author Jack Han
+@version 0.0.1
+ -->
+
+<div class="siteFooter">
+	<div class="siteFooterGroupLink clearfix">
+		<ul class="clearfix">
+			<li class="siteFooterGroupLinkItem">
+                <h2>demo title</h2>
+				<ul>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+				</ul>
+			</li>
+			<li class="siteFooterGroupLinkItem">
+				<h2>demo title</h2>
+                <ul>
+                    <li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+				</ul>
+			</li>
+			<li class="siteFooterGroupLinkItem">
+				<h2>demo title</h2>
+                <ul>
+                    <li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+				</ul>
+			</li>
+			<li class="siteFooterGroupLinkItem siteFooterGroupLinkItemLast">
+				<h2>demo title</h2>
+                <ul>
+                    <li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+				</ul>
+			</li>
+
+		</ul>
+	</div>
+
+	<div class="siteFooterBtmLink">
+        <h2>Footer Link <i class="fa fa-sort-up"></i></h2>
+		<ul class="clearfix">
+			<li><a href="">Policy</a>  </li>
+			<li><a href="">Shop Info</a>  </li>
+			<li><a href="">Policy</a>  </li>
+			<li><a href="">Shop Info</a>  </li>
+			<li><a href="">Policy</a> </li>
+			<li><a href="">Shop Info</a>  </li>
+			<li><a href="">Policy</a>  </li>
+			<li><a href="">Shop Info</a>  </li>
+		</ul>
+	</div>
+</div>
+<!-- End footer  -->
+
+
+
+    </div>
+    <!-- libs -->
+    <script src="../../lib/jquery/jquery-1.11.2.min.js"></script>
+    <script src="../../lib/jquery/jquery.mobile.custom.min.js"></script>
+    <script src="../../lib/enquire.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../lib/handlebars.js"></script>
+    <!--<script src="../../blocks/dist/js/bootCommerce.min.js"></script>-->
+    <script src="../../blocks/js/bootCommerceBase.js"></script>
+
+    <!-- blocks js -->
+    <script src="../../blocks/js/bootCommerce.Search.js"></script>
+    <script src="../../blocks/js/bootCommerce.MiniBasket.js"></script>
+    <script src="../../blocks/js/bootCommerce.ProductInfosTab.js"></script>
+    <script src="../../blocks/js/bootCommerce.Basket.js"></script>
+    <script src="../../blocks/js/bootCommerce.Carousel.js"></script>
+    <script src="../../blocks/js/bootCommerce.FilterRemoveable.js"></script>
+    <script src="../../blocks/js/bootCommerce.FilterChecklist.js"></script>
+    <script src="../../blocks/js/bootCommerce.StoreLocator.js"></script>
+    <script src="../../blocks/js/bootCommerce.ImageViewer.js"></script>
+    <script src="../../blocks/js/bootCommerce.signInRegister.js"></script>
+    <script src="../../blocks/js/bootCommerce.Navigation.js"></script>
+    <script src="../../pages/dist/js/index.min.js"></script>
+<script src="../js/pdpPage.js"></script>
+  </body>
+</html>
+

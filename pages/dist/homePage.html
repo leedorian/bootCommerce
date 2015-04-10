@@ -10,7 +10,7 @@
     <!-- Bootstrap core CSS -->
     <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- font awesome CSS -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../lib/font-awesome-4.3.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
     <link href="../../blocks/dist/css/bootCommerce.min.css" rel="stylesheet">
@@ -29,17 +29,20 @@
 <body>
     <div class="homePage">
         <!-- Begin header  -->
-<!-- 
+<!--
 @author Jack Han
 @version 0.0.1
  -->
 
-<div class="header clearfix"> 
+<div class="header clearfix">
     <div class="siteLogo headerLogo">
-        <img src="http://lorempixel.com/200/150/sports" />
+        <img src="http://lorempixel.com/200/150/food" class="deskTopLogo" />
+        <img src="http://lorempixel.com/200/150/food" class="mobileLogo" />
     </div>
+
     <div class="headerCol clearfix">
-        <div class="headerColLink">         
+        <div class="headerColLink">
+            <h2>Top Link <i class="fa fa-sort-desc"></i></h2>
             <ul>
                 <li><span>Free call 1800 640 811</span></li>
                 <li><a href="">Store Locator</a></li>
@@ -47,60 +50,78 @@
                 <li><a href="">Sign In/Register</a></li>
             </ul>
         </div>
+        <div class="mobileHeader">
+            <ul class="clearfix">
+                <li class="mobileNavBar" site-target="siteNavBar"> <i class="fa fa-bars"></i> <span>menu</span></li>
+                <li class="mobileSearchBar" site-target="siteSearchBar"><i class="fa fa-search"></i> <span>search</span></li>
+                <li class="mobileUserCenter" site-target="siteAccount"><i class="fa fa-user"></i> <span>account</span></li>
+                <li class="mobileMinBasket" site-target="siteMinBasket"> <i class="fa fa-shopping-cart"></i> <span>cart</span></li>
+            </ul>
+        </div>
         <div class="clearfix">
             <!-- Begin product search box -->
-<!-- 
+<!--
 @author Jack
 @version 0.0.1
  -->
 
-<div class="siteSearchBar ">
+<div class="siteSearchBar " responsive-mobile-control="true">
     <form class="form-inline clearfix">
-        <div class="form-group siteSearchBarInput">           
+        <div class="form-group siteSearchBarInput">
             <input type="text" placeholder="search..." id="" class="form-control">
         </div>
-        <div class="form-group siteSearchBarSelect">           
+        <div class="form-group siteSearchBarSelect">
             <select class="form-control">
                 <option>All Cateogries</option>
-                <option> demo 1</option>    
+                <option> demo 1</option>
             </select>
         </div>
         <button class="btn btn-primary siteSearchBarBtn" type="submit">search</button>
     </form>
-    
+
     <div class="siteSearchBarAutoSuggest">
         <div class="autoSuggestBox">
             <div class="autoSuggestKeywords">
-                <h2>Suggested keywords</h2>
-                <ul>
-                    <li><a href=""><span>shirt</span></a></li>
-                    <li><a href=""><span>shirt</span> tee</a></li>
-                    <li><a href="">span>shirt</span>s</a></li>
-                    <li><a href=""><span>shirt</span> teesh</a></li>
-                </ul>
             </div>
             <div class="autoSuggestCategory">
-                <h2>Category</h2>
-                <ul>
-                    <li><a href="">Womens>Fashion Tops & <span>shirt</span></a></li>
-                    <li><a href="">Womens>Fashion Tops & <span>shirt</span></a></li>
-                </ul>
             </div>
             <div class="autoSuggestViewAll">
                 <a href="">View all result</a>
-            </div>                  
-        </div>                  
+            </div>
+        </div>
     </div>
 </div>
 
-<!-- End product search box -->
+<script id="tempBcSearchAutoSugTerm" type="text/x-handlebars-template">
+    <h2>{{header}}</h2>
+    <ul>
+    {{#searchTermBold term}}
+    {{#each keywords}}
+        <li><a href='' data-keyword='{{this}}'>{{this}}</a></li>
+    {{/each}}
+    {{/searchTermBold}}
+    </ul>
+</script>
+
+<script id="tempBcSearchAutoSugCat" type="text/x-handlebars-template">
+    <h2>Suggest Category</h2>
+    <ul>
+    {{#searchTermBold term}}
+    {{#each Category}}
+        <li><a href="{{url}}">{{{name}}}</a></li>
+    {{/each}}
+    {{/searchTermBold}}
+    </ul>
+</script>
+
+<!-- End product search box -->
             <!-- Begin mini basket  -->
-<!-- 
+<!--
 @author Jack Han
 @version 0.0.1
  -->
 
-<div class="siteMinBasket">
+<div class="siteMinBasket" responsive-mobile-control="true">
     <div class="siteMinBasketBox">
         <i class="fa fa-shopping-cart"></i> My basket
     </div>
@@ -120,11 +141,11 @@
                       </a>
                       <div class="media-body">
                         <h4 class="media-heading"><a href="">Top aligned media</a></h4>
-                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel </p>   
+                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel </p>
                         <div class="clearfix">
                             <span class="siteMinBasketQty"><strong>Quantity</strong>:1</span>
                             <span class="siteMinBasketPrice">$49.00</span>
-                        </div>    
+                        </div>
                       </div>
                      </div>
                 </li>
@@ -135,90 +156,73 @@
                       </a>
                       <div class="media-body">
                         <h4 class="media-heading"><a href="">Top aligned media </a></h4>
-                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel </p>   
+                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel </p>
                         <div class="clearfix">
                             <span class="siteMinBasketQty"><strong>Quantity</strong>:1</span>
                             <span class="siteMinBasketPrice">$49.00</span>
-                        </div>    
+                        </div>
                       </div>
                      </div>
-                </li>   
+                </li>
             </ul>
             <p class="siteMinBasketTotal">Subtotal for 2 items(s) <strong>$640</strong></p>
           </div>
-          <div class="modal-footer">                        
+          <div class="modal-footer">
             <button class="btn btn-primary" type="button">go to your Basket</button>
           </div>
         </div>
     </div>
 </div>
 
-<!-- End mini basket  -->
-        </div>      
-    </div>  
+<!-- End mini basket  -->
+        </div>
+    </div>
+
     <!-- Begin product search box -->
-<!-- 
+<!--
 @author Jack
 @version 0.0.1
  -->
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+ <!--
+    responsive-mobile-control - for responsive use only
+ -->
+<nav class="navbar navbar-default siteNavBar" responsive-mobile-control="true">
+  <div class="container-fluid">
+    <div class="navbar-collapse" id="">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
+        <li class=""><a href="#">Mens <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Womens</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Kids <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Hats</a></li>
+            <li><a href="#">Gloves</a></li>
+            <li><a href="#">Toys</a></li>
+            <li><a href="#">Others</a></li>
           </ul>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<!-- End product search box -->
-</div>  
+<!-- End product search box -->
+</div>
 
-<!-- End header  -->
+<!-- End header  -->
         <div class="homeBanner">
             <!-- Begin carousel -->
 <!-- 
 @author Ivy
 @version 0.0.1
  -->
-<div id="carousel_slide" class="carousel slide">
+<div id="carouselSlide" class="carousel slide">
     <!-- Carousel point-->
-    <ol class="carousel-indicators">
-        <li data-target="#carousel_slide" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel_slide" data-slide-to="1"></li>
-        <li data-target="#carousel_slide" data-slide-to="2"></li>
+    <ol class="carouselIndicators carousel-indicators">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
     </ol>
     <!-- Carousel img -->
     <div class="carousel-inner">
@@ -233,15 +237,13 @@
         </div>
     </div>
     <!-- Carousel left right btn -->
-    <a class="carousel-control left" href="#carousel_slide"
-       data-slide="prev">&lsaquo;</a>
-    <a class="carousel-control right" href="#carousel_slide"
-       data-slide="next">&rsaquo;</a>
+    <a class="carouselControl carousel-control left">&lsaquo;</a>
+    <a class="carouselControl carousel-control right">&rsaquo;</a>
 </div>
 <!-- End carousel -->
         </div>
         <!-- Begin footer  -->
-<!-- 
+<!--
 @author Jack Han
 @version 0.0.1
  -->
@@ -250,8 +252,8 @@
 	<div class="siteFooterGroupLink clearfix">
 		<ul class="clearfix">
 			<li class="siteFooterGroupLinkItem">
+                <h2>demo title</h2>
 				<ul>
-					<li><h2>demo title</h2></li>
 					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
 					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
 					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
@@ -261,9 +263,9 @@
 				</ul>
 			</li>
 			<li class="siteFooterGroupLinkItem">
-				<ul>
-					<li><h2>demo title</h2></li>
-					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+				<h2>demo title</h2>
+                <ul>
+                    <li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
 					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
 					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
 					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
@@ -272,9 +274,9 @@
 				</ul>
 			</li>
 			<li class="siteFooterGroupLinkItem">
-				<ul>
-					<li><h2>demo title</h2></li>
-					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+				<h2>demo title</h2>
+                <ul>
+                    <li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
 					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
 					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
 					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
@@ -283,9 +285,9 @@
 				</ul>
 			</li>
 			<li class="siteFooterGroupLinkItem siteFooterGroupLinkItemLast">
-				<ul>
-					<li><h2>demo title</h2></li>
-					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
+				<h2>demo title</h2>
+                <ul>
+                    <li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
 					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
 					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
 					<li><i class="fa fa-caret-right"></i><a href="">Helper Center</a></li>
@@ -296,7 +298,9 @@
 
 		</ul>
 	</div>
+
 	<div class="siteFooterBtmLink">
+        <h2>Footer Link <i class="fa fa-sort-up"></i></h2>
 		<ul class="clearfix">
 			<li><a href="">Policy</a>  </li>
 			<li><a href="">Shop Info</a>  </li>
@@ -309,20 +313,31 @@
 		</ul>
 	</div>
 </div>
-<!-- End footer  -->
+<!-- End footer  -->
     </div>
-    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- libs -->
     <script src="../../lib/jquery/jquery-1.11.2.min.js"></script>
+    <script src="../../lib/jquery/jquery.mobile.custom.min.js"></script>
+    <script src="../../lib/enquire.min.js"></script>
     <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../lib/handlebars.js"></script>
     <!--<script src="../../blocks/dist/js/bootCommerce.min.js"></script>-->
     <script src="../../blocks/js/bootCommerceBase.js"></script>
 
     <!-- blocks js -->
     <script src="../../blocks/js/bootCommerce.Search.js"></script>
     <script src="../../blocks/js/bootCommerce.MiniBasket.js"></script>
-
-    <script src="../dist/js/home.min.js"></script>
-<script src="../js/homePage.js"></script>
+    <script src="../../blocks/js/bootCommerce.ProductInfosTab.js"></script>
+    <script src="../../blocks/js/bootCommerce.Basket.js"></script>
+    <script src="../../blocks/js/bootCommerce.Carousel.js"></script>
+    <script src="../../blocks/js/bootCommerce.FilterRemoveable.js"></script>
+    <script src="../../blocks/js/bootCommerce.FilterChecklist.js"></script>
+    <script src="../../blocks/js/bootCommerce.StoreLocator.js"></script>
+    <script src="../../blocks/js/bootCommerce.ImageViewer.js"></script>
+    <script src="../../blocks/js/bootCommerce.signInRegister.js"></script>
+    <script src="../../blocks/js/bootCommerce.Navigation.js"></script>
+    <script src="../../pages/dist/js/index.min.js"></script>
+<script src="/pages/js/homePage.js"></script>
   </body>
 </html>
 

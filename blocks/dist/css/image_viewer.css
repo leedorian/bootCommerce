@@ -1,0 +1,105 @@
+/*!
+ * bootCommerce v0.0.1 (https://github.com/leedorian/bootCommerce/)
+ * Copyright 2015-2015 
+ * Licensed under MIT (https://github.com/leedorian/bootCommerce/blob/master/LICENSE.md)
+ */
+
+/**
+ * @author Lionel Dong
+ */
+.imageViewer img
+{
+    width: 100%;
+}
+.imageViewer .imageViewerBooth
+{
+    position: relative;
+
+    margin-bottom: 6px;
+}
+.imageViewer .imageViewerBooth:hover
+{
+    cursor: move;
+}
+.imageViewer .imageViewerBooth:hover .imageViewerZoom
+{
+    display: none;
+}
+.imageViewer .imageViewerBooth:hover .imageViewerLens
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 50%;
+    height: 50%;
+
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAMAAABFaP0WAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAGUExURT1uzv///62t27cAAAACdFJOU/8A5bcwSgAAABBJREFUeNpiYGBkYGQECDAAAA0ABMZIs2EAAAAASUVORK5CYII=);
+}
+.imageViewer .imageViewerBooth .imageViewerZoom
+{
+    font-size: 18px;
+    line-height: 30px;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 30px;
+    height: 30px;
+
+    text-align: center;
+
+    opacity: .6;
+    color: #333;
+    background-color: #fff;
+}
+.imageViewer .imageViewerBooth .imageViewerOverlay
+{
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 100%;
+
+    display: none;
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
+}
+.imageViewer .imageViewerBooth .imageViewerOverlay img
+{
+    width: 200%;
+    height: 200%;
+}
+.imageViewer .imageViewerThumb ul
+{
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+.imageViewer .imageViewerThumb ul li
+{
+    float: left;
+
+    width: 25%;
+    padding: 0 1px;
+}
+.imageViewer .imageViewerThumb ul li img
+{
+    border: 3px solid #fff;
+}
+.imageViewer .imageViewerThumb ul li.active img
+{
+    border: 3px solid #333;
+}
+.imageViewer .imageViewerThumb ul li:hover img
+{
+    border: 3px solid #333;
+}
+.imageViewer .imageViewerThumb ul li + li + li + li + li
+{
+    display: none;
+}

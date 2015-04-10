@@ -7,45 +7,45 @@
 /**
  * @author Ivy
  */
-.basket_hasItem .basket_order_link
+.basketHasItem .basketOrderLink
 {
     margin: 10px 0;
 
     text-align: right;
 }
-.basket_hasItem .basket_order_btn
+.basketHasItem .basketOrderBtn
 {
     float: left;
 
     margin: 10px 0;
 }
-.basket_quantity_item
+.basketQuantityItem
 {
     text-align: center;
 }
-.basket_quantity_item .basket_product_remove,
-.basket_quantity_item .basket_move_wishList
+.basketQuantityItem .basketProductRemove,
+.basketQuantityItem .basketMoveWishList
 {
     display: block;
 }
-.basket_quantity_item .basket_order_quantity
+.basketQuantityItem .basketOrderQuantity
 {
     width: 50px;
 
     text-align: center;
 }
-.basket_quantity_item .basket_quantity_operation
+.basketQuantityItem .basketQuantityOperation
 {
     min-width: 100px;
 }
-.basket_order_table .basket_productImg_section
+.basketOrderTable .basketProductImgSection
 {
     text-align: center;
 }
-.basket_order_table .basket_productImg_section img
+.basketOrderTable .basketProductImgSection img
 {
-    width: 80px;
-    height: 80px;
+    width: 100%;
+    height: 100%;
 }
 .orderSummary
 {

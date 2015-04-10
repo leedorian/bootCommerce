@@ -7,6 +7,26 @@
 /**
  * @author Jack Han
  */
+/**
+ * @author Lionel
+ * @date 2015-03-19
+ */
+/**
+ * Mixin - Breakpoint
+ *
+ * @author Lionel Dong
+ */
+/**
+ * These should be used with the bp (max-width, xx) mixin
+ * where a min-width is used, remember to +1 to break correctly
+ */
+/**
+ * set a max-width/min-width/both media query
+ *
+ * @param {string} max | min | range
+ * @param {string} @maxValue, @minValue, {number}px
+ * @param {string} @content The style's block
+ */
 .siteFooter .siteFooterGroupLink > ul,
 .siteFooter .siteFooterGroupLinkItem > ul
 {
@@ -64,4 +84,116 @@
 .siteFooter .siteFooterBtmLink ul li:last-child a
 {
     border-right: 0;
+}
+.siteFooter .siteFooterBtmLink h2
+{
+    display: none;
+}
+.mobile .siteFooter .siteFooterGroupLinkItem
+{
+    width: 33.33333%;
+    margin-top: 15px;
+}
+.mobileSmall .siteFooter .siteFooterGroupLinkItem
+{
+    display: block;
+    float: none;
+
+    width: 100%;
+    margin-top: 5px;
+
+    text-align: center;
+
+    border: 1px solid #ddd;
+    background: #eee;
+}
+.mobileSmall .siteFooter .siteFooterGroupLinkItem h2
+{
+    line-height: 40px;
+
+    margin: 0;
+}
+.mobileSmall .siteFooter .siteFooterGroupLinkItem ul
+{
+    display: none;
+}
+.mobileSmall .siteFooter .siteFooterGroupLinkItem:hover
+{
+    background: #ccc;
+}
+.mobileSmall .siteFooter .siteFooterBtmLink
+{
+    text-align: right;
+}
+.mobileSmall .siteFooter .siteFooterBtmLink ul
+{
+    display: none;
+}
+.mobileSmall .siteFooter .siteFooterBtmLink h2
+{
+    font-size: 13px;
+
+    display: inline-block;
+
+    margin: 0;
+    padding: 5px 10px;
+
+    border: 1px solid #ccc;
+}
+@media only screen and (max-width: 770px)
+{
+    .siteFooter .siteFooterGroupLinkItem
+    {
+        width: 33.33333%;
+        margin-top: 15px;
+    }
+}
+@media only screen and (max-width: 479px)
+{
+    .siteFooter .siteFooterGroupLinkItem
+    {
+        display: block;
+        float: none;
+
+        width: 100%;
+        margin-top: 5px;
+
+        text-align: center;
+
+        border: 1px solid #ddd;
+        background: #eee;
+    }
+    .siteFooter .siteFooterGroupLinkItem h2
+    {
+        line-height: 40px;
+
+        margin: 0;
+    }
+    .siteFooter .siteFooterGroupLinkItem ul
+    {
+        display: none;
+    }
+    .siteFooter .siteFooterGroupLinkItem:hover
+    {
+        background: #ccc;
+    }
+    .siteFooter .siteFooterBtmLink
+    {
+        text-align: right;
+    }
+    .siteFooter .siteFooterBtmLink ul
+    {
+        display: none;
+    }
+    .siteFooter .siteFooterBtmLink h2
+    {
+        font-size: 13px;
+
+        display: inline-block;
+
+        margin: 0;
+        padding: 5px 10px;
+
+        border: 1px solid #ccc;
+    }
 }

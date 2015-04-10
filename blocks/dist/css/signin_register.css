@@ -1,0 +1,146 @@
+/*!
+ * bootCommerce v0.0.1 (https://github.com/leedorian/bootCommerce/)
+ * Copyright 2015-2015 
+ * Licensed under MIT (https://github.com/leedorian/bootCommerce/blob/master/LICENSE.md)
+ */
+
+/**
+ * @author Mike Zou
+ */
+/**
+ * @author Lionel
+ * @date 2015-03-19
+ */
+/**
+ * Mixin - Breakpoint
+ *
+ * @author Lionel Dong
+ */
+/**
+ * These should be used with the bp (max-width, xx) mixin
+ * where a min-width is used, remember to +1 to break correctly
+ */
+/**
+ * set a max-width/min-width/both media query
+ *
+ * @param {string} max | min | range
+ * @param {string} @maxValue, @minValue, {number}px
+ * @param {string} @content The style's block
+ */
+/**
+ * @author Mike Zou
+ */
+.form-group
+{
+    width: 80%;
+}
+.form-group label,
+.form-group input
+{
+    line-height: 34px;
+
+    height: 34px;
+}
+.form-group input[type=checkbox]
+{
+    float: left;
+}
+.form-group:after
+{
+    font-size: 0;
+
+    display: block;
+    visibility: hidden;
+    clear: both;
+
+    height: 0;
+
+    content: ' ';
+}
+.horizontalForm1 .form-group label,
+.horizontalForm2 .form-group label,
+.horizontalForm1 .form-group input,
+.horizontalForm2 .form-group input
+{
+    float: left;
+
+    width: 50%;
+}
+.horizontalForm1 .checkboxGroup input,
+.horizontalForm2 .checkboxGroup input
+{
+    width: auto;
+}
+.horizontalForm1 .form-group label
+{
+    padding-right: 2%;
+
+    text-align: right;
+}
+.horizontalForm1 .checkboxGroup
+{
+    position: relative;
+}
+.horizontalForm1 .checkboxGroup label
+{
+    float: right;
+
+    text-align: left;
+}
+.horizontalForm1 .checkboxGroup input
+{
+    position: absolute;
+    left: 50%;
+
+    margin-left: -17px;
+}
+.withoutLabelForm .form-group label
+{
+    display: none;
+}
+.withoutLabelForm .checkboxGroup label
+{
+    display: inline-block;
+}
+.withoutLabelForm .checkboxGroup input
+{
+    width: auto;
+}
+.form-inline .form-group
+{
+    width: auto;
+}
+.signInOrRegister .signInWrapper,
+.signInOrRegister .registerWrapper
+{
+    float: left;
+
+    width: 50%;
+    padding: 0 5%;
+}
+.signInOrRegister .signInWrapper
+{
+    border-right: 1px solid #999;
+}
+.signInOrRegister .FormLayoutTransTrigger
+{
+    display: inline-block;
+
+    width: 40%;
+    margin: 10px 2%;
+
+    text-align: center;
+}
+@media only screen and (max-width: 770px)
+{
+    .signInOrRegister .signInWrapper,
+    .signInOrRegister .registerWrapper
+    {
+        width: 100%;
+    }
+    .signInOrRegister .signInWrapper
+    {
+        border-right: none;
+        border-bottom: 1px solid #999;
+    }
+}

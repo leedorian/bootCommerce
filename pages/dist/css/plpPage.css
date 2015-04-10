@@ -1,0 +1,54 @@
+/*!
+ * bootCommerce v0.0.1 (https://github.com/leedorian/bootCommerce/)
+ * Copyright 2015-2015 
+ * Licensed under MIT (https://github.com/leedorian/bootCommerce/blob/master/LICENSE.md)
+ */
+
+/**
+ * @author Jack
+ * @date 2015-04-05
+ */
+/**
+ * @author Lionel
+ * @date 2015-03-19
+ */
+/**
+ * Mixin - Breakpoint
+ *
+ * @author Lionel Dong
+ */
+/**
+ * These should be used with the bp (max-width, xx) mixin
+ * where a min-width is used, remember to +1 to break correctly
+ */
+/**
+ * set a max-width/min-width/both media query
+ *
+ * @param {string} max | min | range
+ * @param {string} @maxValue, @minValue, {number}px
+ * @param {string} @content The style's block
+ */
+@media only screen and (min-width: 979px)
+{
+    .plpPage
+    {
+        width: 980px;
+        margin: 0 auto;
+    }
+}
+.plpPage .plpFilterCol
+{
+    float: left;
+
+    width: 25%;
+}
+.plpPage .plpListCol
+{
+    float: right;
+
+    width: 75%;
+}
+.plpPage .productListThumbnailMode
+{
+    margin-top: 15px;
+}

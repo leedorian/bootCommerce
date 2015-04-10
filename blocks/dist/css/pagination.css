@@ -11,11 +11,11 @@
 {
     margin: 0;
 }
-.siteProListPage .siteProListPage_pagination
+.siteProListPage .siteProListPagePagination
 {
     float: left;
 }
-.siteProListPage .siteProListPage_control
+.siteProListPage .siteProListPageControl
 {
     float: right;
 
@@ -24,25 +24,25 @@
 
     list-style: none;
 }
-.siteProListPage .siteProListPage_control li
+.siteProListPage .siteProListPageControl li
 {
     float: left;
 }
-.siteProListPage .siteProListPage_control span
+.siteProListPage .siteProListPageControl span
 {
     margin: 0 10px 0 0;
 }
-.siteProListPage .siteProListPage_control .form-group
+.siteProListPage .siteProListPageControl .form-group
 {
     margin: 0 10px 0 0;
 }
-.siteProListPage .siteProListPage_control .form-control
+.siteProListPage .siteProListPageControl .form-control
 {
     display: inline-block;
 
     width: auto;
 }
-.siteProListPage .siteProListPage_control a
+.siteProListPage .siteProListPageControl a
 {
     font-size: 26px;
     line-height: 34px;

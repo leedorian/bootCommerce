@@ -4,21 +4,8 @@ module.exports = function (grunt) {
     // Force use of Unix newlines
     grunt.util.linefeed = '\n';
 
-
-
     var fs = require('fs');
     var path = require('path');
-    //var npmShrinkwrap = require('npm-shrinkwrap');
-    //var generateGlyphiconsData = require('./grunt/bs-glyphicons-data-generator.js');
-    /*var BsLessdocParser = require('./grunt/bs-lessdoc-parser.js');
-    var getLessVarsData = function () {
-      var filePath = path.join(__dirname, 'less/variables.less');
-      var fileContent = fs.readFileSync(filePath, { encoding: 'utf8' });
-      var parser = new BsLessdocParser(fileContent);
-      return { sections: parser.parseFile() };
-    };
-    var generateRawFiles = require('./grunt/bs-raw-files-generator.js');
-    var generateCommonJSModule = require('./grunt/bs-commonjs-generator.js');*/
     var configBridge = grunt.file.readJSON('./grunt/configBridge.json', {
         encoding: 'utf8'
     });
@@ -29,49 +16,39 @@ module.exports = function (grunt) {
         });
     });
 
-    //get all html from blocks folder
-
-    /*function getAllHtmlFromBlocks() {
-        var path = "./blocks";
-        var filesNameArr = [];
-        var files = fs.readdirSync(path);
-        for (var i = 0; i < files.length; i++) {
-            if (files[i].indexOf(".html") > -1) {
-                filesNameArr.push(files[i].slice(0, -5));
-            }
-        }
-        return filesNameArr;
-    }*/
+    //all blocks
     var fileNames = [
-        ["basket_empty.html","Empty basket"],
-        ["basket_hasItem.html","Basket with items"],
-        ["bread_crumbs.html","Bread crumbs"],
-        ["carousel_product_crosswise.html","Horizontal products carousel"],
-        ["carousel_product_vertical.html","Vertical products carousel"],
-        ["carousel_slide.html","Slide show"],
-        ["footer.html","Footer of site"],
-        ["signin_register.html","Sign in & register"],
-        ["registration.html","Registration"],
-        ["header.html","Header of site"],
-        ["mini_basket.html","Mini basket"],
-        ["navigation.html","Site navigation"],
-        ["orderSummary.html","Summary text"],
-        ["pagination.html","Pagination"],
-        ["product_filter_checkbox.html","Product filter checklist"],
-        ["product_filter_removable.html","Product filter removeable"],
-        ["product-image-viewer.html","Image viewer"],
-        ["product-list-horizontal.html","Products list view"],
-        ["product-list-vertical.html","Products thumbnail view"],
-        ["product-option.html","Product swatch"],
-        ["promotionalCode.html","Promotional code"],
-        ["quick-info.html","Quick info box"],
-        ["search.html","Product search"],
-        ["store_locator.html","Store locator"],
-        ["store_locator_detail.html","Store locator detail"],
-        ["tab-views.html","Product infos tab"]
+        ["basket_empty.html", "Empty basket"],
+        ["basket_hasItem.html", "Basket with items"],
+        ["bread_crumbs.html", "Bread crumbs"],
+        ["carousel_product_crosswise.html", "Horizontal products carousel"],
+        ["carousel_product_vertical.html", "Vertical products carousel"],
+        ["carousel_slide.html", "Slide show"],
+        ["footer.html", "Footer of site"],
+        ["signin_register.html", "Sign in & register"],
+        ["registration.html", "Registration"],
+        ["header.html", "Header of site"],
+        ["mini_basket.html", "Mini basket"],
+        ["navigation.html", "Site navigation"],
+        ["orderSummary.html", "Summary text"],
+        ["pagination.html", "Pagination"],
+        ["product_filter_checkbox.html", "Product filter checklist"],
+        ["product_filter_removable.html", "Product filter removeable"],
+        ["image_viewer.html", "Image viewer"],
+        ["product-list-item.html", "Product list item"],
+        ["product-list-horizontal.html", "Products list view"],
+        ["product-list-vertical.html", "Products thumbnail view"],
+        ["product-option.html", "Product swatch"],
+        ["promotionalCode.html", "Promotional code"],
+        ["quick_info.html", "Quick info box"],
+        ["search.html", "Product search"],
+        ["store_locator_view1.html", "Store locator view1"],
+        ["store_locator_view2.html", "Store locator view2"],
+        ["store_locator_detail.html", "Store locator detail"],
+        ["product_infos_tab.html", "Product infos tab"]
     ];
-    fileNames = fileNames.sort(function(x, y){
-      return x[1].localeCompare(y[1]);
+    fileNames = fileNames.sort(function (x, y) {
+        return x[1].localeCompare(y[1]);
     });
     // Project configuration.
     grunt.initConfig({
@@ -86,7 +63,7 @@ module.exports = function (grunt) {
         //jqueryCheck: configBridge.config.jqueryCheck.join('\n'),
         //jqueryVersionCheck: configBridge.config.jqueryVersionCheck.join('\n'),
         // http server
-        'http-server': {
+        /*'http-server': {
             'dev': {
                 // the server root directory
                 root: "./",
@@ -101,7 +78,7 @@ module.exports = function (grunt) {
                 // run in parallel with other tasks
                 runInBackground: false
             }
-        },
+        },*/
 
         // Task configuration.
         clean: {
@@ -109,94 +86,6 @@ module.exports = function (grunt) {
             pages: 'pages/dist'
         },
         /*
-           jshint: {
-             options: {
-               jshintrc: 'js/.jshintrc'
-             },
-             grunt: {
-               options: {
-                 jshintrc: 'grunt/.jshintrc'
-               },
-               src: ['Gruntfile.js', 'grunt/*.js']
-             },
-             core: {
-               src: 'js/*.js'
-             },
-             test: {
-               options: {
-                 jshintrc: 'js/tests/unit/.jshintrc'
-               },
-               src: 'js/tests/unit/*.js'
-             },
-             assets: {
-               src: ['docs/assets/js/src/*.js', 'docs/assets/js/*.js', '!docs/assets/js/*.min.js']
-             }
-           },
-
-           jscs: {
-             options: {
-               config: 'js/.jscsrc'
-             },
-             grunt: {
-               src: '<%= jshint.grunt.src %>'
-             },
-             core: {
-               src: '<%= jshint.core.src %>'
-             },
-             test: {
-               src: '<%= jshint.test.src %>'
-             },
-             assets: {
-               options: {
-                 requireCamelCaseOrUpperCaseIdentifiers: null
-               },
-               src: '<%= jshint.assets.src %>'
-             }
-           },
-
-           concat: {
-             options: {
-               //banner: '<%= banner %>\n<%= jqueryCheck %>\n<%= jqueryVersionCheck %>',
-               banner: '<%= banner %>',
-               stripBanners: false
-             },
-             bootstrap: {
-               src: [
-                 'js/transition.js',
-                 'js/alert.js',
-                 'js/button.js',
-                 'js/carousel.js',
-                 'js/collapse.js',
-                 'js/dropdown.js',
-                 'js/modal.js',
-                 'js/tooltip.js',
-                 'js/popover.js',
-                 'js/scrollspy.js',
-                 'js/tab.js',
-                 'js/affix.js'
-               ],
-               dest: 'dist/js/<%= pkg.name %>.js'
-             }
-           },
-
-           uglify: {
-             options: {
-               preserveComments: 'some'
-             },
-             core: {
-               src: '<%= concat.bootstrap.dest %>',
-               dest: 'dist/js/<%= pkg.name %>.min.js'
-             },
-             customize: {
-               src: configBridge.paths.customizerJs,
-               dest: 'docs/assets/js/customize.min.js'
-             },
-             docsJs: {
-               src: configBridge.paths.docsJs,
-               dest: 'docs/assets/js/docs.min.js'
-             }
-           },
-
            qunit: {
              options: {
                inject: 'js/tests/unit/phantom.js'
@@ -204,7 +93,6 @@ module.exports = function (grunt) {
              files: 'js/tests/index.html'
            },*/
 
-        // TODO validate html blocks
         jshint: {
             options: {
                 jshintrc: 'blocks/js/.jshintrc',
@@ -247,7 +135,7 @@ module.exports = function (grunt) {
                 dest: 'pages/dist/js/',
                 ext: '.min.js',
                 extDot: 'first'
-           }
+            }
         },
 
         less: {
@@ -414,17 +302,43 @@ module.exports = function (grunt) {
                 force: true
             },
             html: {
-                src: ['pages/*.html','pages/includes/*.html','blocks/*.html']
+                src: ['pages/*.html', 'pages/includes/*.html', 'blocks/*.html']
             }
         },
         watch: {
             less: {
                 files: ['blocks/less/**/*.less', 'pages/less/**/*.less'],
-                tasks: ['dist-css', 'dist-pages']
+                tasks: ['dist-css']
             },
-            pages: {
-                files: ['blocks/*.html', 'pages/*.html', 'pages/includes/**/*.html'],
+            js: {
+                files: ['blocks/js/*.js', 'pages/js/*.js'],
+                tasks: ['dist-js']
+            },
+            html: {
+                files: ['blocks/*.html','pages/*.html', 'pages/includes/**/*.html'],
                 tasks: ['processhtml:blocks','processhtml:pages']
+            }
+        },
+        browserSync: {
+            bsFiles: {
+                src: [
+                    'blocks/dist/**/*.*',
+                    'pages/dist/**/*.*'
+                ]
+            },
+            options: {
+                watchTask: true,
+                server: {
+                    baseDir: [
+                        "pages/dist",
+                        "./"
+                    ]
+                },
+                port: 7272,
+                host: "127.0.0.1",
+                reloadDelay: 2000,
+                reloadOnRestart: false,
+                browser: ["chrome", "firefox"]
             }
         }
 
@@ -436,11 +350,6 @@ module.exports = function (grunt) {
         scope: 'devDependencies'
     });
     require('time-grunt')(grunt);
-    /*
-      // Docs HTML validation task
-      grunt.registerTask('validate-html', ['jekyll:docs', 'validation']);
-
-    */
 
     // JS distribution task.
     grunt.registerTask('dist-js', ['jshint:blocks', 'jshint:pages', 'jscs', 'concat:js', 'concat:js_base', 'uglify']);
@@ -448,13 +357,13 @@ module.exports = function (grunt) {
     // CSS distribution task.
     grunt.registerTask('less-compile', ['less:compileBlock', 'less:compilePage']);
     grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:blocks', 'autoprefixer:pages', 'csscomb:blocks', 'csscomb:pages', 'csslint:blocks', 'csslint:pages', 'cssmin:minifyBlocks', 'usebanner']);
-    grunt.registerTask('dist-pages', ['htmlhintplus', 'processhtml:blocks','processhtml:pages']);
+    grunt.registerTask('dist-pages', ['htmlhintplus', 'processhtml:blocks', 'processhtml:pages']);
 
     // Full distribution task.
     grunt.registerTask('dist', ['clean', 'dist-css', 'dist-pages', 'dist-js']);
-    //http server task.
-    grunt.registerTask('server', ['http-server']);
+
     // default task
-    grunt.registerTask('default', ['clean', 'dist', 'server']);
+    //grunt.registerTask('default', ['clean', 'dist', 'server']);
+    grunt.registerTask('default', ['clean', 'dist', 'browserSync', 'watch']);
 
 };

@@ -7,7 +7,7 @@
 /**
  * @author Ivy
  */
-.carousel_product_vertical
+.carouselProductVertical
 {
     width: 300px;
     margin: 20px auto;
@@ -16,40 +16,40 @@
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-.carousel_product_vertical .carousel-inner
+.carouselProductVertical .carousel-inner
 {
     width: 80%;
     margin: 0 auto;
 }
-.carousel_product_vertical .carousel-inner .item
+.carouselProductVertical .carousel-inner .item
 {
     width: 100%;
 }
-.carousel_product_vertical .carousel-inner ul
+.carouselProductVertical .carousel-inner ul
 {
     margin-right: 0;
     padding: 0;
 }
-.carousel_product_vertical .carousel-indicators
+.carouselProductVertical .carousel-indicators
 {
     bottom: -40px;
 }
-.carousel_product_vertical .carousel-indicators li
+.carouselProductVertical .carousel-indicators li
 {
     border-color: #000;
     background: #ccc;
 }
-.carousel_product_vertical .carousel-inner .item li
+.carouselProductVertical .carousel-inner .item li
 {
     margin-bottom: 20px;
 
     list-style: none;
 }
-.carousel_product_vertical .carousel-inner .item li:last-child
+.carouselProductVertical .carousel-inner .item li:last-child
 {
     margin-bottom: 0 ;
 }
-.carousel_product_vertical .carousel-inner .item img
+.carouselProductVertical .carousel-inner .item img
 {
     width: 100%;
 }

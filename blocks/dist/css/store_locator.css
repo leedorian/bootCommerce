@@ -7,46 +7,46 @@
 /**
  * @author Ivy
  */
-.store_locator .store_locator_inputInfo .form-control
+.storeLocator .storeLocatorInputInfo .form-control
 {
     display: inline-block;
 
     width: 30%;
 }
-.store_locator ul,
-.store_locator p
+.storeLocator ul,
+.storeLocator p
 {
     margin: 0;
     padding: 0;
 }
-.store_locator li
+.storeLocator li
 {
     list-style: none;
 }
-.store_locator_map
+.storeLocatorMap
 {
     margin: 20px auto;
 }
-.store_locator_map .store_map_panel
+.storeLocatorMap .storeMapPanel
 {
     float: left;
 
     width: 60%;
 }
-.store_locator_map .store_map_panel .store_map_canvas
+.storeLocatorMap .storeMapPanel .storeMapCanvas
 {
     min-height: 300px;
     margin-bottom: 5%;
 
     border: 1px solid #ccc;
 }
-.store_locator_map .store_map_lenged
+.storeLocatorMap .storeMapLenged
 {
     padding: 10px;
 
     border: 1px solid #ccc;
 }
-.store_locator_map .store_map_lenged li
+.storeLocatorMap .storeMapLenged li
 {
     display: inline;
     float: left;
@@ -54,11 +54,11 @@
     width: 45%;
     margin-right: 5%;
 }
-.store_locator_map .store_map_lenged .glyphicon
+.storeLocatorMap .storeMapLenged .glyphicon
 {
     margin: 5px 10px 0 0;
 }
-.store_locator_map .store_map_lenged h5
+.storeLocatorMap .storeMapLenged h5
 {
     font-weight: bold;
 
@@ -67,11 +67,11 @@
     width: 80%;
     margin-top: 0;
 }
-.store_locator_map .store_map_lenged p
+.storeLocatorMap .storeMapLenged p
 {
     font-weight: normal;
 }
-.store_locator_map .store_map_list
+.storeLocatorMap .storeMapList
 {
     display: inline;
     float: left;
@@ -83,11 +83,11 @@
 
     border: 1px solid #ccc;
 }
-.store_locator_map .store_map_list .store_mapList_icon
+.storeLocatorMap .storeMapList .storeMapListIcon
 {
     vertical-align: top;
 }
-.store_locator_map .store_mapList_info
+.storeLocatorMap .storeMapListInfo
 {
     display: inline-block;
 
@@ -97,7 +97,7 @@
 
     vertical-align: middle;
 }
-.store_locator_mapGloble .store_map_canvas
+.storeLocatorMapGloble .storeMapCanvas
 {
     width: 100%;
     min-height: 300px;
@@ -105,12 +105,12 @@
 
     border: 1px solid #ccc;
 }
-.store_map_legendLocalStore span,
-.store_map_legendSuperStore span
+.storeMapLegendLocalStore span,
+.storeMapLegendSuperStore span
 {
     vertical-align: top;
 }
-.store_mapList_storeName span
+.storeMapListStoreName span
 {
     float: right;
 }

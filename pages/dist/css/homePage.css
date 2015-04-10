@@ -10,14 +10,9 @@
  */
 .homePage
 {
-    width: 980px;
     margin: 0 auto;
 }
 .homePage .homeBanner
 {
     padding-top: 5px;
-}
-.homePage .homeBanner .carousel
-{
-    width: 980px;
 }

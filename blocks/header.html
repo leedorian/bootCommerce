@@ -1,15 +1,18 @@
 <!-- Begin header  -->
-<!-- 
+<!--
 @author Jack Han
 @version 0.0.1
  -->
 
-<div class="header clearfix"> 
+<div class="header clearfix">
     <div class="siteLogo headerLogo">
-        <img src="http://lorempixel.com/200/150/sports" />
+        <img src="http://lorempixel.com/200/150/food" class="deskTopLogo" />
+        <img src="http://lorempixel.com/200/150/food" class="mobileLogo" />
     </div>
+
     <div class="headerCol clearfix">
-        <div class="headerColLink">         
+        <div class="headerColLink">
+            <h2>Top Link <i class="fa fa-sort-desc"></i></h2>
             <ul>
                 <li><span>Free call 1800 640 811</span></li>
                 <li><a href="">Store Locator</a></li>
@@ -17,18 +20,27 @@
                 <li><a href="">Sign In/Register</a></li>
             </ul>
         </div>
+        <div class="mobileHeader">
+            <ul class="clearfix">
+                <li class="mobileNavBar" site-target="siteNavBar"> <i class="fa fa-bars"></i> <span>menu</span></li>
+                <li class="mobileSearchBar" site-target="siteSearchBar"><i class="fa fa-search"></i> <span>search</span></li>
+                <li class="mobileUserCenter" site-target="siteAccount"><i class="fa fa-user"></i> <span>account</span></li>
+                <li class="mobileMinBasket" site-target="siteMinBasket"> <i class="fa fa-shopping-cart"></i> <span>cart</span></li>
+            </ul>
+        </div>
         <div class="clearfix">
             <!-- build:include search.html -->
-            Header component 
-            <!-- /build --> 
+            Header component
+            <!-- /build -->
             <!-- build:include mini_basket.html -->
             Header component
             <!-- /build -->
-        </div>      
-    </div>  
+        </div>
+    </div>
+
     <!-- build:include navigation.html -->
     Header component
-    <!-- /build -->   
-</div>  
+    <!-- /build -->
+</div>
 
 <!-- End header  -->
