@@ -1,0 +1,28 @@
+body {
+  background: #fafafa;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+ol, ul {
+  list-style: none;
+  padding: 0;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#headerContainer.paper-scroll-header-panel {
+  z-index: 999;
+}
+
+#tabsContainer #ink.paper-tab {
+  color: #f5f5f5;
+}
+
+#tabsContainer #selectionBar.paper-tabs {
+  background-color: #aaa;
+}

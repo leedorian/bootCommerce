@@ -1,0 +1,75 @@
+<script src="../bower_components/page.js/page.js"></script>
+<script>
+  window.addEventListener('WebComponentsReady', function() {
+
+    // Middleware
+    function scrollToTop(ctx, next) {
+      app.scrollPageToTop();
+      next();
+    }
+
+    // Routes
+    page('/', scrollToTop, function() {
+      app.route = 'home';
+    });
+
+    page('/components', scrollToTop, function() {
+      app.route = 'components';
+      app.paths = [
+        {name: 'Home', href: '/'},
+        {name: 'Components'}
+      ];
+    });
+
+    page('/components/:name', scrollToTop, function(data) {
+      app.route = 'components-' + data.params.name;
+
+      switch (data.params.name) {
+        case 'breadcrumb':
+          app.samplePaths = [
+            {name: 'Home'},
+            {name: 'Library'},
+            {name: 'Data'}
+          ];
+          app.pathName = 'Breadcrumb';
+          break;
+        case 'tabs':
+          app.tabs = [
+            {name: 'Description'},
+            {name: 'Customer Reviews'},
+            {name: 'Tabview Test3'},
+            {name: 'Tabview Test4'}
+          ];
+          app.pathName = 'Tabs';
+          break;
+      }
+
+      app.paths = [
+        {name: 'Home', href: '/'},
+        {name: 'Components', href: '/components'},
+        {name: app.pathName}
+      ];
+    });
+
+    page('/demos', scrollToTop, function() {
+      app.route = 'contact';
+    });
+
+    page('/demos/:name', scrollToTop, function(data) {
+      app.route = 'Demos Page';
+      app.params = data.params;
+    });
+
+    page('*', function() {
+      app.$.toast.text = 'Can\'t find: ' + window.location.href  + '. Redirected you to Home Page';
+      app.$.toast.show();
+      page.redirect('/');
+    });
+
+    // add #! before urls
+    page({
+      hashbang: true
+    });
+
+  });
+</script>

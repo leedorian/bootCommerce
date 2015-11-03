@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="BootCommerce" />
+  <title>BootCommerce</title>
+  <!-- Place favicon.ico in the `app/` directory -->
+
+  <!-- Chrome for Android theme color -->
+  <meta name="theme-color" content="#2E3AA1">
+
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Tile color for Win8 -->
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="PSK">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="BootCommerce">
+  <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8 (144x144) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <!-- endbuild -->
+
+  <!-- will be replaced with elements/elements.vulcanized.html -->
+  <link rel="import" href="elements/elements.html">
+  <!-- endreplace-->
+
+  <!-- For shared styles, shared-styles.html import in elements.html -->
+  <style is="custom-style" include="shared-styles"></style>
+
+</head>
+
+<body unresolved class="fullbleed layout vertical">
+  <span id="browser-sync-binding"></span>
+  <template is="dom-bind" id="app">
+
+    <paper-drawer-panel id="paperDrawerPanel">
+      <!-- Drawer Scroll Header Panel -->
+      <paper-scroll-header-panel drawer fixed>
+
+        <!-- Drawer Toolbar -->
+        <paper-toolbar id="drawerToolbar">
+          <span class="paper-font-title">Menu</span>
+        </paper-toolbar>
+
+        <!-- Drawer Content -->
+        <paper-menu>
+          <paper-submenu>
+            <paper-icon-item class="menu-trigger">
+              <a data-route="home" href="/" on-tap="onDataRouteClick">
+                <iron-icon icon="home" item-icon></iron-icon>
+                Home
+              </a>
+            </paper-icon-item>
+          </paper-submenu>
+
+          <paper-submenu>
+            <paper-icon-item class="menu-trigger">
+              <a data-route="components" href="/components" on-tap="onDataRouteClick">
+                <iron-icon icon="view-quilt" item-icon></iron-icon>
+                Components
+              </a>
+            </paper-icon-item>
+            <paper-menu class="menu-content">
+              <paper-item>
+                <a data-route="components" href="/components/breadcrumb" on-tap="onDataRouteClick">
+                  <span>Breadcrumb</span>
+                </a>
+              </paper-item>
+              <paper-item>
+                <a data-route="tabs" href="/components/tabs" on-tap="onDataRouteClick">
+                  <span>Tabs</span>
+                </a>
+              </paper-item>
+            </paper-menu>
+          </paper-submenu>
+        </paper-menu>
+      </paper-scroll-header-panel>
+
+      <!-- Main Area -->
+      <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header>
+
+        <!-- Main Toolbar -->
+        <paper-toolbar id="mainToolbar" class="tall">
+          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+          <span class="flex"></span>
+
+          <!-- Toolbar icons -->
+          <paper-icon-button icon="refresh"></paper-icon-button>
+          <paper-icon-button icon="search"></paper-icon-button>
+
+          <!-- Application name -->
+          <div class="middle middle-container center horizontal layout">
+            <div class="app-name">BootCommerce</div>
+          </div>
+
+          <!-- Application sub title -->
+          <div class="bottom bottom-container center horizontal layout">
+            <div class="bottom-title paper-font-subhead">A components library of e-commerce site, it's based on Polymer.</div>
+          </div>
+
+        </paper-toolbar>
+
+        <!-- Main Content -->
+        <div class="content">
+          <iron-pages attr-for-selected="data-route" selected="{{route}}">
+
+            <section data-route="home">
+              <paper-material elevation="1">
+                <bc-home-page></bc-home-page>
+              </paper-material>
+            </section>
+
+            <section data-route="components">
+              <bc-breadcrumb paths="{{paths}}"></bc-breadcrumb>
+            </section>
+
+            <section data-route="components-breadcrumb">
+              <bc-breadcrumb paths="{{paths}}"></bc-breadcrumb>
+              <h3>{{pathName}} Demo:</h3>
+              <bc-breadcrumb paths="{{samplePaths}}"></bc-breadcrumb>
+            </section>
+
+            <section data-route="components-tabs">
+              <bc-breadcrumb paths="{{paths}}"></bc-breadcrumb>
+              <h3>{{pathName}} Demo:</h3>
+              <bc-tabs tabs="{{tabs}}"></bc-tabs>
+            </section>
+
+          </iron-pages>
+        </div>
+      </paper-scroll-header-panel>
+    </paper-drawer-panel>
+
+    <paper-toast id="toast">
+      <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
+    </paper-toast>
+
+  </template>
+
+  <!-- build:js scripts/app.js -->
+  <script src="scripts/app.js"></script>
+  <!-- endbuild-->
+</body>
+
+</html>

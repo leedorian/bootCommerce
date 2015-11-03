@@ -1,0 +1,62 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="bc-tabs">
+  <template>
+    <style include="shared-styles"></style>
+    <style>
+      :host {
+        display: block;
+      }
+
+      :host > paper-tabs {
+        background-color: #eee;
+      }
+
+      paper-tab {
+        padding: 0 12px;
+      }
+
+      iron-pages {
+        padding: 15px;
+      }
+
+    </style>
+    <paper-tabs selected="0" scrollable selected="{{tabIndex}}">
+      <template is="dom-repeat" items="{{tabs}}">
+        <paper-tab on-click="tab">{{item.name}}</paper-tab>
+      </template>
+    </paper-tabs>
+    <iron-pages selected="{{tabIndex}}">
+      <template is="dom-repeat" items="{{tabs}}">
+        <div>{{item.name}}</div>
+      </template>
+    </iron-pages>
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'bc-tabs',
+
+        properties: {
+          tabs: {
+            type: Array,
+            notify: true
+          },
+          tabIndex: {
+            type: Number,
+            notify: true,
+            value: 0
+          }
+        },
+
+        tab: function(e) {
+          this.tabIndex = Array.prototype.slice.call(e.currentTarget.parentNode.querySelectorAll('paper-tab')).indexOf(e.currentTarget);
+        }
+      });
+    })();
+  </script>
+
+</dom-module>

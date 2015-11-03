@@ -1,0 +1,17 @@
+{
+  "name": "Ecommerce commponets based on polymer",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0",
+    "iron-elements": "PolymerElements/iron-elements#^1.0.4",
+    "paper-elements": "PolymerElements/paper-elements#^1.0.5",
+    "gold-elements": "PolymerElements/gold-elements#^1.0.1",
+    "neon-elements": "PolymerElements/neon-elements#^1.0.0",
+    "platinum-elements": "PolymerElements/platinum-elements#^1.2.0",
+    "page.js": "^1.6.4",
+    "bootstrap": "~3.3.5"
+  },
+  "devDependencies": {
+    "webcomponentsjs": "^0.7.15"
+  }
+}
